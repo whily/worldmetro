@@ -1,0 +1,6 @@
+/bin
+/gen
+/res/drawable-*
+local.properties
+proguard.cfg
+*.class
