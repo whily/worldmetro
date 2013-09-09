@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<city>
+  <!-- Unit for time duration is in minute. -->
+  <name>Beijing</name>
+  <logo></logo>
+  <!-- Language for station names: 1. EnglishOnly 2. LocalOnly 3. Both -->
+  <language>Both</language>
+  <!-- Transit information from http://www.ditiezu.com/thread-71145-1-1.html -->
+  <stations>
+    <!-- Station ID is a string. If there is no official station IDs,
+         then the ID is a 32 bit integer according to rules below: the
+         least significant 5 digits for actual station ID within the
+         line, while the most significant 5 digits for line ID. It is
+         recommended to use a BASIC line number style for future
+         proof, i.e. each station id is a multiple of 10, and the
+         first station id is 10000.-->
+
+    <!-- Start of Line 2 -->
+    <station id="201" local="西直门" english="XIZHIMEN">
+      <alt id="413" />
+      <alt id="1301" />
+      <transit sourceId="201" targetId="413" time="0" />   
+      <transit sourceId="413" targetId="201" time="1" />   
+      <transit sourceId="201" targetId="1301" time="3" />
+      <transit sourceId="1301" targetId="201" time="3" />
+      <transit sourceId="413" targetId="1301" time="2" />
+      <transit sourceId="1301" targetId="413" time="2" />
+    </station>
+    <station id="214" local="东直门" english="DONGZHIMEN">
+      <alt id="1316" />
+      <alt id="JX01" />
+    </station>
+    <!-- End of Line 2 -->
+
+    <!-- Start of Line 5 -->
+    <station id="520" local="立水桥" english="LISHUIQIAO">
+      <alt id="1310" />
+      <transit sourceId="520" targetId="1310" time="1" />
+      <transit sourceId="1310" targetId="520" time="1" />
+    </station>
+    <!-- End of Line 5 -->
+
+    <!-- Start of Line 8 -->
+    <station id="829" local="霍营" english="HUOYING">
+      <alt id="1309" />
+    </station>
+    <!-- End of Line 8 -->
+
+    <!-- Start of Line 10 -->
+    <station id="101xxx0" local="知春路" english="ZHICHUNLU">
+      <alt id="1303" />
+    </station>
+    <station id="101xxx0" local="芍药居" english="SHAOYAOJU">
+      <alt id="1313" />
+    </station>
+    <!-- End of Line 10 -->
+
+    <!-- Start of Line 13 -->
+    <station id="1302" local="大钟寺" english="DAZHONGSI" />
+    <station id="1304" local="五道口" english="WUDAOKOU" />
+    <station id="1305" local="上地"   english="SHANGDI" />
+    <station id="1306" local="西二旗" english="XI'ER QI">
+      <transits>
+        <transit id="XX10000" />
+      </transits>
+    </station>
+    <station id="1307" local="龙泽" english="LONGZE" />
+    <station id="1308" local="回龙观" english="HUILONGGUAN" />
+    <station id="1311" local="北苑" english="BEIYUAN" />
+    <station id="1312" local="望京西" english="WANGJING West" />
+    <station id="1314" local="光熙门" english="GUANGXIMEN" />
+    <station id="1315" local="柳芳" english="LIUFANG" />
+    <!-- End of Line 13 -->
+  </stations>
+
+  <lines>
+    <line id="1" color="r:185 g: 53 b: 54" />
+    <line id="2" color="r:45 g: 94 b: 149" />
+    <line id="4" color="r:48 g: 140 b: 155" />
+
+
+    <!-- Information is from http://baike.baidu.com/view/1186257.htm -->
+    <line id="5" color="r:160 g: 5 b: 129">
+      <stations>
+        <station id="501" />
+        <station id="502" time="2" />
+        <station id="503" time="2" />
+        <station id="504" time="3" />
+        <station id="505" time="2" />
+        <station id="506" time="2" />
+        <station id="507" time="2" />
+        <station id="508" time="2" />
+        <station id="509" time="2" />
+        <station id="510" time="2" />
+        <station id="511" time="2" />
+        <station id="512" time="2" />
+        <station id="513" time="3" />
+        <station id="514" time="2" />
+        <station id="515" time="2" />
+        <station id="516" time="2" />
+        <station id="517" time="3" />
+        <station id="518" time="3" />
+        <station id="519" time="2" />
+        <station id="520" time="3" />
+        <station id="521" time="2" />
+        <station id="522" time="2" />
+        <station id="523" time="2" />
+      </stations>
+    </line>
+
+    <line id="6" color="r:203 g: 149 b: 32" />
+    <line id="8" color="r:46 g: 154 b: 105" />
+    <line id="9" color="r:142 g: 195 b: 44" />
+    <line id="10" color="r:55 g: 153 b: 190" />
+
+
+    <!-- Information is from http://baike.baidu.com/view/6152850.htm -->
+    <line id="13" type="line" localLong="13号线" localShort="13"
+          englishLong="Line 13" englishShort="13" color="#F5D312">
+      <stations>
+        <station id="1301" />
+        <station id="1302" time="3" />
+        <station id="1303" time="2" />
+        <station id="1304" time="3" />
+        <station id="1305" time="6" />
+        <station id="1306" time="4" />
+        <station id="1307" time="5" />
+        <station id="1308" time="3" />
+        <station id="1309" time="4" />
+        <station id="1310" time="6" />
+        <station id="1311" time="3" />
+        <station id="1312" time="8" />
+        <station id="1313" time="3" />
+        <station id="1314" time="2" />
+        <station id="1315" time="2" />
+        <station id="1316" time="2" />
+      </stations>
+    </line>
+    <line id="14" color="r:209 g: 163 b: 161" />
+    <line id="15" color="r:103 g: 50 b: 122" />
+    <line id="100" localLong="昌平线" color="r:213 g: 126 b: 177" />
+    <line id="101" localLong="亦庄线" color="r:219 g: 0 b: 119" />
+    <line id="102" localLong="房山线" color="r:218 g: 94 b: 45" />
+    <line id="200" localLong="机场线" color="r:162 g: 151 b: 186" />
+  </lines>
+</city>
