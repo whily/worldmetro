@@ -73,14 +73,14 @@
     <!-- End of Line 13 -->
   </stations>
 
+  <!-- Travel time innformation is from wiki pages like 
+       http://en.wikipedia.org/wiki/Line_10,_Beijing_Subway -->
   <lines>
-    <line id="1" color="r:185 g: 53 b: 54" />
-    <line id="2" color="r:45 g: 94 b: 149" />
-    <line id="4" color="r:48 g: 140 b: 155" />
+    <line id="1" color="#B93536" />
+    <line id="2" color="#2D5E95" />
+    <line id="4" color="#308C9B" />
 
-
-    <!-- Information is from http://baike.baidu.com/view/1186257.htm -->
-    <line id="5" color="r:160 g: 5 b: 129">
+    <line id="5" color="#A00581">
       <stations>
         <station id="501" />
         <station id="502" time="2" />
@@ -108,11 +108,10 @@
       </stations>
     </line>
 
-    <line id="6" color="r:203 g: 149 b: 32" />
-    <line id="8" color="r:46 g: 154 b: 105" />
-    <line id="9" color="r:142 g: 195 b: 44" />
-    <line id="10" color="r:55 g: 153 b: 190" />
-
+    <line id="6" color="#CB9520" />
+    <line id="8" color="#2E9A69" />
+    <line id="9" color="#8EC32C" />
+    <line id="10" color="#3799BE" />
 
     <!-- Information is from http://baike.baidu.com/view/6152850.htm -->
     <line id="13" type="line" localLong="13号线" localShort="13"
@@ -136,11 +135,11 @@
         <station id="1316" time="2" />
       </stations>
     </line>
-    <line id="14" color="r:209 g: 163 b: 161" />
-    <line id="15" color="r:103 g: 50 b: 122" />
-    <line id="100" localLong="昌平线" color="r:213 g: 126 b: 177" />
-    <line id="101" localLong="亦庄线" color="r:219 g: 0 b: 119" />
-    <line id="102" localLong="房山线" color="r:218 g: 94 b: 45" />
-    <line id="200" localLong="机场线" color="r:162 g: 151 b: 186" />
+    <line id="14" color="#D1A3A1" />
+    <line id="15" color="#67327A" />
+    <line id="100" localLong="昌平线" color="#D57EB1" />
+    <line id="101" localLong="亦庄线" color="#DB0077" />
+    <line id="102" localLong="房山线" color="#DA5E2D" />
+    <line id="200" localLong="机场线" color="#A297BA" />
   </lines>
 </city>
