@@ -3,6 +3,7 @@ package net.whily.android.worldmetro
 import android.os.Bundle
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.app.Activity
 import android.view.MenuItem
 import android.view.Menu
@@ -19,6 +20,12 @@ class MainActivity extends Activity with AdapterView.OnItemClickListener {
   
   override def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
+    
+    // Set Holo Light/Dark theme according to preference value.
+    val prefs: SharedPreferences = getSharedPreferences("Theme", 0);
+    val theme: Int = prefs.getInt("theme", android.R.style.Theme_Holo_Light_DarkActionBar);
+    setTheme(theme)
+       
     setContentView(R.layout.activity_main)
     grid = findViewById(R.id.city_grid).asInstanceOf[GridView]
     grid.setAdapter(new ArrayAdapter[String](this, R.layout.city, items))

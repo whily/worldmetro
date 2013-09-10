@@ -11,7 +11,7 @@
         android:entryValues="@array/theme_values_preference"
         android:dialogTitle="@string/theme_dialog_title_preference"
         android:persistent="true" 
-        android:defaultValue="0"
+        android:defaultValue="@android:style/Theme.Holo.Light.DarkActionBar"
         android:shouldDisableView="false" /> 
     <ListPreference 
         android:key="text_size_preference"

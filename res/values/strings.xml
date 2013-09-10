@@ -17,8 +17,8 @@
     <item>Dark</item>
   </array>
   <string-array name="theme_values_preference">
-    <item>0</item>
-    <item>1</item>
+    <item>@android:style/Theme.Holo.Light.DarkActionBar</item>
+    <item>@android:style/Theme.Holo</item>
   </string-array>
   <string name="text_size_title_preference">Text size</string>
   <string name="text_size_summary_preference">Text size</string>
