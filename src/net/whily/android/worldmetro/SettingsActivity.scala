@@ -16,8 +16,11 @@ import android.preference.PreferenceActivity
 
 class SettingsActivity extends PreferenceActivity {
   override def onCreate(savedInstanceState: Bundle) {
+    // For PreferenceActivity, setTheme should proceed super.oCreate. 
+    // See http://stackoverflow.com/questions/11751498/how-to-change-preferenceactivity-theme
+    Util.setHoloTheme(this) 
     super.onCreate(savedInstanceState)
-        
+    
     // Load the preferences from an XML resource
     addPreferencesFromResource(R.xml.settings)
   }
