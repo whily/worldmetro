@@ -6,3 +6,4 @@ proguard.cfg
 *.class
 .cache
 libs/
+proguard_cache/
