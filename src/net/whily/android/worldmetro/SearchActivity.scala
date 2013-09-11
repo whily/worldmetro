@@ -1,5 +1,5 @@
 /**
- * About activity for World Metro.
+ * Search activity for World Metro.
  *
  * @author  Yujian Zhang <yujian{dot}zhang[at]gmail(dot)com>
  *
@@ -13,17 +13,12 @@ package net.whily.android.worldmetro
 
 import android.app.Activity
 import android.os.Bundle
-import android.webkit.WebView
 
-class AboutActivity extends Activity {
-  private[this] var browser: WebView = null
-
+class SearchActivity extends Activity {
   override def onCreate(icicle: Bundle) {
     super.onCreate(icicle)
+    Util.setHoloTheme(this)
     setContentView(R.layout.about)
-
-    browser = findViewById(R.id.webkit).asInstanceOf[WebView]
-    browser.loadData(getString(R.string.about_html), "text/html", "UTF-8")
   }
 }
 

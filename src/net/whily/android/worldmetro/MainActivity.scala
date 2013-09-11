@@ -47,6 +47,7 @@ class MainActivity extends Activity with AdapterView.OnItemClickListener {
     }
   }
   
-  def onItemClick(parent: AdapterView[_], v: View, position: Int, id: Long) {    
+  def onItemClick(parent: AdapterView[_], v: View, position: Int, id: Long) {     
+    startActivity(new Intent(this, classOf[SearchActivity]))
   }
 }
