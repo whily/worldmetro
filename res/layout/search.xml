@@ -4,30 +4,22 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:padding="8dp">
-  <RelativeLayout 
-      android:id="@+id/add_entry_button"
+  <LinearLayout 
+      android:orientation="horizontal"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:paddingTop="8dp">
-    <Button
-      android:id="@+id/reverse"
-      android:layout_alignParentRight="true"
-      android:layout_alignParentTop="true"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Switch" 
-      android:onClick="onAddButtonClick" />
     <LinearLayout 
       android:orientation="vertical"
       android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:layout_toLeftOf="@id/reverse"
-      android:layout_alignTop="@id/reverse"      
+      android:layout_height="wrap_content"
+      android:layout_weight="4"  
       android:padding="8dp">
       <EditText
         android:id="@+id/from_entry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
         android:hint="string/from_entry_hint" 
         android:inputType="text"
         android:imeOptions="actionGo" />
@@ -39,7 +31,14 @@
         android:inputType="text"
         android:imeOptions="actionGo" />      
     </LinearLayout>
-  </RelativeLayout>
+    <Button
+      android:id="@+id/reverse"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"       
+      android:text="Switch" 
+      android:onClick="onAddButtonClick" />    
+  </LinearLayout>
   <ExpandableListView 
   	android:id="@android:id/list"
     android:layout_width="match_parent"

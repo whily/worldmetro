@@ -18,7 +18,7 @@ class SearchActivity extends Activity {
   override def onCreate(icicle: Bundle) {
     super.onCreate(icicle)
     Util.setHoloTheme(this)
-    setContentView(R.layout.about)
+    setContentView(R.layout.search)
   }
 }
 
