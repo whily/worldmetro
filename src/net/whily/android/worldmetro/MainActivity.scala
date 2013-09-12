@@ -1,15 +1,10 @@
 package net.whily.android.worldmetro
  
+import android.app.{ActionBar, Activity}
+import android.content.{Context, Intent}
 import android.os.Bundle
-import android.content.Context
-import android.content.Intent
-import android.app.Activity
-import android.view.MenuItem
-import android.view.Menu
-import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.GridView
+import android.view.{Menu, MenuItem, View}
+import android.widget.{AdapterView, ArrayAdapter, GridView}
  
 class MainActivity extends Activity with AdapterView.OnItemClickListener {
   private val items = 
@@ -22,6 +17,7 @@ class MainActivity extends Activity with AdapterView.OnItemClickListener {
     super.onCreate(savedInstanceState)
     Util.setHoloTheme(this)      
     setContentView(R.layout.activity_main)
+    getActionBar.setHomeButtonEnabled(true)
     grid = findViewById(R.id.city_grid).asInstanceOf[GridView]
     grid.setAdapter(new ArrayAdapter[String](this, R.layout.city, items))
     grid.setOnItemClickListener(this)
@@ -34,9 +30,15 @@ class MainActivity extends Activity with AdapterView.OnItemClickListener {
   
   override def onOptionsItemSelected(item: MenuItem): Boolean = {
     item.getItemId match {
-      case R.id.about    => startActivity(new Intent(this, classOf[AboutActivity])); true
-      case R.id.settings => startActivityForResult(new Intent(this, classOf[SettingsActivity]), ResultSettings); true
-      case _             => super.onOptionsItemSelected(item)
+      case android.R.id.home | R.id.about => {
+        startActivity(new Intent(this, classOf[AboutActivity]))
+        true
+      }
+      case R.id.settings => { 
+        startActivityForResult(new Intent(this, classOf[SettingsActivity]), ResultSettings)
+        true
+      }
+      case _ => super.onOptionsItemSelected(item)
     }
   }
   
