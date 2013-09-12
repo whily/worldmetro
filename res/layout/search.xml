@@ -14,8 +14,9 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_weight="4"  
+      android:verticalSpacing="8dip"
       android:padding="8dp">
-      <EditText
+      <AutoCompleteTextView
         android:id="@+id/from_entry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,7 +24,7 @@
         android:hint="string/from_entry_hint" 
         android:inputType="text"
         android:imeOptions="actionGo" />
-      <EditText
+      <AutoCompleteTextView
         android:id="@+id/to_entry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
