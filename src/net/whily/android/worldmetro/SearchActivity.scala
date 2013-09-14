@@ -36,8 +36,8 @@ class SearchActivity extends Activity {
     toEntry = findViewById(R.id.to_entry).asInstanceOf[AutoCompleteTextView]
     fromEntry.setThreshold(1)
     toEntry.setThreshold(1)
-    fromEntry.setAdapter(new AccentFoldingArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, stations))
-    toEntry.setAdapter(new AccentFoldingArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, stations))
+    fromEntry.setAdapter(new AccentFoldingArrayAdapter(this, R.layout.simple_dropdown_item_1line, stations))
+    toEntry.setAdapter(new AccentFoldingArrayAdapter(this, R.layout.simple_dropdown_item_1line, stations))
     fromEntry.setOnTouchListener(new View.OnTouchListener() {
       override def onTouch(v: View, e: MotionEvent): Boolean = {
       	fromEntry.showDropDown()
