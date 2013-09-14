@@ -23,5 +23,28 @@
         android:persistent="true" 
         android:defaultValue="0"
         android:shouldDisableView="false" /> 
+    <ListPreference 
+        android:key="language_preference"
+        android:title="@string/language_title_preference" 
+        android:summary="@string/language_summary_preference"
+        android:entries="@array/language_entries_preference" 
+        android:entryValues="@array/language_values_preference"
+        android:dialogTitle="@string/language_dialog_title_preference"
+        android:persistent="true" 
+        android:defaultValue="0"
+        android:shouldDisableView="false" />         
   </PreferenceCategory>
+  <PreferenceCategory
+      android:title="@string/miscellaneous_preference">
+    <ListPreference 
+        android:key="unit_preference"
+        android:title="@string/unit_title_preference" 
+        android:summary="@string/unit_summary_preference"
+        android:entries="@array/unit_entries_preference" 
+        android:entryValues="@array/unit_values_preference"
+        android:dialogTitle="@string/unit_dialog_title_preference"
+        android:persistent="true"   
+        android:defaultValue="0"
+        android:shouldDisableView="false" />
+  </PreferenceCategory>  
 </PreferenceScreen>
