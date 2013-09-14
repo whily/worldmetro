@@ -69,4 +69,11 @@ class SearchActivity extends Activity {
       }
     }
   }
+  
+  override def onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+    super.onActivityResult(requestCode, resultCode, data)
+    requestCode match {
+      case ResultSettings => recreate() // Trigger to apply new theme.
+    }
+  }  
 }
