@@ -12,6 +12,7 @@
 package net.whily.android.worldmetro
 
 import java.io.InputStream
+import android.app.Activity
 
 // Using mutable.HashMap might improve performance. However, there is 
 // runtime error "NoSuchMethod" when calling HashMap.keys
@@ -20,8 +21,8 @@ import scala.collection.immutable.HashMap
 import scala.xml
 
 /** City class holds all data for a metro network of a city. */
-class City(is: InputStream) {
-  private val city = xml.XML.load(is)
+class City(activity: Activity, id: Int) {
+  private val city = xml.XML.load(activity.getResources.openRawResource(id))
   private val stations = city \ "stations" \ "station"
   private val stationNameMap = getStationNameMap
   

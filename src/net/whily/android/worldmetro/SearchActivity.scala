@@ -21,7 +21,7 @@ class SearchActivity extends Activity {
   private var fromEntry: AutoCompleteTextView = null
   private var toEntry: AutoCompleteTextView = null
   private var city: City = null
-  private val ResultSettings = 1  
+  private val ResultSettings = 1
   
   override def onCreate(icicle: Bundle) {
     super.onCreate(icicle)
@@ -29,7 +29,7 @@ class SearchActivity extends Activity {
     setContentView(R.layout.search)
     getActionBar.setHomeButtonEnabled(true)
       
-    city = new City(getResources.openRawResource(R.raw.beijing))  
+    city = new City(this, R.raw.beijing)  
     val stations = city.stationNames
     
     fromEntry = findViewById(R.id.from_entry).asInstanceOf[AutoCompleteTextView]
