@@ -1,50 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:padding="8dp">
-  <LinearLayout 
-      android:orientation="horizontal"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:paddingTop="8dp">
-    <LinearLayout 
-      android:orientation="vertical"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_weight="4"  
-      android:verticalSpacing="8dip"
-      android:padding="8dp">
-      <AutoCompleteTextView
-        android:id="@+id/from_entry"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:hint="string/from_entry_hint" 
-        android:inputType="text"
-        android:imeOptions="actionGo" />
-      <AutoCompleteTextView
-        android:id="@+id/to_entry"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="string/to_entry_hint" 
-        android:inputType="text"
-        android:imeOptions="actionGo" />      
-    </LinearLayout>
-    <Button
-      android:id="@+id/reverse"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_weight="1"       
-      android:text="Switch" 
-      android:onClick="onAddButtonClick" />    
-  </LinearLayout>
-  <ExpandableListView 
-  	android:id="@android:id/list"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+  android:paddingBottom="@dimen/activity_vertical_margin"
+  android:paddingLeft="@dimen/activity_horizontal_margin"
+  android:paddingRight="@dimen/activity_horizontal_margin"
+  android:paddingTop="@dimen/activity_vertical_margin">
+  <AutoCompleteTextView
+    android:id="@+id/from_entry"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_weight="1"
-    android:drawSelectorOnTop="false" 
-    android:choiceMode="multipleChoiceModal" />
+    android:layout_height="wrap_content"
+    android:hint="@string/from_entry_hint"
+    android:imeOptions="actionGo"
+    android:textSize="@dimen/edit_text_size_medium"
+    android:inputType="text" />    
+  <AutoCompleteTextView
+    android:id="@+id/to_entry"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="@string/to_entry_hint"
+    android:imeOptions="actionGo"
+    android:textSize="@dimen/edit_text_size_medium"
+    android:inputType="text" />  
+  <ExpandableListView
+		android:id="@android:id/list"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+    android:layout_margin="5dp"		
+		android:choiceMode="multipleChoiceModal"
+		android:drawSelectorOnTop="false" />
 </LinearLayout>

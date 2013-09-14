@@ -70,5 +70,5 @@ class AccentFoldingArrayAdapter(context: Context, textViewResourceId: Int, objec
         notifyDataSetInvalidated()
       }  
     }
-	}
+  }
 }
