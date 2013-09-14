@@ -18,8 +18,9 @@ import android.view.{MenuItem, MotionEvent, View}
 import android.widget.{ArrayAdapter, AutoCompleteTextView}
 
 class SearchActivity extends Activity {
-  private[this] var fromEntry: AutoCompleteTextView = null
-  private[this] var toEntry: AutoCompleteTextView = null
+  private var fromEntry: AutoCompleteTextView = null
+  private var toEntry: AutoCompleteTextView = null
+  private var city: City = null
   
   override def onCreate(icicle: Bundle) {
     super.onCreate(icicle)
@@ -27,11 +28,14 @@ class SearchActivity extends Activity {
     setContentView(R.layout.search)
     getActionBar.setHomeButtonEnabled(true)
     
+    
+    city = new City(getResources.openRawResource(R.raw.beijing))  
+    val stations = city.stationNames
+    
     fromEntry = findViewById(R.id.from_entry).asInstanceOf[AutoCompleteTextView]
     toEntry = findViewById(R.id.to_entry).asInstanceOf[AutoCompleteTextView]
     fromEntry.setThreshold(1)
     toEntry.setThreshold(1)
-    val stations = Array("Huilongguan", "Zhichunlu", "Xizhimeng", "Life Science Museum", "Musée d'Orsay")
     fromEntry.setAdapter(new AccentFoldingArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, stations))
     toEntry.setAdapter(new AccentFoldingArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, stations))
     fromEntry.setOnTouchListener(new View.OnTouchListener() {
