@@ -30,13 +30,22 @@ class City(activity: Activity, id: Int) {
   
   private def getStationNameMap: HashMap[String, String] = {
     var map = new HashMap[String, String]()
+    val languagePref = Util.getLanguagePref(activity)
     for (station <- stations) {
       val id             = (station \ "@id").text
       val englishName    = (station \ "@english").text
       val localName      = (station \ "@local").text
       assert(!id.isEmpty && !(englishName.isEmpty && localName.isEmpty))
-      if (!englishName.isEmpty) map += (englishName -> id)
-      if (!localName.isEmpty)   map += (localName   -> id)
+      val name = 
+        if (languagePref == "both" && !localName.isEmpty && !englishName.isEmpty)
+          localName + " (" + englishName + ")"
+        else if ((!localName.isEmpty && englishName.isEmpty) ||
+                 (!localName.isEmpty && !englishName.isEmpty && languagePref == "local"))
+          localName
+        else
+          englishName
+        
+      map += (name -> id)  
     }
 
     map

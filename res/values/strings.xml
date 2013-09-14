@@ -44,9 +44,9 @@
     <item>Local and English (if available)</item>    
   </string-array>
   <string-array name="language_values_preference">
-    <item>0</item> 
-    <item>1</item> 
-    <item>2</item>
+    <item>local</item> 
+    <item>english</item> 
+    <item>both</item>
   </string-array>
   <string name="miscellaneous_preference">Miscellaneous</string>
   <string name="unit_title_preference">Unit</string>

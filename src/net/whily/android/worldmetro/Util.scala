@@ -25,12 +25,16 @@ object Util {
     PreferenceManager.getDefaultSharedPreferences(activity).getString(key, default)
     
   /** Return the theme preference in {0, 1}. */
-  def getTheme(activty: Activity) = getSharedPref(activty, "theme_preference", "0").toInt
+  def getThemePref(activty: Activity) = getSharedPref(activty, "theme_preference", "0").toInt
+  
+  /** Return the language preference. */
+  def getLanguagePref(activity: Activity) = 
+    getSharedPref(activity, "language_preference", "local")
     
   /** Set Holo Light/Dark theme according to preference value. */
   def setHoloTheme(activity: Activity) {
     val theme: Int = 
-      if (getTheme(activity) == 0)
+      if (getThemePref(activity) == 0)
       	android.R.style.Theme_Holo
       else
     	  android.R.style.Theme_Holo_Light_DarkActionBar
