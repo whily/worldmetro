@@ -14,13 +14,14 @@ package net.whily.android.worldmetro
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.view.{MenuItem, MotionEvent, View}
+import android.view.{Menu, MenuItem, MotionEvent, View}
 import android.widget.{ArrayAdapter, AutoCompleteTextView}
 
 class SearchActivity extends Activity {
   private var fromEntry: AutoCompleteTextView = null
   private var toEntry: AutoCompleteTextView = null
   private var city: City = null
+  private val ResultSettings = 1  
   
   override def onCreate(icicle: Bundle) {
     super.onCreate(icicle)
@@ -52,13 +53,19 @@ class SearchActivity extends Activity {
     })
   }
   
+  override def onCreateOptionsMenu(menu: Menu): Boolean = {
+    getMenuInflater().inflate(R.menu.search, menu)
+    return true
+  }  
+  
   override def onOptionsItemSelected(item: MenuItem): Boolean = {
     item.getItemId match {
-      // App icon in action bar clicked; go home.
-      case android.R.id.home => {
-        val intent = new Intent(this, classOf[MainActivity])
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        startActivity(intent)
+      case android.R.id.home | R.id.about => {
+        startActivity(new Intent(this, classOf[AboutActivity]))
+        true
+      }
+      case R.id.settings => { 
+        startActivityForResult(new Intent(this, classOf[SettingsActivity]), ResultSettings)
         true
       }
     }

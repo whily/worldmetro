@@ -8,6 +8,7 @@
   <string name="select_city">Please select city</string>
   
   <!--  SearchActivity -->
+  <string name="map">Map</string>
   <string name="from_entry_hint">FROM station or place</string>
   <string name="to_entry_hint">TO station or place</string>
   

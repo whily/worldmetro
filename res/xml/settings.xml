@@ -13,7 +13,6 @@
         android:persistent="true"   
         android:defaultValue="0"
         android:shouldDisableView="false" />
-    <!-- 16974105 = R.style.Theme_Holo_Light_DarkActionBar --> 
     <ListPreference 
         android:key="text_size_preference"
         android:title="@string/text_size_title_preference" 
