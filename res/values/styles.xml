@@ -3,7 +3,7 @@
       Base application theme, dependent on API level. Since the app is targeted
       for Android 4.3+, we use res/values-v14/styles.xml directly.
   -->
-  <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+  <style name="AppBaseTheme" parent="android:Theme.Holo">
     <!-- API 14 theme customizations can go here. -->
   </style>
 

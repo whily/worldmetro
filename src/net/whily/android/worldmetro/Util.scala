@@ -19,10 +19,11 @@ object Util {
   /** Set Holo Light/Dark theme according to preference value. */
   def setHoloTheme(activity: Activity) {
     val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity)
-    val theme: Int = if (prefs.getString("theme_preference", "0").toInt == 0)
-    			             android.R.style.Theme_Holo_Light_DarkActionBar
-    			           else
-    			             android.R.style.Theme_Holo
+    val theme: Int = 
+      if (prefs.getString("theme_preference", "0").toInt == 0)
+      	android.R.style.Theme_Holo
+      else
+    	  android.R.style.Theme_Holo_Light_DarkActionBar
     activity.setTheme(theme)    
   }
 }
