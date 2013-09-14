@@ -28,8 +28,7 @@ class SearchActivity extends Activity {
     Util.setHoloTheme(this)
     setContentView(R.layout.search)
     getActionBar.setHomeButtonEnabled(true)
-    
-    
+      
     city = new City(getResources.openRawResource(R.raw.beijing))  
     val stations = city.stationNames
     
