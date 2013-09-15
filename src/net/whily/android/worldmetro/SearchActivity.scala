@@ -11,25 +11,40 @@
 
 package net.whily.android.worldmetro
 
+// Using mutable.HashMap might improve performance. However, there is 
+// runtime error "NoSuchMethod" when calling HashMap.keys
+import scala.collection.immutable.HashMap
+
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.{Menu, MenuItem, MotionEvent, View}
-import android.widget.{ArrayAdapter, AutoCompleteTextView}
+import android.widget.{AdapterView, ArrayAdapter, AutoCompleteTextView, Spinner}
 
 class SearchActivity extends Activity {
   private var fromEntry: AutoCompleteTextView = null
   private var toEntry: AutoCompleteTextView = null
   private var city: City = null
+  private var citySpinner: Spinner = null
   private val ResultSettings = 1
+  
+  // The key is locale city name (which is displayed, note that this is not the LOCAL name),
+  // and the value is the city name (which is used as a unique identifier) as in class City.
+  private var cities = new HashMap[String, String]()
   
   override def onCreate(icicle: Bundle) {
     super.onCreate(icicle)
     Util.setHoloTheme(this)
     setContentView(R.layout.search)
+    setTitle("")
     getActionBar.setHomeButtonEnabled(true)
       
-    city = new City(this, R.raw.beijing)  
+    val cityIds = Array("beijing", "munich")
+    cities = new HashMap[String, String]()
+    for (city <- cityIds) 
+      cities += (Util.getString(this, city) -> city)
+              
+    city = new City(this, "munich")  
     val stations = city.stationNames
     
     fromEntry = findViewById(R.id.from_entry).asInstanceOf[AutoCompleteTextView]
@@ -54,8 +69,57 @@ class SearchActivity extends Activity {
   
   override def onCreateOptionsMenu(menu: Menu): Boolean = {
     getMenuInflater().inflate(R.menu.search, menu)
-    return true
+    citySpinner = menu.findItem(R.id.city_spinner).getActionView.asInstanceOf[Spinner]
+    val localeCityNames = cities.keys.toArray
+    val cityAdapter = new ArrayAdapter[String](this, android.R.layout.simple_spinner_item, localeCityNames) 
+    cityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+    citySpinner.setAdapter(cityAdapter)
+    citySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener () {
+      override def onItemSelected(parentView: AdapterView[_], selectedItemView: View, position: Int, id: Long) {
+        // TODO
+      }
+ 
+      override def onNothingSelected(parentView: AdapterView[_]) {
+        // Do nothing.
+      }      
+    })
+    
+    return super.onCreateOptionsMenu(menu)
   }  
+ /* 
+
+    cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener () {
+        public void onCheckedChanged(CompoundButton buttonView, 
+                                     boolean isChecked) {
+          if (isChecked) {
+            rl.setVisibility(View.VISIBLE);
+            entry.requestFocus();
+          }
+          else {
+            rl.setVisibility(View.GONE);
+          }
+        }
+      });
+          
+        //添加事件Spinner事件监听    
+        spinner.setOnItemSelectedListener(new SpinnerSelectedListener());  
+          
+        //设置默认值  
+        spinner.setVisibility(View.VISIBLE);  
+          
+    }  
+      
+    //使用数组形式操作  
+    class SpinnerSelectedListener implements OnItemSelectedListener{  
+  
+        public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,  
+                long arg3) {  
+            view.setText("你的血型是："+m[arg2]);  
+        }  
+  
+        public void onNothingSelected(AdapterView<?> arg0) {  
+        }  
+    }     */
   
   override def onOptionsItemSelected(item: MenuItem): Boolean = {
     item.getItemId match {
