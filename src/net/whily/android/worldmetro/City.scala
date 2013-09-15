@@ -20,9 +20,16 @@ import scala.collection.immutable.HashMap
 
 import scala.xml
 
-/** City class holds all data for a metro network of a city. */
-class City(activity: Activity, id: Int) {
-  private val city = xml.XML.load(activity.getResources.openRawResource(id))
+/** 
+ *  City class holds all data for a metro network of a city. 
+ *  
+ *  cityName should be in English; and if there is spaces (e.g. San Francisco), 
+ *  use hyphen for space. cityName is the base name for the corresponding xml file
+ *  (e.g. san-francisco.xml).
+ *  */
+class City(activity: Activity, cityName: String) {
+  private val city = xml.XML.load(activity.getResources.openRawResource(
+    Util.getRawId(activity, cityName)))
   private val stations = city \ "stations" \ "station"
   private val stationNameMap = getStationNameMap
   
