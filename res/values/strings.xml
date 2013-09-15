@@ -8,6 +8,9 @@
   <string name="map">Map</string>
   <string name="from_entry_hint">FROM station or place</string>
   <string name="to_entry_hint">TO station or place</string>
+  <!--  Below is the array of names of the cities supported in this app. -->
+  <string name="beijing">Beijing</string>
+  <string name="munich">Munich</string>
   
   <!--  Activity Settings -->
   <string name="appearance_preference">Appearance</string>

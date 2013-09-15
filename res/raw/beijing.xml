@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <city>
   <!-- Unit for time duration is in minute. -->
-  <name>Beijing</name>
-  <logo></logo>
-  <!-- Language for station names: 1. EnglishOnly 2. LocalOnly 3. Both -->
-  <language>Both</language>
   <!-- Transit information from http://www.ditiezu.com/thread-71145-1-1.html -->
   <stations>
-    <!-- Station ID is a string. If there is no official station IDs,
-         then the ID is a 32 bit integer according to rules below: the
-         least significant 5 digits for actual station ID within the
-         line, while the most significant 5 digits for line ID. It is
-         recommended to use a BASIC line number style for future
-         proof, i.e. each station id is a multiple of 10, and the
-         first station id is 10000.-->
+    <!-- Note: station ID is a string. -->
 
     <!-- Start of Line 2 -->
     <station id="201" local="西直门" english="XIZHIMEN">
@@ -73,7 +63,7 @@
     <!-- End of Line 13 -->
   </stations>
 
-  <!-- Travel time innformation is from wiki pages like 
+  <!-- Travel time information is from wiki pages like 
        http://en.wikipedia.org/wiki/Line_10,_Beijing_Subway -->
   <lines>
     <line id="1" color="#B93536" />

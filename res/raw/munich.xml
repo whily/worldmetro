@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<city>
+  <!-- Unit for time duration is in minute. -->
+  <!-- Transit information from ... -->
+  <stations>
+    <!-- Note: station ID is a string. -->
+
+    <!-- Start of U1 -->
+    <station id="U1-01" local="Olympia-Einkaufszentrum" />
+    <station id="U1-02" local="Rotkreuzplatz" />
+    <station id="U1-03" local="Central Station" />
+    <station id="U1-04" local="Sendlinger Tor" />
+    <station id="U1-05" local="Kolumbusplatz" />
+    <station id="U1-06" local="Mangfallplatz" />                    
+    <!-- End of U1 2 -->
+
+  <!-- Travel time information is from wiki pages like ... -->
+  <lines>
+    <line id="U1" color="#00AA00">
+      <stations>
+        <station id="U1-01" />
+        <station id="U1-02" time="2" />
+        <station id="U1-03" time="2" />
+        <station id="U1-04" time="2" />
+        <station id="U1-05" time="2" />
+        <station id="U1-06" time="2" />
+      </stations>
+    </line>
+  </lines>
+</city>
