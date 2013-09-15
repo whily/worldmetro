@@ -40,4 +40,35 @@ object Util {
     	  android.R.style.Theme_Holo_Light_DarkActionBar
     activity.setTheme(theme)    
   }
+  
+  /** Return id (like R.raw.name). 
+   *  
+   *  @param activity: it is needed to access global variable Resources.
+   */
+  def getRawId(activity: Activity, name: String) =
+    getId(activity, name, "raw")
+
+  /** Return string value correponding to R.string.name. 
+   *  
+   *  @param activity: it is needed to access global variable Resources.
+   */    
+  def getString(activity: Activity, name: String) =
+    activity.getResources.getString(getStringId(activity, name))
+
+  /** Return id (like R.string.name). 
+   *  
+   *  @param activity: it is needed to access global variable Resources.
+   */    
+  def getStringId(activity: Activity, name: String) =
+    getId(activity, name, "string")    
+
+  /** Core function used by getRawId() or getStringId(). 
+   *  
+   *  @param defType indicates e.g. "raw" or "string". For details, see
+   *  android.content.res.Resources.getIdentifier().
+   */   
+  def getId(activity: Activity, name: String, defType: String) = {
+    activity.getResources.getIdentifier(name, defType, 
+      activity.getApplicationContext.getPackageName)
+  }
 }
