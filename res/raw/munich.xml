@@ -13,6 +13,7 @@
     <station id="U1-05" local="Kolumbusplatz" />
     <station id="U1-06" local="Mangfallplatz" />                    
     <!-- End of U1 2 -->
+  </stations>
 
   <!-- Travel time information is from wiki pages like ... -->
   <lines>
