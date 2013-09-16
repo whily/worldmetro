@@ -11,6 +11,8 @@
   <!--  Below is the array of names of the cities supported in this app. -->
   <string name="beijing">Beijing</string>
   <string name="munich">Munich</string>
+  <string name="shanghai">Shanghai</string>
+  <string name="tokyo">Tokyo</string>
   
   <!--  Activity Settings -->
   <string name="appearance_preference">Appearance</string>

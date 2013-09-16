@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
   <item android:id="@+id/city_spinner"
         android:title="string/city"
-        android:showAsAction="ifRoom" 
+        android:showAsAction="always" 
         android:actionViewClass="android.widget.Spinner" />
 	<item android:id="@+id/map"
         android:title="@string/map" 

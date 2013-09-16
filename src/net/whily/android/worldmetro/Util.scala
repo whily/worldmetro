@@ -24,6 +24,18 @@ object Util {
   def getSharedPref(activity: Activity, key: String, default: String) = 
     PreferenceManager.getDefaultSharedPreferences(activity).getString(key, default)
     
+  /** 
+   *  Set (key, value) to the shared preference object. 
+   *  
+   *  @value String value
+   *  @param activity is used to get the shared preference object.
+   */
+  def setSharedPref(activity: Activity, key: String, value: String) {
+    val editor = PreferenceManager.getDefaultSharedPreferences(activity).edit()
+    editor.putString(key, value)
+    editor.commit()
+  }
+    
   /** Return the theme preference in {0, 1}. */
   def getThemePref(activty: Activity) = getSharedPref(activty, "theme_preference", "0").toInt
   
@@ -37,18 +49,20 @@ object Util {
       if (getThemePref(activity) == 0)
       	android.R.style.Theme_Holo
       else
-    	  android.R.style.Theme_Holo_Light_DarkActionBar
+    	  android.R.style.Theme_Holo_Light
     activity.setTheme(theme)    
   }
   
-  /** Return id (like R.raw.name). 
+  /** 
+   *  Return id (like R.raw.name). 
    *  
    *  @param activity: it is needed to access global variable Resources.
    */
   def getRawId(activity: Activity, name: String) =
     getId(activity, name, "raw")
 
-  /** Return string value correponding to R.string.name. 
+  /** 
+   *  Return string value corresponding to R.string.name. 
    *  
    *  @param activity: it is needed to access global variable Resources.
    */    

@@ -21,16 +21,20 @@ import android.os.Bundle
 import android.view.{Menu, MenuItem, MotionEvent, View}
 import android.widget.{AdapterView, ArrayAdapter, AutoCompleteTextView, Spinner}
 
+import android.util.Log
+
 class SearchActivity extends Activity {
   private var fromEntry: AutoCompleteTextView = null
   private var toEntry: AutoCompleteTextView = null
   private var city: City = null
   private var citySpinner: Spinner = null
   private val ResultSettings = 1
+  private val LastDisplayedCity = "last_displayed_city"
   
   // The key is locale city name (which is displayed, note that this is not the LOCAL name),
   // and the value is the city name (which is used as a unique identifier) as in class City.
   private var cities = new HashMap[String, String]()
+  private var localeCityNames: Array[String] = null
   
   override def onCreate(icicle: Bundle) {
     super.onCreate(icicle)
@@ -39,12 +43,16 @@ class SearchActivity extends Activity {
     setTitle("")
     getActionBar.setHomeButtonEnabled(true)
       
-    val cityIds = Array("beijing", "munich")
+    val cityIds = Array("beijing", "munich", "shanghai", "tokyo")
+    Log.d("City", "Before")
     cities = new HashMap[String, String]()
+    localeCityNames = for (city <- cityIds) yield Util.getString(this, city)
+    Log.d("City", "One")
     for (city <- cityIds) 
       cities += (Util.getString(this, city) -> city)
-              
-    city = new City(this, "munich")  
+    Log.d("City", "Two")
+                     
+    city = new City(this, cityIds(getLastDisplayedCity))  
     val stations = city.stationNames
     
     fromEntry = findViewById(R.id.from_entry).asInstanceOf[AutoCompleteTextView]
@@ -70,56 +78,25 @@ class SearchActivity extends Activity {
   override def onCreateOptionsMenu(menu: Menu): Boolean = {
     getMenuInflater().inflate(R.menu.search, menu)
     citySpinner = menu.findItem(R.id.city_spinner).getActionView.asInstanceOf[Spinner]
-    val localeCityNames = cities.keys.toArray
     val cityAdapter = new ArrayAdapter[String](this, android.R.layout.simple_spinner_item, localeCityNames) 
     cityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
     citySpinner.setAdapter(cityAdapter)
     citySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener () {
       override def onItemSelected(parentView: AdapterView[_], selectedItemView: View, position: Int, id: Long) {
-        // TODO
+        if (position != getLastDisplayedCity) {
+          Util.setSharedPref(SearchActivity.this, LastDisplayedCity, position.toString)
+          recreate
+        }
       }
  
       override def onNothingSelected(parentView: AdapterView[_]) {
         // Do nothing.
       }      
     })
+    citySpinner.setSelection(getLastDisplayedCity)
     
     return super.onCreateOptionsMenu(menu)
   }  
- /* 
-
-    cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener () {
-        public void onCheckedChanged(CompoundButton buttonView, 
-                                     boolean isChecked) {
-          if (isChecked) {
-            rl.setVisibility(View.VISIBLE);
-            entry.requestFocus();
-          }
-          else {
-            rl.setVisibility(View.GONE);
-          }
-        }
-      });
-          
-        //添加事件Spinner事件监听    
-        spinner.setOnItemSelectedListener(new SpinnerSelectedListener());  
-          
-        //设置默认值  
-        spinner.setVisibility(View.VISIBLE);  
-          
-    }  
-      
-    //使用数组形式操作  
-    class SpinnerSelectedListener implements OnItemSelectedListener{  
-  
-        public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,  
-                long arg3) {  
-            view.setText("你的血型是："+m[arg2]);  
-        }  
-  
-        public void onNothingSelected(AdapterView<?> arg0) {  
-        }  
-    }     */
   
   override def onOptionsItemSelected(item: MenuItem): Boolean = {
     item.getItemId match {
@@ -139,5 +116,8 @@ class SearchActivity extends Activity {
     requestCode match {
       case ResultSettings => recreate() // Trigger to apply new theme.
     }
-  }  
+  } 
+  
+  private def getLastDisplayedCity = 
+    Util.getSharedPref(this, LastDisplayedCity, "0").toInt
 }
