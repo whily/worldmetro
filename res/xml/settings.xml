@@ -6,7 +6,7 @@
     <ListPreference 
         android:key="theme_preference"
         android:title="@string/theme_title_preference" 
-        android:summary="@string/theme_summary_preference"
+        android:summary="%s"
         android:entries="@array/theme_entries_preference" 
         android:entryValues="@array/theme_values_preference"
         android:dialogTitle="@string/theme_dialog_title_preference"
@@ -16,7 +16,7 @@
     <ListPreference 
         android:key="text_size_preference"
         android:title="@string/text_size_title_preference" 
-        android:summary="@string/text_size_summary_preference"
+        android:summary="%s"
         android:entries="@array/text_size_entries_preference" 
         android:entryValues="@array/text_size_values_preference"
         android:dialogTitle="@string/text_size_dialog_title_preference"
@@ -26,7 +26,7 @@
     <ListPreference 
         android:key="language_preference"
         android:title="@string/language_title_preference" 
-        android:summary="@string/language_summary_preference"
+        android:summary="%s"
         android:entries="@array/language_entries_preference" 
         android:entryValues="@array/language_values_preference"
         android:dialogTitle="@string/language_dialog_title_preference"
@@ -39,7 +39,7 @@
     <ListPreference 
         android:key="unit_preference"
         android:title="@string/unit_title_preference" 
-        android:summary="@string/unit_summary_preference"
+        android:summary="%s"
         android:entries="@array/unit_entries_preference" 
         android:entryValues="@array/unit_values_preference"
         android:dialogTitle="@string/unit_dialog_title_preference"
