@@ -1,16 +1,20 @@
 World Metro
 ===========
 
-World Metro is a universal metro/subway Android app, with the ambition
-to cover major cities with metros. It is currently under development
-and is expected to have following features:
+World Metro is a universal metro/subway/underground Android app, with
+the ambition to cover major cities with metros. It is currently under
+development and is expected to have following features:
 
-* Supported cities: Beijing...
+* Supported cities: Beijing, Cairo, Guangzhou, Hong Kong, Kyoto,
+  London, Munich, Osaka, Paris, Rome, São Paulo, Seoul, Shanghai,
+  Singapore, Shenzhen, Tokyo, Washington
+* Designed for offline usage
 * Vector map
-* Offline usage
-* Both English and local languages for station/line names
+* Display both English (if available) and local languages for station/line names
 * Time schedule
 * Real time feedback of stations
+* Easy input to search station/destination (ignoring
+  accents/diacritical marks)
 
 For more information about World Metro, please go to
   <https://github.com/whily/worldmetro>
@@ -33,7 +37,10 @@ The following tools are needed to build World Metro from source:
 * Eclipse (4.2 Juno)
 * Scala (2.10.0)
 * Scalar IDE for Eclipse plugin (v3.0.1) from <http://scala-ide.org/>.
-* AndroidProguardScala from <https://github.com/banshee/AndroidProguardScala>
+* AndroidProguardScala from
+  <https://github.com/banshee/AndroidProguardScala>
+* JUnit 4 from <https://github.com/junit-team/junit/wiki/Download-and-Install>
 * [Inkscape](http://inkscape.org) and [ImageMagick](http://www.imagemagick.org)
   to generate icons.
+
 
