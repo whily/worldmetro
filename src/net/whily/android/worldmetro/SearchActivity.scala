@@ -14,17 +14,14 @@ package net.whily.android.worldmetro
 // Using mutable.HashMap might improve performance. However, there is 
 // runtime error "NoSuchMethod" when calling HashMap.keys
 import scala.collection.immutable.HashMap
-
-import android.app.Activity
+import android.app.{ActionBar, Activity}
 import android.content.Intent
 import android.os.Bundle
 import android.view.{Menu, MenuItem, MotionEvent, View}
-import android.util.TypedValue
+import android.util.{Log, TypedValue}
 import android.widget.{AdapterView, ArrayAdapter, AutoCompleteTextView, Spinner}
 
-import android.util.Log
-
-class SearchActivity extends Activity {
+class SearchActivity extends Activity with ActionBar.OnNavigationListener {
   private var fromEntry: AutoCompleteTextView = null
   private var toEntry: AutoCompleteTextView = null
   private var city: City = null
@@ -42,16 +39,22 @@ class SearchActivity extends Activity {
     Util.setHoloTheme(this)
     setContentView(R.layout.search)
     setTitle("")
-    getActionBar.setHomeButtonEnabled(true)
+    
+    val bar = getActionBar
+    bar.setHomeButtonEnabled(true)
       
     val cityIds = Array("beijing", "munich", "shanghai", "tokyo")
-    Log.d("City", "Before")
     cities = new HashMap[String, String]()
     localeCityNames = for (city <- cityIds) yield Util.getString(this, city)
-    Log.d("City", "One")
     for (city <- cityIds) 
       cities += (Util.getString(this, city) -> city)
-    Log.d("City", "Two")
+      
+    // Show navigation list, which is at the left side of action bar.
+    val cityAdapter = new ArrayAdapter[String](this, android.R.layout.simple_spinner_item, localeCityNames) 
+    cityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+    bar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST)
+    bar.setListNavigationCallbacks(cityAdapter, this)
+    bar.setSelectedNavigationItem(getLastDisplayedCity)      
                      
     city = new City(this, cityIds(getLastDisplayedCity))  
     val stations = city.stationNames
@@ -78,26 +81,9 @@ class SearchActivity extends Activity {
       }
     })
   }
-  
+   
   override def onCreateOptionsMenu(menu: Menu): Boolean = {
     getMenuInflater().inflate(R.menu.search, menu)
-    citySpinner = menu.findItem(R.id.city_spinner).getActionView.asInstanceOf[Spinner]
-    val cityAdapter = new ArrayAdapter[String](this, android.R.layout.simple_spinner_item, localeCityNames) 
-    cityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-    citySpinner.setAdapter(cityAdapter)
-    citySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener () {
-      override def onItemSelected(parentView: AdapterView[_], selectedItemView: View, position: Int, id: Long) {
-        if (position != getLastDisplayedCity) {
-          Util.setSharedPref(SearchActivity.this, LastDisplayedCity, position.toString)
-          recreate
-        }
-      }
- 
-      override def onNothingSelected(parentView: AdapterView[_]) {
-        // Do nothing.
-      }      
-    })
-    citySpinner.setSelection(getLastDisplayedCity)
     
     return super.onCreateOptionsMenu(menu)
   }  
@@ -113,6 +99,15 @@ class SearchActivity extends Activity {
         true
       }
     }
+  }
+  
+  override def onNavigationItemSelected(itemPosition: Int, itemId: Long): Boolean = {
+    if (itemPosition != getLastDisplayedCity) {
+      Util.setSharedPref(SearchActivity.this, LastDisplayedCity, itemPosition.toString)
+      recreate
+    }    
+    
+    true
   }
   
   override def onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {

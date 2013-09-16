@@ -1,12 +1,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-  <item android:id="@+id/city_spinner"
-        android:title="string/city"
-        android:showAsAction="always" 
-        android:actionViewClass="android.widget.Spinner" />
 	<item android:id="@+id/map"
         android:title="@string/map" 
         android:icon="@android:drawable/ic_menu_mapmode" 
-        android:showAsAction="ifRoom" />
+        android:showAsAction="always" />
   <item android:id="@+id/settings"
         android:title="@string/settings" 
         android:icon="@android:drawable/ic_menu_preferences" />
