@@ -12,7 +12,7 @@
     <station id="U1-04" local="Sendlinger Tor" />
     <station id="U1-05" local="Kolumbusplatz" />
     <station id="U1-06" local="Mangfallplatz" />                    
-    <!-- End of U1 2 -->
+    <!-- End of U1 -->
   </stations>
 
   <!-- Travel time information is from wiki pages like ... -->

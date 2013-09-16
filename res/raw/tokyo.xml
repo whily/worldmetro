@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<city>
+  <!-- Unit for time duration is in minute. -->
+  <!-- Transit information from ... -->
+  <stations>
+    <!-- Note: station ID is a string. -->
+
+    <!-- Start of Line 3 -->
+    <station id="G-01" local="渋谷" english="Shibuya" />
+    <station id="G-02" local="表参道" english="Omotesandō" />
+    <station id="G-03" local="外苑前" english="Gaiemmae" />
+    <station id="G-04" local="青山一丁目" english="Aoyama-Itchōme" />
+    <station id="G-05" local="赤坂見附" english="Akasaka-Mitsuke" />
+    <station id="G-06" local="溜池山王" english="Tameike-Sannō" />
+    <station id="G-07" local="虎ノ門" english="Toranomon" />
+    <station id="G-08" local="新橋" english="Shimbashi" />
+    <station id="G-09" local="銀座" english="Ginza" />
+    <station id="G-10" local="京橋" english="Kyōbashi" />
+    <station id="G-11" local="日本橋" english="Nihombashi" />
+    <station id="G-12" local="三越前" english="Mitsukoshimae" />
+    <station id="G-13" local="神田" english="Kanda" />
+    <station id="G-14" local="末広町" english="Suehirochō" />
+    <station id="G-15" local="上野広小路" english="Ueno-Hirokōji" />
+    <station id="G-16" local="上野" english="Ueno" />
+    <station id="G-17" local="稲荷町" english="Inarichō" />
+    <station id="G-18" local="田原町" english="Tawaramachi" />
+    <station id="G-19" local="浅草" english="Asakusa" />                        
+    <!-- End of Line 3 -->
+  </stations>
+
+  <!-- Travel time information is from wiki pages like ... -->
+  <lines>
+    <line id="3" color="#FFFFFF">
+      <stations>
+        <station id="G-01" />
+        <station id="G-02" time="2" />
+        <station id="G-03" time="2" />
+        <station id="G-04" time="2" />
+        <station id="G-05" time="2" />
+        <station id="G-06" time="2" />
+        <station id="G-07" time="2" />
+        <station id="G-08" time="2" />
+        <station id="G-09" time="2" />
+        <station id="G-10" time="2" />
+        <station id="G-11" time="2" />
+        <station id="G-12" time="2" />
+        <station id="G-13" time="2" />
+        <station id="G-14" time="2" />
+        <station id="G-15" time="2" />
+        <station id="G-16" time="2" />
+        <station id="G-17" time="2" />
+        <station id="G-18" time="2" />
+        <station id="G-19" time="2" />   
+      </stations>
+    </line>
+  </lines>
+</city>

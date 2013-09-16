@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<city>
+  <!-- Unit for time duration is in minute. -->
+  <!-- Transit information from ... -->
+  <stations>
+    <!-- Note: station ID is a string. -->
+
+    <!-- Start of Line 1 -->
+    <station id="101" local="莘庄" english="Xinzhuang" />
+    <station id="102" local="外环路" english="Waihuanlu" />
+    <station id="103" local="莲花路" english="Lianhua Road" />
+    <station id="104" local="锦江乐园" english="Jinjiang Park" />
+    <station id="105" local="上海南站" english="Shanghai South Railway Station" />
+    <station id="106" local="漕宝路" english="Caobao Road" />
+    <station id="107" local="上海体育馆" english="Shanghai Indoor Stadium" />
+    <station id="108" local="徐家汇" english="Xujiahui" />
+    <station id="109" local="衡山路" english="Hengshan Road" />
+    <station id="110" local="常熟路" english="Changshu Road" />
+    <station id="111" local="陕西南路" english="South Shaanxi Road" />
+    <station id="112" local="黄陂南路" english="South Huangpi Road" />
+    <station id="113" local="人民广场" english="People's Square" />
+    <station id="114" local="新闸路" english="Xinzha Road" />
+    <station id="115" local="汉中路" english="Hanzhong Road" />
+    <station id="116" local="上海火车站" english="Shanghai Railway Station" />
+    <station id="117" local="中山北路" english="North Zhongshan Road" />
+    <station id="118" local="延长路" english="Yanchang Road" />
+    <station id="119" local="上海马戏城" english="Shanghai Circus World" />
+    <station id="120" local="汶水路" english="Wenshui Road" />
+    <station id="121" local="彭浦新村" english="Pengpu Xincun" />
+    <station id="122" local="共康路" english="Gongkang Road" />
+    <station id="123" local="通河新村" english="Tonghe Xincun" />
+    <station id="124" local="呼兰路" english="Hulan Road" />
+    <station id="125" local="共富新村" english="Gongfu Xincun" />
+    <station id="126" local="宝安公路" english="Bao'an Highway" />
+    <station id="127" local="友谊西路" english="West Youyi Road" />
+    <station id="128" local="富锦路" english="Fujin Road" />                   
+    <!-- End of Line 1 -->
+  </stations>
+
+  <!-- Travel time information is from wiki pages like ... -->
+  <lines>
+    <line id="1" color="#FF0000">
+      <stations>
+        <station id="101" />
+        <station id="102" time="2" />
+        <station id="103" time="2" />
+        <station id="104" time="2" />
+        <station id="105" time="2" />
+        <station id="106" time="2" />
+        <station id="107" time="2" />
+        <station id="108" time="2" />
+        <station id="109" time="2" />
+        <station id="110" time="2" />
+        <station id="111" time="2" />
+        <station id="112" time="2" />
+        <station id="113" time="2" />
+        <station id="114" time="2" />
+        <station id="115" time="2" />
+        <station id="116" time="2" />
+        <station id="117" time="2" />
+        <station id="118" time="2" />
+        <station id="119" time="2" />
+        <station id="120" time="2" />
+        <station id="121" time="2" />
+        <station id="122" time="2" />
+        <station id="123" time="2" />
+        <station id="124" time="2" />
+        <station id="125" time="2" />
+        <station id="126" time="2" />
+        <station id="127" time="2" />
+        <station id="128" time="2" />
+      </stations>
+    </line>
+  </lines>
+</city>
