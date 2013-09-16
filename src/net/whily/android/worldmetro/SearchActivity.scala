@@ -19,6 +19,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.{Menu, MenuItem, MotionEvent, View}
+import android.util.TypedValue
 import android.widget.{AdapterView, ArrayAdapter, AutoCompleteTextView, Spinner}
 
 import android.util.Log
@@ -55,10 +56,13 @@ class SearchActivity extends Activity {
     city = new City(this, cityIds(getLastDisplayedCity))  
     val stations = city.stationNames
     
+    val editTextSize = Util.getEditTextSize(this)
     fromEntry = findViewById(R.id.from_entry).asInstanceOf[AutoCompleteTextView]
     toEntry = findViewById(R.id.to_entry).asInstanceOf[AutoCompleteTextView]
     fromEntry.setThreshold(1)
     toEntry.setThreshold(1)
+    fromEntry.setTextSize(TypedValue.COMPLEX_UNIT_SP, editTextSize)
+    toEntry.setTextSize(TypedValue.COMPLEX_UNIT_SP, editTextSize)
     fromEntry.setAdapter(new AccentFoldingArrayAdapter(this, R.layout.simple_dropdown_item_1line, stations))
     toEntry.setAdapter(new AccentFoldingArrayAdapter(this, R.layout.simple_dropdown_item_1line, stations))
     fromEntry.setOnTouchListener(new View.OnTouchListener() {

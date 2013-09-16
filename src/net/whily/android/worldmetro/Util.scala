@@ -85,4 +85,13 @@ object Util {
     activity.getResources.getIdentifier(name, defType, 
       activity.getApplicationContext.getPackageName)
   }
+  
+  /** Return text size for Edit component in unit of sp. */
+  def getEditTextSize(activity: Activity) = {
+    getSharedPref(activity, "text_size_preference", "1") match {
+      case "0" => 12
+      case "1" => 15
+      case "2" => 18
+    }    
+  }
 }

@@ -31,9 +31,9 @@
   <string name="text_size_summary_preference">Text size</string>
   <string name="text_size_dialog_title_preference">Text size</string>
   <string-array name="text_size_entries_preference">
+    <item>Small</item>  	
     <item>Medium</item>
     <item>Large</item>
-    <item>Huge</item>
   </string-array>
   <string-array name="text_size_values_preference">
     <item>0</item>

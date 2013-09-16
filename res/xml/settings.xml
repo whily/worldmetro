@@ -21,7 +21,7 @@
         android:entryValues="@array/text_size_values_preference"
         android:dialogTitle="@string/text_size_dialog_title_preference"
         android:persistent="true" 
-        android:defaultValue="0"
+        android:defaultValue="1"
         android:shouldDisableView="false" /> 
     <ListPreference 
         android:key="language_preference"
