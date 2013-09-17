@@ -86,19 +86,21 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
     fromEntry.setOnItemClickListener(new AdapterView.OnItemClickListener () {
       override def onItemClick(parentView: AdapterView[_], selectedItemView: View, position: Int, id: Long) {
         fromSelectedPosition = position
-        if (toSelectedPosition >= 0)
-          Util.toast(SearchActivity.this, city.findRoute(stations(fromSelectedPosition), 
-            stations(toSelectedPosition)).map(stationIdMap(_)).mkString("->"))
+        if (toSelectedPosition >= 0) showRoute()
       }    
     })  
     toEntry.setOnItemClickListener(new AdapterView.OnItemClickListener () {
       override def onItemClick(parentView: AdapterView[_], selectedItemView: View, position: Int, id: Long) {
         toSelectedPosition = position
-        if (fromSelectedPosition >= 0)
-          Util.toast(SearchActivity.this, city.findRoute(stations(fromSelectedPosition), 
-            stations(toSelectedPosition)).map(stationIdMap(_)).mkString("->"))
+        if (fromSelectedPosition >= 0) showRoute()
       }    
     })           
+    
+    def showRoute() {
+      Util.toast(SearchActivity.this, city.findRoute(fromEntry.getText.toString, 
+        toEntry.getText.toString).map(stationIdMap(_)).mkString("->"))
+      
+    }
   }
    
   override def onCreateOptionsMenu(menu: Menu): Boolean = {
