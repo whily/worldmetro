@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <city>
   <!-- Unit for time duration is in minute. -->
-  <!-- Transit information from http://www.ditiezu.com/thread-71145-1-1.html -->
+  <!-- Transit information from http://www.ditiezu.com/thread-71145-1-1.html.
+       The values is multipled by two and we don't consider the difference between
+       the directions -->
   <stations>
     <!-- Note: station ID is a string. -->
 
@@ -9,12 +11,9 @@
     <station id="201" local="西直门" english="XIZHIMEN">
       <alt id="413" />
       <alt id="1301" />
-      <transit sourceId="201" targetId="413" time="0" />   
-      <transit sourceId="413" targetId="201" time="1" />   
-      <transit sourceId="201" targetId="1301" time="3" />
-      <transit sourceId="1301" targetId="201" time="3" />
-      <transit sourceId="413" targetId="1301" time="2" />
-      <transit sourceId="1301" targetId="413" time="2" />
+      <transit sourceId="201" targetId="413" time="2" />   
+      <transit sourceId="201" targetId="1301" time="6" />
+      <transit sourceId="413" targetId="1301" time="4" />
     </station>
     <station id="214" local="东直门" english="DONGZHIMEN">
       <alt id="1316" />
@@ -23,11 +22,32 @@
     <!-- End of Line 2 -->
 
     <!-- Start of Line 5 -->
-    <station id="520" local="立水桥" english="LISHUIQIAO">
+    <station id="501" local="天通苑北" english="TIANTONGYUAN NORTH" />
+    <station id="502" local="天通苑" english="TIANTONGYUAN" />
+    <station id="503" local="天通苑南" english="TIANTONGYUAN SOUTH" />
+    <station id="504" local="立水桥" english="LISHUIQIAO">
       <alt id="1310" />
-      <transit sourceId="520" targetId="1310" time="1" />
-      <transit sourceId="1310" targetId="520" time="1" />
-    </station>
+      <transit sourceId="504" targetId="1310" time="2" />
+    </station>    
+    <station id="505" local="立水桥南" english="LISHUIQIAO SOUTH" />
+    <station id="506" local="北苑路北" english="BEIYUANLU NORTH" />
+    <station id="507" local="大屯路东" english="DATUNLU EAST" />
+    <station id="508" local="惠新西街北口" english="HUIXINXIJIE BEIKOU" />
+    <station id="509" local="惠新西街南口" english="HUIXINXIJIE NANKOU" />
+    <station id="510" local="和平西桥" english="HEPINGXIQIAO" />
+    <station id="511" local="和平里北街" english="HEPINGLI BEIJIE" />
+    <station id="512" local="雍和宫" english="YONGHEGONG LAMA TEMPLE" />
+    <station id="513" local="北新桥" english="BEIXINQIAO" />
+    <station id="514" local="张自忠路" english="ZHANGZIZHONGLU" />
+    <station id="515" local="东四" english="DONGSI" />
+    <station id="516" local="灯市口" english="DENGSHIKOU" />
+    <station id="517" local="东单" english="DONGDAN" />
+    <station id="518" local="崇文门" english="CHONGWENMEN" />
+    <station id="519" local="磁器口" english="CIQIKOU" />
+    <station id="520" local="天坛东门" english="TIANTANDONGMEN" />
+    <station id="521" local="蒲黄榆" english="PUHUANGYU" />
+    <station id="522" local="刘家窑" english="LIUJIAYAO" />
+    <station id="523" local="宋家庄" english="SONGJIAZHUANG" />    
     <!-- End of Line 5 -->
 
     <!-- Start of Line 8 -->
@@ -75,23 +95,23 @@
         <station id="501" />
         <station id="502" time="2" />
         <station id="503" time="2" />
-        <station id="504" time="3" />
-        <station id="505" time="2" />
+        <station id="504" time="2" />
+        <station id="505" time="3" />
         <station id="506" time="2" />
-        <station id="507" time="2" />
+        <station id="507" time="4" />
         <station id="508" time="2" />
         <station id="509" time="2" />
         <station id="510" time="2" />
         <station id="511" time="2" />
-        <station id="512" time="2" />
-        <station id="513" time="3" />
+        <station id="512" time="3" />
+        <station id="513" time="2" />
         <station id="514" time="2" />
         <station id="515" time="2" />
         <station id="516" time="2" />
-        <station id="517" time="3" />
-        <station id="518" time="3" />
+        <station id="517" time="2" />
+        <station id="518" time="2" />
         <station id="519" time="2" />
-        <station id="520" time="3" />
+        <station id="520" time="2" />
         <station id="521" time="2" />
         <station id="522" time="2" />
         <station id="523" time="2" />
