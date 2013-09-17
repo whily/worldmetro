@@ -91,6 +91,16 @@ class City(activity: Activity, cityName: String) {
     	    prevStation = stationId
     	  }
     	}
+      
+      // Add transit weights.
+      val transits = city \ "stations" \ "station" \ "transit"
+      for (transit <- transits) {
+        val sourceId = (transit \ "@sourceId").text
+        val targetId = (transit \ "@targetId").text
+        val time     = (transit \ "@time").text.toInt
+        map += ((sourceId, targetId) -> time)
+        map += ((targetId, sourceId) -> time)
+      }
     }
     
     map
