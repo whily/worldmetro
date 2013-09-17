@@ -24,6 +24,8 @@ import android.widget.{AdapterView, ArrayAdapter, AutoCompleteTextView, Spinner}
 class SearchActivity extends Activity with ActionBar.OnNavigationListener {
   private var fromEntry: AutoCompleteTextView = null
   private var toEntry: AutoCompleteTextView = null
+  private var fromSelectedPosition = -1
+  private var toSelectedPosition = -1
   private var city: City = null
   private var citySpinner: Spinner = null
   private val ResultSettings = 1
@@ -45,7 +47,7 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
       
     val cityIds = Array("beijing", "munich", "shanghai", "tokyo")
     cities = new HashMap[String, String]()
-    localeCityNames = for (city <- cityIds) yield Util.getString(this, city)
+    localeCityNames = cityIds.map(Util.getString(this, _))
     for (city <- cityIds) 
       cities += (Util.getString(this, city) -> city)
       
@@ -58,6 +60,7 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
                      
     city = new City(this, cityIds(getLastDisplayedCity))  
     val stations = city.stationNames
+    val stationIdMap = city.getStationIdMap
     
     val editTextSize = Util.getEditTextSize(this)
     fromEntry = findViewById(R.id.from_entry).asInstanceOf[AutoCompleteTextView]
@@ -80,6 +83,22 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
       	false
       }
     })
+    fromEntry.setOnItemClickListener(new AdapterView.OnItemClickListener () {
+      override def onItemClick(parentView: AdapterView[_], selectedItemView: View, position: Int, id: Long) {
+        fromSelectedPosition = position
+        if (toSelectedPosition >= 0)
+          Util.toast(SearchActivity.this, city.findRoute(stations(fromSelectedPosition), 
+            stations(toSelectedPosition)).map(stationIdMap(_)).mkString("->"))
+      }    
+    })  
+    toEntry.setOnItemClickListener(new AdapterView.OnItemClickListener () {
+      override def onItemClick(parentView: AdapterView[_], selectedItemView: View, position: Int, id: Long) {
+        toSelectedPosition = position
+        if (fromSelectedPosition >= 0)
+          Util.toast(SearchActivity.this, city.findRoute(stations(fromSelectedPosition), 
+            stations(toSelectedPosition)).map(stationIdMap(_)).mkString("->"))
+      }    
+    })           
   }
    
   override def onCreateOptionsMenu(menu: Menu): Boolean = {

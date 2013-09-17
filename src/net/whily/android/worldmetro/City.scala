@@ -31,10 +31,20 @@ class City(activity: Activity, cityName: String) {
   private val city = xml.XML.load(activity.getResources.openRawResource(
     Util.getRawId(activity, cityName)))
   private val stations = city \ "stations" \ "station"
+  private val lines = city \ "lines" \ "line"
+  
+  // Map (stationName -> stationId)
   private val stationNameMap = getStationNameMap
+  // Map (stationId -> stationName)
+  val getStationIdMap = stationNameMap.map(_ swap)
+  
+  private val timeGraph = Graph.Graph(getTravelTimeMap)
   
   def stationNames: Array[String] = stationNameMap.keys.toArray
   
+  def findRoute(sourceName: String, targetName: String): List[String] = 
+    timeGraph.find(stationNameMap(sourceName), stationNameMap(targetName))
+   
   private def getStationNameMap: HashMap[String, String] = {
     var map = new HashMap[String, String]()
     val languagePref = Util.getLanguagePref(activity)
@@ -55,6 +65,34 @@ class City(activity: Activity, cityName: String) {
       map += (name -> id)  
     }
 
+    map
+  }
+  
+  private def getTravelTimeMap: HashMap[(String, String), Int] = {
+    var map = new HashMap[(String, String), Int]()
+
+    for (line <- lines) {
+      val id = (line \ "@id").text
+
+    	val stations = line \ "stations" \ "station"
+    	var prevStation = ""
+    	var index = 0
+    	// TODO: handle ring-type metro line.
+    	for (station <- stations) {
+    	  val stationId = (station \ "@id").text
+    	  if (index == 0) {
+    	    index = 1
+    	    prevStation = stationId
+    	  } else {
+    	    val time = (station \ "@time").text
+    	    assert(!time.isEmpty())
+    	    map += ((prevStation, stationId) -> time.toInt)
+    	    map += ((stationId, prevStation) -> time.toInt)
+    	    prevStation = stationId
+    	  }
+    	}
+    }
+    
     map
   }
 }

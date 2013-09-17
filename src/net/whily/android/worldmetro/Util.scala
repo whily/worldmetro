@@ -12,10 +12,15 @@
 package net.whily.android.worldmetro
 
 import android.app.Activity
-import android.content.SharedPreferences
+import android.content.{Context, SharedPreferences}
 import android.preference.PreferenceManager
+import android.widget.Toast
 
 object Util {
+  def toast (context: Context, text: String) {
+    Toast.makeText(context, text, Toast.LENGTH_LONG).show()
+  }
+  
   /** 
    *  Return string value of the corresponding key; return default if not found. 
    *  

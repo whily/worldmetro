@@ -39,7 +39,6 @@ The following tools are needed to build World Metro from source:
 * Scalar IDE for Eclipse plugin (v3.0.1) from <http://scala-ide.org/>.
 * AndroidProguardScala from
   <https://github.com/banshee/AndroidProguardScala>
-* JUnit 4 from <https://github.com/junit-team/junit/wiki/Download-and-Install>
 * [Inkscape](http://inkscape.org) and [ImageMagick](http://www.imagemagick.org)
   to generate icons.
 
