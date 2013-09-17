@@ -67,6 +67,7 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
     toEntry = findViewById(R.id.to_entry).asInstanceOf[AutoCompleteTextView]
     fromEntry.setThreshold(1)
     toEntry.setThreshold(1)
+       
     fromEntry.setTextSize(TypedValue.COMPLEX_UNIT_SP, editTextSize)
     toEntry.setTextSize(TypedValue.COMPLEX_UNIT_SP, editTextSize)
     fromEntry.setAdapter(new AccentFoldingArrayAdapter(this, R.layout.simple_dropdown_item_1line, stations))
@@ -124,6 +125,13 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
   
   override def onNavigationItemSelected(itemPosition: Int, itemId: Long): Boolean = {
     if (itemPosition != getLastDisplayedCity) {
+      // If we don't set below explicitly, the previous input text still remains 
+      // when city is changed. This is rather strange as the whole activity is
+      // recreated after city switching. Also the two lines below are not effective 
+      // if put in onCreate().
+      fromEntry.setText("")
+      toEntry.setText("")
+    
       Util.setSharedPref(SearchActivity.this, LastDisplayedCity, itemPosition.toString)
       recreate
     }    
