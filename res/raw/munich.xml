@@ -1,22 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <city>
   <!-- Unit for time duration is in minute. -->
-  <!-- Transit information from ... -->
+  <!-- Timetable information from http://www.mvv-muenchen.de/en/journey-planner/timetable-book/index.html. -->
   <stations>
-    <!-- Note: station ID is a string. -->
-
+    <!-- Note: station ID is a string WITHOUT space. -->
+    <!-- TODO: need to get the actual travel time and transit time. -->
     <!-- Start of U1 -->
-    <station id="U1-01" local="Olympia-Einkaufszentrum" />
+    <station id="U1-01" local="Olympia-Einkaufszentrum">
+    	<transit ids="U1-01 U3-02" time="3" />
+    </station>
     <station id="U1-02" local="Rotkreuzplatz" />
-    <station id="U1-03" local="Central Station" />
-    <station id="U1-04" local="Sendlinger Tor" />
-    <station id="U1-05" local="Kolumbusplatz" />
+    <station id="U1-03" local="Central Station">
+    	<transit ids="U1-03 U2-04" time="3" />
+    </station>
+    <station id="U1-04" local="Sendlinger Tor">
+      <transit ids="U1-04 U2-05 U3-08" time="3" />	
+    </station>
+    <station id="U1-05" local="Kolumbusplatz">
+      <transit ids="U1-05 U2-06" time="3" />	
+    </station>
     <station id="U1-06" local="Mangfallplatz" />                    
     <!-- End of U1 -->
+    
+    <!-- Start of U2 -->
+    <station id="U2-01" local="Feldmoching" />
+    <station id="U2-02" local="Harthof" />
+    <station id="U2-03" local="Scheidplatz">
+    	<transit ids="U2-03 U3-04" time="3" />
+    </station>     
+    <station id="U2-07" local="Giesing" />    
+    <station id="U2-08" local="Innsbrucker Ring" />                    
+    <station id="U2-09" local="Trudering" />                    
+    <station id="U2-10" local="Messestadt Ost" />                    
+    <!-- End of U2 -->    
+    
+    <!-- Start of U3 -->
+    <station id="U3-01" local="Moosachl" />
+    <station id="U3-03" local="Olympiazentrum" />
+    <station id="U3-05" local="Münchner Freiheit" />     
+    <station id="U3-06" local="Odeonsplatz" />    
+    <station id="U3-07" local="Marienplatz" />                    
+    <station id="U3-09" local="Implerstraße" />                    
+    <station id="U3-10" local="Obersendling" /> 
+    <station id="U3-11" local="Fürstenried West" />                    
+    <!-- End of U3 -->        
   </stations>
 
   <!-- Travel time information is from wiki pages like ... -->
   <lines>
+  	<!--  TODO: check all colors and travel time. -->
     <line id="U1" color="#00AA00">
       <stations>
         <station id="U1-01" />
@@ -27,5 +59,52 @@
         <station id="U1-06" time="2" />
       </stations>
     </line>
+    
+    <line id="U2" color="#AA0000">
+      <stations>
+        <station id="U2-01" />
+        <station id="U2-02" time="2" />
+        <station id="U2-03" time="2" />
+        <station id="U2-04" time="2" />
+        <station id="U2-05" time="2" />
+        <station id="U2-06" time="2" />
+        <station id="U2-07" time="2" />
+        <station id="U2-08" time="2" />
+        <station id="U2-09" time="2" />
+        <station id="U2-10" time="2" />        
+      </stations>
+    </line>
+    
+    <line id="U3" color="#AA0000">
+      <stations>
+        <station id="U3-01" />
+        <station id="U3-02" time="2" />
+        <station id="U3-03" time="2" />
+        <station id="U3-04" time="2" />
+        <station id="U3-05" time="2" />
+        <station id="U3-06" time="2" />
+        <station id="U3-07" time="2" />
+        <station id="U3-08" time="2" />
+        <station id="U3-09" time="2" />
+        <station id="U3-10" time="2" />
+        <station id="U3-11" time="2" />   
+      </stations>
+    </line>   
+    
+    <line id="U4" color="#AA0000">
+      <stations>
+        <station id="U4-01" />
+        <station id="U4-02" time="2" />
+        <station id="U4-03" time="2" />
+        <station id="U4-04" time="2" />
+        <station id="U4-05" time="2" />
+        <station id="U4-06" time="2" />
+        <station id="U4-07" time="2" />
+        <station id="U4-08" time="2" />
+        <station id="U4-09" time="2" />
+        <station id="U4-10" time="2" />
+        <station id="U4-11" time="2" />   
+      </stations>
+    </line>      
   </lines>
 </city>

@@ -12,6 +12,7 @@
 package net.whily.android.worldmetro
 
 import java.io.InputStream
+import scala.collection.mutable.Set
 import android.app.Activity
 
 // Using mutable.HashMap might improve performance. However, there is 
@@ -33,19 +34,19 @@ class City(activity: Activity, cityName: String) {
   private val stations = city \ "stations" \ "station"
   private val lines = city \ "lines" \ "line"
   
-  // Map (stationName -> stationId)
-  private val stationNameMap = getStationNameMap
   // Map (stationId -> stationName)
-  val getStationIdMap = stationNameMap.map(_ swap)
+  val stationIdMap = getStationIdMap
+  // Map (stationName -> stationId)
+  private val stationNameMap = stationIdMap.map(_ swap)
   
   private val timeGraph = Graph.Graph(getTravelTimeMap)
   
-  def stationNames: Array[String] = stationNameMap.keys.toArray
+  val stationNames = stationNameMap.keys.toArray sortWith (_ < _)
   
   def findRoute(sourceName: String, targetName: String): List[String] = 
     timeGraph.find(stationNameMap(sourceName), stationNameMap(targetName))
    
-  private def getStationNameMap: HashMap[String, String] = {
+  private def getStationIdMap: HashMap[String, String] = {
     var map = new HashMap[String, String]()
     val languagePref = Util.getLanguagePref(activity)
     for (station <- stations) {
@@ -62,7 +63,15 @@ class City(activity: Activity, cityName: String) {
         else
           englishName
         
-      map += (name -> id)  
+      map += (id -> name)  
+      
+      val transits = station \ "transit"
+      var ids: Set[String] = Set()
+      for (transit <- transits) {
+        val ids = (transit \ "@ids").text.split(" ")
+        for (altId <- ids if altId != id)
+          map += (altId -> name)
+       }
     }
 
     map
@@ -95,11 +104,13 @@ class City(activity: Activity, cityName: String) {
       // Add transit weights.
       val transits = city \ "stations" \ "station" \ "transit"
       for (transit <- transits) {
-        val sourceId = (transit \ "@sourceId").text
-        val targetId = (transit \ "@targetId").text
-        val time     = (transit \ "@time").text.toInt
-        map += ((sourceId, targetId) -> time)
-        map += ((targetId, sourceId) -> time)
+        val ids = (transit \ "@ids").text.split(" ")
+        val time     = (transit \ "@time").text.toInt        
+        for (i <- 0 until ids.length)
+          for (j <- (i + 1) until ids.length) {
+            map += ((ids(i), ids(j)) -> time)
+            map += ((ids(j), ids(i)) -> time)
+          }
       }
     }
     

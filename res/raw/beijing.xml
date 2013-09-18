@@ -5,15 +5,13 @@
        The values is multipled by two and we don't consider the difference between
        the directions -->
   <stations>
-    <!-- Note: station ID is a string. -->
+    <!-- Note: station ID is a string WITHOUT space. -->
 
     <!-- Start of Line 2 -->
     <station id="201" local="西直门" english="XIZHIMEN">
-      <alt id="413" />
-      <alt id="1301" />
-      <transit sourceId="201" targetId="413" time="2" />   
-      <transit sourceId="201" targetId="1301" time="6" />
-      <transit sourceId="413" targetId="1301" time="4" />
+      <transit ids="201 413" time="2" />   
+      <transit ids="201 1301" time="6" />
+      <transit ids="413 1301" time="4" />
     </station>
     <station id="214" local="东直门" english="DONGZHIMEN">
       <alt id="1316" />
@@ -26,8 +24,7 @@
     <station id="502" local="天通苑" english="TIANTONGYUAN" />
     <station id="503" local="天通苑南" english="TIANTONGYUAN SOUTH" />
     <station id="504" local="立水桥" english="LISHUIQIAO">
-      <alt id="1310" />
-      <transit sourceId="504" targetId="1310" time="2" />
+      <transit ids="504 1310" time="2" />
     </station>    
     <station id="505" local="立水桥南" english="LISHUIQIAO SOUTH" />
     <station id="506" local="北苑路北" english="BEIYUANLU NORTH" />
@@ -51,17 +48,20 @@
     <!-- End of Line 5 -->
 
     <!-- Start of Line 8 -->
+    <!--  TODO: check transit time. -->
     <station id="829" local="霍营" english="HUOYING">
-      <alt id="1309" />
+      <transit ids="829 1309" time="3" />
     </station>
     <!-- End of Line 8 -->
 
     <!-- Start of Line 10 -->
-    <station id="101xxx0" local="知春路" english="ZHICHUNLU">
-      <alt id="1303" />
+    <!--  TODO: Check id name 1010 and transit time. -->
+    <station id="1010" local="知春路" english="ZHICHUNLU">
+      <transit ids="1010 1303" time="3" />
     </station>
-    <station id="101xxx0" local="芍药居" english="SHAOYAOJU">
-      <alt id="1313" />
+    <!--  TODO: Check id name 1020 and transit time. -->
+    <station id="1020" local="芍药居" english="SHAOYAOJU">
+      <transit ids="1020 1313" time="3" />
     </station>
     <!-- End of Line 10 -->
 
@@ -69,11 +69,7 @@
     <station id="1302" local="大钟寺" english="DAZHONGSI" />
     <station id="1304" local="五道口" english="WUDAOKOU" />
     <station id="1305" local="上地"   english="SHANGDI" />
-    <station id="1306" local="西二旗" english="XI'ER QI">
-      <transits>
-        <transit id="XX10000" />
-      </transits>
-    </station>
+    <station id="1306" local="西二旗" english="XI'ER QI" />
     <station id="1307" local="龙泽" english="LONGZE" />
     <station id="1308" local="回龙观" english="HUILONGGUAN" />
     <station id="1311" local="北苑" english="BEIYUAN" />

@@ -24,8 +24,6 @@ import android.widget.{AdapterView, ArrayAdapter, AutoCompleteTextView, Spinner}
 class SearchActivity extends Activity with ActionBar.OnNavigationListener {
   private var fromEntry: AutoCompleteTextView = null
   private var toEntry: AutoCompleteTextView = null
-  private var fromSelectedPosition = -1
-  private var toSelectedPosition = -1
   private var city: City = null
   private var citySpinner: Spinner = null
   private val ResultSettings = 1
@@ -60,7 +58,7 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
                      
     city = new City(this, cityIds(getLastDisplayedCity))  
     val stations = city.stationNames
-    val stationIdMap = city.getStationIdMap
+    val stationIdMap = city.stationIdMap
     
     val editTextSize = Util.getEditTextSize(this)
     fromEntry = findViewById(R.id.from_entry).asInstanceOf[AutoCompleteTextView]
@@ -86,20 +84,19 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
     })
     fromEntry.setOnItemClickListener(new AdapterView.OnItemClickListener () {
       override def onItemClick(parentView: AdapterView[_], selectedItemView: View, position: Int, id: Long) {
-        fromSelectedPosition = position
-        if (toSelectedPosition >= 0) showRoute()
+        showRoute()
       }    
     })  
     toEntry.setOnItemClickListener(new AdapterView.OnItemClickListener () {
       override def onItemClick(parentView: AdapterView[_], selectedItemView: View, position: Int, id: Long) {
-        toSelectedPosition = position
-        if (fromSelectedPosition >= 0) showRoute()
+        showRoute()
       }    
     })           
     
     def showRoute() {
-      Util.toast(SearchActivity.this, city.findRoute(fromEntry.getText.toString, 
-        toEntry.getText.toString).map(stationIdMap(_)).mkString("->"))
+      if (fromEntry.getText.toString != "" && toEntry.getText.toString != "")
+        Util.toast(SearchActivity.this, city.findRoute(fromEntry.getText.toString, 
+          toEntry.getText.toString).map(stationIdMap(_)).mkString("->"))
       
     }
   }
