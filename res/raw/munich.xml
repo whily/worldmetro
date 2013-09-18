@@ -1,37 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <city>
   <!-- Unit for time duration is in minute. -->
-  <!-- Timetable information from http://www.mvv-muenchen.de/en/journey-planner/timetable-book/index.html. -->
+  <!-- Timetable information from 
+       http://www.mvv-muenchen.de/en/journey-planner/timetable-book/index.html 
+       In normal hours, interval for U-Bahn and S-Bahn is 10 and 20 minutes, 
+       respectively. Assume there are 2 minute walking time, the transit time is:
+          U->U: 7 min, U->S and S->S: 12 min. -->
   <stations>
     <!-- Note: station ID is a string WITHOUT space. -->
-    <!-- TODO: need to get the actual travel time and transit time. -->
+    <!-- TODO: check the line color. -->
+      
     <!-- Start of U1 -->
     <station id="U1-01" local="Olympia-Einkaufszentrum">
-    	<transit ids="U1-01 U3-02" time="3" />
+    	<transit ids="U1-01 U3-02" time="7" />
     </station>
-    <station id="U1-02" local="Rotkreuzplatz" />
-    <station id="U1-03" local="Central Station">
-    	<transit ids="U1-03 U2-04" time="3" />
+    <station id="U1-02" local="Georg-Brauchle-Ring" />
+    <station id="U1-03" local="Westfriedhof" />
+    <station id="U1-04" local="Gern" />
+    <station id="U1-05" local="Rotkreuzplatz" />
+    <station id="U1-06" local="Maillingerstraße" />
+    <station id="U1-07" local="Stiglmaierplatz" />
+    <station id="U1-08" local="Hauptbahnhof" english="Central Station">
+    	<transit ids="U1-08 U2-13" time="7" />
     </station>
-    <station id="U1-04" local="Sendlinger Tor">
-      <transit ids="U1-04 U2-05 U3-08" time="3" />	
+    <station id="U1-09" local="Sendlinger Tor">
+      <transit ids="U1-09 U2-14 U3-08" time="7" />	
     </station>
-    <station id="U1-05" local="Kolumbusplatz">
-      <transit ids="U1-05 U2-06" time="3" />	
+    <station id="U1-10" local="Fraunhoferstraße">
+    	<transit ids="U1-10 U2-15" time="7" />
     </station>
-    <station id="U1-06" local="Mangfallplatz" />                    
+    <station id="U1-11" local="Kolumbusplatz">
+      <transit ids="U1-11 U2-16" time="7" />	
+    </station>
+    <station id="U1-12" local="Candidplatz" />
+    <station id="U1-13" local="Wettersteinplatz" />
+    <station id="U1-14" local="St.-Quirin-Platz" />  
+    <station id="U1-15" local="Mangfallplatz" />                    
     <!-- End of U1 -->
     
     <!-- Start of U2 -->
     <station id="U2-01" local="Feldmoching" />
-    <station id="U2-02" local="Harthof" />
-    <station id="U2-03" local="Scheidplatz">
-    	<transit ids="U2-03 U3-04" time="3" />
-    </station>     
-    <station id="U2-07" local="Giesing" />    
-    <station id="U2-08" local="Innsbrucker Ring" />                    
-    <station id="U2-09" local="Trudering" />                    
-    <station id="U2-10" local="Messestadt Ost" />                    
+    <station id="U2-02" local="Hasenbergl" />  
+    <station id="U2-03" local="Dülferstraße" />      
+    <station id="U2-04" local="Harthof" />
+    <station id="U2-05" local="Am Hart" />  
+    <station id="U2-06" local="Frankfurter Ring" />      
+    <station id="U2-07" local="Milbertshofen" />    
+    <station id="U2-08" local="Scheidplatz">
+    	<transit ids="U2-08 U3-04" time="7" />
+    </station>
+    <station id="U2-09" local="Hohenzollernplatz" />                    
+    <station id="U2-10" local="Josephsplatz" />  
+    <station id="U2-11" local="Theresienstraße" />  
+    <station id="U2-12" local="Königsplatz" />  
+    <station id="U2-17" local="Silberhornstraße" />
+    <station id="U2-18" local="Untersbergstraße" />   
+    <station id="U2-19" local="Giesing Bahnhof" />   
+    <station id="U2-20" local="Karl-Preis-Platz" />     
+    <station id="U2-21" local="Innsbrucker Ring" />  
+    <station id="U2-22" local="Josephsburg" />  
+    <station id="U2-23" local="Kreillerstraße" />                        
+    <station id="U2-24" local="Trudering" />  
+    <station id="U2-25" local="Moosfeld" />                                            
+    <station id="U2-26" local="Messestadt West" />                       
+    <station id="U2-27" local="Messestadt Ost" />                     
     <!-- End of U2 -->    
     
     <!-- Start of U3 -->
@@ -51,27 +83,52 @@
   	<!--  TODO: check all colors and travel time. -->
     <line id="U1" color="#00AA00">
       <stations>
-        <station id="U1-01" />
-        <station id="U1-02" time="2" />
-        <station id="U1-03" time="2" />
+        <station id="U1-02" time="1" />
+        <station id="U1-03" time="1" />
         <station id="U1-04" time="2" />
-        <station id="U1-05" time="2" />
+        <station id="U1-05" time="1" />
         <station id="U1-06" time="2" />
+        <station id="U1-07" time="1" />
+        <station id="U1-08" time="2" />
+        <station id="U1-09" time="2" />
+        <station id="U1-10" time="1" />      
+        <station id="U1-11" time="2" />  
+        <station id="U1-12" time="1" />  
+        <station id="U1-13" time="1" />  
+        <station id="U1-14" time="1" />  
+        <station id="U1-15" time="2" />
       </stations>
     </line>
     
     <line id="U2" color="#AA0000">
       <stations>
         <station id="U2-01" />
-        <station id="U2-02" time="2" />
-        <station id="U2-03" time="2" />
+        <station id="U2-02" time="1" />
+        <station id="U2-03" time="1" />
         <station id="U2-04" time="2" />
-        <station id="U2-05" time="2" />
+        <station id="U2-05" time="1" />
         <station id="U2-06" time="2" />
-        <station id="U2-07" time="2" />
+        <station id="U2-07" time="1" />
         <station id="U2-08" time="2" />
         <station id="U2-09" time="2" />
-        <station id="U2-10" time="2" />        
+        <station id="U2-10" time="1" />      
+        <station id="U2-11" time="1" />  
+        <station id="U2-12" time="1" />  
+        <station id="U2-13" time="2" />  
+        <station id="U2-14" time="2" />  
+        <station id="U2-15" time="1" />
+        <station id="U2-16" time="2" />
+        <station id="U2-17" time="1" />
+        <station id="U2-18" time="1" />
+        <station id="U2-19" time="1" />
+        <station id="U2-20" time="2" />      
+        <station id="U2-21" time="2" />  
+        <station id="U2-22" time="2" />  
+        <station id="U2-23" time="1" />  
+        <station id="U2-24" time="2" />  
+        <station id="U2-25" time="1" />                                            
+        <station id="U2-26" time="2" />    
+        <station id="U2-27" time="2" />                             
       </stations>
     </line>
     
