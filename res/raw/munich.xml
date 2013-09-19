@@ -5,26 +5,46 @@
        http://www.mvv-muenchen.de/en/journey-planner/timetable-book/index.html 
        In normal hours, interval for U-Bahn and S-Bahn is 10 and 20 minutes, 
        respectively. Assume there are 2 minute walking time, the transit time is:
-          U->U: 7 min, U->S and S->S: 12 min. -->
+          U->U, S->U: 7 min, U->S and S->S: 12 min. 
+       Special case is S20/S27/A, whose intervals are roughly 60 minutes. Denote as SA, the
+       transit time is: 
+          U->SA, S->SA, or SA->SA: 32 min
+          SA->U: 7min, SA->S: 12 min. 
+          
+       When for one station, there are both "an" and "ab", we only consider "ab"
+       for travel time. -->
+  <!-- Special message specific to current city. If yes, R.string.CITYNAME_message will
+       be displayed.-->
+  <message available="true" />
   <stations>
     <!-- Note: station ID is a string WITHOUT space. -->
-    <!-- TODO: check the line color. -->
+    <!-- TODO: check the line color, icon, and lat/lon for each stations. -->
       
     <!-- Start of U1 -->
     <station id="U1-01" local="Olympia-Einkaufszentrum">
-    	<transit ids="U1-01 U3-02" time="7" />
+    	<transit ids="U1-01 U3-03" time="7" />
     </station>
     <station id="U1-02" local="Georg-Brauchle-Ring" />
-    <station id="U1-03" local="Westfriedhof" />
-    <station id="U1-04" local="Gern" />
-    <station id="U1-05" local="Rotkreuzplatz" />
-    <station id="U1-06" local="Maillingerstraße" />
-    <station id="U1-07" local="Stiglmaierplatz" />
+    <station id="U1-03" local="Westfriedhof">
+    	<transit ids="U1-03 U7-01" time="7" />
+    </station>
+    <station id="U1-04" local="Gern">
+      <transit ids="U1-04 U7-02" time="7" />    	
+    </station>
+    <station id="U1-05" local="Rotkreuzplatz">
+      <transit ids="U1-05 U7-03" time="7" />      	
+    </station>
+    <station id="U1-06" local="Maillingerstraße">
+      <transit ids="U1-06 U7-04" time="7" />        	
+    </station>
+    <station id="U1-07" local="Stiglmaierplatz">
+      <transit ids="U1-07 U7-05" time="7" />         	
+    </station>
     <station id="U1-08" local="Hauptbahnhof" english="Central Station">
-    	<transit ids="U1-08 U2-13" time="7" />
+    	<transit ids="U1-08 U2-13 U4-05 U5-07 U7-06" time="7" />
     </station>
     <station id="U1-09" local="Sendlinger Tor">
-      <transit ids="U1-09 U2-14 U3-08" time="7" />	
+      <transit ids="U1-09 U2-14 U3-14 U6-16 U7-07" time="7" />	
     </station>
     <station id="U1-10" local="Fraunhoferstraße">
     	<transit ids="U1-10 U2-15" time="7" />
@@ -39,7 +59,10 @@
     <!-- End of U1 -->
     
     <!-- Start of U2 -->
-    <station id="U2-01" local="Feldmoching" />
+    <station id="U2-01" local="Feldmoching">
+      <transit oneway="source" ids="U2-01 S1-08" time="12" />
+      <transit oneway="source" ids="S1-08 U2-01" time="7" />   	
+    </station>
     <station id="U2-02" local="Hasenbergl" />  
     <station id="U2-03" local="Dülferstraße" />      
     <station id="U2-04" local="Harthof" />
@@ -47,7 +70,7 @@
     <station id="U2-06" local="Frankfurter Ring" />      
     <station id="U2-07" local="Milbertshofen" />    
     <station id="U2-08" local="Scheidplatz">
-    	<transit ids="U2-08 U3-04" time="7" />
+    	<transit ids="U2-08 U3-07" time="7" />
     </station>
     <station id="U2-09" local="Hohenzollernplatz" />                    
     <station id="U2-10" local="Josephsplatz" />  
@@ -57,32 +80,385 @@
     <station id="U2-18" local="Untersbergstraße" />   
     <station id="U2-19" local="Giesing Bahnhof" />   
     <station id="U2-20" local="Karl-Preis-Platz" />     
-    <station id="U2-21" local="Innsbrucker Ring" />  
+    <station id="U2-21" local="Innsbrucker Ring">
+      <transit ids="U2-08 U5-13" time="7" />	
+    </station> 
     <station id="U2-22" local="Josephsburg" />  
     <station id="U2-23" local="Kreillerstraße" />                        
-    <station id="U2-24" local="Trudering" />  
+    <station id="U2-24" local="Trudering">
+      <transit oneway="source" ids="U2-24 S4-24" time="12" />
+      <transit oneway="source" ids="S4-24 U2-24" time="7" />    	
+    </station>  
     <station id="U2-25" local="Moosfeld" />                                            
     <station id="U2-26" local="Messestadt West" />                       
     <station id="U2-27" local="Messestadt Ost" />                     
-    <!-- End of U2 -->    
-    
+    <!-- End of U2 -->  
+
     <!-- Start of U3 -->
-    <station id="U3-01" local="Moosachl" />
-    <station id="U3-03" local="Olympiazentrum" />
-    <station id="U3-05" local="Münchner Freiheit" />     
-    <station id="U3-06" local="Odeonsplatz" />    
-    <station id="U3-07" local="Marienplatz" />                    
-    <station id="U3-09" local="Implerstraße" />                    
-    <station id="U3-10" local="Obersendling" /> 
-    <station id="U3-11" local="Fürstenried West" />                    
-    <!-- End of U3 -->        
+    <station id="U3-01" local="Moosach">
+      <transit oneway="source" ids="U3-01 S1-10" time="12" />
+      <transit oneway="source" ids="S1-10 U3-01" time="7" />      	
+    </station>
+    <station id="U3-02" local="Moosacher St.-Martins-Platz" />  
+    <station id="U3-04" local="Oberwiesenfeld" />
+    <station id="U3-05" local="Olympiazentrum" />
+    <station id="U3-06" local="Petuelring" />
+    <station id="U3-08" local="Bonner Platz" />
+    <station id="U3-09" local="Münchner Freiheit">
+      <transit ids="U3-09 U6-11" time="7" />  	
+    </station>
+    <station id="U3-10" local="Giselastraße">
+      <transit ids="U3-10 U6-12" time="7" />    	
+    </station>
+    <station id="U3-11" local="Universität">
+      <transit ids="U3-11 U6-13" time="7" />      	
+    </station>  
+    <station id="U3-12" local="Odeonsplatz">
+      <transit ids="U3-12 U4-07 U5-09 U6-14" time="7" />        	
+    </station> 
+    <station id="U3-13" local="Marienplatz">
+      <transit ids="U3-13 U6-15" time="7" />
+      <transit ids="S1-17 S2-16 S3-17 S4-18 S6-19 S7-19 S8-13" time="12" />
+      <transit oneway="source" ids="U3-13 S1-17 S2-16 S3-17 S4-18 S6-19 S7-19 S8-13" time="12" />
+      <transit oneway="source" ids="U6-15 S1-17 S2-16 S3-17 S4-18 S6-19 S7-19 S8-13" time="12" />
+      <transit oneway="target" ids="U3-13 S1-17 S2-16 S3-17 S4-18 S6-19 S7-19 S8-13" time="7" />
+      <transit oneway="target" ids="U6-15 S1-17 S2-16 S3-17 S4-18 S6-19 S7-19 S8-13" time="7" />
+    </station> 
+    <station id="U3-15" local="Goetheplatz">
+      <transit ids="U3-15 U6-17" time="7" />        	
+    </station>
+    <station id="U3-16" local="Poccistraße">
+      <transit ids="U3-16 U6-18" time="7" />          	
+    </station>
+    <station id="U3-17" local="Implerstraße">
+      <transit ids="U3-17 U6-19" time="7" />           	
+    </station>
+    <station id="U3-18" local="Brudermühlstraße" />
+    <station id="U3-19" local="Thalkirchen (Tierpark)" />      
+    <station id="U3-20" local="Obersendling" />  
+    <station id="U3-21" local="Aidenbachstraße" />  
+    <station id="U3-22" local="Machtlfinger Straße" />  
+    <station id="U3-23" local="Forstenrieder Allee" />  
+    <station id="U3-24" local="Basler Straße" />     
+    <station id="U3-25" local="Fürstenried West" />      
+    <!-- End of U3 -->
+
+    <!-- Start of U4 -->
+    <station id="U4-01" local="Westendstraße">
+      <transit ids="U4-01 U5-03" time="7" />             	
+    </station>
+    <station id="U4-02" local="Heimeranplatz">
+      <transit ids="U4-02 U5-04" time="7" />
+      <transit ids="S20-05 S27-06" time="32" />             
+      <transit oneway="target" ids="U4-02 S7-14 S20-05 S27-06" time="7" /> 
+      <transit oneway="target" ids="U5-04 S7-14 S20-05 S27-06" time="7" />   
+      <transit oneway="target" ids="S7-14 U4-02 U5-04 S20-05 S27-06" time="12" />   
+      <transit oneway="target" ids="S20-05 S7-14 U4-02 U5-04" time="32" />
+      <transit oneway="target" ids="S27-06 S7-14 U4-02 U5-04" time="32" />
+    </station>
+    <station id="U4-03" local="Schwanthalerhöhe">
+      <transit ids="U4-03 U5-05" time="7" />               	
+    </station>
+    <station id="U4-04" local="Theresienwiese">
+      <transit ids="U4-04 U5-06" time="7" />               	
+    </station>
+    <station id="U4-06" local="Karlsplatz (Stachus)">
+      <transit ids="U4-06 U5-08" time="7" />                	
+    </station>    
+    <station id="U4-08" local="Lehel">
+      <transit ids="U4-08 U5-10" time="7" />                	
+    </station>
+    <station id="U4-09" local="Max-Weber-Platz">
+      <transit ids="U4-09 U5-11" time="7" />                  	
+    </station>
+    <station id="U4-10" local="Prinzregentenplatz" />
+    <station id="U4-11" local="Böhmerwaldplatz" />   
+    <station id="U4-12" local="Richard-Strauss-Straße" />  
+    <station id="U4-13" local="Arabellapark" />                                 
+    <!-- End of U4 -->  
+
+    <!-- Start of U5 -->
+    <station id="U5-01" local="Laimer Platz" />
+    <station id="U5-02" local="Friedenheimer Straße" />  
+    <station id="U5-12" local="Ostbahnhof">
+      <transit ids="S1-20 S2-19 S3-20 S4-21 S6-22 S7-22 S8-10" time="12" />
+      <transit oneway="source" ids="U5-12 S1-20 S2-19 S3-20 S4-21 S6-22 S7-22 S8-10" time="12" />
+      <transit oneway="target" ids="U5-12 S1-20 S2-19 S3-20 S4-21 S6-22 S7-22 S8-10" time="7" /> 	
+    </station> 
+    <station id="U5-14" local="Michaelibad" />     
+    <station id="U5-15" local="Quiddestraße" />
+    <station id="U5-16" local="Neuperlach Zentrum" />     
+    <station id="U5-17" local="Therese-Giehse-Allee" />       
+    <station id="U5-18" local="Neuperlach Süd">
+      <transit oneway="source" ids="U5-18 S7-26" time="12" />
+      <transit oneway="target" ids="U5-18 S7-26" time="7" />  	
+    </station>                             
+    <!-- End of U5 -->  
+
+    <!-- Start of U6 -->
+    <station id="U6-01" local="Garching Forschungszentrum" />
+    <station id="U6-02" local="Garching" />  
+    <station id="U6-03" local="Garching-Hochbrück" />     
+    <station id="U6-04" local="Fröttmaning" />
+    <station id="U6-05" local="Kieferngarten" />
+    <station id="U6-06" local="Freimann" />
+    <station id="U6-07" local="Studentenstadt" />
+    <station id="U6-08" local="Alte Heide" />
+    <station id="U6-09" local="Nordfriedhof" />
+    <station id="U6-10" local="Dietlindenstraße" />
+    <station id="U6-20" local="Harras">
+      <transit oneway="target" ids="U6-20 S7-13 S27-05" time="7" />
+      <transit oneway="target" ids="S7-13 U6-20 S27-05" time="12" />  
+      <transit oneway="target" ids="S27-05 U6-20 S7-13" time="32" />                	
+    </station> 
+    <station id="U6-21" local="Partnachplatz" />       
+    <station id="U6-22" local="Westpark" />     
+    <station id="U6-23" local="Holzapfelkreuth" />
+    <station id="U6-24" local="Haderner Stern" />   
+    <station id="U6-25" local="Großhadern" />       
+    <station id="U6-26" local="Klinikum Großhadern" />                              
+    <!-- End of U6 -->  
+
+    <!-- Start of U7 -->
+    <!-- Stations between Fraunhoferstraße and Neuperlach Zentrum are not considered
+         as they are not available in normal hours. -->    
+    <!-- End of U7 -->  
+
+    <!-- Start of S1 -->
+    <station id="S1-01" local="Flughafen München" english="Airport">
+      <transit ids="S1-01 S8-01" time="12" />            	
+    </station>
+    <station id="S1-02" local="Flughafen Besucherpark">
+      <transit ids="S1-02 S8-02" time="12" />             	
+    </station>
+    <station id="S1-03" local="Neufahrn" />  
+    <station id="S1-04" local="Eching" />
+    <station id="S1-05" local="Lohhof" />
+    <station id="S1-06" local="Unterschleißheim" />
+    <station id="S1-07" local="Oberschleißheim" />
+    <station id="S1-09" local="Fasanerie" />
+    <station id="S1-11" local="Laim">
+      <transit ids="S1-11 S2-10 S3-11 S4-12 S6-13 S8-19" time="12" />               	
+    </station>
+    <station id="S1-12" local="Hirschgarten">
+      <transit ids="S1-12 S2-11 S3-12 S4-13 S6-14 S8-18" time="12" />                 	
+    </station>  
+    <station id="S1-13" local="Donnersbergerbrücke">
+      <transit ids="S1-13 S2-12 S3-13 S4-14 S6-15 S7-15 S8-17" time="12" />
+      <transit oneway="source" ids="S27-07 S1-13 S2-12 S3-13 S4-14 S6-15 S7-15 S8-17" time="12" />
+      <transit oneway="target" ids="S27-07 S1-13 S2-12 S3-13 S4-14 S6-15 S7-15 S8-17" time="32" />
+    </station>      
+    <station id="S1-14" local="Hackerbrücke">
+      <transit ids="S1-14 S2-13 S3-14 S4-15 S6-16 S7-16 S8-16" time="12" />                   	
+    </station>
+    <station id="S1-15" local="Hauptbahnhof (Tunnel)">
+      <transit ids="S1-15 S2-14 S3-15 S4-16 S6-17 S7-17 S8-15" time="12" />                   	
+    </station>
+    <station id="S1-16" local="Karlsplatz (Stachus)">
+      <transit ids="S1-16 S2-15 S3-16 S4-17 S6-18 S7-18 S8-14" time="12" />                   	
+    </station>
+    <station id="S1-18" local="Isartor">
+      <transit ids="S1-18 S2-17 S3-18 S4-19 S6-20 S7-20 S8-12" time="12" />                   	
+    </station>     
+    <station id="S1-19" local="Rosenheimer Platz">
+      <transit ids="S1-19 S2-18 S3-19 S4-20 S6-21 S7-21 S8-11" time="12" />                   	
+    </station>
+    <!-- End of S1 -->  
+
+    <!-- Start of S2 -->
+    <station id="S2-01" local="Petershausen" />
+    <station id="S2-02" local="Vierkirchen-Esterhofen" />
+    <station id="S2-03" local="Röhrmoos" />        
+    <station id="S2-04" local="Hebertshausen" />
+    <station id="S2-05" local="Dachau">
+    	<transit oneway="target" ids="S2-05 A-10" time="12" />
+    	<transit oneway="target" ids="A-10 S2-05" time="32" />
+    </station>
+    <station id="S2-06" local="Karlsfeld" />
+    <station id="S2-07" local="Allach" />
+    <station id="S2-08" local="Untermenzing" />
+    <station id="S2-09" local="Obermenzing" />
+    <station id="S2-20" local="Leuchtenbergring">
+    	<transit ids="S2-20 S4-22 S8-09" time="12" />
+    </station>  
+    <station id="S2-21" local="Berg am Laim">
+    	<trainst ids="S2-21 S4-23" time="12" />
+    </station>     
+    <station id="S2-22" local="Riem" />     
+    <station id="S2-23" local="Feldkirchen" />
+    <station id="S2-24" local="Heimstetten" />   
+    <station id="S2-25" local="Grub" />       
+    <station id="S2-26" local="Poing" />     
+    <station id="S2-27" local="Markt Schwaben" />
+    <station id="S2-28" local="Ottenhofen" />   
+    <station id="S2-29" local="St Koloman" />       
+    <station id="S2-30" local="Aufhausen (ED)" />     
+    <station id="S2-31" local="Altenerding" />
+    <station id="S2-32" local="Erding" />                            
+    <!-- End of S2 -->  
+
+    <!-- Start of S3 -->
+    <!-- Stations Althegnenberg and Haspelmoorbetween are not considered
+         as they are available in sparse manner. -->       
+    <station id="S3-01" local="Mammendorf" />
+    <station id="S3-02" local="Malching" />
+    <station id="S3-03" local="Maisach" />   
+    <station id="S3-04" local="Gernlinden" />
+    <station id="S3-05" local="Esting" />
+    <station id="S3-06" local="Olching" />
+    <station id="S3-07" local="Gröbenzell" />
+    <station id="S3-08" local="Lochhausen" />
+    <station id="S3-09" local="Langwied" />
+    <station id="S3-10" local="Pasing">
+    	<transit ids="S3-10 S4-11 S6-12 S8-20" time="12" />
+    	<transit oneway="source" ids="S20-06 S3-10 S4-11 S6-12 S8-20" time="12" />
+    	<transit oneway="target" ids="S20-06 S3-10 S4-11 S6-12 S8-20" time="32" />
+    </station>
+    <station id="S3-21" local="St.-Martin-Straße">
+    	<transit ids="S3-21 S7-23" time="12" />
+    </station>       
+    <station id="S3-22" local="Giesing">
+      <transit ids="S3-23 S7-24" time="12" />	
+    </station>     
+    <station id="S3-23" local="Fasangarten" />
+    <station id="S3-24" local="Fasanenpark" />   
+    <station id="S3-25" local="Unterhaching" />       
+    <station id="S3-26" local="Taufkirchen" />     
+    <station id="S3-27" local="Furth" />
+    <station id="S3-28" local="Deisenhofen">
+    	<transit ids="S20-01 S27-01" time="32" />
+    	<transit oneway="source" ids="S3-28 S20-01 S27-01" time="32" />
+      <transit oneway="target" ids="S3-28 S20-01 S27-01" time="12" />	
+    </station>   
+    <station id="S3-29" local="Sauerlach" />       
+    <station id="S3-30" local="Otterfing" />     
+    <station id="S3-31" local="Holzkirchen" />                          
+    <!-- End of S3 -->  
+
+    <!-- Start of S4 -->
+    <station id="S4-01" local="Geltendorf" />
+    <station id="S4-02" local="Türkenfeld" />
+    <station id="S4-03" local="Grafrath" />        
+    <station id="S4-04" local="Schöngeising" />
+    <station id="S4-05" local="Buchenau" />
+    <station id="S4-06" local="Fürstenfeldbruck" />
+    <station id="S4-07" local="Eichenau" />
+    <station id="S4-08" local="Puchheim" />
+    <station id="S4-09" local="Aubing" />
+    <station id="S4-10" local="Leienfelsstraße" />
+    <station id="S4-25" local="Gronsdorf" />       
+    <station id="S4-26" local="Haar" />     
+    <station id="S4-27" local="Vaterstetten" />
+    <station id="S4-28" local="Baldham" />   
+    <station id="S4-29" local="Zorneding" />       
+    <station id="S4-30" local="Eglharting" />     
+    <station id="S4-31" local="Kirchseeon" />
+    <station id="S4-32" local="Grafing Bahnhof" />    
+    <station id="S4-33" local="Grafing Stadt" />
+    <station id="S4-34" local="Ebersberg" />                                
+    <!-- End of S4 -->  
+
+    <!-- Start of S6 -->
+    <!-- Stations Trudering and Zornedingbetween are not considered
+         as they are not available in normal hours. -->        
+    <station id="S6-01" local="Tutzing" />
+    <station id="S6-02" local="Feldafing" />
+    <station id="S6-03" local="Possenhofen" />        
+    <station id="S6-04" local="Starnberg" />
+    <station id="S6-05" local="Starnberg Nord" />
+    <station id="S6-06" local="Gauting" />
+    <station id="S6-07" local="Stockdorf" />
+    <station id="S6-08" local="Planegg" />
+    <station id="S6-09" local="Gräfelfing" />
+    <station id="S6-10" local="Lochham" />
+    <station id="S6-11" local="Westkreuz">
+    	<transit ids="S6-11 S8-21" time="12" />
+    </station>   
+    <!-- End of S6 -->  
+
+    <!-- Start of S7 -->
+    <!-- Stations Peiß and Kreuzstraße are not considered
+         as they are not available in normal hours. -->        
+    <station id="S7-01" local="Wolfratshausen" />
+    <station id="S7-02" local="Icking" />
+    <station id="S7-03" local="Ebenhausen-Schäftlarn" />        
+    <station id="S7-04" local="Hohenschäftlarn" />
+    <station id="S7-05" local="Baierbrunn" />
+    <station id="S7-06" local="Buchenhain" />
+    <station id="S7-07" local="Höllriegelskreuth" />
+    <station id="S7-08" local="Pullach" />
+    <station id="S7-09" local="Großhesselohe Isartalbf" />
+    <station id="S7-10" local="Solln">
+    	<transit ids="S20-02 S27-02" time="32" />
+    	<transit oneway="source" ids="S7-10 S20-02 S27-02" time="32" />
+    	<transit oneway="target" ids="S7-10 S20-02 S27-02" time="12" />
+    </station>
+    <station id="S7-11" local="Siemenswerke">
+      <transit ids="S20-03 S27-03" time="32" />
+      <transit oneway="source" ids="S7-11 S20-03 S27-03" time="32" />
+      <transit oneway="target" ids="S7-11 S20-03 S27-03" time="12" />	
+    </station>   
+    <station id="S7-12" local="Mittersendling">
+      <transit ids="S20-04 S27-04" time="32" />
+      <transit oneway="source" ids="S7-12 S20-04 S27-04" time="32" />
+      <transit oneway="target" ids="S7-12 S20-04 S27-04" time="12" /> 	
+    </station>  
+    <station id="S7-25" local="Perlach" />       
+    <station id="S7-27" local="Neubiberg" />
+    <station id="S7-28" local="Ottobrunn" />   
+    <station id="S7-29" local="Hohenbrunn" />       
+    <station id="S7-30" local="Wächterhof" />     
+    <station id="S7-31" local="Höhenkirchen-Siegertsbrunn" />
+    <station id="S7-32" local="Dürrnhaar" />  
+    <station id="S7-33" local="Aying" />                                   
+    <!-- End of S7 -->  
+ 
+    <!-- Start of S8 -->
+    <station id="S8-03" local="Hallbergmoos Bahnhof" />        
+    <station id="S8-04" local="Ismaning" />
+    <station id="S8-05" local="Unterföhring" />
+    <station id="S8-06" local="Johanneskirchen" />
+    <station id="S8-07" local="Englschalking" />
+    <station id="S8-08" local="Daglfling" />      
+    <station id="S8-22" local="Neuaubing" />     
+    <station id="S8-23" local="Freiham" />
+    <station id="S8-24" local="Harthaus" />   
+    <station id="S8-25" local="Germering-Unterpfaffenhofen" />       
+    <station id="S8-26" local="Geisenbrunn" />     
+    <station id="S8-27" local="Gilching-Argelsried" />
+    <station id="S8-28" local="Neugilching" />   
+    <station id="S8-29" local="Weßling" />       
+    <station id="S8-30" local="Steinebach" />     
+    <station id="S8-31" local="Seefeld-Hechendorf" />
+    <station id="S8-32" local="Herrsching" />                            
+    <!-- End of S8 -->  
+
+    <!-- Start of S20 -->
+    <!-- End of S20 -->  
+
+    <!-- Start of S27 -->
+    <station id="S27-08" local="Hauptbahnhof, Gl. 27-36" />                           
+    <!-- End of S27 -->  
+
+    <!-- Start of A -->
+    <station id="A-01" local="Altomünster" />
+    <station id="A-02" local="Kleinberghofen" />
+    <station id="A-03" local="Erdweg" />        
+    <station id="A-04" local="Arnbach" />
+    <station id="A-05" local="Markt Indersdorf" />
+    <station id="A-06" local="Niederroth" />
+    <station id="A-07" local="Schwabhausen" />
+    <station id="A-08" local="Bachern" />
+    <station id="A-09" local="Dachau Stadt" />
+    <!-- End of A -->        
   </stations>
 
   <!-- Travel time information is from wiki pages like ... -->
   <lines>
   	<!--  TODO: check all colors and travel time. -->
-    <line id="U1" color="#00AA00">
+    <line id="U1" wait="5" color="#00AA00">
       <stations>
+        <station id="U1-01" />      	
         <station id="U1-02" time="1" />
         <station id="U1-03" time="1" />
         <station id="U1-04" time="2" />
@@ -100,7 +476,7 @@
       </stations>
     </line>
     
-    <line id="U2" color="#AA0000">
+    <line id="U2" wait="5" color="#AA0000">
       <stations>
         <station id="U2-01" />
         <station id="U2-02" time="1" />
@@ -128,40 +504,400 @@
         <station id="U2-24" time="2" />  
         <station id="U2-25" time="1" />                                            
         <station id="U2-26" time="2" />    
-        <station id="U2-27" time="2" />                             
+        <station id="U2-27" time="2" />   
       </stations>
     </line>
     
-    <line id="U3" color="#AA0000">
+    <line id="U3" wait="5" color="#AA0000">
       <stations>
         <station id="U3-01" />
         <station id="U3-02" time="2" />
-        <station id="U3-03" time="2" />
+        <station id="U3-03" time="1" />
         <station id="U3-04" time="2" />
         <station id="U3-05" time="2" />
-        <station id="U3-06" time="2" />
+        <station id="U3-06" time="1" />
         <station id="U3-07" time="2" />
-        <station id="U3-08" time="2" />
+        <station id="U3-08" time="1" />
         <station id="U3-09" time="2" />
-        <station id="U3-10" time="2" />
+        <station id="U3-10" time="1" />
         <station id="U3-11" time="2" />   
+        <station id="U3-12" time="1" />  
+        <station id="U3-13" time="2" />  
+        <station id="U3-14" time="1" />  
+        <station id="U3-15" time="2" />
+        <station id="U3-16" time="1" />
+        <station id="U3-17" time="1" />
+        <station id="U3-18" time="2" />
+        <station id="U3-19" time="2" />
+        <station id="U3-20" time="1" />      
+        <station id="U3-21" time="2" />  
+        <station id="U3-22" time="1" />  
+        <station id="U3-23" time="2" />  
+        <station id="U3-24" time="1" />  
+        <station id="U3-25" time="1" />                                            
       </stations>
     </line>   
     
-    <line id="U4" color="#AA0000">
+    <line id="U4" wait="5" color="#AA0000">
       <stations>
         <station id="U4-01" />
         <station id="U4-02" time="2" />
-        <station id="U4-03" time="2" />
-        <station id="U4-04" time="2" />
+        <station id="U4-03" time="1" />
+        <station id="U4-04" time="1" />
         <station id="U4-05" time="2" />
-        <station id="U4-06" time="2" />
+        <station id="U4-06" time="1" />
         <station id="U4-07" time="2" />
-        <station id="U4-08" time="2" />
+        <station id="U4-08" time="1" />
         <station id="U4-09" time="2" />
-        <station id="U4-10" time="2" />
-        <station id="U4-11" time="2" />   
+        <station id="U4-10" time="1" />
+        <station id="U4-11" time="1" />   
+        <station id="U4-12" time="1" />  
+        <station id="U4-13" time="2" />  
       </stations>
-    </line>      
+    </line>  
+    
+    <line id="U5" wait="5" color="#AA0000">
+      <stations>
+        <station id="U5-01" />
+        <station id="U5-02" time="1" />
+        <station id="U5-03" time="1" />
+        <station id="U5-04" time="2" />
+        <station id="U5-05" time="1" />
+        <station id="U5-06" time="1" />
+        <station id="U5-07" time="2" />
+        <station id="U5-08" time="1" />
+        <station id="U5-09" time="2" />
+        <station id="U5-10" time="1" />
+        <station id="U5-11" time="2" />   
+        <station id="U5-12" time="1" />  
+        <station id="U5-13" time="3" />  
+        <station id="U5-14" time="2" />  
+        <station id="U5-15" time="2" />
+        <station id="U5-16" time="1" />
+        <station id="U5-17" time="1" />
+        <station id="U5-18" time="1" />                                          
+      </stations>
+    </line>    
+    
+    <line id="U6" wait="5" color="#AA0000">
+      <stations>
+        <station id="U6-01" />
+        <station id="U6-02" time="3" />
+        <station id="U6-03" time="2" />
+        <station id="U6-04" time="4" />
+        <station id="U6-05" time="2" />
+        <station id="U6-06" time="2" />
+        <station id="U6-07" time="2" />
+        <station id="U6-08" time="1" />
+        <station id="U6-09" time="1" />
+        <station id="U6-10" time="1" />      
+        <station id="U6-11" time="2" />  
+        <station id="U6-12" time="1" />  
+        <station id="U6-13" time="2" />  
+        <station id="U6-14" time="1" />  
+        <station id="U6-15" time="2" />
+        <station id="U6-16" time="1" />
+        <station id="U6-17" time="2" />
+        <station id="U6-18" time="1" />
+        <station id="U6-19" time="1" />
+        <station id="U6-20" time="2" />      
+        <station id="U6-21" time="2" />  
+        <station id="U6-22" time="1" />  
+        <station id="U6-23" time="2" />  
+        <station id="U6-24" time="1" />  
+        <station id="U6-25" time="2" />                                            
+        <station id="U6-26" time="1" />    
+      </stations>
+    </line>
+    
+    <line id="U7" wait="5" color="#AA0000">
+      <stations>
+        <station id="U7-01" />
+        <station id="U7-02" time="2" />
+        <station id="U7-03" time="1" />
+        <station id="U7-04" time="2" />
+        <station id="U7-05" time="1" />
+        <station id="U7-06" time="2" />
+        <station id="U7-07" time="2" />
+      </stations>
+    </line>  
+
+    <line id="S1" wait="10" color="#AA0000">
+      <stations>
+        <station id="S1-01" />
+        <station id="S1-02" time="2" />
+        <station id="S1-03" time="6" />
+        <station id="S1-04" time="8" />
+        <station id="S1-05" time="3" />
+        <station id="S1-06" time="2" />
+        <station id="S1-07" time="2" />
+        <station id="S1-08" time="5" />
+        <station id="S1-09" time="2" />      
+        <station id="S1-10" time="3" />  
+        <station id="S1-11" time="4" />  
+        <station id="S1-12" time="4" />  
+        <station id="S1-13" time="2" />  
+        <station id="S1-14" time="2" />
+        <station id="S1-15" time="1" />
+        <station id="S1-16" time="2" />
+        <station id="S1-17" time="2" />
+        <station id="S1-18" time="1" />
+        <station id="S1-19" time="2" />   
+        <station id="S1-20" time="2" />                                            
+      </stations>
+    </line>  
+    
+    <line id="S2" wait="10" color="#AA0000">
+      <stations>
+        <station id="S2-01" />
+        <station id="S2-02" time="5" />
+        <station id="S2-03" time="4" />
+        <station id="S2-04" time="4" />
+        <station id="S2-05" time="3" />
+        <station id="S2-06" time="5" />
+        <station id="S2-07" time="3" />
+        <station id="S2-08" time="2" />
+        <station id="S2-09" time="2" />
+        <station id="S2-10" time="4" />      
+        <station id="S2-11" time="2" />  
+        <station id="S2-12" time="2" />  
+        <station id="S2-13" time="2" />  
+        <station id="S2-14" time="1" />  
+        <station id="S2-15" time="2" />
+        <station id="S2-16" time="2" />
+        <station id="S2-17" time="1" />
+        <station id="S2-18" time="2" />
+        <station id="S2-19" time="2" />
+        <station id="S2-20" time="3" />      
+        <station id="S2-21" time="3" />  
+        <station id="S2-22" time="3" />  
+        <station id="S2-23" time="3" />  
+        <station id="S2-24" time="3" />  
+        <station id="S2-25" time="2" />                                            
+        <station id="S2-26" time="2" />    
+        <station id="S2-27" time="4" />  
+        <station id="S2-28" time="7" />
+        <station id="S2-29" time="3" />
+        <station id="S2-30" time="3" />      
+        <station id="S2-31" time="4" />  
+        <station id="S2-32" time="2" />         
+      </stations>
+    </line>
+
+    <line id="S3" wait="10" color="#AA0000">
+      <stations>
+        <station id="S3-01" />
+        <station id="S3-02" time="3" />
+        <station id="S3-03" time="2" />
+        <station id="S3-04" time="6" />
+        <station id="S3-05" time="2" />
+        <station id="S3-06" time="2" />
+        <station id="S3-07" time="3" />
+        <station id="S3-08" time="3" />
+        <station id="S3-09" time="2" />
+        <station id="S3-10" time="3" />      
+        <station id="S3-11" time="6" />  
+        <station id="S3-12" time="2" />  
+        <station id="S3-13" time="2" />  
+        <station id="S3-14" time="1" />  
+        <station id="S3-15" time="2" />
+        <station id="S3-16" time="2" />
+        <station id="S3-17" time="1" />
+        <station id="S3-18" time="2" />
+        <station id="S3-19" time="2" />
+        <station id="S3-20" time="1" />      
+        <station id="S3-21" time="5" />  
+        <station id="S3-22" time="2" />  
+        <station id="S3-23" time="2" />  
+        <station id="S3-24" time="2" />  
+        <station id="S3-25" time="2" />                                            
+        <station id="S3-26" time="2" />    
+        <station id="S3-27" time="3" />  
+        <station id="S3-28" time="2" />
+        <station id="S3-29" time="6" />
+        <station id="S3-30" time="5" />      
+        <station id="S3-31" time="3" />  
+      </stations>
+    </line>
+    
+    <line id="S4" wait="10" color="#AA0000">
+      <stations>
+        <station id="S4-01" />
+        <station id="S4-02" time="3" />
+        <station id="S4-03" time="4" />
+        <station id="S4-04" time="3" />
+        <station id="S4-05" time="2" />
+        <station id="S4-06" time="2" />
+        <station id="S4-07" time="7" />
+        <station id="S4-08" time="3" />
+        <station id="S4-09" time="4" />
+        <station id="S4-10" time="2" />      
+        <station id="S4-11" time="2" />  
+        <station id="S4-12" time="6" />  
+        <station id="S4-13" time="2" />  
+        <station id="S4-14" time="2" />  
+        <station id="S4-15" time="2" />
+        <station id="S4-16" time="1" />
+        <station id="S4-17" time="2" />
+        <station id="S4-18" time="2" />
+        <station id="S4-19" time="1" />
+        <station id="S4-20" time="2" />      
+        <station id="S4-21" time="1" />  
+        <station id="S4-22" time="4" />  
+        <station id="S4-23" time="3" />  
+        <station id="S4-24" time="2" />  
+        <station id="S4-25" time="3" />                                            
+        <station id="S4-26" time="3" />    
+        <station id="S4-27" time="2" />  
+        <station id="S4-28" time="2" />
+        <station id="S4-29" time="3" />
+        <station id="S4-30" time="3" />      
+        <station id="S4-31" time="2" />  
+        <station id="S4-32" time="4" />
+        <station id="S4-33" time="5" />  
+        <station id="S4-34" time="5" />                   
+      </stations>
+    </line>
+    
+    <line id="S6" wait="10" color="#AA0000">
+      <stations>
+        <station id="S6-01" />
+        <station id="S6-02" time="3" />
+        <station id="S6-03" time="3" />
+        <station id="S6-04" time="4" />
+        <station id="S6-05" time="2" />
+        <station id="S6-06" time="6" />
+        <station id="S6-07" time="3" />
+        <station id="S6-08" time="3" />
+        <station id="S6-09" time="2" />
+        <station id="S6-10" time="2" />      
+        <station id="S6-11" time="3" />  
+        <station id="S6-12" time="2" />  
+        <station id="S6-13" time="5" />  
+        <station id="S6-14" time="2" />  
+        <station id="S6-15" time="2" />
+        <station id="S6-16" time="2" />
+        <station id="S6-17" time="1" />
+        <station id="S6-18" time="2" />
+        <station id="S6-19" time="2" />
+        <station id="S6-20" time="1" />      
+        <station id="S6-21" time="2" />  
+        <station id="S6-22" time="1" />  
+      </stations>
+    </line>
+    
+    <line id="S7" wait="10" color="#AA0000">
+      <stations>
+        <station id="S7-01" />
+        <station id="S7-02" time="6" />
+        <station id="S7-03" time="3" />
+        <station id="S7-04" time="3" />
+        <station id="S7-05" time="4" />
+        <station id="S7-06" time="2" />
+        <station id="S7-07" time="2" />
+        <station id="S7-08" time="3" />
+        <station id="S7-09" time="2" />
+        <station id="S7-10" time="2" />      
+        <station id="S7-11" time="2" />  
+        <station id="S7-12" time="2" />  
+        <station id="S7-13" time="2" />  
+        <station id="S7-14" time="3" />  
+        <station id="S7-15" time="4" />
+        <station id="S7-16" time="2" />
+        <station id="S7-17" time="2" />
+        <station id="S7-18" time="1" />
+        <station id="S7-19" time="2" />
+        <station id="S7-20" time="1" />      
+        <station id="S7-21" time="2" />  
+        <station id="S7-22" time="2" />  
+        <station id="S7-23" time="2" />  
+        <station id="S7-24" time="4" />  
+        <station id="S7-25" time="4" />                                            
+        <station id="S7-26" time="2" />    
+        <station id="S7-27" time="3" />  
+        <station id="S7-28" time="2" />
+        <station id="S7-29" time="3" />
+        <station id="S7-30" time="2" />      
+        <station id="S7-31" time="2" />  
+        <station id="S7-32" time="4" />    
+        <station id="S7-33" time="4" />                
+      </stations>
+    </line>
+    
+    <line id="S8" wait="10" color="#AA0000">
+      <stations>
+        <station id="S8-01" />
+        <station id="S8-02" time="2" />
+        <station id="S8-03" time="5" />
+        <station id="S8-04" time="7" />
+        <station id="S8-05" time="4" />
+        <station id="S8-06" time="3" />
+        <station id="S8-07" time="2" />
+        <station id="S8-08" time="2" />
+        <station id="S8-09" time="4" />
+        <station id="S8-10" time="2" />      
+        <station id="S8-11" time="4" />  
+        <station id="S8-12" time="2" />  
+        <station id="S8-13" time="1" />  
+        <station id="S8-14" time="2" />  
+        <station id="S8-15" time="2" />
+        <station id="S8-16" time="1" />
+        <station id="S8-17" time="2" />
+        <station id="S8-18" time="2" />
+        <station id="S8-19" time="2" />
+        <station id="S8-20" time="2" />      
+        <station id="S8-21" time="4" />  
+        <station id="S8-22" time="3" />  
+        <station id="S8-23" time="1" />  
+        <station id="S8-24" time="3" />  
+        <station id="S8-25" time="2" />                                            
+        <station id="S8-26" time="5" />    
+        <station id="S8-27" time="3" />  
+        <station id="S8-28" time="2" />
+        <station id="S8-29" time="3" />
+        <station id="S8-30" time="4" />      
+        <station id="S8-31" time="5" />  
+        <station id="S8-32" time="5" />                
+      </stations>
+    </line>    
+    
+    <line id="S20" wait="30" color="#AA0000">
+      <stations>
+        <station id="S20-01" />
+        <station id="S20-02" time="5" />
+        <station id="S20-03" time="2" />
+        <station id="S20-04" time="3" />
+        <station id="S20-05" time="4" />
+        <station id="S20-06" time="6" />      
+      </stations>
+    </line>
+    
+    <line id="S27" wait="30" color="#AA0000">
+      <stations>
+        <station id="S27-01" />
+        <station id="S27-02" time="6" />
+        <station id="S27-03" time="2" />
+        <station id="S27-04" time="2" />
+        <station id="S27-05" time="2" />
+        <station id="S27-06" time="2" />
+        <station id="S27-07" time="2" />
+        <station id="S27-08" time="3" />       
+      </stations>
+    </line>
+    
+    <line id="A" wait="30" color="#AA0000">
+      <stations>
+        <station id="A-01" />
+        <station id="A-02" time="4" />
+        <station id="A-03" time="5" />
+        <station id="A-04" time="4" />
+        <station id="A-05" time="4" />
+        <station id="A-06" time="5" />
+        <station id="A-07" time="4" />
+        <station id="A-08" time="4" />
+        <station id="A-09" time="7" />
+        <station id="A-10" time="3" />         
+      </stations>
+    </line>    
   </lines>
 </city>

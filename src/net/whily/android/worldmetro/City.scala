@@ -71,7 +71,7 @@ class City(activity: Activity, cityName: String) {
         val ids = (transit \ "@ids").text.split(" ")
         for (altId <- ids if altId != id)
           map += (altId -> name)
-       }
+      }
     }
 
     map
@@ -105,12 +105,23 @@ class City(activity: Activity, cityName: String) {
       val transits = city \ "stations" \ "station" \ "transit"
       for (transit <- transits) {
         val ids = (transit \ "@ids").text.split(" ")
-        val time     = (transit \ "@time").text.toInt        
+        val time = (transit \ "@time").text.toInt
+        val oneway = (transit \ "@oneway").text
+        if (oneway != "") {
+          assert(ids.length >= 2 && ((oneway == "source") || (oneway == "target")))
+          val first = ids(0)
+          for (id <- ids.drop(1))
+            if (oneway == "source")
+              map += ((first, id) -> time)
+            else
+              map += ((id, first) -> time)
+        } else {
         for (i <- 0 until ids.length)
           for (j <- (i + 1) until ids.length) {
             map += ((ids(i), ids(j)) -> time)
             map += ((ids(j), ids(i)) -> time)
           }
+        }        
       }
     }
     
