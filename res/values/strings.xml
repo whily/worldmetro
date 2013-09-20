@@ -8,9 +8,11 @@
   <string name="map">Map</string>
   <string name="from_entry_hint">FROM station or place</string>
   <string name="to_entry_hint">TO station or place</string>
+  <string name="general_message">Selected route and travel time may not be optimal as factors like realtime schedule and user walking speed are not considered.</string>
   <!--  Below is the array of names of the cities supported in this app. -->
   <string name="beijing">Beijing</string>
   <string name="munich">Munich</string>
+  <string name="munich_message">Note that some stations of the supported lines might not be available as they are only available in a rather limited way.</string>
   <string name="shanghai">Shanghai</string>
   <string name="tokyo">Tokyo</string>
   
