@@ -41,5 +41,18 @@ The following tools are needed to build World Metro from source:
   <https://github.com/banshee/AndroidProguardScala>
 * [Inkscape](http://inkscape.org) and [ImageMagick](http://www.imagemagick.org)
   to generate icons.
+  
+TODO
+----
+
+* If the source/target station are transits, consider the shortest
+  route.
+* Regression test (for all station pairs in all cities)
+* Route/Segment, Station, Line
+* Draw line
+* Display results
+* Handle time/transit search (i.e. add transit search)
+* Draw map.
+* Add start with one station and show the stations afterwards.
 
 
