@@ -21,102 +21,102 @@
     <!-- TODO: check the line color, icon, and lat/lon for each stations. -->
       
     <!-- Start of U1 -->
-    <station id="U1-01" local="Olympia-Einkaufszentrum">
+    <station id="U1-01" local="Olympia-Einkaufszentrum" latitude="48.181944" longitude="11.53">
     	<transit ids="U1-01 U3-03" time="7" />
     </station>
-    <station id="U1-02" local="Georg-Brauchle-Ring" />
-    <station id="U1-03" local="Westfriedhof">
+    <station id="U1-02" local="Georg-Brauchle-Ring" latitude="" longitude="" />
+    <station id="U1-03" local="Westfriedhof" latitude="" longitude="">
     	<transit ids="U1-03 U7-01" time="7" />
     </station>
-    <station id="U1-04" local="Gern">
+    <station id="U1-04" local="Gern" latitude="" longitude="">
       <transit ids="U1-04 U7-02" time="7" />    	
     </station>
-    <station id="U1-05" local="Rotkreuzplatz">
+    <station id="U1-05" local="Rotkreuzplatz" latitude="48.153889 " longitude="11.533056">
       <transit ids="U1-05 U7-03" time="7" />      	
     </station>
-    <station id="U1-06" local="Maillingerstraße">
+    <station id="U1-06" local="Maillingerstraße" latitude="" longitude="">
       <transit ids="U1-06 U7-04" time="7" />        	
     </station>
-    <station id="U1-07" local="Stiglmaierplatz">
+    <station id="U1-07" local="Stiglmaierplatz" latitude="" longitude="">
       <transit ids="U1-07 U7-05" time="7" />         	
     </station>
-    <station id="U1-08" local="Hauptbahnhof" english="Central Station">
+    <station id="U1-08" local="Hauptbahnhof" english="Central Station" latitude="48.140833" longitude="11.555">
     	<transit ids="U1-08 U2-13 U4-05 U5-07 U7-06" time="7" />
     </station>
-    <station id="U1-09" local="Sendlinger Tor">
+    <station id="U1-09" local="Sendlinger Tor" latitude="48.133333" longitude="11.566389">
       <transit ids="U1-09 U2-14 U3-14 U6-16 U7-07" time="7" />	
     </station>
-    <station id="U1-10" local="Fraunhoferstraße">
+    <station id="U1-10" local="Fraunhoferstraße" latitude="" longitude="">
     	<transit ids="U1-10 U2-15" time="7" />
     </station>
-    <station id="U1-11" local="Kolumbusplatz">
+    <station id="U1-11" local="Kolumbusplatz" latitude="48.119167" longitude="11.576944">
       <transit ids="U1-11 U2-16" time="7" />	
     </station>
-    <station id="U1-12" local="Candidplatz" />
-    <station id="U1-13" local="Wettersteinplatz" />
-    <station id="U1-14" local="St.-Quirin-Platz" />  
-    <station id="U1-15" local="Mangfallplatz" />                    
+    <station id="U1-12" local="Candidplatz" latitude="" longitude="" />
+    <station id="U1-13" local="Wettersteinplatz" latitude="" longitude="" />
+    <station id="U1-14" local="St.-Quirin-Platz" latitude="" longitude="" />  
+    <station id="U1-15" local="Mangfallplatz" latitude="48.097778" longitude="11.581667" />                    
     <!-- End of U1 -->
     
     <!-- Start of U2 -->
-    <station id="U2-01" local="Feldmoching">
+    <station id="U2-01" local="Feldmoching" latitude="48.213611" longitude="11.541389">
       <transit oneway="source" ids="U2-01 S1-08" time="12" />
       <transit oneway="source" ids="S1-08 U2-01" time="7" />   	
     </station>
-    <station id="U2-02" local="Hasenbergl" />  
-    <station id="U2-03" local="Dülferstraße" />      
-    <station id="U2-04" local="Harthof" />
-    <station id="U2-05" local="Am Hart" />  
-    <station id="U2-06" local="Frankfurter Ring" />      
-    <station id="U2-07" local="Milbertshofen" />    
-    <station id="U2-08" local="Scheidplatz">
+    <station id="U2-02" local="Hasenbergl" latitude="" longitude="" />  
+    <station id="U2-03" local="Dülferstraße" latitude="" longitude="" />      
+    <station id="U2-04" local="Harthof" latitude="48.204197" longitude="11.569592" />
+    <station id="U2-05" local="Am Hart" latitude="" longitude="" />  
+    <station id="U2-06" local="Frankfurter Ring" latitude="" longitude="" />      
+    <station id="U2-07" local="Milbertshofen" latitude="" longitude="" />    
+    <station id="U2-08" local="Scheidplatz" latitude="48.171667" longitude="11.573333">
     	<transit ids="U2-08 U3-07" time="7" />
     </station>
-    <station id="U2-09" local="Hohenzollernplatz" />                    
-    <station id="U2-10" local="Josephsplatz" />  
-    <station id="U2-11" local="Theresienstraße" />  
-    <station id="U2-12" local="Königsplatz" />  
-    <station id="U2-17" local="Silberhornstraße" />
-    <station id="U2-18" local="Untersbergstraße" />   
-    <station id="U2-19" local="Giesing Bahnhof" />   
-    <station id="U2-20" local="Karl-Preis-Platz" />     
-    <station id="U2-21" local="Innsbrucker Ring">
+    <station id="U2-09" local="Hohenzollernplatz" latitude="" longitude="" />                    
+    <station id="U2-10" local="Josephsplatz" latitude="" longitude="" />  
+    <station id="U2-11" local="Theresienstraße" latitude="" longitude="" />  
+    <station id="U2-12" local="Königsplatz" latitude="" longitude="" />  
+    <station id="U2-17" local="Silberhornstraße" latitude="" longitude="" />
+    <station id="U2-18" local="Untersbergstraße" latitude="" longitude="" />   
+    <station id="U2-19" local="Giesing Bahnhof" latitude="" longitude="" />   
+    <station id="U2-20" local="Karl-Preis-Platz" latitude="" longitude="" />     
+    <station id="U2-21" local="Innsbrucker Ring" latitude="" longitude="">
       <transit ids="U2-08 U5-13" time="7" />	
     </station> 
-    <station id="U2-22" local="Josephsburg" />  
-    <station id="U2-23" local="Kreillerstraße" />                        
-    <station id="U2-24" local="Trudering">
+    <station id="U2-22" local="Josephsburg" latitude="" longitude="" />  
+    <station id="U2-23" local="Kreillerstraße" latitude="" longitude="" />                        
+    <station id="U2-24" local="Trudering" latitude="48.126111" longitude="11.663056">
       <transit oneway="source" ids="U2-24 S4-24" time="12" />
       <transit oneway="source" ids="S4-24 U2-24" time="7" />    	
     </station>  
-    <station id="U2-25" local="Moosfeld" />                                            
-    <station id="U2-26" local="Messestadt West" />                       
-    <station id="U2-27" local="Messestadt Ost" />                     
+    <station id="U2-25" local="Moosfeld" latitude="" longitude="" />                                            
+    <station id="U2-26" local="Messestadt West" latitude="" longitude="" />                       
+    <station id="U2-27" local="Messestadt Ost" latitude="48.133333" longitude="11.703611" />                     
     <!-- End of U2 -->  
 
     <!-- Start of U3 -->
-    <station id="U3-01" local="Moosach">
+    <station id="U3-01" local="Moosach" latitude="" longitude="">
       <transit oneway="source" ids="U3-01 S1-10" time="12" />
       <transit oneway="source" ids="S1-10 U3-01" time="7" />      	
     </station>
-    <station id="U3-02" local="Moosacher St.-Martins-Platz" />  
-    <station id="U3-04" local="Oberwiesenfeld" />
-    <station id="U3-05" local="Olympiazentrum" />
-    <station id="U3-06" local="Petuelring" />
-    <station id="U3-08" local="Bonner Platz" />
-    <station id="U3-09" local="Münchner Freiheit">
+    <station id="U3-02" local="Moosacher St.-Martins-Platz" latitude="" longitude="" />  
+    <station id="U3-04" local="Oberwiesenfeld" latitude="" longitude="" />
+    <station id="U3-05" local="Olympiazentrum" latitude="" longitude="" />
+    <station id="U3-06" local="Petuelring" latitude="" longitude="" />
+    <station id="U3-08" local="Bonner Platz" latitude="" longitude="" />
+    <station id="U3-09" local="Münchner Freiheit" latitude="" longitude="">
       <transit ids="U3-09 U6-11" time="7" />  	
     </station>
-    <station id="U3-10" local="Giselastraße">
+    <station id="U3-10" local="Giselastraße" latitude="" longitude="">
       <transit ids="U3-10 U6-12" time="7" />    	
     </station>
-    <station id="U3-11" local="Universität">
+    <station id="U3-11" local="Universität" latitude="" longitude="">
       <transit ids="U3-11 U6-13" time="7" />      	
     </station>  
-    <station id="U3-12" local="Odeonsplatz">
+    <station id="U3-12" local="Odeonsplatz" latitude="" longitude="">
       <transit ids="U3-12 U4-07 U5-09 U6-14" time="7" />        	
     </station> 
-    <station id="U3-13" local="Marienplatz">
+    <station id="U3-13" local="Marienplatz" latitude="" longitude="">
       <transit ids="U3-13 U6-15" time="7" />
       <transit ids="S1-17 S2-16 S3-17 S4-18 S6-19 S7-19 S8-13" time="12" />
       <transit oneway="source" ids="U3-13 S1-17 S2-16 S3-17 S4-18 S6-19 S7-19 S8-13" time="12" />
@@ -124,30 +124,30 @@
       <transit oneway="target" ids="U3-13 S1-17 S2-16 S3-17 S4-18 S6-19 S7-19 S8-13" time="7" />
       <transit oneway="target" ids="U6-15 S1-17 S2-16 S3-17 S4-18 S6-19 S7-19 S8-13" time="7" />
     </station> 
-    <station id="U3-15" local="Goetheplatz">
+    <station id="U3-15" local="Goetheplatz" latitude="" longitude="">
       <transit ids="U3-15 U6-17" time="7" />        	
     </station>
-    <station id="U3-16" local="Poccistraße">
+    <station id="U3-16" local="Poccistraße" latitude="" longitude="">
       <transit ids="U3-16 U6-18" time="7" />          	
     </station>
-    <station id="U3-17" local="Implerstraße">
+    <station id="U3-17" local="Implerstraße" latitude="" longitude="">
       <transit ids="U3-17 U6-19" time="7" />           	
     </station>
-    <station id="U3-18" local="Brudermühlstraße" />
-    <station id="U3-19" local="Thalkirchen (Tierpark)" />      
-    <station id="U3-20" local="Obersendling" />  
-    <station id="U3-21" local="Aidenbachstraße" />  
-    <station id="U3-22" local="Machtlfinger Straße" />  
-    <station id="U3-23" local="Forstenrieder Allee" />  
-    <station id="U3-24" local="Basler Straße" />     
-    <station id="U3-25" local="Fürstenried West" />      
+    <station id="U3-18" local="Brudermühlstraße" latitude="" longitude="" />
+    <station id="U3-19" local="Thalkirchen (Tierpark)" latitude="" longitude="" />      
+    <station id="U3-20" local="Obersendling" latitude="" longitude="" />  
+    <station id="U3-21" local="Aidenbachstraße" latitude="" longitude="" />  
+    <station id="U3-22" local="Machtlfinger Straße" latitude="" longitude="" />  
+    <station id="U3-23" local="Forstenrieder Allee" latitude="" longitude="" />  
+    <station id="U3-24" local="Basler Straße" latitude="" longitude="" />     
+    <station id="U3-25" local="Fürstenried West" latitude="" longitude="" />      
     <!-- End of U3 -->
 
     <!-- Start of U4 -->
-    <station id="U4-01" local="Westendstraße">
+    <station id="U4-01" local="Westendstraße" latitude="" longitude="">
       <transit ids="U4-01 U5-03" time="7" />             	
     </station>
-    <station id="U4-02" local="Heimeranplatz">
+    <station id="U4-02" local="Heimeranplatz" latitude="" longitude="">
       <transit ids="U4-02 U5-04" time="7" />
       <transit ids="S20-05 S27-06" time="32" />             
       <transit oneway="target" ids="U4-02 S7-14 S20-05 S27-06" time="7" /> 
@@ -156,67 +156,67 @@
       <transit oneway="target" ids="S20-05 S7-14 U4-02 U5-04" time="32" />
       <transit oneway="target" ids="S27-06 S7-14 U4-02 U5-04" time="32" />
     </station>
-    <station id="U4-03" local="Schwanthalerhöhe">
+    <station id="U4-03" local="Schwanthalerhöhe" latitude="" longitude="">
       <transit ids="U4-03 U5-05" time="7" />               	
     </station>
-    <station id="U4-04" local="Theresienwiese">
+    <station id="U4-04" local="Theresienwiese" latitude="" longitude="">
       <transit ids="U4-04 U5-06" time="7" />               	
     </station>
-    <station id="U4-06" local="Karlsplatz (Stachus)">
+    <station id="U4-06" local="Karlsplatz (Stachus)" latitude="" longitude="">
       <transit ids="U4-06 U5-08" time="7" />                	
     </station>    
-    <station id="U4-08" local="Lehel">
+    <station id="U4-08" local="Lehel" latitude="" longitude="">
       <transit ids="U4-08 U5-10" time="7" />                	
     </station>
-    <station id="U4-09" local="Max-Weber-Platz">
+    <station id="U4-09" local="Max-Weber-Platz" latitude="" longitude="">
       <transit ids="U4-09 U5-11" time="7" />                  	
     </station>
-    <station id="U4-10" local="Prinzregentenplatz" />
-    <station id="U4-11" local="Böhmerwaldplatz" />   
-    <station id="U4-12" local="Richard-Strauss-Straße" />  
-    <station id="U4-13" local="Arabellapark" />                                 
+    <station id="U4-10" local="Prinzregentenplatz" latitude="" longitude="" />
+    <station id="U4-11" local="Böhmerwaldplatz" latitude="" longitude="" />   
+    <station id="U4-12" local="Richard-Strauss-Straße" latitude="" longitude="" />  
+    <station id="U4-13" local="Arabellapark" latitude="" longitude="" />                                 
     <!-- End of U4 -->  
 
     <!-- Start of U5 -->
-    <station id="U5-01" local="Laimer Platz" />
-    <station id="U5-02" local="Friedenheimer Straße" />  
-    <station id="U5-12" local="Ostbahnhof">
+    <station id="U5-01" local="Laimer Platz" latitude="" longitude="" />
+    <station id="U5-02" local="Friedenheimer Straße" latitude="" longitude="" />  
+    <station id="U5-12" local="Ostbahnhof" latitude="" longitude="">
       <transit ids="S1-20 S2-19 S3-20 S4-21 S6-22 S7-22 S8-10" time="12" />
       <transit oneway="source" ids="U5-12 S1-20 S2-19 S3-20 S4-21 S6-22 S7-22 S8-10" time="12" />
       <transit oneway="target" ids="U5-12 S1-20 S2-19 S3-20 S4-21 S6-22 S7-22 S8-10" time="7" /> 	
     </station> 
-    <station id="U5-14" local="Michaelibad" />     
-    <station id="U5-15" local="Quiddestraße" />
-    <station id="U5-16" local="Neuperlach Zentrum" />     
-    <station id="U5-17" local="Therese-Giehse-Allee" />       
-    <station id="U5-18" local="Neuperlach Süd">
+    <station id="U5-14" local="Michaelibad" latitude="" longitude="" />     
+    <station id="U5-15" local="Quiddestraße" latitude="" longitude="" />
+    <station id="U5-16" local="Neuperlach Zentrum" latitude="" longitude="" />     
+    <station id="U5-17" local="Therese-Giehse-Allee" latitude="" longitude="" />       
+    <station id="U5-18" local="Neuperlach Süd" latitude="" longitude="">
       <transit oneway="source" ids="U5-18 S7-26" time="12" />
       <transit oneway="target" ids="U5-18 S7-26" time="7" />  	
     </station>                             
     <!-- End of U5 -->  
 
     <!-- Start of U6 -->
-    <station id="U6-01" local="Garching Forschungszentrum" />
-    <station id="U6-02" local="Garching" />  
-    <station id="U6-03" local="Garching-Hochbrück" />     
-    <station id="U6-04" local="Fröttmaning" />
-    <station id="U6-05" local="Kieferngarten" />
-    <station id="U6-06" local="Freimann" />
-    <station id="U6-07" local="Studentenstadt" />
-    <station id="U6-08" local="Alte Heide" />
-    <station id="U6-09" local="Nordfriedhof" />
-    <station id="U6-10" local="Dietlindenstraße" />
-    <station id="U6-20" local="Harras">
+    <station id="U6-01" local="Garching Forschungszentrum" latitude="" longitude="" />
+    <station id="U6-02" local="Garching" latitude="" longitude="" />  
+    <station id="U6-03" local="Garching-Hochbrück" latitude="" longitude="" />     
+    <station id="U6-04" local="Fröttmaning" latitude="" longitude="" />
+    <station id="U6-05" local="Kieferngarten" latitude="" longitude="" />
+    <station id="U6-06" local="Freimann" latitude="" longitude="" />
+    <station id="U6-07" local="Studentenstadt" latitude="" longitude="" />
+    <station id="U6-08" local="Alte Heide" latitude="" longitude="" />
+    <station id="U6-09" local="Nordfriedhof" latitude="" longitude="" />
+    <station id="U6-10" local="Dietlindenstraße" latitude="" longitude="" />
+    <station id="U6-20" local="Harras" latitude="" longitude="">
       <transit oneway="target" ids="U6-20 S7-13 S27-05" time="7" />
       <transit oneway="target" ids="S7-13 U6-20 S27-05" time="12" />  
       <transit oneway="target" ids="S27-05 U6-20 S7-13" time="32" />                	
     </station> 
-    <station id="U6-21" local="Partnachplatz" />       
-    <station id="U6-22" local="Westpark" />     
-    <station id="U6-23" local="Holzapfelkreuth" />
-    <station id="U6-24" local="Haderner Stern" />   
-    <station id="U6-25" local="Großhadern" />       
-    <station id="U6-26" local="Klinikum Großhadern" />                              
+    <station id="U6-21" local="Partnachplatz" latitude="" longitude="" />       
+    <station id="U6-22" local="Westpark" latitude="" longitude="" />     
+    <station id="U6-23" local="Holzapfelkreuth" latitude="" longitude="" />
+    <station id="U6-24" local="Haderner Stern" latitude="" longitude="" />   
+    <station id="U6-25" local="Großhadern" latitude="" longitude="" />       
+    <station id="U6-26" local="Klinikum Großhadern" latitude="" longitude="" />                              
     <!-- End of U6 -->  
 
     <!-- Start of U7 -->
@@ -225,153 +225,153 @@
     <!-- End of U7 -->  
 
     <!-- Start of S1 -->
-    <station id="S1-01" local="Flughafen München" english="Airport">
+    <station id="S1-01" local="Flughafen München" english="Airport" latitude="" longitude="">
       <transit ids="S1-01 S8-01" time="12" />            	
     </station>
-    <station id="S1-02" local="Flughafen Besucherpark">
+    <station id="S1-02" local="Flughafen Besucherpark" latitude="" longitude="">
       <transit ids="S1-02 S8-02" time="12" />             	
     </station>
-    <station id="S1-03" local="Neufahrn" />  
-    <station id="S1-04" local="Eching" />
-    <station id="S1-05" local="Lohhof" />
-    <station id="S1-06" local="Unterschleißheim" />
-    <station id="S1-07" local="Oberschleißheim" />
-    <station id="S1-09" local="Fasanerie" />
-    <station id="S1-11" local="Laim">
+    <station id="S1-03" local="Neufahrn" latitude="" longitude="" />  
+    <station id="S1-04" local="Eching" latitude="" longitude="" />
+    <station id="S1-05" local="Lohhof" latitude="" longitude="" />
+    <station id="S1-06" local="Unterschleißheim" latitude="" longitude="" />
+    <station id="S1-07" local="Oberschleißheim" latitude="" longitude="" />
+    <station id="S1-09" local="Fasanerie" latitude="" longitude="" />
+    <station id="S1-11" local="Laim" latitude="" longitude="">
       <transit ids="S1-11 S2-10 S3-11 S4-12 S6-13 S8-19" time="12" />               	
     </station>
-    <station id="S1-12" local="Hirschgarten">
+    <station id="S1-12" local="Hirschgarten" latitude="" longitude="">
       <transit ids="S1-12 S2-11 S3-12 S4-13 S6-14 S8-18" time="12" />                 	
     </station>  
-    <station id="S1-13" local="Donnersbergerbrücke">
+    <station id="S1-13" local="Donnersbergerbrücke" latitude="" longitude="">
       <transit ids="S1-13 S2-12 S3-13 S4-14 S6-15 S7-15 S8-17" time="12" />
       <transit oneway="source" ids="S27-07 S1-13 S2-12 S3-13 S4-14 S6-15 S7-15 S8-17" time="12" />
       <transit oneway="target" ids="S27-07 S1-13 S2-12 S3-13 S4-14 S6-15 S7-15 S8-17" time="32" />
     </station>      
-    <station id="S1-14" local="Hackerbrücke">
+    <station id="S1-14" local="Hackerbrücke" latitude="" longitude="">
       <transit ids="S1-14 S2-13 S3-14 S4-15 S6-16 S7-16 S8-16" time="12" />                   	
     </station>
-    <station id="S1-15" local="Hauptbahnhof (Tunnel)">
+    <station id="S1-15" local="Hauptbahnhof (Tunnel)" latitude="" longitude="">
       <transit ids="S1-15 S2-14 S3-15 S4-16 S6-17 S7-17 S8-15" time="12" />                   	
     </station>
-    <station id="S1-16" local="Karlsplatz (Stachus)">
+    <station id="S1-16" local="Karlsplatz (Stachus)" latitude="" longitude="">
       <transit ids="S1-16 S2-15 S3-16 S4-17 S6-18 S7-18 S8-14" time="12" />                   	
     </station>
-    <station id="S1-18" local="Isartor">
+    <station id="S1-18" local="Isartor" latitude="" longitude="">
       <transit ids="S1-18 S2-17 S3-18 S4-19 S6-20 S7-20 S8-12" time="12" />                   	
     </station>     
-    <station id="S1-19" local="Rosenheimer Platz">
+    <station id="S1-19" local="Rosenheimer Platz" latitude="" longitude="">
       <transit ids="S1-19 S2-18 S3-19 S4-20 S6-21 S7-21 S8-11" time="12" />                   	
     </station>
     <!-- End of S1 -->  
 
     <!-- Start of S2 -->
-    <station id="S2-01" local="Petershausen" />
-    <station id="S2-02" local="Vierkirchen-Esterhofen" />
-    <station id="S2-03" local="Röhrmoos" />        
-    <station id="S2-04" local="Hebertshausen" />
-    <station id="S2-05" local="Dachau">
+    <station id="S2-01" local="Petershausen" latitude="" longitude="" />
+    <station id="S2-02" local="Vierkirchen-Esterhofen" latitude="" longitude="" />
+    <station id="S2-03" local="Röhrmoos" latitude="" longitude="" />        
+    <station id="S2-04" local="Hebertshausen" latitude="" longitude="" />
+    <station id="S2-05" local="Dachau" latitude="" longitude="">
     	<transit oneway="target" ids="S2-05 A-10" time="12" />
     	<transit oneway="target" ids="A-10 S2-05" time="32" />
     </station>
-    <station id="S2-06" local="Karlsfeld" />
-    <station id="S2-07" local="Allach" />
-    <station id="S2-08" local="Untermenzing" />
-    <station id="S2-09" local="Obermenzing" />
-    <station id="S2-20" local="Leuchtenbergring">
+    <station id="S2-06" local="Karlsfeld" latitude="" longitude="" />
+    <station id="S2-07" local="Allach" latitude="" longitude="" />
+    <station id="S2-08" local="Untermenzing" latitude="" longitude="" />
+    <station id="S2-09" local="Obermenzing" latitude="" longitude="" />
+    <station id="S2-20" local="Leuchtenbergring" latitude="" longitude="">
     	<transit ids="S2-20 S4-22 S8-09" time="12" />
     </station>  
-    <station id="S2-21" local="Berg am Laim">
+    <station id="S2-21" local="Berg am Laim" latitude="" longitude="">
     	<trainst ids="S2-21 S4-23" time="12" />
     </station>     
-    <station id="S2-22" local="Riem" />     
-    <station id="S2-23" local="Feldkirchen" />
-    <station id="S2-24" local="Heimstetten" />   
-    <station id="S2-25" local="Grub" />       
-    <station id="S2-26" local="Poing" />     
-    <station id="S2-27" local="Markt Schwaben" />
-    <station id="S2-28" local="Ottenhofen" />   
-    <station id="S2-29" local="St Koloman" />       
-    <station id="S2-30" local="Aufhausen (ED)" />     
-    <station id="S2-31" local="Altenerding" />
-    <station id="S2-32" local="Erding" />                            
+    <station id="S2-22" local="Riem" latitude="" longitude="" />     
+    <station id="S2-23" local="Feldkirchen" latitude="" longitude="" />
+    <station id="S2-24" local="Heimstetten" latitude="" longitude="" />   
+    <station id="S2-25" local="Grub" latitude="" longitude="" />       
+    <station id="S2-26" local="Poing" latitude="" longitude="" />     
+    <station id="S2-27" local="Markt Schwaben" latitude="" longitude="" />
+    <station id="S2-28" local="Ottenhofen" latitude="" longitude="" />   
+    <station id="S2-29" local="St Koloman" latitude="" longitude="" />       
+    <station id="S2-30" local="Aufhausen (ED)" latitude="" longitude="" />     
+    <station id="S2-31" local="Altenerding" latitude="" longitude="" />
+    <station id="S2-32" local="Erding" latitude="" longitude="" />                            
     <!-- End of S2 -->  
 
     <!-- Start of S3 -->
     <!-- Stations Althegnenberg and Haspelmoorbetween are not considered
          as they are available in sparse manner. -->       
-    <station id="S3-01" local="Mammendorf" />
-    <station id="S3-02" local="Malching" />
-    <station id="S3-03" local="Maisach" />   
-    <station id="S3-04" local="Gernlinden" />
-    <station id="S3-05" local="Esting" />
-    <station id="S3-06" local="Olching" />
-    <station id="S3-07" local="Gröbenzell" />
-    <station id="S3-08" local="Lochhausen" />
-    <station id="S3-09" local="Langwied" />
-    <station id="S3-10" local="Pasing">
+    <station id="S3-01" local="Mammendorf" latitude="" longitude="" />
+    <station id="S3-02" local="Malching" latitude="" longitude="" />
+    <station id="S3-03" local="Maisach" latitude="" longitude="" />   
+    <station id="S3-04" local="Gernlinden" latitude="" longitude="" />
+    <station id="S3-05" local="Esting" latitude="" longitude="" />
+    <station id="S3-06" local="Olching" latitude="" longitude="" />
+    <station id="S3-07" local="Gröbenzell" latitude="" longitude="" />
+    <station id="S3-08" local="Lochhausen" latitude="" longitude="" />
+    <station id="S3-09" local="Langwied" latitude="" longitude="" />
+    <station id="S3-10" local="Pasing" latitude="" longitude="">
     	<transit ids="S3-10 S4-11 S6-12 S8-20" time="12" />
     	<transit oneway="source" ids="S20-06 S3-10 S4-11 S6-12 S8-20" time="12" />
     	<transit oneway="target" ids="S20-06 S3-10 S4-11 S6-12 S8-20" time="32" />
     </station>
-    <station id="S3-21" local="St.-Martin-Straße">
+    <station id="S3-21" local="St.-Martin-Straße" latitude="" longitude="">
     	<transit ids="S3-21 S7-23" time="12" />
     </station>       
-    <station id="S3-22" local="Giesing">
+    <station id="S3-22" local="Giesing" latitude="" longitude="">
       <transit ids="S3-23 S7-24" time="12" />	
     </station>     
-    <station id="S3-23" local="Fasangarten" />
-    <station id="S3-24" local="Fasanenpark" />   
-    <station id="S3-25" local="Unterhaching" />       
-    <station id="S3-26" local="Taufkirchen" />     
-    <station id="S3-27" local="Furth" />
-    <station id="S3-28" local="Deisenhofen">
+    <station id="S3-23" local="Fasangarten" latitude="" longitude="" />
+    <station id="S3-24" local="Fasanenpark" latitude="" longitude="" />   
+    <station id="S3-25" local="Unterhaching" latitude="" longitude="" />       
+    <station id="S3-26" local="Taufkirchen" latitude="" longitude="" />     
+    <station id="S3-27" local="Furth" latitude="" longitude="" />
+    <station id="S3-28" local="Deisenhofen" latitude="" longitude="">
     	<transit ids="S20-01 S27-01" time="32" />
     	<transit oneway="source" ids="S3-28 S20-01 S27-01" time="32" />
       <transit oneway="target" ids="S3-28 S20-01 S27-01" time="12" />	
     </station>   
-    <station id="S3-29" local="Sauerlach" />       
-    <station id="S3-30" local="Otterfing" />     
-    <station id="S3-31" local="Holzkirchen" />                          
+    <station id="S3-29" local="Sauerlach" latitude="" longitude="" />       
+    <station id="S3-30" local="Otterfing" latitude="" longitude="" />     
+    <station id="S3-31" local="Holzkirchen" latitude="" longitude="" />                          
     <!-- End of S3 -->  
 
     <!-- Start of S4 -->
-    <station id="S4-01" local="Geltendorf" />
-    <station id="S4-02" local="Türkenfeld" />
-    <station id="S4-03" local="Grafrath" />        
-    <station id="S4-04" local="Schöngeising" />
-    <station id="S4-05" local="Buchenau" />
-    <station id="S4-06" local="Fürstenfeldbruck" />
-    <station id="S4-07" local="Eichenau" />
-    <station id="S4-08" local="Puchheim" />
-    <station id="S4-09" local="Aubing" />
-    <station id="S4-10" local="Leienfelsstraße" />
-    <station id="S4-25" local="Gronsdorf" />       
-    <station id="S4-26" local="Haar" />     
-    <station id="S4-27" local="Vaterstetten" />
-    <station id="S4-28" local="Baldham" />   
-    <station id="S4-29" local="Zorneding" />       
-    <station id="S4-30" local="Eglharting" />     
-    <station id="S4-31" local="Kirchseeon" />
-    <station id="S4-32" local="Grafing Bahnhof" />    
-    <station id="S4-33" local="Grafing Stadt" />
-    <station id="S4-34" local="Ebersberg" />                                
+    <station id="S4-01" local="Geltendorf" latitude="" longitude="" />
+    <station id="S4-02" local="Türkenfeld" latitude="" longitude="" />
+    <station id="S4-03" local="Grafrath" latitude="" longitude="" />        
+    <station id="S4-04" local="Schöngeising" latitude="" longitude="" />
+    <station id="S4-05" local="Buchenau" latitude="" longitude="" />
+    <station id="S4-06" local="Fürstenfeldbruck" latitude="" longitude="" />
+    <station id="S4-07" local="Eichenau" latitude="" longitude="" />
+    <station id="S4-08" local="Puchheim" latitude="" longitude="" />
+    <station id="S4-09" local="Aubing" latitude="" longitude="" />
+    <station id="S4-10" local="Leienfelsstraße" latitude="" longitude="" />
+    <station id="S4-25" local="Gronsdorf" latitude="" longitude="" />       
+    <station id="S4-26" local="Haar" latitude="" longitude="" />     
+    <station id="S4-27" local="Vaterstetten" latitude="" longitude="" />
+    <station id="S4-28" local="Baldham" latitude="" longitude="" />   
+    <station id="S4-29" local="Zorneding" latitude="" longitude="" />       
+    <station id="S4-30" local="Eglharting" latitude="" longitude="" />     
+    <station id="S4-31" local="Kirchseeon" latitude="" longitude="" />
+    <station id="S4-32" local="Grafing Bahnhof" latitude="" longitude="" />    
+    <station id="S4-33" local="Grafing Stadt" latitude="" longitude="" />
+    <station id="S4-34" local="Ebersberg" latitude="" longitude="" />                                
     <!-- End of S4 -->  
 
     <!-- Start of S6 -->
     <!-- Stations Trudering and Zornedingbetween are not considered
          as they are not available in normal hours. -->        
-    <station id="S6-01" local="Tutzing" />
-    <station id="S6-02" local="Feldafing" />
-    <station id="S6-03" local="Possenhofen" />        
-    <station id="S6-04" local="Starnberg" />
-    <station id="S6-05" local="Starnberg Nord" />
-    <station id="S6-06" local="Gauting" />
-    <station id="S6-07" local="Stockdorf" />
-    <station id="S6-08" local="Planegg" />
-    <station id="S6-09" local="Gräfelfing" />
-    <station id="S6-10" local="Lochham" />
-    <station id="S6-11" local="Westkreuz">
+    <station id="S6-01" local="Tutzing" latitude="" longitude="" />
+    <station id="S6-02" local="Feldafing" latitude="" longitude="" />
+    <station id="S6-03" local="Possenhofen" latitude="" longitude="" />        
+    <station id="S6-04" local="Starnberg" latitude="" longitude="" />
+    <station id="S6-05" local="Starnberg Nord" latitude="" longitude="" />
+    <station id="S6-06" local="Gauting" latitude="" longitude="" />
+    <station id="S6-07" local="Stockdorf" latitude="" longitude="" />
+    <station id="S6-08" local="Planegg" latitude="" longitude="" />
+    <station id="S6-09" local="Gräfelfing" latitude="" longitude="" />
+    <station id="S6-10" local="Lochham" latitude="" longitude="" />
+    <station id="S6-11" local="Westkreuz" latitude="" longitude="">
     	<transit ids="S6-11 S8-21" time="12" />
     </station>   
     <!-- End of S6 -->  
@@ -379,77 +379,77 @@
     <!-- Start of S7 -->
     <!-- Stations Peiß and Kreuzstraße are not considered
          as they are not available in normal hours. -->        
-    <station id="S7-01" local="Wolfratshausen" />
-    <station id="S7-02" local="Icking" />
-    <station id="S7-03" local="Ebenhausen-Schäftlarn" />        
-    <station id="S7-04" local="Hohenschäftlarn" />
-    <station id="S7-05" local="Baierbrunn" />
-    <station id="S7-06" local="Buchenhain" />
-    <station id="S7-07" local="Höllriegelskreuth" />
-    <station id="S7-08" local="Pullach" />
-    <station id="S7-09" local="Großhesselohe Isartalbf" />
-    <station id="S7-10" local="Solln">
+    <station id="S7-01" local="Wolfratshausen" latitude="" longitude="" />
+    <station id="S7-02" local="Icking" latitude="" longitude="" />
+    <station id="S7-03" local="Ebenhausen-Schäftlarn" latitude="" longitude="" />        
+    <station id="S7-04" local="Hohenschäftlarn" latitude="" longitude="" />
+    <station id="S7-05" local="Baierbrunn" latitude="" longitude="" />
+    <station id="S7-06" local="Buchenhain" latitude="" longitude="" />
+    <station id="S7-07" local="Höllriegelskreuth" latitude="" longitude="" />
+    <station id="S7-08" local="Pullach" latitude="" longitude="" />
+    <station id="S7-09" local="Großhesselohe Isartalbf" latitude="" longitude="" />
+    <station id="S7-10" local="Solln" latitude="" longitude="">
     	<transit ids="S20-02 S27-02" time="32" />
     	<transit oneway="source" ids="S7-10 S20-02 S27-02" time="32" />
     	<transit oneway="target" ids="S7-10 S20-02 S27-02" time="12" />
     </station>
-    <station id="S7-11" local="Siemenswerke">
+    <station id="S7-11" local="Siemenswerke" latitude="" longitude="">
       <transit ids="S20-03 S27-03" time="32" />
       <transit oneway="source" ids="S7-11 S20-03 S27-03" time="32" />
       <transit oneway="target" ids="S7-11 S20-03 S27-03" time="12" />	
     </station>   
-    <station id="S7-12" local="Mittersendling">
+    <station id="S7-12" local="Mittersendling" latitude="" longitude="">
       <transit ids="S20-04 S27-04" time="32" />
       <transit oneway="source" ids="S7-12 S20-04 S27-04" time="32" />
       <transit oneway="target" ids="S7-12 S20-04 S27-04" time="12" /> 	
     </station>  
-    <station id="S7-25" local="Perlach" />       
-    <station id="S7-27" local="Neubiberg" />
-    <station id="S7-28" local="Ottobrunn" />   
-    <station id="S7-29" local="Hohenbrunn" />       
-    <station id="S7-30" local="Wächterhof" />     
-    <station id="S7-31" local="Höhenkirchen-Siegertsbrunn" />
-    <station id="S7-32" local="Dürrnhaar" />  
-    <station id="S7-33" local="Aying" />                                   
+    <station id="S7-25" local="Perlach" latitude="" longitude="" />       
+    <station id="S7-27" local="Neubiberg" latitude="" longitude="" />
+    <station id="S7-28" local="Ottobrunn" latitude="" longitude="" />   
+    <station id="S7-29" local="Hohenbrunn" latitude="" longitude="" />       
+    <station id="S7-30" local="Wächterhof" latitude="" longitude="" />     
+    <station id="S7-31" local="Höhenkirchen-Siegertsbrunn" latitude="" longitude="" />
+    <station id="S7-32" local="Dürrnhaar" latitude="" longitude="" />  
+    <station id="S7-33" local="Aying" latitude="" longitude="" />                                   
     <!-- End of S7 -->  
  
     <!-- Start of S8 -->
-    <station id="S8-03" local="Hallbergmoos Bahnhof" />        
-    <station id="S8-04" local="Ismaning" />
-    <station id="S8-05" local="Unterföhring" />
-    <station id="S8-06" local="Johanneskirchen" />
-    <station id="S8-07" local="Englschalking" />
-    <station id="S8-08" local="Daglfling" />      
-    <station id="S8-22" local="Neuaubing" />     
-    <station id="S8-23" local="Freiham" />
-    <station id="S8-24" local="Harthaus" />   
-    <station id="S8-25" local="Germering-Unterpfaffenhofen" />       
-    <station id="S8-26" local="Geisenbrunn" />     
-    <station id="S8-27" local="Gilching-Argelsried" />
-    <station id="S8-28" local="Neugilching" />   
-    <station id="S8-29" local="Weßling" />       
-    <station id="S8-30" local="Steinebach" />     
-    <station id="S8-31" local="Seefeld-Hechendorf" />
-    <station id="S8-32" local="Herrsching" />                            
+    <station id="S8-03" local="Hallbergmoos Bahnhof" latitude="" longitude="" />        
+    <station id="S8-04" local="Ismaning" latitude="" longitude="" />
+    <station id="S8-05" local="Unterföhring" latitude="" longitude="" />
+    <station id="S8-06" local="Johanneskirchen" latitude="" longitude="" />
+    <station id="S8-07" local="Englschalking" latitude="" longitude="" />
+    <station id="S8-08" local="Daglfling" latitude="" longitude="" />      
+    <station id="S8-22" local="Neuaubing" latitude="" longitude="" />     
+    <station id="S8-23" local="Freiham" latitude="" longitude="" />
+    <station id="S8-24" local="Harthaus" latitude="" longitude="" />   
+    <station id="S8-25" local="Germering-Unterpfaffenhofen" latitude="" longitude="" />       
+    <station id="S8-26" local="Geisenbrunn" latitude="" longitude="" />     
+    <station id="S8-27" local="Gilching-Argelsried" latitude="" longitude="" />
+    <station id="S8-28" local="Neugilching" latitude="" longitude="" />   
+    <station id="S8-29" local="Weßling" latitude="" longitude="" />       
+    <station id="S8-30" local="Steinebach" latitude="" longitude="" />     
+    <station id="S8-31" local="Seefeld-Hechendorf" latitude="" longitude="" />
+    <station id="S8-32" local="Herrsching" latitude="" longitude="" />                            
     <!-- End of S8 -->  
 
     <!-- Start of S20 -->
     <!-- End of S20 -->  
 
     <!-- Start of S27 -->
-    <station id="S27-08" local="Hauptbahnhof, Gl. 27-36" />                           
+    <station id="S27-08" local="Hauptbahnhof, Gl. 27-36" latitude="" longitude="" />                           
     <!-- End of S27 -->  
 
     <!-- Start of A -->
-    <station id="A-01" local="Altomünster" />
-    <station id="A-02" local="Kleinberghofen" />
-    <station id="A-03" local="Erdweg" />        
-    <station id="A-04" local="Arnbach" />
-    <station id="A-05" local="Markt Indersdorf" />
-    <station id="A-06" local="Niederroth" />
-    <station id="A-07" local="Schwabhausen" />
-    <station id="A-08" local="Bachern" />
-    <station id="A-09" local="Dachau Stadt" />
+    <station id="A-01" local="Altomünster" latitude="" longitude="" />
+    <station id="A-02" local="Kleinberghofen" latitude="" longitude="" />
+    <station id="A-03" local="Erdweg" latitude="" longitude="" />        
+    <station id="A-04" local="Arnbach" latitude="" longitude="" />
+    <station id="A-05" local="Markt Indersdorf" latitude="" longitude="" />
+    <station id="A-06" local="Niederroth" latitude="" longitude="" />
+    <station id="A-07" local="Schwabhausen" latitude="" longitude="" />
+    <station id="A-08" local="Bachern" latitude="" longitude="" />
+    <station id="A-09" local="Dachau Stadt" latitude="" longitude="" />
     <!-- End of A -->        
   </stations>
 
