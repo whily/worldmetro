@@ -82,20 +82,26 @@ class Graph(val vertices: Array[Vertex]) {
   /** Return the shortest path (in a list of tags) with Dijkstra's algorithm in:
    *    http://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
    *  
-   *  @param source, target: index of source and target vertices
+   *  @param source    index of source vertex
+   *  @param targets   indices of target vertices
    *  
    *  We use Dijkstra's algorithm instead of A* algorithm because it is somehow 
    *  difficult to find one good heuristic function to take care minimum time and transits
    *  for metro route finding.
    *  
-   *  In addition, we don't use priority queue as it might be challengint to implement 
+   *  In addition, we don't use priority queue as it might be challenging to implement 
    *  "decrease key" operation.
    */  
-  def find(source: Int, target: Int): List[String] = {
+  def find(source: Int, targets: List[Int]): List[String] = {
     initVertices()
+    var ts = targets.toSet
     
     vertices(source).dist = 0
-    
+
+    // Performance might be improved if we separate q to two sets, one set whose 
+    // dist values not update, while dist is updated in another set. In this way, 
+    // finding the vertex with minimum dist can be done in the latter set only.
+    // However we will do such optimization until we see performance problems.
     var q = (0 until vertices.length).toSet
   
     breakable {
@@ -111,7 +117,8 @@ class Graph(val vertices: Array[Vertex]) {
     	    }
     	  }
     	  
-    	  if (u == target) break
+    	  ts -= u
+    	  if (ts.isEmpty) break
     	  q -= u
         // Error input if all remaining vertices are inaccessible from source.    	  
     	  assert(vertices(u).dist != Vertex.Infinity)
@@ -128,7 +135,7 @@ class Graph(val vertices: Array[Vertex]) {
     }
     
     var s: List[Int] = List()
-    var u = target
+    var u = targets(0) // TODO return a list of results
     while (vertices(u).prev != Vertex.Undefined) {
       s = u :: s
       u = vertices(u).prev
@@ -145,6 +152,6 @@ class Graph(val vertices: Array[Vertex]) {
       if (vertices(i).tag == targetTag) targetIndex = i
     }
     assert (sourceIndex != -1 && targetIndex != -1)
-    find(sourceIndex, targetIndex)
+    find(sourceIndex, List(targetIndex))
   }
 }
