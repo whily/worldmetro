@@ -19,13 +19,15 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.{Menu, MenuItem, MotionEvent, View}
 import android.util.{Log, TypedValue}
-import android.widget.{AdapterView, ArrayAdapter, AutoCompleteTextView, Spinner}
+import android.widget.{AdapterView, ArrayAdapter, AutoCompleteTextView, ExpandableListView, TextView}
 
 class SearchActivity extends Activity with ActionBar.OnNavigationListener {
   private var fromEntry: AutoCompleteTextView = null
   private var toEntry: AutoCompleteTextView = null
+  private var cityInfo: TextView = null
+  private var routeList: ExpandableListView = null
   private var city: City = null
-  private var citySpinner: Spinner = null
+  private var cityId: String = ""
   private val ResultSettings = 1
   private val LastDisplayedCity = "last_displayed_city"
   
@@ -56,7 +58,8 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
     bar.setListNavigationCallbacks(cityAdapter, this)
     bar.setSelectedNavigationItem(getLastDisplayedCity)      
                      
-    city = new City(this, cityIds(getLastDisplayedCity))  
+    cityId = cityIds(getLastDisplayedCity)
+    city = new City(this, cityId)  
     val stations = city.stationNames
     val stationIdMap = city.stationIdMap
     
@@ -93,11 +96,22 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
       }    
     })           
     
+    cityInfo = findViewById(R.id.city_info).asInstanceOf[TextView]
+    cityInfo.setTextSize(TypedValue.COMPLEX_UNIT_SP, editTextSize)
+    cityInfo.setText(Util.getString(this, "general_message") + "\n" +
+                     Util.getString(this, cityId + "_message"))
+    
+    routeList = findViewById(android.R.id.list).asInstanceOf[ExpandableListView]
+    
     def showRoute() {
-      if (fromEntry.getText.toString != "" && toEntry.getText.toString != "")
+      // TODO: check the entry text is actually can be filtered by the corresponding
+      // adapters.
+      if (fromEntry.getText.toString != "" && toEntry.getText.toString != "") {
+        routeList.setVisibility(View.VISIBLE)
+        cityInfo.setVisibility(View.GONE)        
         Util.toast(SearchActivity.this, city.findRoute(fromEntry.getText.toString, 
           toEntry.getText.toString).map(stationIdMap(_)).mkString("->"))
-      
+      }
     }
   }
    

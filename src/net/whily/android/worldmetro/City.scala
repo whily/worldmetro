@@ -25,8 +25,8 @@ import scala.xml
  *  City class holds all data for a metro network of a city. 
  *  
  *  cityName should be in English; and if there is spaces (e.g. San Francisco), 
- *  use hyphen for space. cityName is the base name for the corresponding xml file
- *  (e.g. san-francisco.xml).
+ *  use underscore for space. cityName is the base name for the corresponding xml file
+ *  (e.g. san_francisco.xml).
  *  */
 class City(activity: Activity, cityName: String) {
   private val city = xml.XML.load(activity.getResources.openRawResource(
