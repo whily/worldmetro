@@ -5,88 +5,138 @@
        The values is multipled by two and we don't consider the difference between
        the directions -->
   <stations>
-    <!-- Note: station ID is a string WITHOUT space. -->
+    <!-- Note: station ID is a string WITHOUT space. -->       
+    <station id="103" local="苹果园" english="PINGGUOYUAN" latitude="39.925" longitude="116.171944" />
+    <station id="104" local="古城" english="GUCHENG" latitude="39.906111" longitude="116.183056" />
+    <station id="105" local="八角游乐园" english="BAJIAO AMUSEMENT PARK" latitude="39.906111" longitude="116.206944" />
+    <station id="106" local="八宝山" english="BABAOSHAN" latitude="39.905" longitude="116.231111l" />
+    <station id="107" local="玉泉路" english="YUQUANLU" latitude="39.906111" longitude="116.246944" />
+    <station id="108" local="五棵松" english="WUKESONG" latitude="39.906389" longitude="116.268611" />
+    <station id="109" local="万寿路" english="WANSHOULU" latitude="39.906111" longitude="116.288889" />
+    <station id="110" local="公主坟" english="GONGZHUFEN" latitude="39.906389" longitude="116.304167" />
+    <station id="111" local="军事博物馆" english="MILITARY MUSEUM" latitude="39.906389" longitude="116.316667" />
+    <station id="112" local="木樨地" english="MUXIDI" latitude="39.906111" longitude="116.331944" />
+    <station id="113" local="南礼士路" english="NANLISHILU" latitude="39.905833" longitude="116.345278" />
+    <station id="114" local="复兴门" english="FUXINGMEN" latitude="39.906111" longitude="116.35" />
+    <station id="115" local="西单" english="XIDAN" latitude="39.905833" longitude="116.367778" />
+    <station id="116" local="天安门西" english="TIAN'ANMEN WEST" latitude="39.906111" longitude="116.385556" />
+    <station id="117" local="天安门东" english="TIAN'ANMEN EAST" latitude="39.906389" longitude="116.396111" />
+    <station id="118" local="王府井" english="WANGFUJING" latitude="39.906667" longitude="116.405278" />
+    <station id="119" local="东单" english="DONGDAN" latitude="39.908255" longitude="116.419845" />
+    <station id="120" local="建国门" english="JIANGUOMEN" latitude="35.907222" longitude="116.428889" />
+    <station id="121" local="永安里" english="YONG'ANLI" latitude="39.906944" longitude="116.444167" />
+    <station id="122" local="国贸" english="GUOMAO" latitude="39.909819" longitude="116.455572" />
+    <station id="123" local="大望路" english="DAWANGLU" latitude="39.908333" longitude="116.477778" />
+    <station id="124" local="四惠" english="SIHUI" latitude="" longitude="" />
+    <station id="125" local="四惠东" english="SIHUI EAST" latitude="" longitude="" />       
 
     <!-- Start of Line 2 -->
-    <station id="201" local="西直门" english="XIZHIMEN">
+    <station id="201" local="西直门" english="XIZHIMEN" latitude="" longitude="">
       <transit ids="201 413" time="2" />   
       <transit ids="201 1301" time="6" />
       <transit ids="413 1301" time="4" />
     </station>
-    <station id="214" local="东直门" english="DONGZHIMEN">
+    <station id="214" local="东直门" english="DONGZHIMEN" latitude="" longitude="">
       <alt id="1316" />
       <alt id="JX01" />
     </station>
     <!-- End of Line 2 -->
 
     <!-- Start of Line 5 -->
-    <station id="501" local="天通苑北" english="TIANTONGYUAN NORTH" />
-    <station id="502" local="天通苑" english="TIANTONGYUAN" />
-    <station id="503" local="天通苑南" english="TIANTONGYUAN SOUTH" />
-    <station id="504" local="立水桥" english="LISHUIQIAO">
+    <station id="501" local="天通苑北" english="TIANTONGYUAN NORTH" latitude="" longitude="" />
+    <station id="502" local="天通苑" english="TIANTONGYUAN" latitude="" longitude="" />
+    <station id="503" local="天通苑南" english="TIANTONGYUAN SOUTH" latitude="" longitude="" />
+    <station id="504" local="立水桥" english="LISHUIQIAO" latitude="" longitude="">
       <transit ids="504 1310" time="2" />
     </station>    
-    <station id="505" local="立水桥南" english="LISHUIQIAO SOUTH" />
-    <station id="506" local="北苑路北" english="BEIYUANLU NORTH" />
-    <station id="507" local="大屯路东" english="DATUNLU EAST" />
-    <station id="508" local="惠新西街北口" english="HUIXINXIJIE BEIKOU" />
-    <station id="509" local="惠新西街南口" english="HUIXINXIJIE NANKOU" />
-    <station id="510" local="和平西桥" english="HEPINGXIQIAO" />
-    <station id="511" local="和平里北街" english="HEPINGLI BEIJIE" />
-    <station id="512" local="雍和宫" english="YONGHEGONG LAMA TEMPLE" />
-    <station id="513" local="北新桥" english="BEIXINQIAO" />
-    <station id="514" local="张自忠路" english="ZHANGZIZHONGLU" />
-    <station id="515" local="东四" english="DONGSI" />
-    <station id="516" local="灯市口" english="DENGSHIKOU" />
-    <station id="517" local="东单" english="DONGDAN" />
-    <station id="518" local="崇文门" english="CHONGWENMEN" />
-    <station id="519" local="磁器口" english="CIQIKOU" />
-    <station id="520" local="天坛东门" english="TIANTANDONGMEN" />
-    <station id="521" local="蒲黄榆" english="PUHUANGYU" />
-    <station id="522" local="刘家窑" english="LIUJIAYAO" />
-    <station id="523" local="宋家庄" english="SONGJIAZHUANG" />    
+    <station id="505" local="立水桥南" english="LISHUIQIAO SOUTH" latitude="" longitude="" />
+    <station id="506" local="北苑路北" english="BEIYUANLU NORTH" latitude="" longitude="" />
+    <station id="507" local="大屯路东" english="DATUNLU EAST" latitude="" longitude="" />
+    <station id="508" local="惠新西街北口" english="HUIXINXIJIE BEIKOU" latitude="" longitude="" />
+    <station id="509" local="惠新西街南口" english="HUIXINXIJIE NANKOU" latitude="" longitude="" />
+    <station id="510" local="和平西桥" english="HEPINGXIQIAO" latitude="" longitude="" />
+    <station id="511" local="和平里北街" english="HEPINGLI BEIJIE" latitude="" longitude="" />
+    <station id="512" local="雍和宫" english="YONGHEGONG LAMA TEMPLE" latitude="" longitude="" />
+    <station id="513" local="北新桥" english="BEIXINQIAO" latitude="" longitude="" />
+    <station id="514" local="张自忠路" english="ZHANGZIZHONGLU" latitude="" longitude="" />
+    <station id="515" local="东四" english="DONGSI" latitude="" longitude="" />
+    <station id="516" local="灯市口" english="DENGSHIKOU" latitude="" longitude="" />
+    <station id="517" local="东单" english="DONGDAN" latitude="" longitude="" />
+    <station id="518" local="崇文门" english="CHONGWENMEN" latitude="" longitude="" />
+    <station id="519" local="磁器口" english="CIQIKOU" latitude="" longitude="" />
+    <station id="520" local="天坛东门" english="TIANTANDONGMEN" latitude="" longitude="" />
+    <station id="521" local="蒲黄榆" english="PUHUANGYU" latitude="" longitude="" />
+    <station id="522" local="刘家窑" english="LIUJIAYAO" latitude="" longitude="" />
+    <station id="523" local="宋家庄" english="SONGJIAZHUANG" latitude="" longitude="" />    
     <!-- End of Line 5 -->
 
     <!-- Start of Line 8 -->
     <!--  TODO: check transit time. -->
-    <station id="829" local="霍营" english="HUOYING">
+    <station id="829" local="霍营" english="HUOYING" latitude="" longitude="">
       <transit ids="829 1309" time="3" />
     </station>
     <!-- End of Line 8 -->
 
     <!-- Start of Line 10 -->
     <!--  TODO: Check id name 1010 and transit time. -->
-    <station id="1010" local="知春路" english="ZHICHUNLU">
+    <station id="1010" local="知春路" english="ZHICHUNLU" latitude="39.974722" longitude="116.334444">
       <transit ids="1010 1303" time="3" />
     </station>
     <!--  TODO: Check id name 1020 and transit time. -->
-    <station id="1020" local="芍药居" english="SHAOYAOJU">
+    <station id="1020" local="芍药居" english="SHAOYAOJU" latitude="" longitude="">
       <transit ids="1020 1313" time="3" />
     </station>
     <!-- End of Line 10 -->
 
     <!-- Start of Line 13 -->
-    <station id="1302" local="大钟寺" english="DAZHONGSI" />
-    <station id="1304" local="五道口" english="WUDAOKOU" />
-    <station id="1305" local="上地"   english="SHANGDI" />
-    <station id="1306" local="西二旗" english="XI'ER QI" />
-    <station id="1307" local="龙泽" english="LONGZE" />
-    <station id="1308" local="回龙观" english="HUILONGGUAN" />
-    <station id="1311" local="北苑" english="BEIYUAN" />
-    <station id="1312" local="望京西" english="WANGJING West" />
-    <station id="1314" local="光熙门" english="GUANGXIMEN" />
-    <station id="1315" local="柳芳" english="LIUFANG" />
+    <station id="1302" local="大钟寺" english="DAZHONGSI" latitude="" longitude="" />
+    <station id="1304" local="五道口" english="WUDAOKOU" latitude="" longitude="" />
+    <station id="1305" local="上地"   english="SHANGDI" latitude="" longitude="" />
+    <station id="1306" local="西二旗" english="XI'ER QI" latitude="" longitude="" />
+    <station id="1307" local="龙泽" english="LONGZE" latitude="" longitude="" />
+    <station id="1308" local="回龙观" english="HUILONGGUAN" latitude="40.070833" longitude="116.336111" />
+    <station id="1311" local="北苑" english="BEIYUAN" latitude="" longitude="" />
+    <station id="1312" local="望京西" english="WANGJING West" latitude="" longitude="" />
+    <station id="1314" local="光熙门" english="GUANGXIMEN" latitude="" longitude="" />
+    <station id="1315" local="柳芳" english="LIUFANG" latitude="" longitude="" />
     <!-- End of Line 13 -->
   </stations>
 
-  <!-- Travel time information is from wiki pages like 
+  <!-- Travel time information and line color is from wiki pages like 
        http://en.wikipedia.org/wiki/Line_10,_Beijing_Subway -->
   <lines>
-    <line id="1" color="#B93536" />
-    <line id="2" color="#2D5E95" />
-    <line id="4" color="#308C9B" />
+    <line id="1" color="#A12830">
+      <stations>
+        <station id="103" />
+        <station id="104" time="4" />
+        <station id="105" time="3" />
+        <station id="106" time="3" />
+        <station id="107" time="2" />
+        <station id="108" time="3" />
+        <station id="109" time="3" />
+        <station id="110" time="2" />
+        <station id="111" time="2" />
+        <station id="112" time="1" />
+        <station id="113" time="2" />
+        <station id="114" time="1" />
+        <station id="115" time="2" />
+        <station id="116" time="2" />
+        <station id="117" time="2" />
+        <station id="118" time="1" />
+        <station id="119" time="1" />
+        <station id="120" time="2" />
+        <station id="121" time="2" />
+        <station id="122" time="2" />
+        <station id="123" time="2" />
+        <station id="124" time="2" />
+        <station id="125" time="3" />                
+      </stations>
+    </line>
 
-    <line id="5" color="#A00581">
+    <line id="2" color="#00529B" />
+    <line id="4" color="#008193" />
+
+    <line id="5" color="#AE005F">
       <stations>
         <station id="501" />
         <station id="502" time="2" />
@@ -114,10 +164,10 @@
       </stations>
     </line>
 
-    <line id="6" color="#CB9520" />
-    <line id="8" color="#2E9A69" />
-    <line id="9" color="#8EC32C" />
-    <line id="10" color="#3799BE" />
+    <line id="6" color="#BB8900" />
+    <line id="8" color="#00997A" />
+    <line id="9" color="#87D300" />
+    <line id="10" color="#0092C7" />
 
     <!-- Information is from http://baike.baidu.com/view/6152850.htm -->
     <line id="13" type="line" localLong="13号线" localShort="13"
@@ -141,11 +191,11 @@
         <station id="1316" time="2" />
       </stations>
     </line>
-    <line id="14" color="#D1A3A1" />
-    <line id="15" color="#67327A" />
-    <line id="100" localLong="昌平线" color="#D57EB1" />
-    <line id="101" localLong="亦庄线" color="#DB0077" />
-    <line id="102" localLong="房山线" color="#DA5E2D" />
-    <line id="200" localLong="机场线" color="#A297BA" />
+    <line id="14" color="#D4A7A1" />
+    <line id="15" color="#6A1D44" />
+    <line id="100" localLong="昌平线" color="#D47DAA" />
+    <line id="101" localLong="亦庄线" color="#D61572" />
+    <line id="102" localLong="房山线" color="#D85F26" />
+    <line id="200" localLong="机场线" color="#9B91B1" />
   </lines>
 </city>
