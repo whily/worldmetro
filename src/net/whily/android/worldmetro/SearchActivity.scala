@@ -123,14 +123,13 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
   
   override def onOptionsItemSelected(item: MenuItem): Boolean = {
     item.getItemId match {
-      case android.R.id.home | R.id.about => {
+      case android.R.id.home | R.id.about => 
         startActivity(new Intent(this, classOf[AboutActivity]))
         true
-      }
-      case R.id.settings => { 
+   
+      case R.id.settings =>  
         startActivityForResult(new Intent(this, classOf[SettingsActivity]), ResultSettings)
         true
-      }
     }
   }
   
