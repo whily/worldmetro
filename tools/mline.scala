@@ -64,7 +64,6 @@ object Line {
     if (startIndex >= 0) {
       val endIndex = page.indexOf("\">", startIndex)
       val geohackUrl = "http://" + page.substring(startIndex, endIndex).replace("&amp;", "&")
-      println(geohackUrl)
       val geohackPage = webPage(geohackUrl)
       val latitude = between(geohackPage, "<span class=\"latitude\" title=\"Latitude\">", "</span>")
       val longitude = between(geohackPage, "<span class=\"longitude\" title=\"Longitude\">", "</span>")
@@ -82,7 +81,9 @@ object Line {
   
   // Get the web page in plain text. Each line is separated by "\n".
   def webPage(url: String): String = {
-    val is = (new URL(url)).openConnection.getInputStream
+    val connection = (new URL(url)).openConnection
+    connection.setRequestProperty("User-Agent", "Mozilla/5.0");
+    val is = connection.getInputStream
     scala.io.Source.fromInputStream(is).getLines().mkString("\n")    
   }
 }
