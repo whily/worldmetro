@@ -27,6 +27,7 @@ object Line {
   val hasLocalName = true
   val stationInfoIndent = " " * 4
   val lineInfoIndent    = " " * 8
+  val reverse = true // Reverse all stations. This is mainly used to align the station ids.
 
   def main(args: Array[String]) = {
     val str = webPage(url)
@@ -37,20 +38,23 @@ object Line {
     // Character | should be escaped. Note that the last part is not needed.
     val stations = s.split("\\|-").init
     
+    var stationResults: List[String] = Nil
     for (station <- stations) {
       val sa = between(station, "[[", "]]").split("\\|")
       val stationUrl = wikiPrefix + sa(0).split(" ").mkString("_")
       val englishStationName1 = if (sa.length == 1) sa(0) else sa(1)
       val englishStationName = if (upperCaseStationName) englishStationName1.toUpperCase else englishStationName1
-      val localName = "" // between(station, ">", "\\|")
+      val localName = between(station, ">", "\n")
       val (latitude, longitude) = coordinates(stationUrl) 
       
       val d = stationInfoIndent + "<station id=\"\" local=\"" + localName + 
               "\" english=\"" + englishStationName + 
               "\" latitude=\"" + latitude + 
               "\" longitude=\"" + longitude + "\" />"
-      println(d)
+      stationResults = d :: stationResults
     }
+    val stationShow = if (reverse) stationResults else stationResults.reverse
+    println(stationShow.mkString("\n"))
     
     if (timeInfo) {
       println("*" * 66)
