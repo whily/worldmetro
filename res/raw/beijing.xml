@@ -5,7 +5,10 @@
        The values is multipled by two and we don't consider the difference between
        the directions -->
   <stations>
-    <!-- Note: station ID is a string WITHOUT space. -->       
+    <!-- Note: station ID is a string WITHOUT space. --> 
+    
+    <!--  Start of Line 1 -->
+    <!--  TODO: fix transit time in general. -->      
     <station id="103" local="苹果园" english="PINGGUOYUAN" latitude="39.925" longitude="116.171944" />
     <station id="104" local="古城" english="GUCHENG" latitude="39.906111" longitude="116.183056" />
     <station id="105" local="八角游乐园" english="BAJIAO AMUSEMENT PARK" latitude="39.906111" longitude="116.206944" />
@@ -14,7 +17,9 @@
     <station id="108" local="五棵松" english="WUKESONG" latitude="39.906389" longitude="116.268611" />
     <station id="109" local="万寿路" english="WANSHOULU" latitude="39.906111" longitude="116.288889" />
     <station id="110" local="公主坟" english="GONGZHUFEN" latitude="39.906389" longitude="116.304167" />
-    <station id="111" local="军事博物馆" english="MILITARY MUSEUM" latitude="39.906389" longitude="116.316667" />
+    <station id="111" local="军事博物馆" english="MILITARY MUSEUM" latitude="39.906389" longitude="116.316667">
+    	<transit ids="111 910" time="2" />
+    </station>
     <station id="112" local="木樨地" english="MUXIDI" latitude="39.906111" longitude="116.331944" />
     <station id="113" local="南礼士路" english="NANLISHILU" latitude="39.905833" longitude="116.345278" />
     <station id="114" local="复兴门" english="FUXINGMEN" latitude="39.906111" longitude="116.35" />
@@ -28,7 +33,8 @@
     <station id="122" local="国贸" english="GUOMAO" latitude="39.909819" longitude="116.455572" />
     <station id="123" local="大望路" english="DAWANGLU" latitude="39.908333" longitude="116.477778" />
     <station id="124" local="四惠" english="SIHUI" latitude="" longitude="" />
-    <station id="125" local="四惠东" english="SIHUI EAST" latitude="" longitude="" />       
+    <station id="125" local="四惠东" english="SIHUI EAST" latitude="" longitude="" />  
+    <!-- End of Line 1 -->     
 
     <!-- Start of Line 2 -->
     <station id="201" local="西直门" english="XIZHIMEN" latitude="" longitude="">
@@ -76,6 +82,22 @@
       <transit ids="829 1309" time="3" />
     </station>
     <!-- End of Line 8 -->
+    
+    <!--  Start of Line 9 -->
+    <!--  TODO: check transit time, merge with previous lines. -->
+    <station id="901" local="郭公庄" english="GUOGONGZHUANG" latitude="" longitude="" />
+    <station id="902" local="丰台科技园" english="FENGTAI SCIENCE PARK" latitude="" longitude="" />
+    <station id="903" local="科怡路" english="KEYILU" latitude="" longitude="" />
+    <station id="904" local="丰台南路" english="FENGTAINANLU" latitude="" longitude="" />
+    <station id="905" local="丰台东大街" english="FENGTAI DONGDAJIE" latitude="" longitude="" />
+    <station id="906" local="七里庄" english="QILIZHUANG" latitude="" longitude="" />
+    <station id="907" local="六里桥" english="LIULIQIAO" latitude="39.878889" longitude="116.296944" />
+    <station id="908" local="六里桥东" english="LIULIQIAO EAST" latitude="" longitude="" />
+    <station id="909" local="北京西站" english="BEIJING WEST RAILWAY STATION" latitude="39.894444" longitude="116.315" />
+    <station id="911" local="白堆子" english="BAIDUIZI" latitude="" longitude="" />
+    <station id="912" local="白石桥南" english="BAISHIQIAO SOUTH" latitude="" longitude="" />
+    <station id="913" local="国家图书馆" english="NATIONAL LIBRARY" latitude="39.942778" longitude="116.318889" />    
+    <!--  End of Line 9 -->
 
     <!-- Start of Line 10 -->
     <!--  TODO: Check id name 1010 and transit time. -->
