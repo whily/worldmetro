@@ -18,7 +18,7 @@ import java.io._
 
 object Line {
   // Configurable parameters.
-  val url = "http://en.wikipedia.org/w/index.php?title=Line_9,_Beijing_Subway&action=edit&section=2"
+  val url = "http://en.wikipedia.org/w/index.php?title=Line_10,_Beijing_Subway&action=edit&section=9"
   val wikiPrefix = "http://en.wikipedia.org/wiki/"
   // Whether English name of the station should be upper case.
   val upperCaseStationName = true 
@@ -30,28 +30,30 @@ object Line {
   val reverse = true // Reverse all stations. This is mainly used to align the station ids.
 
   def main(args: Array[String]) = {
-    val str = webPage(url)
+    val str = webPage(url).replace("{BJS line links|}", "") // Remove the confusing |}
     
     // The actual data is betwen |[[ and |}
     val s = str.substring(str.indexOf("|[["), str.indexOf("|}")).trim
     
-    // Character | should be escaped. Note that the last part is not needed.
-    val stations = s.split("\\|-").init
+    // Character | should be escaped. Note that there might be trailing rows which do not contain data.
+    val stations = s.split("\\|-")
     
     var stationResults: List[String] = Nil
     for (station <- stations) {
-      val sa = between(station, "[[", "]]").split("\\|")
-      val stationUrl = wikiPrefix + sa(0).split(" ").mkString("_")
-      val englishStationName1 = if (sa.length == 1) sa(0) else sa(1)
-      val englishStationName = if (upperCaseStationName) englishStationName1.toUpperCase else englishStationName1
-      val localName = between(station, ">", "\n")
-      val (latitude, longitude) = coordinates(stationUrl) 
+      if (station.indexOf("[[") >= 0) {
+        val sa = between(station, "[[", "]]").split("\\|")
+        val stationUrl = wikiPrefix + sa(0).split(" ").mkString("_")
+        val englishStationName1 = if (sa.length == 1) sa(0) else sa(1)
+        val englishStationName = if (upperCaseStationName) englishStationName1.toUpperCase else englishStationName1
+        val localName = between(station, ">", "\n")
+        val (latitude, longitude) = coordinates(stationUrl) 
       
-      val d = stationInfoIndent + "<station id=\"\" local=\"" + localName + 
-              "\" english=\"" + englishStationName + 
-              "\" latitude=\"" + latitude + 
-              "\" longitude=\"" + longitude + "\" />"
-      stationResults = d :: stationResults
+        val d = stationInfoIndent + "<station id=\"\" local=\"" + localName + 
+                "\" english=\"" + englishStationName + 
+                "\" latitude=\"" + latitude + 
+                "\" longitude=\"" + longitude + "\" />"
+        stationResults = d :: stationResults
+      }
     }
     val stationShow = if (reverse) stationResults else stationResults.reverse
     println(stationShow.mkString("\n"))
