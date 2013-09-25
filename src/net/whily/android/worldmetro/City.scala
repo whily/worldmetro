@@ -82,16 +82,23 @@ class City(activity: Activity, cityName: String) {
 
     for (line <- lines) {
       val id = (line \ "@id").text
+      val lineType = (line \ "@type").text
 
     	val stations = line \ "stations" \ "station"
     	var prevStation = ""
     	var index = 0
-    	// TODO: handle ring-type metro line.
+    	var firstStation = ""
+    	var firstTime = ""
     	for (station <- stations) {
     	  val stationId = (station \ "@id").text
     	  if (index == 0) {
     	    index = 1
     	    prevStation = stationId
+    	    if (lineType == "ring") {
+    	      firstStation = stationId
+    	      firstTime = (station \ "@time").text
+    	      assert(!firstTime.isEmpty)
+    	    }
     	  } else {
     	    val time = (station \ "@time").text
     	    assert(!time.isEmpty())
@@ -100,6 +107,10 @@ class City(activity: Activity, cityName: String) {
     	    prevStation = stationId
     	  }
     	}
+      if (lineType == "ring") {
+        map += ((firstStation, prevStation) -> firstTime.toInt)
+        map += ((prevStation, firstStation) -> firstTime.toInt)            
+      }
       
       // Add transit weights.
       val transits = city \ "stations" \ "station" \ "transit"
