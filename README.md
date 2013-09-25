@@ -53,8 +53,5 @@ TODO
 * Route/Segment, Station, Line
 * Draw line
 * Display results
-* Handle time/transit search (i.e. add transit search)
-* Draw map.
-* Add start with one station and show the stations afterwards.
 
 
