@@ -22,13 +22,17 @@
     </station>
     <station id="112" local="木樨地" english="MUXIDI" latitude="39.906111" longitude="116.331944" />
     <station id="113" local="南礼士路" english="NANLISHILU" latitude="39.905833" longitude="116.345278" />
-    <station id="114" local="复兴门" english="FUXINGMEN" latitude="39.906111" longitude="116.35" />
+    <station id="114" local="复兴门" english="FUXINGMEN" latitude="39.906111" longitude="116.35">
+    	<transit ids="114 204" time="2" />
+    </station>
     <station id="115" local="西单" english="XIDAN" latitude="39.905833" longitude="116.367778" />
     <station id="116" local="天安门西" english="TIAN'ANMEN WEST" latitude="39.906111" longitude="116.385556" />
     <station id="117" local="天安门东" english="TIAN'ANMEN EAST" latitude="39.906389" longitude="116.396111" />
     <station id="118" local="王府井" english="WANGFUJING" latitude="39.906667" longitude="116.405278" />
     <station id="119" local="东单" english="DONGDAN" latitude="39.908255" longitude="116.419845" />
-    <station id="120" local="建国门" english="JIANGUOMEN" latitude="35.907222" longitude="116.428889" />
+    <station id="120" local="建国门" english="JIANGUOMEN" latitude="35.907222" longitude="116.428889">
+    	<transit ids="120 211" time="2" />
+    </station>
     <station id="121" local="永安里" english="YONG'ANLI" latitude="39.906944" longitude="116.444167" />
     <station id="122" local="国贸" english="GUOMAO" latitude="39.909819" longitude="116.455572" />
     <station id="123" local="大望路" english="DAWANGLU" latitude="39.908333" longitude="116.477778" />
@@ -37,15 +41,29 @@
     <!-- End of Line 1 -->     
 
     <!-- Start of Line 2 -->
-    <station id="201" local="西直门" english="XIZHIMEN" latitude="" longitude="">
+    <station id="201" local="西直门" english="XIZHIMEN" latitude="39.9405" longitude="116.355">
       <transit ids="201 413" time="2" />   
       <transit ids="201 1301" time="6" />
       <transit ids="413 1301" time="4" />
     </station>
-    <station id="214" local="东直门" english="DONGZHIMEN" latitude="" longitude="">
-      <alt id="1316" />
-      <alt id="JX01" />
+    <station id="202" local="车公庄" english="CHEGONGZHUANG" latitude="39.932347" longitude="116.355728" />    
+    <station id="203" local="阜成门" english="FUCHENGMEN" latitude="" longitude="" />     
+    <station id="205" local="长椿街" english="CHANGCHUNJIE" latitude="" longitude="" />   
+    <station id="206" local="宣武门" english="XUANWUMEN" latitude="" longitude="" />    
+    <station id="207" local="和平门" english="HEPINGMEN" latitude="" longitude="" />   
+    <station id="208" local="前门" english="QIANMEN" latitude="" longitude="" />    
+    <station id="209" local="崇文门" english="CHONGWENMEN" latitude="" longitude="" /> 
+    <station id="210" local="北京站" english="BEIJING RAILWAY STATION" latitude="39.902222" longitude="116.421111" />    
+    <station id="212" local="朝阳门" english="CHAOYANGMEN" latitude="" longitude="" />   
+    <station id="213" local="东四十条" english="DONGSI SHITIAO" latitude="" longitude="" />                                   
+    <station id="214" local="东直门" english="DONGZHIMEN" latitude="39.94" longitude="116.428">
+      <transit ids="214 1316" time="2" />
     </station>
+    <station id="215" local="雍和宫" english="YONGHEGONG LAMA TEMPLE" latitude="" longitude="" />                                   
+    <station id="216" local="安定门" english="ANDINGMEN" latitude="39.949167" longitude="116.408333" />                                   
+    <station id="217" local="鼓楼大街" english="GULOUDAJIE" latitude="" longitude="" />                                   
+    <station id="218" local="积水潭" english="JISHUITAN" latitude="" longitude="" />       
+    
     <!-- End of Line 2 -->
 
     <!-- Start of Line 5 -->
@@ -127,7 +145,7 @@
   <!-- Travel time information and line color is from wiki pages like 
        http://en.wikipedia.org/wiki/Line_10,_Beijing_Subway -->
   <lines>
-    <line id="1" color="#A12830">
+    <line id="1" type="line" color="#A12830">
       <stations>
         <station id="103" />
         <station id="104" time="4" />
@@ -155,7 +173,29 @@
       </stations>
     </line>
 
-    <line id="2" color="#00529B" />
+    <line id="2" type="ring" color="#00529B">
+      <stations>
+        <station id="201" time="2" /> <!--  Not sure about the value. -->
+        <station id="202" time="2" />
+        <station id="203" time="2" />
+        <station id="204" time="3" />
+        <station id="205" time="2" />
+        <station id="206" time="2" />
+        <station id="207" time="2" />
+        <station id="208" time="2" />
+        <station id="209" time="2" />
+        <station id="210" time="4" />
+        <station id="211" time="2" />
+        <station id="212" time="3" />
+        <station id="213" time="2" />
+        <station id="214" time="2" />
+        <station id="215" time="4" />
+        <station id="216" time="2" />
+        <station id="217" time="2" />
+        <station id="218" time="3" />               
+      </stations>    
+    </line>
+    
     <line id="4" color="#008193" />
 
     <line id="5" color="#AE005F">
