@@ -138,4 +138,23 @@ class City(activity: Activity, cityName: String) {
     
     map
   }
+  
+  /** Return true if `thisId` and `thatId` refer to the same station 
+   *  (i.e. they can be on the different lines).
+   */
+  def sameStation(thisId: String, thatId: String) = {
+    thisId == thatId
+  }
+  
+  /** Trim the unnecessary transits at the begiing and end of the `path`. */
+  def trimPath(path: List[String]): List[String] = {
+    val len = path.length
+    if (len <= 1) path
+    else if (sameStation(path.head, path.tail.head)) trimPath(path.tail)
+    else {
+    	val (u, v) = path.splitAt(len - 1)
+    	if (sameStation(u.last, v.head)) trimPath(u)
+    	else path
+    }
+  }  
 }
