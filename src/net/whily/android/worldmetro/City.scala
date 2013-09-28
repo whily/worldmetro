@@ -39,7 +39,7 @@ class City(activity: Activity, cityName: String) {
   val stationNames = stationNameMap.keys.toArray sortWith (_ < _)
   
   def findRoute(sourceName: String, targetName: String): List[String] = 
-    timeGraph.find(stationNameMap(sourceName), stationNameMap(targetName))
+    trimPath(timeGraph.find(stationNameMap(sourceName), stationNameMap(targetName)))
    
   private def getStationIdMap: mutable.HashMap[String, String] = {
     var map = new mutable.HashMap[String, String]()
@@ -137,11 +137,14 @@ class City(activity: Activity, cityName: String) {
   /** Return true if `thisId` and `thatId` refer to the same station 
    *  (i.e. they can be on the different lines).
    */
-  def sameStation(thisId: String, thatId: String) = {
-    thisId == thatId
+  def sameStation(thisId: String, thatId: String): Boolean = {
+    // Since sameStation is only called by trimPath, it is an error case
+    // thisId == thatId.
+    require(thisId != thatId)
+    stationIdMap(thisId) == stationIdMap(thatId)
   }
   
-  /** Trim the unnecessary transits at the begiing and end of the `path`. */
+  /** Trim the unnecessary transits at the begining and end of the `path`. */
   def trimPath(path: List[String]): List[String] = {
     val len = path.length
     if (len <= 1) path
