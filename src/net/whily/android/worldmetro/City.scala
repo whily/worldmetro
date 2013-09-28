@@ -38,8 +38,8 @@ class City(activity: Activity, cityName: String) {
   
   val stationNames = stationNameMap.keys.toArray sortWith (_ < _)
   
-  def findRoute(sourceName: String, targetName: String): List[String] = 
-    trimPath(timeGraph.find(stationNameMap(sourceName), stationNameMap(targetName)))
+  def findRoute(sourceName: String, targetName: String): List[List[String]] = 
+    timeGraph.find(stationNameMap(sourceName), stationNameMap(targetName)).map(trimPath _).toSet.toList
    
   private def getStationIdMap: mutable.HashMap[String, String] = {
     var map = new mutable.HashMap[String, String]()

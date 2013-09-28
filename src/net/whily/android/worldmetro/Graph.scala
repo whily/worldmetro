@@ -87,7 +87,19 @@ class Graph(val vertices: Array[Vertex]) {
    *  In addition, we don't use priority queue as it might be challenging to implement 
    *  "decrease key" operation.
    */  
-  def find(source: Int, targets: List[Int]): List[String] = {
+  def find(source: Int, targets: List[Int]): List[List[String]] = {
+    /** Return the path given `target`. */
+    def path(target: Int): List[String] = {
+      var s: List[Int] = List()
+      var u = target
+      while (vertices(u).prev != Vertex.Undefined) {
+        s = u :: s
+        u = vertices(u).prev
+      }
+      s = source :: s
+      s.map(vertices(_).tag)      
+    }
+    
     initVertices()
     var ts = targets.toSet
     
@@ -129,17 +141,10 @@ class Graph(val vertices: Array[Vertex]) {
     	}
     }
     
-    var s: List[Int] = List()
-    var u = targets(0) // TODO return a list of results
-    while (vertices(u).prev != Vertex.Undefined) {
-      s = u :: s
-      u = vertices(u).prev
-    }
-    s = source :: s
-    s.map(vertices(_).tag)
+    targets.map(path _)
   }
   
-  def find(sourceTag: String, targetTag: String): List[String] = {
+  def find(sourceTag: String, targetTag: String): List[List[String]] = {
     var sourceIndex = -1
     var targetIndex = -1
     for (i <- 0 to vertices.size - 1) {
