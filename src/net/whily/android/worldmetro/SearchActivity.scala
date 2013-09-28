@@ -11,9 +11,7 @@
 
 package net.whily.android.worldmetro
 
-// Using mutable.HashMap might improve performance. However, there is 
-// runtime error "NoSuchMethod" when calling HashMap.keys
-import scala.collection.immutable.HashMap
+import scala.collection.mutable
 import android.app.{ActionBar, Activity}
 import android.content.Intent
 import android.os.Bundle
@@ -33,7 +31,7 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
   
   // The key is locale city name (which is displayed, note that this is not the LOCAL name),
   // and the value is the city name (which is used as a unique identifier) as in class City.
-  private var cities = new HashMap[String, String]()
+  private var cities = new mutable.HashMap[String, String]()
   private var localeCityNames: Array[String] = null
   
   override def onCreate(icicle: Bundle) {
@@ -46,7 +44,7 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
     bar.setHomeButtonEnabled(true)
       
     val cityIds = Array("beijing", "munich", "shanghai", "tokyo")
-    cities = new HashMap[String, String]()
+    cities = new mutable.HashMap[String, String]()
     localeCityNames = cityIds.map(Util.getString(this, _))
     for (city <- cityIds) 
       cities += (Util.getString(this, city) -> city)
