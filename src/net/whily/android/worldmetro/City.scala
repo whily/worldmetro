@@ -12,14 +12,9 @@
 package net.whily.android.worldmetro
 
 import java.io.InputStream
-import scala.collection.mutable.Set
-import android.app.Activity
-
-// Using mutable.HashMap might improve performance. However, there is 
-// runtime error "NoSuchMethod" when calling HashMap.keys
-import scala.collection.immutable.HashMap
-
+import scala.collection.mutable
 import scala.xml
+import android.app.Activity
 
 /** 
  *  City class holds all data for a metro network of a city. 
@@ -46,8 +41,8 @@ class City(activity: Activity, cityName: String) {
   def findRoute(sourceName: String, targetName: String): List[String] = 
     timeGraph.find(stationNameMap(sourceName), stationNameMap(targetName))
    
-  private def getStationIdMap: HashMap[String, String] = {
-    var map = new HashMap[String, String]()
+  private def getStationIdMap: mutable.HashMap[String, String] = {
+    var map = new mutable.HashMap[String, String]()
     val languagePref = Util.getLanguagePref(activity)
     for (station <- stations) {
       val id             = (station \ "@id").text
@@ -66,7 +61,7 @@ class City(activity: Activity, cityName: String) {
       map += (id -> name)  
       
       val transits = station \ "transit"
-      var ids: Set[String] = Set()
+      var ids: mutable.Set[String] = mutable.Set()
       for (transit <- transits) {
         val ids = (transit \ "@ids").text.split(" ")
         for (altId <- ids if altId != id)
@@ -77,8 +72,8 @@ class City(activity: Activity, cityName: String) {
     map
   }
   
-  private def getTravelTimeMap: HashMap[(String, String), Int] = {
-    var map = new HashMap[(String, String), Int]()
+  private def getTravelTimeMap: mutable.HashMap[(String, String), Int] = {
+    var map = new mutable.HashMap[(String, String), Int]()
 
     for (line <- lines) {
       val id = (line \ "@id").text
