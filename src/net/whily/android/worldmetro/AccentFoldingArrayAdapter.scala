@@ -13,7 +13,7 @@ package net.whily.android.worldmetro
 
 import java.text.Normalizer
 import android.content.Context
-import android.widget.{ ArrayAdapter, Filterable, Filter }
+import android.widget.{ArrayAdapter, Filterable, Filter}
 
 /**
  * Filter the string by ignoring the accents.
@@ -47,7 +47,7 @@ class AccentFoldingArrayAdapter(context: Context, textViewResourceId: Int, objec
   }
 
   private class CustomFilter extends Filter {
-    override def performFiltering(constraint: CharSequence): Filter.FilterResults = {
+    override protected def performFiltering(constraint: CharSequence): Filter.FilterResults = {
       var filterResults = new Filter.FilterResults
       if (constraint == null || constraint.length == 0) {
         filterResults.values = objects
@@ -62,7 +62,7 @@ class AccentFoldingArrayAdapter(context: Context, textViewResourceId: Int, objec
       filterResults
     }
 
-    override def publishResults(constraint: CharSequence, results: Filter.FilterResults) {
+    override protected def publishResults(constraint: CharSequence, results: Filter.FilterResults) {
       data = results.values.asInstanceOf[Array[String]]
       if (results != null && results.count > 0) {
         notifyDataSetChanged()
