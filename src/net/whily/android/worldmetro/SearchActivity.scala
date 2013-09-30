@@ -20,12 +20,14 @@ import android.util.{Log, TypedValue}
 import android.widget.{AdapterView, ArrayAdapter, AutoCompleteTextView, ExpandableListView, TextView}
 
 class SearchActivity extends Activity with ActionBar.OnNavigationListener {
+  private var bar: ActionBar = null
   private var fromEntry: AutoCompleteTextView = null
   private var toEntry: AutoCompleteTextView = null
   private var cityInfo: TextView = null
   private var routeList: ExpandableListView = null
   private var city: City = null
   private var cityId: String = ""
+  private val cityIds = Array("beijing", "munich", "shanghai", "tokyo")    
   private val ResultSettings = 1
   private val LastDisplayedCity = "last_displayed_city"
   
@@ -40,10 +42,9 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
     setContentView(R.layout.search)
     setTitle("")
     
-    val bar = getActionBar
+    bar = getActionBar
     bar.setHomeButtonEnabled(true)
-      
-    val cityIds = Array("beijing", "munich", "shanghai", "tokyo")
+     
     cities = new mutable.HashMap[String, String]()
     localeCityNames = cityIds.map(Util.getString(this, _))
     for (city <- cityIds) 
@@ -54,64 +55,9 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
     cityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
     bar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST)
     bar.setListNavigationCallbacks(cityAdapter, this)
-    bar.setSelectedNavigationItem(getLastDisplayedCity)      
-                     
-    cityId = cityIds(getLastDisplayedCity)
-    city = new City(this, cityId)  
-    val stations = city.stationNames
-    val stationIdMap = city.stationIdMap
     
-    val editTextSize = Util.getEditTextSize(this)
-    fromEntry = findViewById(R.id.from_entry).asInstanceOf[AutoCompleteTextView]
-    toEntry = findViewById(R.id.to_entry).asInstanceOf[AutoCompleteTextView]
-    fromEntry.setThreshold(1)
-    toEntry.setThreshold(1)
-       
-    fromEntry.setTextSize(TypedValue.COMPLEX_UNIT_SP, editTextSize)
-    toEntry.setTextSize(TypedValue.COMPLEX_UNIT_SP, editTextSize)
-    fromEntry.setAdapter(new AccentFoldingArrayAdapter(this, R.layout.simple_dropdown_item_1line, stations))
-    toEntry.setAdapter(new AccentFoldingArrayAdapter(this, R.layout.simple_dropdown_item_1line, stations))
-    fromEntry.setOnTouchListener(new View.OnTouchListener() {
-      override def onTouch(v: View, e: MotionEvent): Boolean = {
-      	fromEntry.showDropDown()
-      	false
-      }
-    })
-    toEntry.setOnTouchListener(new View.OnTouchListener() {
-      override def onTouch(v: View, e: MotionEvent): Boolean = {
-      	toEntry.showDropDown()
-      	false
-      }
-    })
-    fromEntry.setOnItemClickListener(new AdapterView.OnItemClickListener () {
-      override def onItemClick(parentView: AdapterView[_], selectedItemView: View, position: Int, id: Long) {
-        showRoute()
-      }    
-    })  
-    toEntry.setOnItemClickListener(new AdapterView.OnItemClickListener () {
-      override def onItemClick(parentView: AdapterView[_], selectedItemView: View, position: Int, id: Long) {
-        showRoute()
-      }    
-    })           
-    
-    cityInfo = findViewById(R.id.city_info).asInstanceOf[TextView]
-    cityInfo.setTextSize(TypedValue.COMPLEX_UNIT_SP, editTextSize)
-    cityInfo.setText(Util.getString(this, "general_message") + "\n" +
-                     Util.getString(this, cityId + "_message"))
-    
-    routeList = findViewById(android.R.id.list).asInstanceOf[ExpandableListView]
-    
-    def showRoute() {
-      // TODO: check the entry text is actually can be filtered by the corresponding
-      // adapters.
-      if (fromEntry.getText.toString != "" && toEntry.getText.toString != "") {
-        routeList.setVisibility(View.VISIBLE)
-        cityInfo.setVisibility(View.GONE)        
-        Util.toast(SearchActivity.this, 
-                   city.findRoute(fromEntry.getText.toString, toEntry.getText.toString).
-                     map(_.map(stationIdMap(_)).mkString("->")).mkString("\n"))
-      }
-    }
+    initWidgets()
+    initContents()
   }
    
   override def onCreateOptionsMenu(menu: Menu): Boolean = {
@@ -137,12 +83,12 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
       // If we don't set below explicitly, the previous input text still remains 
       // when city is changed. This is rather strange as the whole activity is
       // recreated after city switching. Also the two lines below are not effective 
-      // if put in onCreate().
+      // if put in initContents().
       fromEntry.setText("")
       toEntry.setText("")
     
       Util.setSharedPref(SearchActivity.this, LastDisplayedCity, itemPosition.toString)
-      recreate
+      initContents
     }    
     
     true
@@ -154,6 +100,71 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
       case ResultSettings => recreate() // Trigger to apply new theme.
     }
   } 
+  
+  // Initialize the widgets. The contents are initialized in `initContent`.
+  private def initWidgets() {
+    val editTextSize = Util.getEditTextSize(this)
+    fromEntry = findViewById(R.id.from_entry).asInstanceOf[AutoCompleteTextView]
+    toEntry = findViewById(R.id.to_entry).asInstanceOf[AutoCompleteTextView]
+    fromEntry.setThreshold(1)
+    toEntry.setThreshold(1)      
+    fromEntry.setTextSize(TypedValue.COMPLEX_UNIT_SP, editTextSize)
+    toEntry.setTextSize(TypedValue.COMPLEX_UNIT_SP, editTextSize)   
+    fromEntry.setOnTouchListener(new View.OnTouchListener() {
+      override def onTouch(v: View, e: MotionEvent): Boolean = {
+      	fromEntry.showDropDown()
+      	false
+      }
+    })
+    toEntry.setOnTouchListener(new View.OnTouchListener() {
+      override def onTouch(v: View, e: MotionEvent): Boolean = {
+      	toEntry.showDropDown()
+      	false
+      }
+    })   
+    
+    cityInfo = findViewById(R.id.city_info).asInstanceOf[TextView]
+    cityInfo.setTextSize(TypedValue.COMPLEX_UNIT_SP, editTextSize)   
+    
+    routeList = findViewById(android.R.id.list).asInstanceOf[ExpandableListView]    
+  }
+  
+  // Initialize the contents of the widgets.
+  private def initContents() {
+    bar.setSelectedNavigationItem(getLastDisplayedCity)                          
+    cityId = cityIds(getLastDisplayedCity)
+    city = new City(this, cityId)  
+    val stations = city.stationNames
+    val stationIdMap = city.stationIdMap   
+    
+    fromEntry.setAdapter(new AccentFoldingArrayAdapter(this, R.layout.simple_dropdown_item_1line, stations))
+    toEntry.setAdapter(new AccentFoldingArrayAdapter(this, R.layout.simple_dropdown_item_1line, stations))
+    fromEntry.setOnItemClickListener(new AdapterView.OnItemClickListener () {
+      override def onItemClick(parentView: AdapterView[_], selectedItemView: View, position: Int, id: Long) {
+        showRoute()
+      }    
+    })  
+    toEntry.setOnItemClickListener(new AdapterView.OnItemClickListener () {
+      override def onItemClick(parentView: AdapterView[_], selectedItemView: View, position: Int, id: Long) {
+        showRoute()
+      }    
+    }) 
+    
+    cityInfo.setText(Util.getString(this, "general_message") + "\n" +
+                     Util.getString(this, cityId + "_message"))   
+    
+    def showRoute() {
+      // TODO: check the entry text is actually can be filtered by the corresponding
+      // adapters.
+      if (fromEntry.getText.toString != "" && toEntry.getText.toString != "") {
+        routeList.setVisibility(View.VISIBLE)
+        cityInfo.setVisibility(View.GONE)        
+        Util.toast(SearchActivity.this, 
+                   city.findRoute(fromEntry.getText.toString, toEntry.getText.toString).
+                     map(_.map(stationIdMap(_)).mkString("->")).mkString("\n"))
+      }
+    }    
+  }
   
   private def getLastDisplayedCity = 
     Util.getSharedPref(this, LastDisplayedCity, "0").toInt
