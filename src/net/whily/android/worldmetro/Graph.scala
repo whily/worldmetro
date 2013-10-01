@@ -1,6 +1,11 @@
 /**
  * Graph class, which is used to search the shorted path between 
  * source/destination stations.
+ * 
+ * Be CAREFUL about the relation of different "infinities".
+ * Here we set the infinity of a vertex as 999999, the guard value
+ * to find the vertex with the smallest dist metric as 99999999,
+ * and the penalty value for transit in City.scala as 9999 (minutes).
  *
  * @author  Yujian Zhang <yujian{dot}zhang[at]gmail(dot)com>
  *

@@ -160,7 +160,7 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
         routeList.setVisibility(View.VISIBLE)
         cityInfo.setVisibility(View.GONE)        
         Util.toast(SearchActivity.this, 
-                   city.findRoute(fromEntry.getText.toString, toEntry.getText.toString).
+                   city.findRoutes(fromEntry.getText.toString, toEntry.getText.toString).
                      map(_.map(stationIdMap(_)).mkString("->")).mkString("\n"))
       }
     }    

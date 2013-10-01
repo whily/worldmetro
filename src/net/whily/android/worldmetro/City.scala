@@ -33,14 +33,19 @@ class City(activity: Activity, cityName: String) {
   // stationNameMap: (stationName -> (set of stationId))
   val (stationIdMap, stationNameMap) = getStationIdMap
   
-  private val timeGraph = Graph.Graph(getTravelTimeMap)
+  private val timeGraph    = Graph.Graph(getTimeTransitMap(true))
+  private val transitGraph = Graph.Graph(getTimeTransitMap(false))
   
   val stationNames = stationNameMap.keys.toArray sortWith (_ < _)
   
-  def findRoute(sourceName: String, targetName: String): List[List[String]] = {
+  def findRoutes(sourceName: String, targetName: String): List[List[String]] = {
     val sourceTagList = stationNameMap(sourceName).toList
     val targetTagList = stationNameMap(targetName).toList
-    sourceTagList.flatMap(timeGraph.find(_, targetTagList).map(trimPath _)).toSet.toList
+    val leastTimeRoutes = sourceTagList.flatMap(timeGraph.find(_, targetTagList).map(trimPath _))
+    val leastTransitRoutes = sourceTagList.flatMap(transitGraph.find(_, targetTagList).map(trimPath _))
+    
+    // Return only unique routes.
+    (leastTimeRoutes ::: leastTransitRoutes).toSet.toList
   }
    
   // Return two maps: (stationId -> stationName) and (stationName -> (set of stationId))
@@ -80,7 +85,11 @@ class City(activity: Activity, cityName: String) {
     (idMap, nameMap)
   }
   
-  private def getTravelTimeMap: mutable.HashMap[(String, String), Int] = {
+  /** Return time map if `isTimeMap` is true; otherwise transit map where each transit has a very high
+   *  penalty.
+   */
+  private def getTimeTransitMap(isTimeMap: Boolean): mutable.HashMap[(String, String), Int] = {
+    val TransitPenalty = 9999
     var map = new mutable.HashMap[(String, String), Int]()
 
     for (line <- lines) {
@@ -120,20 +129,21 @@ class City(activity: Activity, cityName: String) {
       for (transit <- transits) {
         val ids = (transit \ "@ids").text.split(" ")
         val time = (transit \ "@time").text.toInt
+        val weight = if (isTimeMap) time else TransitPenalty
         val oneway = (transit \ "@oneway").text
         if (oneway != "") {
           assert(ids.length >= 2 && ((oneway == "source") || (oneway == "target")))
           val first = ids(0)
           for (id <- ids.drop(1))
             if (oneway == "source")
-              map += ((first, id) -> time)
+              map += ((first, id) -> weight)
             else
-              map += ((id, first) -> time)
+              map += ((id, first) -> weight)
         } else {
         for (i <- 0 until ids.length)
           for (j <- (i + 1) until ids.length) {
-            map += ((ids(i), ids(j)) -> time)
-            map += ((ids(j), ids(i)) -> time)
+            map += ((ids(i), ids(j)) -> weight)
+            map += ((ids(j), ids(i)) -> weight)
           }
         }        
       }
