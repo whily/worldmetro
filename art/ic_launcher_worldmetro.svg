@@ -29,8 +29,8 @@
      id="namedview50"
      showgrid="false"
      inkscape:zoom="0.93"
-     inkscape:cx="-249.541"
-     inkscape:cy="690.44665"
+     inkscape:cx="225.39895"
+     inkscape:cy="683.21223"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
@@ -135,44 +135,6 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <g
-     id="layer1">
-    <g
-       id="g3853">
-      <rect
-         fill="#000"
-         x="111.6"
-         y="258.76"
-         width="400"
-         filter="url(#filter3837)"
-         height="400"
-         ry="25"
-         rx="25"
-         id="rect3827" />
-      <g
-         transform="translate(112.85715,132.85711)"
-         id="g3819">
-        <rect
-           fill="#646464"
-           x="-12.857"
-           y="119.51"
-           width="400"
-           height="400"
-           ry="25"
-           rx="25"
-           id="rect3016" />
-        <rect
-           fill="url(#linearGradient3823)"
-           x="-12.857"
-           y="119.51"
-           width="400"
-           height="400"
-           ry="25"
-           rx="25"
-           id="rect3016-4" />
-      </g>
-    </g>
-  </g>
   <flowRoot
      fill="#000000"
      font-family="Times New Roman"
@@ -259,29 +221,28 @@
      id="rect5376-4-5"
      width="35.483871"
      height="65.5914"
-     x="-551.00244"
-     y="-190.2037"
+     x="231.74229"
+     y="-674.45245"
      rx="16.666666"
      ry="28.24074"
-     transform="matrix(-0.55979928,-0.82862825,0.82862825,-0.55979928,0,0)" />
+     transform="matrix(-0.5,0.8660254,-0.8660254,-0.5,0,0)" />
   <rect
      style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-miterlimit:2;stroke-opacity:1;stroke-dasharray:none"
      id="rect5376-2"
      width="35.483871"
      height="65.5914"
-     x="141.93855"
-     y="-700.40826"
+     x="533.87091"
+     y="84.748665"
      rx="16.666666"
      ry="28.24074"
-     transform="matrix(-0.60444512,0.79664678,-0.79664678,-0.60444512,0,0)" />
+     transform="matrix(0.5,0.8660254,-0.8660254,0.5,0,0)" />
   <rect
      style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-miterlimit:2;stroke-opacity:1;stroke-dasharray:none"
      id="rect5376-2-1"
      width="35.483871"
      height="65.5914"
-     x="-316.84915"
-     y="-336.61563"
+     x="285.15091"
+     y="267.36813"
      rx="16.666666"
-     ry="28.24074"
-     transform="matrix(-0.99996704,0.00811935,-0.00811935,-0.99996704,0,0)" />
+     ry="28.24074" />
 </svg>
