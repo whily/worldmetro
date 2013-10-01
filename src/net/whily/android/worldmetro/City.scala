@@ -29,20 +29,25 @@ class City(activity: Activity, cityName: String) {
   private val stations = city \ "stations" \ "station"
   private val lines = city \ "lines" \ "line"
   
-  // Map (stationId -> stationName)
-  val stationIdMap = getStationIdMap
-  // Map (stationName -> stationId)
-  private val stationNameMap = stationIdMap.map(_ swap)
+  // stationIdMap:   (stationId   -> stationName)[
+  // stationNameMap: (stationName -> (set of stationId))
+  val (stationIdMap, stationNameMap) = getStationIdMap
   
   private val timeGraph = Graph.Graph(getTravelTimeMap)
   
   val stationNames = stationNameMap.keys.toArray sortWith (_ < _)
   
-  def findRoute(sourceName: String, targetName: String): List[List[String]] = 
-    timeGraph.find(stationNameMap(sourceName), stationNameMap(targetName)).map(trimPath _).toSet.toList
+  def findRoute(sourceName: String, targetName: String): List[List[String]] = {
+    val sourceTagList = stationNameMap(sourceName).toList
+    val targetTagList = stationNameMap(targetName).toList
+    sourceTagList.flatMap(timeGraph.find(_, targetTagList).map(trimPath _)).toSet.toList
+  }
    
-  private def getStationIdMap: mutable.HashMap[String, String] = {
-    var map = new mutable.HashMap[String, String]()
+  // Return two maps: (stationId -> stationName) and (stationName -> (set of stationId))
+  private def getStationIdMap: (mutable.HashMap[String, String],
+                                mutable.HashMap[String, Set[String]]) = {
+    var idMap = new mutable.HashMap[String, String]()
+    var nameMap = new mutable.HashMap[String, Set[String]]()
     val languagePref = Util.getLanguagePref(activity)
     for (station <- stations) {
       val id             = (station \ "@id").text
@@ -58,18 +63,21 @@ class City(activity: Activity, cityName: String) {
         else
           englishName
         
-      map += (id -> name)  
+      idMap += (id -> name)
+      nameMap += (name -> Set(id))
       
       val transits = station \ "transit"
       var ids: mutable.Set[String] = mutable.Set()
       for (transit <- transits) {
         val ids = (transit \ "@ids").text.split(" ")
-        for (altId <- ids if altId != id)
-          map += (altId -> name)
+        for (altId <- ids if altId != id) {
+          idMap += (altId -> name)
+          nameMap(name) += altId
+        }
       }
     }
 
-    map
+    (idMap, nameMap)
   }
   
   private def getTravelTimeMap: mutable.HashMap[(String, String), Int] = {

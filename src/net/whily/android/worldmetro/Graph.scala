@@ -144,14 +144,15 @@ class Graph(val vertices: Array[Vertex]) {
     targets.map(path _)
   }
   
-  def find(sourceTag: String, targetTag: String): List[List[String]] = {
+  def find(sourceTag: String, targetTags: List[String]): List[List[String]] = {
     var sourceIndex = -1
-    var targetIndex = -1
+    val targetIndices = targetTags.map(_ => -1).toArray
     for (i <- 0 to vertices.size - 1) {
       if (vertices(i).tag == sourceTag) sourceIndex = i
-      if (vertices(i).tag == targetTag) targetIndex = i
+      for (j <- 0 to targetIndices.size - 1)
+        if (vertices(i).tag == targetTags(j)) targetIndices(j) = i
     }
-    assert (sourceIndex != -1 && targetIndex != -1)
-    find(sourceIndex, List(targetIndex))
+    assert (sourceIndex != -1 && targetIndices.forall(_ != -1))
+    find(sourceIndex, targetIndices.toList)
   }
 }
