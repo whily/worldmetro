@@ -5,7 +5,7 @@
   <!--  SearchActivity -->
   <string name="settings">Settings</string>
   <string name="about">About</string>  
-  <string name="map">Map</string>
+  <string name="reverse">Reverse FROM and TO</string>
   <string name="from_entry_hint">FROM station or place</string>
   <string name="to_entry_hint">TO station or place</string>
   <string name="general_message">Selected route and travel time may not be optimal as factors like realtime schedule and user walking speed are not considered.</string>

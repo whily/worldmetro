@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+# General icons from Inkscape file.
+
+# Generate dark them SVG file from light theme.
+GenerateDark() {
+  light=$1
+  dark=${light%light.svg}dark.svg
+  sed 's/opacity:0.6/opacity:0.8/g' $light | sed 's/#333333/#ffffff/g' > $dark
+}
+
+# Convert file for a single dpi.
+# ConvertSingle svg dpi dim edim
+#   edim is the final dimension.
+#   File will be firstly converted according to dimension DIM, then extended
+#   to EDIM.
+ConvertSingle() {
+  svg=$1  
+  dpi=$2
+  png=../res/drawable-${dpi}/${svg%.svg}.png
+  dim=$3
+  edim=$4
+  # convert -background none $svg -size ${dim}x${dim} $png
+  inkscape -e $png -D -y 0.0 -w $dim -h $dim $svg
+  if [ $3 -ne $4 ]; then
+    mogrify -background none -gravity center -extent ${edim}x${edim} -transparent white $png
+  fi
+}
+
+# Convert svg dim-for-ldpi dim-for-mdpi dim-for-hdpi dim-for-xhdpi [scale]
+#   if scale parameter is present, the intermediate size is 3/4 of the final size.
+Convert() {
+  eDimLdpi=$2
+  eDimMdpi=$3
+  eDimHdpi=$4
+  eDimXhdpi=$5
+  if [ -z "$6" ]; then
+    dimLdpi=$eDimLdpi
+    dimMdpi=$eDimMdpi
+    dimHdpi=$eDimHdpi
+    dimXhdpi=$eDimXhdpi
+  else
+    dimLdpi=$(( eDimLdpi / 4 * 3))
+    dimMdpi=$(( eDimMdpi / 4 * 3))
+    dimHdpi=$(( eDimHdpi / 4 * 3))
+    dimXhdpi=$(( eDimXhdpi / 4 * 3))
+  fi
+  ConvertSingle $1 ldpi $dimLdpi $eDimLdpi
+  ConvertSingle $1 mdpi $dimMdpi $eDimMdpi
+  ConvertSingle $1 hdpi $dimHdpi $eDimHdpi
+  ConvertSingle $1 xhdpi $dimXhdpi $eDimXhdpi
+}
+
+ConvertToLauncherIcon() {
+  Convert $1 36 48 72 96
+}
+
+ConvertToActionBarIcon() {
+  GenerateDark $1
+  dark=${1%light.svg}dark.svg  
+  Convert $1    24 32 48 64
+  Convert $dark 24 32 48 64
+}
+
+mkdir -p res/drawable-ldpi/ res/drawable-mdpi/ res/drawable-mdpi/ res/drawable-hdpi/ res/drawable-xhdpi/
+
+cd art/
+ConvertToLauncherIcon ic_launcher_worldmetro.svg
+for f in reverse; do
+  ConvertToActionBarIcon ic_menu_${f}_holo_light.svg
+done
+cd ..
