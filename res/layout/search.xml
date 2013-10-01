@@ -27,6 +27,10 @@
   	android:id="@+id/city_info"
   	android:layout_width="match_parent"
   	android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/textview_vertical_margin"
+    android:paddingLeft="@dimen/textview_horizontal_margin"
+    android:paddingRight="@dimen/textview_horizontal_margin"
+    android:paddingTop="@dimen/textview_vertical_margin"  	
   	android:textSize="@dimen/edit_text_size_medium" />
   <ExpandableListView
 		android:id="@android:id/list"
