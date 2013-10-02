@@ -47,8 +47,6 @@ The following tools are needed to build World Metro from source:
 TODO
 ----
 
-* If the source/target station are transits, consider the shortest
-  route.
 * Regression test (for all station pairs in all cities)
 * Route/Segment, Station, Line
 * Draw line
