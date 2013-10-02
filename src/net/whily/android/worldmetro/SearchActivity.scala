@@ -174,7 +174,8 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
     val fromStation = fromEntry.getText.toString
     val toStation   = toEntry.getText.toString
     if (fromStation != "" && stationNameMap.contains(fromStation) && 
-        toStation   != "" && stationNameMap.contains(toStation)) {
+        toStation   != "" && stationNameMap.contains(toStation) &&
+        fromStation != toStation) {
       routeList.setVisibility(View.VISIBLE)
       cityInfo.setVisibility(View.GONE)        
       Util.toast(SearchActivity.this, 
