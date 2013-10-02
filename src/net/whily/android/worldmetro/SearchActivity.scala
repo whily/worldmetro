@@ -28,6 +28,8 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
   private var city: City = null
   private var cityId: String = ""
   private val cityIds = Array("beijing", "munich", "shanghai", "tokyo")    
+  private var stationIdMap: mutable.HashMap[String, String] = null
+  private var stationNameMap: mutable.HashMap[String, Set[String]] = null
   private val ResultSettings = 1
   private val LastDisplayedCity = "last_displayed_city"
   
@@ -71,6 +73,10 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
       case android.R.id.home | R.id.about => 
         startActivity(new Intent(this, classOf[AboutActivity]))
         true
+        
+      case R.id.reverse =>
+        reverseFromTo()        
+        true
    
       case R.id.settings =>  
         startActivityForResult(new Intent(this, classOf[SettingsActivity]), ResultSettings)
@@ -100,6 +106,13 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
       case ResultSettings => recreate() // Trigger to apply new theme.
     }
   } 
+  
+  private def reverseFromTo () {
+    val temp = fromEntry.getText
+    fromEntry.setText(toEntry.getText)
+    toEntry.setText(temp)
+    showRoutes()
+  }
   
   // Initialize the widgets. The contents are initialized in `initContent`.
   private def initWidgets() {
@@ -135,36 +148,40 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
     cityId = cityIds(getLastDisplayedCity)
     city = new City(this, cityId)  
     val stations = city.stationNames
-    val stationIdMap = city.stationIdMap   
+    stationIdMap = city.stationIdMap
+    stationNameMap = city.stationNameMap
     
     fromEntry.setAdapter(new AccentFoldingArrayAdapter(this, R.layout.simple_dropdown_item_1line, stations))
     toEntry.setAdapter(new AccentFoldingArrayAdapter(this, R.layout.simple_dropdown_item_1line, stations))
     fromEntry.setOnItemClickListener(new AdapterView.OnItemClickListener () {
       override def onItemClick(parentView: AdapterView[_], selectedItemView: View, position: Int, id: Long) {
-        showRoute()
+        showRoutes()
       }    
     })  
     toEntry.setOnItemClickListener(new AdapterView.OnItemClickListener () {
       override def onItemClick(parentView: AdapterView[_], selectedItemView: View, position: Int, id: Long) {
-        showRoute()
+        showRoutes()
       }    
     }) 
     
     cityInfo.setText(Util.getString(this, "general_message") + "\n" +
                      Util.getString(this, cityId + "_message"))   
-    
-    def showRoute() {
-      // TODO: check the entry text is actually can be filtered by the corresponding
-      // adapters.
-      if (fromEntry.getText.toString != "" && toEntry.getText.toString != "") {
-        routeList.setVisibility(View.VISIBLE)
-        cityInfo.setVisibility(View.GONE)        
-        Util.toast(SearchActivity.this, 
-                   city.findRoutes(fromEntry.getText.toString, toEntry.getText.toString).
-                     map(_.map(stationIdMap(_)).mkString("->")).mkString("\n"))
+  }
+  
+  private def showRoutes() {
+    // TODO: check the entry text is actually can be filtered by the corresponding
+    // adapters.
+    val fromStation = fromEntry.getText.toString
+    val toStation   = toEntry.getText.toString
+    if (fromStation != "" && stationNameMap.contains(fromStation) && 
+        toStation   != "" && stationNameMap.contains(toStation)) {
+      routeList.setVisibility(View.VISIBLE)
+      cityInfo.setVisibility(View.GONE)        
+      Util.toast(SearchActivity.this, 
+                 city.findRoutes(fromStation, toStation).
+                   map(_.map(stationIdMap(_)).mkString("->")).mkString("\n"))                     
       }
     }    
-  }
   
   private def getLastDisplayedCity = 
     Util.getSharedPref(this, LastDisplayedCity, "0").toInt
