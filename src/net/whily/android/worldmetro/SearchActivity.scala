@@ -112,6 +112,7 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
     fromEntry.setText(toEntry.getText)
     toEntry.setText(temp)
     showRoutes()
+    // TODO: focus on the incomplete entry.
   }
   
   // Initialize the widgets. The contents are initialized in `initContent`.
@@ -173,16 +174,16 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
     // adapters.
     val fromStation = fromEntry.getText.toString
     val toStation   = toEntry.getText.toString
-    if (fromStation != "" && stationNameMap.contains(fromStation) && 
-        toStation   != "" && stationNameMap.contains(toStation) &&
+    if (stationNameMap.contains(fromStation) && 
+        stationNameMap.contains(toStation) &&
         fromStation != toStation) {
       routeList.setVisibility(View.VISIBLE)
       cityInfo.setVisibility(View.GONE)        
       Util.toast(SearchActivity.this, 
                  city.findRoutes(fromStation, toStation).
                    map(_.map(stationIdMap(_)).mkString("->")).mkString("\n"))                     
-      }
-    }    
+    }
+  }    
   
   private def getLastDisplayedCity = 
     Util.getSharedPref(this, LastDisplayedCity, "0").toInt
