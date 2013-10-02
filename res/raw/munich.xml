@@ -7,7 +7,7 @@
        respectively. Assume there are 2 minute walking time, the transit time is:
           U->U, S->U: 7 min, U->S and S->S: 12 min. 
        Special case is S20/S27/A, whose intervals are roughly 60 minutes. Denote as SA, the
-       transit time is: 
+       transit time is:
           U->SA, S->SA, or SA->SA: 32 min
           SA->U: 7min, SA->S: 12 min. 
           

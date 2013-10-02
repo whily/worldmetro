@@ -3,7 +3,7 @@
   <!-- Unit for time duration is in minute. -->
   <!-- Transit information from ... -->
   <stations>
-    <!-- Note: station ID is a string. -->
+    <!-- Note: station ID is a string WITHOUT space. -->
 
     <!-- Start of Line 3 -->
     <station id="G-01" local="渋谷" english="Shibuya" />
