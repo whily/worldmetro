@@ -8,12 +8,12 @@
   <string name="reverse">Reverse FROM and TO</string>
   <string name="from_entry_hint">FROM station or place</string>
   <string name="to_entry_hint">TO station or place</string>
-  <string name="general_message">Selected route and travel time may not be optimal as factors like realtime schedule and user walking speed are not considered.</string>
+  <string name="general_message">Route and travel time may not be 100% accurate as factors like realtime schedule and walking speed are not considered.</string>
   <!--  Below is the array of names of the cities supported in this app. -->
   <string name="beijing">Beijing</string>
   <string name="beijing_message"></string>
   <string name="munich">Munich</string>
-  <string name="munich_message">Note that some stations of the supported lines might not be available as they are only available in a rather limited way.</string>
+  <string name="munich_message">Note that some stations might not be always available.</string>
   <string name="shanghai">Shanghai</string>
   <string name="shanghai_message"></string>
   <string name="tokyo">Tokyo</string>
