@@ -33,9 +33,11 @@ class City(activity: Activity, cityName: String) {
   // stationNameMap: (stationName -> (set of stationId))
   val (stationIdMap, stationNameMap) = getStationIdMap
   
+  private val stationLineMap = getStationLineMap
+  
   private val timeGraph    = Graph.Graph(getTimeTransitMap(true))
   private val transitGraph = Graph.Graph(getTimeTransitMap(false))
-  
+
   val stationNames = stationNameMap.keys.toArray sortWith (_ < _)
   
   def findRoutes(sourceName: String, targetName: String): List[List[String]] = {
@@ -83,6 +85,22 @@ class City(activity: Activity, cityName: String) {
     }
 
     (idMap, nameMap)
+  }
+  
+  /** Return (stationId -> lineId) map. */
+  private def getStationLineMap: mutable.HashMap[String, String] = {
+    var map = new mutable.HashMap[String, String]()
+
+    for (line <- lines) {
+      val id = (line \ "@id").text
+    	val stations = line \ "stations" \ "station"
+    	for (station <- stations) {
+    	  val stationId = (station \ "@id").text
+        map += (stationId -> id)
+    	}
+    }
+    
+    map
   }
   
   /** Return time map if `isTimeMap` is true; otherwise transit map where each transit has a very high
@@ -173,4 +191,35 @@ class City(activity: Activity, cityName: String) {
     	else path
     }
   }  
+  
+  /**
+   * Class 
+   */
+  class Route(route: List[String]) {
+    def travelTime = 0
+    def transitNum = 0
+  }
+
+  class Segment {
+  
+  }
+
+  class Line {
+  
+  }  
+  
+  private def segments(route: List[String]): List[List[String]] = {
+    route match {
+      case Nil    => Nil
+      case x :: y => 
+        segments(y) match {
+          case Nil    => List(List(x))
+          case u :: v => if (stationLineMap(x) == stationLineMap(u.head)) 
+                           (x :: u) :: v
+                         else
+                           List(x) :: u :: v
+        }
+    }
+  }
+
 }
