@@ -48,8 +48,6 @@ TODO
 ----
 
 * Regression test (for all station pairs in all cities)
-* Route/Segment, Station, Line
 * Draw line
-* Display results
 
 

@@ -178,10 +178,11 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
         stationNameMap.contains(toStation) &&
         fromStation != toStation) {
       routeList.setVisibility(View.VISIBLE)
-      cityInfo.setVisibility(View.GONE)        
-      Util.toast(SearchActivity.this, 
-                 city.findRoutes(fromStation, toStation).
-                   map(_.map(stationIdMap(_)).mkString("->")).mkString("\n"))                     
+      cityInfo.setVisibility(View.GONE)  
+      val routes = city.findRoutes(fromStation, toStation).map(city.newRoute(_))
+      val groupArray = routes.map(_.toString)
+      val childArray = routes.map(_.segments.map(_.toString))
+      routeList.setAdapter(new ExpandableListAdapter(this, groupArray, childArray))
     }
   }    
   

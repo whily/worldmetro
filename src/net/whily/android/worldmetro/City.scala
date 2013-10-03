@@ -192,27 +192,31 @@ class City(activity: Activity, cityName: String) {
     }
   }  
   
+  def newRoute(route: List[String]): Route = new Route(route)
+  
   /**
    * Class 
    */
   class Route(route: List[String]) {
     def travelTime = 0
     def transitNum = 0
+    val segments = routeSegments(route).map(new Segment(_))
+    override def toString = "Transits: " + (segments.length - 1) 
   }
 
-  class Segment {
-  
+  class Segment (segment: List[String]) {
+    override def toString = segment.map(stationIdMap(_)).mkString("->")
   }
 
   class Line {
   
   }  
   
-  private def segments(route: List[String]): List[List[String]] = {
+  private def routeSegments(route: List[String]): List[List[String]] = {
     route match {
       case Nil    => Nil
       case x :: y => 
-        segments(y) match {
+        routeSegments(y) match {
           case Nil    => List(List(x))
           case u :: v => if (stationLineMap(x) == stationLineMap(u.head)) 
                            (x :: u) :: v
