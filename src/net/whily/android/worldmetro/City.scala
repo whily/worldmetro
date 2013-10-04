@@ -218,7 +218,7 @@ class City(activity: Activity, cityName: String) {
   class Segment (segment: List[String]) {
     override def toString = 
       "Line " + stationLineMap(segment(0)) + " " +
-      segment.map(stationIdMap(_)).mkString("->")
+      segment.map(stationIdMap(_)).mkString("→")
   }
 
   class Line {
