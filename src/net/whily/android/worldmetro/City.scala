@@ -34,8 +34,9 @@ class City(activity: Activity, cityName: String) {
   val (stationIdMap, stationNameMap) = getStationIdMap
   
   private val stationLineMap = getStationLineMap
+  private val timeTransitMap = getTimeTransitMap(true)
   
-  private val timeGraph    = Graph.Graph(getTimeTransitMap(true))
+  private val timeGraph    = Graph.Graph(timeTransitMap)
   private val transitGraph = Graph.Graph(getTimeTransitMap(false))
 
   val stationNames = stationNameMap.keys.toArray sortWith (_ < _)
@@ -198,10 +199,20 @@ class City(activity: Activity, cityName: String) {
    * Class 
    */
   class Route(route: List[String]) {
-    def travelTime = 0
-    def transitNum = 0
     val segments = routeSegments(route).map(new Segment(_))
-    override def toString = "Transits: " + (segments.length - 1) 
+    val transitNum = segments.length - 1
+    def travelTime = {
+      // TODO: add initial wait time.
+      var time = 0
+      var prevStation = route.head
+      for (station <- route.tail) {
+        time += timeTransitMap((prevStation, station))
+        prevStation = station
+      }
+      time
+    }
+    
+    override def toString = "Time: " + travelTime + " min, transits: " + transitNum   
   }
 
   class Segment (segment: List[String]) {
