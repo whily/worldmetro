@@ -53,6 +53,7 @@ class ExpandableListAdapter(activity: Activity, groupArray: List[String], childA
     textView.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT)
     textView.setPadding(40, 0, 0, 0)
     textView.setText(string)
+    textView.setTextSize(Util.getEditTextSize(activity))
     textView
   }
 }
