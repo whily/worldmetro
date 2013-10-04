@@ -29,7 +29,7 @@
      id="namedview50"
      showgrid="false"
      inkscape:zoom="0.93"
-     inkscape:cx="225.39895"
+     inkscape:cx="227.54949"
      inkscape:cy="683.21223"
      inkscape:window-x="0"
      inkscape:window-y="27"
@@ -216,33 +216,34 @@
      id="path5877-9-0"
      style="fill:none;stroke:#0000ff;stroke-width:50;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:none"
      sodipodi:type="arc" />
-  <rect
+  <path
+     sodipodi:type="arc"
      style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-miterlimit:2;stroke-opacity:1;stroke-dasharray:none"
-     id="rect5376-4-5"
-     width="35.483871"
-     height="65.5914"
-     x="231.74229"
-     y="-674.45245"
-     rx="16.666666"
-     ry="28.24074"
-     transform="matrix(-0.5,0.8660254,-0.8660254,-0.5,0,0)" />
-  <rect
+     id="path3013"
+     sodipodi:cx="284.4086"
+     sodipodi:cy="265.84088"
+     sodipodi:rx="30.645161"
+     sodipodi:ry="30.645161"
+     d="m 315.05376,265.84088 a 30.645161,30.645161 0 1 1 -61.29032,0 30.645161,30.645161 0 1 1 61.29032,0 z"
+     transform="translate(20.430108,34.408602)" />
+  <path
+     sodipodi:type="arc"
      style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-miterlimit:2;stroke-opacity:1;stroke-dasharray:none"
-     id="rect5376-2"
-     width="35.483871"
-     height="65.5914"
-     x="533.87091"
-     y="84.748665"
-     rx="16.666666"
-     ry="28.24074"
-     transform="matrix(0.5,0.8660254,-0.8660254,0.5,0,0)" />
-  <rect
+     id="path3013-7"
+     sodipodi:cx="284.4086"
+     sodipodi:cy="265.84088"
+     sodipodi:rx="30.645161"
+     sodipodi:ry="30.645161"
+     d="m 315.05376,265.84088 a 30.645161,30.645161 0 1 1 -61.29032,0 30.645161,30.645161 0 1 1 61.29032,0 z"
+     transform="translate(-114.51613,262.36559)" />
+  <path
+     sodipodi:type="arc"
      style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-miterlimit:2;stroke-opacity:1;stroke-dasharray:none"
-     id="rect5376-2-1"
-     width="35.483871"
-     height="65.5914"
-     x="285.15091"
-     y="267.36813"
-     rx="16.666666"
-     ry="28.24074" />
+     id="path3013-7-2"
+     sodipodi:cx="284.4086"
+     sodipodi:cy="265.84088"
+     sodipodi:rx="30.645161"
+     sodipodi:ry="30.645161"
+     d="m 315.05376,265.84088 a 30.645161,30.645161 0 1 1 -61.29032,0 30.645161,30.645161 0 1 1 61.29032,0 z"
+     transform="translate(152.15054,262.36559)" />
 </svg>
