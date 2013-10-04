@@ -16,6 +16,7 @@ import android.app.{ActionBar, Activity}
 import android.content.Intent
 import android.os.Bundle
 import android.view.{Menu, MenuItem, MotionEvent, View}
+import android.view.inputmethod.InputMethodManager
 import android.util.{Log, TypedValue}
 import android.widget.{AdapterView, ArrayAdapter, AutoCompleteTextView, ExpandableListView, TextView}
 
@@ -183,6 +184,17 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
       val groupArray = routes.map(_.toString)
       val childArray = routes.map(_.segments.map(_.toString))
       routeList.setAdapter(new ExpandableListAdapter(this, groupArray, childArray))
+      
+      // Hide input method window.
+      val imeManager = getSystemService("input_method").asInstanceOf[InputMethodManager]
+      if (imeManager.isActive(fromEntry)) 
+        imeManager.hideSoftInputFromWindow(fromEntry.getWindowToken, 0)
+      if (imeManager.isActive(toEntry))
+        imeManager.hideSoftInputFromWindow(toEntry.getWindowToken, 0)
+        
+      // If there is only one route shown, expand it directly.
+      if (routes.length == 1) 
+        routeList.expandGroup(0)
     }
   }    
   
