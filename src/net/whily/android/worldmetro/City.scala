@@ -89,16 +89,25 @@ class City(activity: Activity, cityName: String) {
   }
   
   /** Return (stationId -> lineId) map. */
-  private def getStationLineMap: mutable.HashMap[String, String] = {
-    var map = new mutable.HashMap[String, String]()
+  private def getStationLineMap: mutable.HashMap[String, MetroLine] = {
+    var map = new mutable.HashMap[String, MetroLine]()
 
     for (line <- lines) {
       val id = (line \ "@id").text
+      val color = (line \ "@color").text
+      val lineType = (line \ "@type").text
     	val stations = line \ "stations" \ "station"
+    	var stationIds: List[String] = Nil
     	for (station <- stations) {
     	  val stationId = (station \ "@id").text
-        map += (stationId -> id)
+    	  stationIds = stationId :: stationIds
     	}
+      stationIds = stationIds.reverse
+    	val metroLine = lineType match {
+        case "ring" => new MetroRing(id, color, stationIds)
+        case _      => new MetroLinear(id, color, stationIds)
+      }
+    	for (stationId <- stationIds) map += (stationId -> metroLine)
     }
     
     map
@@ -212,18 +221,42 @@ class City(activity: Activity, cityName: String) {
       time
     }
     
-    override def toString = "Time: " + travelTime + " min, transits: " + transitNum   
+    override def toString = travelTime + " min, " + transitNum + " transits"   
   }
 
-  class Segment (segment: List[String]) {
-    override def toString = 
-      "Line " + stationLineMap(segment(0)) + " " +
-      segment.map(stationIdMap(_)).mkString("→")
+  class Segment (val segment: List[String]) {
+    override def toString = {
+      val line = stationLineMap(segment(0))
+      "Line " + line.id + " " +
+        "towards " + line.direction(this) + "\n" +
+        segment.map(stationIdMap(_)).mkString("→")
+    }
   }
 
-  class Line {
-  
+  // Metro line.
+  abstract class MetroLine(val id: String, val color: String, val stations: List[String]) {
+    // Return direction (a station) name.
+    def direction(segment: Segment): String
   }  
+  
+  // Typical metro line which is linear.
+  class MetroLinear(override val id: String, override val color: String, override val stations: List[String]) 
+    extends MetroLine(id, color, stations) {
+    override def direction(segment: Segment): String = {
+      val i = stations.indexOf(segment.segment(0))
+      val j = stations.indexOf(segment.segment(1))
+      assert (i == j + 1 || j == i + 1)
+      val stationId = if (j == i + 1) stations.last else stations.head
+      stationIdMap(stationId)
+    }
+  }
+  
+  // Metro line which is a ring (loop).
+  class MetroRing(override val id: String, override val color: String, override val stations: List[String])
+    extends MetroLine(id, color, stations) {
+    override def direction(segment: Segment): String =
+      stationIdMap(segment.segment(1))
+  }
   
   private def routeSegments(route: List[String]): List[List[String]] = {
     route match {
@@ -231,7 +264,7 @@ class City(activity: Activity, cityName: String) {
       case x :: y => 
         routeSegments(y) match {
           case Nil    => List(List(x))
-          case u :: v => if (stationLineMap(x) == stationLineMap(u.head)) 
+          case u :: v => if (stationLineMap(x).id == stationLineMap(u.head).id) 
                            (x :: u) :: v
                          else
                            List(x) :: u :: v
