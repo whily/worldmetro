@@ -41,14 +41,32 @@ class City(activity: Activity, cityName: String) {
 
   val stationNames = stationNameMap.keys.toArray sortWith (_ < _)
   
-  def findRoutes(sourceName: String, targetName: String): List[List[String]] = {
+  def findRoutes(sourceName: String, targetName: String): List[Route] = {
     val sourceTagList = stationNameMap(sourceName).toList
     val targetTagList = stationNameMap(targetName).toList
     val leastTimeRoutes = sourceTagList.flatMap(timeGraph.find(_, targetTagList).map(trimPath _))
     val leastTransitRoutes = sourceTagList.flatMap(transitGraph.find(_, targetTagList).map(trimPath _))
     
     // Return only unique routes.
-    (leastTimeRoutes ::: leastTransitRoutes).toSet.toList
+    val routes = (leastTimeRoutes ::: leastTransitRoutes).distinct.map(new Route(_))
+    var leastTime, timeForLeastTransit = routes.head.travelTime
+    var transitForLeastTime, leastTransit = routes.head.transitNum
+    for (route <- routes.tail) {
+      val travelTime = route.travelTime
+      val transitNum = route.transitNum
+      if (travelTime < leastTime) {
+        leastTime = travelTime
+        transitForLeastTime = transitNum
+      }
+      if (transitNum < leastTransit) {
+        leastTransit = transitNum
+        timeForLeastTransit = travelTime
+      }
+    }
+    
+    routes.filter(x => ((x.travelTime - leastTime <= 10) && (x.transitNum <= transitForLeastTime)) ||
+                       ((leastTransit < transitForLeastTime) && (x.transitNum == leastTransit) && 
+                        (x.travelTime - timeForLeastTransit <= 10)))
   }
    
   // Return two maps: (stationId -> stationName) and (stationName -> (set of stationId))
@@ -201,8 +219,6 @@ class City(activity: Activity, cityName: String) {
     	else path
     }
   }  
-  
-  def newRoute(route: List[String]): Route = new Route(route)
   
   /**
    * Class 
