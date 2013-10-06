@@ -241,10 +241,12 @@ class City(activity: Activity, cityName: String) {
   }
 
   class Segment (val segment: List[String]) {
+    private val stopNum = segment.length - 1
     override def toString = {
       val line = stationLineMap(segment(0))
       "Line " + line.id + " " +
-        "towards " + line.direction(this) + "\n" +
+        "towards " + line.direction(this) + ", " +
+        Util.getPluralString(activity, R.plurals.stops, stopNum) + "\n" +
         segment.map(stationIdMap(_)).mkString("→")
     }
   }

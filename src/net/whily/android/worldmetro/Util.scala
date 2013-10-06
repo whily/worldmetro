@@ -58,6 +58,16 @@ object Util {
     activity.setTheme(theme)    
   }
   
+  /**
+   * Return plural string.
+   * 
+   * @param activity: it is needed to access global variable Resources.
+   */
+  def getPluralString(activity: Activity, id: Int, quantity: Int) = {
+    val quantityInteger: Integer = quantity
+    activity.getResources.getQuantityString(id, quantity, quantityInteger)  
+  }
+  
   /** 
    *  Return id (like R.raw.name). 
    *  
