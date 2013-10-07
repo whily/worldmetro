@@ -161,11 +161,11 @@
     <station id="609" local="白石桥南" english="BAISHIQIAO SOUTH" latitude="" longitude="">
     	<transit ids="609 912" time="2" />
     </station>
-    <station id="610" local="二里沟" english="ERLIGOU" latitude="" longitude="" />
+    <!--<station id="610" local="二里沟" english="ERLIGOU" latitude="" longitude="" />-->
     <station id="611" local="车公庄西" english="CHEGONGZHUANG WEST" latitude="" longitude="" />
     <station id="614" local="北海北" english="BEIHAI NORTH" latitude="" longitude="" />
     <station id="615" local="南锣鼓巷" english="NANLUOGUXIANG" latitude="" longitude="">
-    	<transit ids="615 816" time="2" />
+    	<!--<transit ids="615 816" time="2" />-->
     </station>
     <station id="618" local="东大桥" english="DONGDAQIAO" latitude="" longitude="" />
     <station id="619" local="呼家楼" english="HUJIALOU" latitude="39.922" longitude="116.4555">
@@ -181,9 +181,9 @@
     <!--  End of Line 6 -->
        
     <!-- Start of Line 8 -->
-    <station id="815" local="中国美术馆" english="NATIONAL ART MUSEUM" latitude="" longitude="" />
-    <station id="817" local="什刹海" english="SHICHAHAI" latitude="" longitude="" />
-    <station id="819" local="安德里北街" english="ANDELIBEIJIE" latitude="" longitude="" />
+    <!--<station id="815" local="中国美术馆" english="NATIONAL ART MUSEUM" latitude="" longitude="" />-->
+    <!--<station id="817" local="什刹海" english="SHICHAHAI" latitude="" longitude="" />-->
+    <!--<station id="819" local="安德里北街" english="ANDELIBEIJIE" latitude="" longitude="" />-->
     <station id="820" local="安华桥" english="ANHUAQIAO" latitude="" longitude="" />
     <station id="821" local="北土城" english="BEITUCHENG" latitude="39.976" longitude="116.3879">
     	<transit ids="821 1038" time="2" />
@@ -300,9 +300,12 @@
   </stations>
 
   <!-- Travel time information and line color is from wiki pages like 
-       http://en.wikipedia.org/wiki/Line_10,_Beijing_Subway -->
+       http://en.wikipedia.org/wiki/Line_10,_Beijing_Subway 
+       
+       Frequency (headway) information from:
+       http://en.wikipedia.org/wiki/Beijing_Subway#Increasing_Capacity -->
   <lines>
-    <line id="1" type="line" color="#A12830">
+    <line id="1" local="1号线" english="Line 1" color="#A12830" wait="1">
       <stations>
         <station id="103" />
         <station id="104" time="4" />
@@ -330,7 +333,7 @@
       </stations>
     </line>
 
-    <line id="2" type="ring" color="#00529B">
+    <line id="2" local="2号线" english="Line 2" type="ring" color="#00529B" wait="1">
       <stations>
         <station id="201" time="2" /> <!--  Not sure about the value. -->
         <station id="202" time="2" />
@@ -353,7 +356,7 @@
       </stations>    
     </line>
 
-    <line id="4" type="line" color="#008193">
+    <line id="4" local="4号线" english="Line 4" color="#008193" wait="1">
       <stations>
         <station id="401" time="9" /> 
         <station id="402" time="9" />
@@ -382,7 +385,7 @@
       </stations>     	
     </line>
 
-    <line id="5" color="#AE005F">
+    <line id="5" local="5号线" english="Line 5" color="#AE005F" wait="1">
       <stations>
         <station id="523" />
         <station id="522" time="2" />
@@ -410,52 +413,58 @@
       </stations>
     </line>
 
-    <line id="6" color="#BB8900">
-    	<stations>
-        <station id="606" time="9" />
-        <station id="607" time="9" />
-        <station id="608" time="9" />
-        <station id="609" time="9" />
-        <station id="610" time="9" />
-        <station id="611" time="9" />
-        <station id="612" time="9" />
-        <station id="613" time="9" />
-        <station id="614" time="9" />
-        <station id="615" time="9" />
-        <station id="616" time="9" />
-        <station id="617" time="9" />
-        <station id="618" time="9" />   
-        <station id="619" time="9" />
-        <station id="620" time="9" />
-        <station id="621" time="9" />
-        <station id="622" time="9" />
-        <station id="623" time="9" />
-        <station id="624" time="9" />
-        <station id="625" time="9" />
-        <station id="626" time="9" />            
+    <!-- Travel time from http://bjsubway.com/node/3147
+         headway information from http://baike.baidu.com/view/1377551.htm -->
+    <line id="6" local="6号线" english="Line 6" color="#BB8900" wait="2">
+      <stations>
+        <station id="606" />
+        <station id="607" time="3" />
+        <station id="608" time="3" />
+        <station id="609" time="2" />
+        <!--<station id="610" time="2" />-->
+        <station id="611" time="3" />
+        <station id="612" time="2" />
+        <station id="613" time="3" />
+        <station id="614" time="3" />
+        <station id="615" time="2" />
+        <station id="616" time="4" />
+        <station id="617" time="3" />
+        <station id="618" time="3" />   
+        <station id="619" time="2" />
+        <station id="620" time="3" />
+        <station id="621" time="3" />
+        <station id="622" time="2" />
+        <station id="623" time="5" />
+        <station id="624" time="2" />
+        <station id="625" time="3" />
+        <station id="626" time="2" />            
       </stations>     	
     </line>
-    <line id="8" color="#00997A">
+
+    <!-- Travel time from http://baike.baidu.com/view/2157542.htm
+         Headway information from http://baike.baidu.com/view/2157542.htm -->
+    <line id="8" local="8号线" english="Line 8" color="#00997A" wait="3">
       <stations>
-        <station id="815" time="9" />
-        <station id="816" time="9" />
-        <station id="817" time="9" />
-        <station id="818" time="9" />   
-        <station id="819" time="9" />
-        <station id="820" time="9" />
-        <station id="821" time="9" />
-        <station id="822" time="9" />
-        <station id="823" time="9" />
-        <station id="824" time="9" />
-        <station id="825" time="9" />
-        <station id="826" time="9" />      
-        <station id="827" time="9" />
-        <station id="828" time="9" />
-        <station id="829" time="9" />
-        <station id="830" time="9" />                
+        <!--<station id="815" time="9" />-->
+        <!--<station id="816" />-->
+        <!--<station id="817" time="9" />-->
+        <station id="818" />   
+        <!--<station id="819" time="9" />-->
+        <station id="820" time="5" />
+        <station id="821" time="2" />
+        <station id="822" time="3" />
+        <station id="823" time="3" />
+        <station id="824" time="2" />
+        <station id="825" time="3" />
+        <station id="826" time="4" />      
+        <station id="827" time="2" />
+        <station id="828" time="3" />
+        <station id="829" time="3" />
+        <station id="830" time="2" />                
       </stations>      	
     </line>
-    <line id="9" color="#87D300">
+
+    <line id="9" local="9号线" english="Line 9" color="#87D300">
       <stations>
         <station id="901" time="9" /> 
         <station id="902" time="9" />
@@ -474,7 +483,7 @@
     </line>
     
     <!-- Information is from http://http://baike.baidu.com/view/1376596.htm -->    
-    <line id="10" type="ring" color="#0092C7">
+    <line id="10" local="10号线" english="Line 10" type="ring" color="#0092C7" wait="1">
     	<stations>
         <station id="1001" time="1" /> 
         <station id="1002" time="2" />
@@ -525,8 +534,7 @@
     </line>
 
     <!-- Information is from http://baike.baidu.com/view/6152850.htm -->
-    <line id="13" type="line" localLong="13号线" localShort="13"
-          englishLong="Line 13" englishShort="13" color="#F5D312">
+    <line id="13" local="13号线" english="Line 13" color="#F5D312" wait="2">
       <stations>
         <station id="1301" />
         <station id="1302" time="3" />
@@ -548,8 +556,8 @@
     </line>
 
     <!-- Information is from http://www.bjsubway.com/node/3284 -->    
-    <line id="14" color="#D4A7A1">
-    	<stations>
+    <line id="14" local="14号线" english="Line 14" color="#D4A7A1" wait="9">
+      <stations>
         <station id="1401" />
         <station id="1402" time="1" />
         <station id="1403" time="5" />
@@ -560,8 +568,8 @@
     </line>
 
     <!-- Information is from http://www.bjsubway.com/node/1836 -->       
-    <line id="15" color="#6A1D44">
-    	<stations>
+    <line id="15" local="15号线" english="Line 15" color="#6A1D44" wait="9">
+      <stations>
         <station id="1508" />
         <station id="1510" time="2" />
         <station id="1511" time="5" />
@@ -577,9 +585,25 @@
       </stations>    	
     </line>
     
-    <line id="100" localLong="昌平线" color="#D47DAA" />
-    <line id="101" localLong="亦庄线" color="#D61572" />
-    <line id="102" localLong="房山线" color="#D85F26" />
-    <line id="200" localLong="机场线" color="#9B91B1" />
+    <line id="100" local="昌平线" color="#D47DAA" wait="9" />
+    <line id="101" local="亦庄线" color="#D61572" wait="9" />
+    <line id="102" local="房山线" color="#D85F26" wait="9" />
+
+    <!-- Transit time information from
+           http://baike.baidu.com/view/1733524.htm 
+         Travel time from Dongzhimeng to Sanyuanqiao is from 
+           http://bjsubway.com/node/1823
+         Other travel time is from 
+           http://zhidao.baidu.com/question/98549451.html -->
+    <line id="机场" english="Airport Express" local="机场线" color="#9B91B1" wait="6">
+       <!-- Not enabled as this is a special loop.
+       <stations>
+        <station id="AE01"/>
+        <station id="AE02" time="4" />
+        <station id="AE03" time="3" />
+        <station id="AE04" time="" />
+      </stations>
+      -->
+    </line>
   </lines>
 </city>
