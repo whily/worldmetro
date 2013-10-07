@@ -8,7 +8,7 @@
   <string name="reverse">Reverse FROM and TO</string>
   <string name="from_entry_hint">FROM station or place</string>
   <string name="to_entry_hint">TO station or place</string>
-  <string name="general_message">Route and travel time may not be 100% accurate as factors like realtime schedule and walking speed are not considered.</string>
+  <string name="general_message">Route and travel time may not be 100% accurate.</string>
   <!--  Below is the array of names of the cities supported in this app. -->
   <string name="beijing">Beijing</string>
   <string name="beijing_message"></string>
