@@ -166,8 +166,10 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
       }    
     }) 
     
+    cityInfo.setVisibility(View.VISIBLE)      
     cityInfo.setText(Util.getString(this, "general_message") + "\n" +
                      Util.getString(this, cityId + "_message"))   
+    routeList.setVisibility(View.GONE)
   }
   
   private def showRoutes() {
