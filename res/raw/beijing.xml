@@ -224,7 +224,9 @@
     <station id="1004" local="车道沟" english="CHEDAOGOU" latitude="" longitude="" />
     <station id="1006" local="西钓鱼台 " english="XIDIAOYUTAI" latitude="" longitude="" />
     <station id="1008" local="莲花桥" english="LIANHUAQIAO" latitude="" longitude="" />
-    <station id="1010" local="西局" english="XIJU" latitude="" longitude="" />
+    <station id="1010" local="西局" english="XIJU" latitude="" longitude="">
+    	<transit ids="1010 1407" time="2" />
+    </station>
     <station id="1011" local="泥洼" english="NIWA" latitude="" longitude="" />
     <station id="1012" local="丰台站" english="FENGTAI RAILWAY STATION" latitude="39.848333" longitude="116.288611" />
     <station id="1013" local="首经贸" english="SHOUJINGMAO" latitude="" longitude="" />
@@ -267,10 +269,34 @@
     <station id="1307" local="龙泽" english="LONGZE" latitude="" longitude="" />
     <station id="1308" local="回龙观" english="HUILONGGUAN" latitude="40.070833" longitude="116.336111" />
     <station id="1311" local="北苑" english="BEIYUAN" latitude="" longitude="" />
-    <station id="1312" local="望京西" english="WANGJING West" latitude="39.994167" longitude="116.4425" />
+    <station id="1312" local="望京西" english="WANGJING West" latitude="39.994167" longitude="116.4425">
+    	<transit ids="1312 1508" time="2" />
+    </station>
     <station id="1314" local="光熙门" english="GUANGXIMEN" latitude="" longitude="" />
     <station id="1315" local="柳芳" english="LIUFANG" latitude="" longitude="" />
     <!-- End of Line 13 -->
+    
+    <!-- Start of Line 14 -->
+    <station id="1401" local="张郭庄" english="Zhangguozhuang" latitude="" longitude="" />
+    <station id="1402" local="园博园" english="GARDEN EXPO" latitude="" longitude="" />
+    <station id="1403" local="大瓦窑" english="DAWAYAO" latitude="" longitude="" />
+    <station id="1404" local="郭庄子" english="GUOZHUANGZI" latitude="" longitude="" />
+    <station id="1405" local="大井" english="DAJING" latitude="" longitude="" />
+    <!-- End of Line 14 -->  
+    
+    <!-- Start of Line 15 -->
+    <station id="1510" local="望京" english="WANGJING" latitude="39.9975" longitude="116.463056" />
+    <station id="1511" local="崔各庄" english="CUIGEZHUANG" latitude="40.020278" longitude="116.486944" />
+    <station id="1512" local="马泉营" english="MAQUANYING" latitude="40.0325" longitude="116.498611" />
+    <station id="1513" local="孙河" english="SUNHE" latitude="40.043943" longitude="116.528651" />
+    <station id="1514" local="国展" english="CHINA INTERNATIONAL EXHIBITION CENTER" latitude="40.068808" longitude="116.549277" />
+    <station id="1515" local="花梨坎" english="HUALIKAN" latitude="40.083333" longitude="116.551667" />
+    <station id="1516" local="后沙峪" english="HOUSHAYU" latitude="40.113056" longitude="116.558333" />
+    <station id="1517" local="南法信" english="NANFAXIN" latitude="40.127222" longitude="116.603611" />
+    <station id="1518" local="石门" english="SHIMEN" latitude="40.128806" longitude="116.634814" />
+    <station id="1519" local="顺义" english="SHUNYI" latitude="40.128889" longitude="116.650833" />
+    <station id="1520" local="俸伯" english="FENGBO" latitude="40.131364" longitude="116.676169" />
+    <!-- End of Line 15 -->        
   </stations>
 
   <!-- Travel time information and line color is from wiki pages like 
@@ -447,53 +473,54 @@
       </stations>    	
     </line>
     
+    <!-- Information is from http://http://baike.baidu.com/view/1376596.htm -->    
     <line id="10" type="ring" color="#0092C7">
     	<stations>
-        <station id="1001" time="9" /> 
-        <station id="1002" time="9" />
-        <station id="1003" time="9" />
-        <station id="1004" time="9" />
-        <station id="1005" time="9" />
-        <station id="1006" time="9" />
-        <station id="1007" time="9" />
-        <station id="1008" time="9" />
-        <station id="1009" time="9" />
-        <station id="1010" time="9" />
-        <station id="1011" time="9" />
-        <station id="1012" time="9" />
-        <station id="1013" time="9" />
-        <station id="1014" time="9" />
-        <station id="1015" time="9" />
-        <station id="1016" time="9" />
-        <station id="1017" time="9" />
-        <station id="1018" time="9" />   
-        <station id="1019" time="9" />
-        <station id="1020" time="9" />
-        <station id="1021" time="9" />
-        <station id="1022" time="9" />
-        <station id="1023" time="9" />
-        <station id="1024" time="9" />
-        <station id="1025" time="9" />
-        <station id="1026" time="9" />
-        <station id="1027" time="9" />
-        <station id="1028" time="9" />
-        <station id="1029" time="9" />
-        <station id="1030" time="9" />
-        <station id="1031" time="9" />
-        <station id="1032" time="9" />
-        <station id="1033" time="9" />
-        <station id="1034" time="9" />
-        <station id="1035" time="9" />
-        <station id="1036" time="9" />
-        <station id="1037" time="9" />
-        <station id="1038" time="9" />   
-        <station id="1039" time="9" />
-        <station id="1040" time="9" />
-        <station id="1041" time="9" />
-        <station id="1042" time="9" />
-        <station id="1043" time="9" />
-        <station id="1044" time="9" />   
-        <station id="1045" time="9" />                
+        <station id="1001" time="1" /> 
+        <station id="1002" time="2" />
+        <station id="1003" time="2" />
+        <station id="1004" time="2" />
+        <station id="1005" time="2" />
+        <station id="1006" time="3" />
+        <station id="1007" time="3" />
+        <station id="1008" time="2" />
+        <station id="1009" time="3" />
+        <station id="1010" time="3" />
+        <station id="1011" time="3" />
+        <station id="1012" time="3" />
+        <station id="1013" time="3" />
+        <station id="1014" time="2" />
+        <station id="1015" time="3" />
+        <station id="1016" time="2" />
+        <station id="1017" time="4" />
+        <station id="1018" time="2" />   
+        <station id="1019" time="2" />
+        <station id="1020" time="3" />
+        <station id="1021" time="2" />
+        <station id="1022" time="2" />
+        <station id="1023" time="3" />
+        <station id="1024" time="2" />
+        <station id="1025" time="2" />
+        <station id="1026" time="2" />
+        <station id="1027" time="3" />
+        <station id="1028" time="1" />
+        <station id="1029" time="3" />
+        <station id="1030" time="1" />
+        <station id="1031" time="2" />
+        <station id="1032" time="2" />
+        <station id="1033" time="3" />
+        <station id="1034" time="3" />
+        <station id="1035" time="1" />
+        <station id="1036" time="3" />
+        <station id="1037" time="3" />
+        <station id="1038" time="2" />   
+        <station id="1039" time="2" />
+        <station id="1040" time="2" />
+        <station id="1041" time="2" />
+        <station id="1042" time="2" />
+        <station id="1043" time="3" />
+        <station id="1044" time="2" />   
+        <station id="1045" time="2" />                
       </stations>                     	
     </line>
 
@@ -519,8 +546,35 @@
         <station id="1316" time="2" />
       </stations>
     </line>
-    <line id="14" color="#D4A7A1" />
-    <line id="15" color="#6A1D44" />
+
+    <!-- Information is from http://www.bjsubway.com/node/3284 -->    
+    <line id="14" color="#D4A7A1">
+        <station id="1401" />
+        <station id="1402" time="1" />
+        <station id="1403" time="5" />
+        <station id="1404" time="3" />
+        <station id="1405" time="3" />
+        <station id="1407" time="3" />    	
+    </line>
+
+    <!-- Information is from http://www.bjsubway.com/node/1836 -->       
+    <line id="15" color="#6A1D44">
+    	<stations>
+        <station id="1508" />
+        <station id="1510" time="2" />
+        <station id="1511" time="5" />
+        <station id="1512" time="3" />
+        <station id="1513" time="4" />
+        <station id="1514" time="3" />
+        <station id="1515" time="3" />
+        <station id="1516" time="3" />
+        <station id="1517" time="5" />
+        <station id="1518" time="3" />
+        <station id="1519" time="2" />
+        <station id="1520" time="3" />                                
+      </stations>    	
+    </line>
+    
     <line id="100" localLong="昌平线" color="#D47DAA" />
     <line id="101" localLong="亦庄线" color="#D61572" />
     <line id="102" localLong="房山线" color="#D85F26" />
