@@ -18,7 +18,7 @@ import java.io._
 
 object Line {
   // Configurable parameters.
-  val url = "http://en.wikipedia.org/w/index.php?title=Line_10,_Beijing_Subway&action=edit&section=9"
+  val url = "http://en.wikipedia.org/w/index.php?title=Line_14,_Beijing_Subway&action=edit&section=1"
   val wikiPrefix = "http://en.wikipedia.org/wiki/"
   // Whether English name of the station should be upper case.
   val upperCaseStationName = true 
@@ -27,7 +27,7 @@ object Line {
   val hasLocalName = true
   val stationInfoIndent = " " * 4
   val lineInfoIndent    = " " * 8
-  val reverse = true // Reverse all stations. This is mainly used to align the station ids.
+  val reverse = false // Reverse all stations. This is mainly used to align the station ids.
 
   def main(args: Array[String]) = {
     val str = webPage(url).replace("{BJS line links|}", "") // Remove the confusing |}
@@ -46,13 +46,18 @@ object Line {
         val englishStationName1 = if (sa.length == 1) sa(0) else sa(1)
         val englishStationName = if (upperCaseStationName) englishStationName1.toUpperCase else englishStationName1
         val localName = between(station, ">", "\n")
-        val (latitude, longitude) = coordinates(stationUrl) 
+        
+        try {
+          val (latitude, longitude) = coordinates(stationUrl) 
       
-        val d = stationInfoIndent + "<station id=\"\" local=\"" + localName + 
-                "\" english=\"" + englishStationName + 
-                "\" latitude=\"" + latitude + 
-                "\" longitude=\"" + longitude + "\" />"
-        stationResults = d :: stationResults
+          val d = stationInfoIndent + "<station id=\"\" local=\"" + localName + 
+                  "\" english=\"" + englishStationName + 
+                  "\" latitude=\"" + latitude + 
+                  "\" longitude=\"" + longitude + "\" />"
+          stationResults = d :: stationResults
+        } catch {
+          case ex: FileNotFoundException => None // The station URL does not exist in Wikipedia.
+        }
       }
     }
     val stationShow = if (reverse) stationResults else stationResults.reverse
