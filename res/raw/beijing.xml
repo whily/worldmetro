@@ -549,12 +549,14 @@
 
     <!-- Information is from http://www.bjsubway.com/node/3284 -->    
     <line id="14" color="#D4A7A1">
+    	<stations>
         <station id="1401" />
         <station id="1402" time="1" />
         <station id="1403" time="5" />
         <station id="1404" time="3" />
         <station id="1405" time="3" />
-        <station id="1407" time="3" />    	
+        <station id="1407" time="3" />
+      </stations>    	
     </line>
 
     <!-- Information is from http://www.bjsubway.com/node/1836 -->       
