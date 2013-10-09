@@ -33,11 +33,10 @@ class City(activity: Activity, cityName: String) {
   // stationNameMap: (stationName -> (set of stationId))
   val (stationIdMap, stationNameMap) = getStationIdMap
   
-  private val stationLineMap = getStationLineMap
-  private val timeTransitMap = getTimeTransitMap(true)
+  private val (timeMap, transitMap, stationLineMap) = getTimeTransitLineMap
   
-  private val timeGraph    = Graph.Graph(timeTransitMap)
-  private val transitGraph = Graph.Graph(getTimeTransitMap(false))
+  private val timeGraph    = Graph.Graph(timeMap)
+  private val transitGraph = Graph.Graph(transitMap)
 
   val stationNames = stationNameMap.keys.toArray sortWith (_ < _)
   
@@ -106,49 +105,27 @@ class City(activity: Activity, cityName: String) {
     (idMap, nameMap)
   }
   
-  /** Return (stationId -> lineId) map. */
-  private def getStationLineMap: mutable.HashMap[String, MetroLine] = {
-    var map = new mutable.HashMap[String, MetroLine]()
-
-    for (line <- lines) {
-      val id = (line \ "@id").text
-      val color = (line \ "@color").text
-      val lineType = (line \ "@type").text
-    	val stations = line \ "stations" \ "station"
-    	var stationIds: List[String] = Nil
-    	for (station <- stations) {
-    	  val stationId = (station \ "@id").text
-    	  stationIds = stationId :: stationIds
-    	}
-      stationIds = stationIds.reverse
-    	val metroLine = lineType match {
-        case "ring" => new MetroRing(id, color, stationIds)
-        case _      => new MetroLinear(id, color, stationIds)
-      }
-    	for (stationId <- stationIds) map += (stationId -> metroLine)
-    }
-    
-    map
-  }
-  
-  /** Return time map if `isTimeMap` is true; otherwise transit map where each transit has a very high
-   *  penalty.
-   */
-  private def getTimeTransitMap(isTimeMap: Boolean): mutable.HashMap[(String, String), Int] = {
+  /** Return time and transit map. */
+  private def getTimeTransitLineMap: (mutable.HashMap[(String, String), Int],
+                                      mutable.HashMap[(String, String), Int],
+                                      mutable.HashMap[String, MetroLine]) = {
     val TransitPenalty = 9999
-    var map = new mutable.HashMap[(String, String), Int]()
+    var timeMap, transitMap = new mutable.HashMap[(String, String), Int]()
+    var lineMap = new mutable.HashMap[String, MetroLine]()
 
     for (line <- lines) {
       val id = (line \ "@id").text
       val lineType = (line \ "@type").text
-
+      val color = (line \ "@color").text      
     	val stations = line \ "stations" \ "station"
     	var prevStation = ""
     	var index = 0
     	var firstStation = ""
     	var firstTime = ""
+    	var stationIds: List[String] = Nil    	  
     	for (station <- stations) {
     	  val stationId = (station \ "@id").text
+    	  stationIds = stationId :: stationIds    	  
     	  if (index == 0) {
     	    index = 1
     	    prevStation = stationId
@@ -160,42 +137,58 @@ class City(activity: Activity, cityName: String) {
     	  } else {
     	    val time = (station \ "@time").text
     	    assert(!time.isEmpty())
-    	    map += ((prevStation, stationId) -> time.toInt)
-    	    map += ((stationId, prevStation) -> time.toInt)
+    	    timeMap += ((prevStation, stationId) -> time.toInt)
+    	    timeMap += ((stationId, prevStation) -> time.toInt)
+    	    transitMap += ((prevStation, stationId) -> time.toInt)
+    	    transitMap += ((stationId, prevStation) -> time.toInt)    	    
     	    prevStation = stationId
     	  }
     	}
       if (lineType == "ring") {
-        map += ((firstStation, prevStation) -> firstTime.toInt)
-        map += ((prevStation, firstStation) -> firstTime.toInt)            
+        timeMap += ((firstStation, prevStation) -> firstTime.toInt)
+        timeMap += ((prevStation, firstStation) -> firstTime.toInt)  
+        transitMap += ((firstStation, prevStation) -> firstTime.toInt)
+        transitMap += ((prevStation, firstStation) -> firstTime.toInt)          
       }
+      
+      // Build map (stationId -> line)
+      stationIds = stationIds.reverse   
+    	val metroLine = lineType match {
+        case "ring" => new MetroRing(id, color, stationIds)
+        case _      => new MetroLinear(id, color, stationIds)
+      }
+    	for (stationId <- stationIds) lineMap += (stationId -> metroLine)      
       
       // Add transit weights.
       val transits = city \ "stations" \ "station" \ "transit"
       for (transit <- transits) {
         val ids = (transit \ "@ids").text.split(" ")
         val time = (transit \ "@time").text.toInt
-        val weight = if (isTimeMap) time else TransitPenalty
         val oneway = (transit \ "@oneway").text
         if (oneway != "") {
           assert(ids.length >= 2 && ((oneway == "source") || (oneway == "target")))
           val first = ids(0)
           for (id <- ids.drop(1))
-            if (oneway == "source")
-              map += ((first, id) -> weight)
-            else
-              map += ((id, first) -> weight)
+            if (oneway == "source") {
+              timeMap += ((first, id) -> time)
+              transitMap += ((first, id) -> TransitPenalty)              
+            } else {
+              timeMap += ((id, first) -> time)
+              transitMap += ((id, first) -> TransitPenalty)              
+            }
         } else {
-        for (i <- 0 until ids.length)
-          for (j <- (i + 1) until ids.length) {
-            map += ((ids(i), ids(j)) -> weight)
-            map += ((ids(j), ids(i)) -> weight)
+          for (i <- 0 until ids.length)
+            for (j <- (i + 1) until ids.length) {
+              timeMap += ((ids(i), ids(j)) -> time)
+              timeMap += ((ids(j), ids(i)) -> time)
+              transitMap += ((ids(i), ids(j)) -> TransitPenalty)
+              transitMap += ((ids(j), ids(i)) -> TransitPenalty)              
           }
         }        
       }
     }
     
-    map
+    (timeMap, transitMap, lineMap)
   }
   
   /** Return true if `thisId` and `thatId` refer to the same station 
@@ -231,7 +224,7 @@ class City(activity: Activity, cityName: String) {
       var time = 0
       var prevStation = route.head
       for (station <- route.tail) {
-        time += timeTransitMap((prevStation, station))
+        time += timeMap((prevStation, station))
         prevStation = station
       }
       time
