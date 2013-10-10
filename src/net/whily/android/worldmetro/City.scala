@@ -117,6 +117,8 @@ class City(activity: Activity, cityName: String) {
       val id = (line \ "@id").text
       val lineType = (line \ "@type").text
       val color = (line \ "@color").text      
+      val wait = (line \ "@wait").text.toInt
+      assert(color != "")
     	val stations = line \ "stations" \ "station"
     	var prevStation = ""
     	var index = 0
@@ -154,8 +156,8 @@ class City(activity: Activity, cityName: String) {
       // Build map (stationId -> line)
       stationIds = stationIds.reverse   
     	val metroLine = lineType match {
-        case "ring" => new MetroRing(id, color, stationIds)
-        case _      => new MetroLinear(id, color, stationIds)
+        case "ring" => new MetroRing(id, color, wait, stationIds)
+        case _      => new MetroLinear(id, color, wait, stationIds)
       }
     	for (stationId <- stationIds) lineMap += (stationId -> metroLine)      
       
@@ -220,8 +222,8 @@ class City(activity: Activity, cityName: String) {
     val segments = routeSegments(route).map(new Segment(_))
     val transitNum = segments.length - 1
     def travelTime = {
-      // TODO: add initial wait time.
-      var time = 0
+      // Initialize with the wait time of the first segment.
+      var time = segments(0).line.waitTime
       var prevStation = route.head
       for (station <- route.tail) {
         time += timeMap((prevStation, station))
@@ -235,8 +237,8 @@ class City(activity: Activity, cityName: String) {
 
   class Segment (val segment: List[String]) {
     private val stopNum = segment.length - 1
+    def line : MetroLine = stationLineMap(segment(0))
     override def toString = {
-      val line = stationLineMap(segment(0))
       "Line " + line.id + " " +
         "towards " + line.direction(this) + ", " +
         Util.getPluralString(activity, R.plurals.stops, stopNum) + "\n" +
@@ -244,15 +246,15 @@ class City(activity: Activity, cityName: String) {
     }
   }
 
-  // Metro line.
-  abstract class MetroLine(val id: String, val color: String, val stations: List[String]) {
+  // Metro line. Note that we cannot have field "wait" since AnyRef already has such field.
+  class MetroLine(val id: String, val color: String, val waitTime: Int, val stations: List[String]) {
     // Return direction (a station) name.
-    def direction(segment: Segment): String
+    def direction(segment: Segment): String = ""
   }  
   
   // Typical metro line which is linear.
-  class MetroLinear(override val id: String, override val color: String, override val stations: List[String]) 
-    extends MetroLine(id, color, stations) {
+  class MetroLinear(id: String, color: String, waitTime: Int, stations: List[String]) 
+    extends MetroLine(id, color, waitTime, stations) {
     override def direction(segment: Segment): String = {
       val i = stations.indexOf(segment.segment(0))
       val j = stations.indexOf(segment.segment(1))
@@ -263,8 +265,8 @@ class City(activity: Activity, cityName: String) {
   }
   
   // Metro line which is a ring (loop).
-  class MetroRing(override val id: String, override val color: String, override val stations: List[String])
-    extends MetroLine(id, color, stations) {
+  class MetroRing(id: String, color: String, waitTime: Int, stations: List[String])
+    extends MetroLine(id, color, waitTime, stations) {
     override def direction(segment: Segment): String =
       stationIdMap(segment.segment(1))
   }
