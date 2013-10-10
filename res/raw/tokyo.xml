@@ -30,7 +30,7 @@
 
   <!-- Travel time information is from wiki pages like ... -->
   <lines>
-    <line id="3" color="#FFFFFF">
+    <line id="3" color="#FFFFFF" wait="9">
       <stations>
         <station id="G-01" />
         <station id="G-02" time="2" />
@@ -54,4 +54,6 @@
       </stations>
     </line>
   </lines>
+  
+  <!--  Attaction information from http://www.tokyometro.jp/en/attractions/index02.html -->
 </city>

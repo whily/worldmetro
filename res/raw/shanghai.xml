@@ -39,7 +39,7 @@
 
   <!-- Travel time information is from wiki pages like ... -->
   <lines>
-    <line id="1" color="#FF0000">
+    <line id="1" color="#FF0000" wait="9">
       <stations>
         <station id="101" />
         <station id="102" time="2" />
