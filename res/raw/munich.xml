@@ -101,7 +101,7 @@
     </station>
     <station id="U3-02" local="Moosacher St.-Martins-Platz" latitude="" longitude="" />  
     <station id="U3-04" local="Oberwiesenfeld" latitude="" longitude="" />
-    <station id="U3-05" local="Olympiazentrum" latitude="" longitude="" />
+    <station id="U3-05" local="Olympiazentrum" english="Olympic Centre" latitude="" longitude="" />
     <station id="U3-06" local="Petuelring" latitude="" longitude="" />
     <station id="U3-08" local="Bonner Platz" latitude="" longitude="" />
     <station id="U3-09" local="Münchner Freiheit" latitude="" longitude="">
@@ -900,4 +900,28 @@
       </stations>
     </line>    
   </lines>
+  
+  <!--  Information from http://www.mvv-muenchen.de/fileadmin/media/Dateien/0_Startseite/Endversion_MVV_Handout_fuer_Touristen_en_250113.pdf -->
+  <places>   
+    <place local="Frauenkirche" english="Church of Our Lady" stationLocal="Marienplatz" />	
+    <place local="Neues Rathaus" english="New Town Hall" stationLocal="Marienplatz" />
+    <place local="Alter Peter" english="St. Peter’s Church" stationLocal="Marienplatz" />  
+    <place local="Theatinerkirche und Feldherrnhalle" english="Theatiner Church and Feldherrnhalle" stationLocal="Odeonsplatz" />  
+    <place local="Residenz und Residenztheater" english="Former Royal Palace and Residenz Theatre" stationLocal="Marienplatz" />  
+    <place local="Nationaltheater" english="Opera" stationLocal="Marienplatz" />
+    <place local="Münchner Kammerspiele" english="Munich Kammerspiele" stationLocal="Marienplatz" />  
+    <place local="Staatliches Museum für Völkerkunde" english="Ethnological Museum" stationLocal="Maxmonument" />  
+    <place local="Maximilianeum" stationLocal="Max-Weber-Platz" />  
+    <place local="Prinzregententheater" stationLocal="Prinzregentenplatz" />
+    <place local="Viktualienmarkt" english="Food Market" stationLocal="Marienplatz" />  
+    <place local="Münchner Stadtmuseum" english="Munich City Museum" stationLocal="Marienplatz" />
+    <place local="Jüdisches Museum" english="Jewish Museum" stationLocal="Marienplatz" />  
+    <place local="BMW Welt" english="BMW World" stationLocal="Olympiazentrum" />
+    <place local="Staatstheater am Gärtnerplatz" stationLocal="Fraunhoferstraße" />  
+    <place local="Deutsches Museum" english="German Museum" stationLocal="Isartor" />
+    <place local="Gasteig" english="Cultural Centre" stationLocal="Rosenheimer Platz" />  
+    <place local="Englischer Garten" english="English Garden" stationLocal="Universität" />  
+    <place local="Glyptothek" stationLocal="Königsplatz" />  
+    <place local="Städtische Galerie im Lenbachhaus" english="Municipal Art Galery in Lenbachhaus" stationLocal="Königsplatz" />  
+  </places>  
 </city>
