@@ -15,7 +15,6 @@ import scala.collection.mutable
 import android.app.{ActionBar, Activity}
 import android.content.Intent
 import android.os.Bundle
-import android.os.Debug
 import android.view.{Menu, MenuItem, MotionEvent, View}
 import android.view.inputmethod.InputMethodManager
 import android.util.{Log, TypedValue}
@@ -147,7 +146,6 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
   
   // Initialize the contents of the widgets.
   private def initContents() {
-    //Debug.startMethodTracing()    
     bar.setSelectedNavigationItem(getLastDisplayedCity)                          
     cityId = cityIds(getLastDisplayedCity)
     city = new City(this, cityId)  
@@ -172,7 +170,6 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
     cityInfo.setText(Util.getString(this, "general_message") + "\n" +
                      Util.getString(this, cityId + "_message"))   
     routeList.setVisibility(View.GONE)
-    //Debug.stopMethodTracing()    
   }
   
   private def showRoutes() {
