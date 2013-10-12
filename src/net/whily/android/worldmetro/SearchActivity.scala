@@ -175,14 +175,14 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
   private def showRoutes() {
     // TODO: check the entry text is actually can be filtered by the corresponding
     // adapters.
-    val fromStation = fromEntry.getText.toString
-    val toStation   = toEntry.getText.toString
-    if (stationNameMap.contains(fromStation) && 
-        stationNameMap.contains(toStation) &&
-        fromStation != toStation) {
+    val fromStationPlace = fromEntry.getText.toString
+    val toStationPlace   = toEntry.getText.toString
+    if (city.stationPlaceExists(fromStationPlace) && 
+        city.stationPlaceExists(toStationPlace) &&
+        fromStationPlace != toStationPlace) {
       routeList.setVisibility(View.VISIBLE)
       cityInfo.setVisibility(View.GONE)  
-      val routes = city.findRoutes(fromStation, toStation)
+      val routes = city.findRoutes(fromStationPlace, toStationPlace)
       val groupArray = routes.map(_.toString)
       val childArray = routes.map(_.segments.map(_.toString))
       routeList.setAdapter(new ExpandableListAdapter(this, groupArray, childArray))

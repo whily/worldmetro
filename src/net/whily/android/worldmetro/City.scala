@@ -32,20 +32,41 @@ class City(activity: Activity, cityName: String) {
   var stationIdMap = new mutable.HashMap[String, String]() 
   // (stationName -> (set of stationId)
   var stationNameMap = new mutable.HashMap[String, Set[String]]()
+  // (localStationName -> stationName)
+  var localStationNameMap = new mutable.HashMap[String, String]()
   
   private var timeMap, transitMap = new mutable.HashMap[(String, String), Int]()
   private var stationLineMap = new mutable.HashMap[String, MetroLine]()
+  
+  // (placeName -> localStationName)
+  var placeLocalStationMap = new mutable.HashMap[String, String]()
   
   init()
   
   private val timeGraph    = Graph.Graph(timeMap)
   private val transitGraph = Graph.Graph(transitMap)
 
-  val stationNames = stationNameMap.keys.toArray sortWith (_ < _)
+  // Todo: direclty use array concatenation, which seems raising error.
+  private val stationNameArray: Array[String] = (stationNameMap.keys.toList ::: placeLocalStationMap.keys.toList).toArray
+  val stationNames = stationNameArray sortWith (_ < _)
+  
+  /** Returns `true` if the display `name` is a station or place name. */
+  def stationPlaceExists(name: String) = {
+    stationNameMap.contains(name) || placeLocalStationMap.contains(name)
+  }
   
   def findRoutes(sourceName: String, targetName: String): List[Route] = {
-    val sourceTagList = stationNameMap(sourceName).toList
-    val targetTagList = stationNameMap(targetName).toList
+    /** Return a list of station Ids corresponding the station/place. */
+    def tagList(name: String) = {
+      val stationName = 
+        if (placeLocalStationMap.contains(name)) 
+          localStationNameMap(placeLocalStationMap(name))
+        else
+          name
+      stationNameMap(stationName).toList
+    }
+    val sourceTagList = tagList(sourceName)
+    val targetTagList = tagList(targetName)
     val leastTimeRoutes = sourceTagList.flatMap(timeGraph.find(_, targetTagList).map(trimPath _))
     val leastTransitRoutes = sourceTagList.flatMap(transitGraph.find(_, targetTagList).map(trimPath _))
     
@@ -187,6 +208,7 @@ class City(activity: Activity, cityName: String) {
 	        
 	      stationIdMap += (id -> name)
 	      stationNameMap += (name -> Set(id))
+	      localStationNameMap += (localName -> name)
 	      
 	      if (xpp.next == XmlPullParser.START_TAG) {
 	        do {
@@ -263,6 +285,15 @@ class City(activity: Activity, cityName: String) {
 	  /** Read information of places from city XML. */
     def readPlaces() { 
 	    readElements("places") {
+	      val localName = attr("local")
+	      val englishName = attr("english")
+	      val stationLocalName = attr("stationLocal")
+	      val name = displayName(localName, englishName)
+	      assert(stationLocalName != "")
+	      
+	      placeLocalStationMap += (name -> stationLocalName)
+	      
+	      xpp.nextTag() // We are now at </place.
 	    }    
 	  }
 	  
