@@ -13,9 +13,6 @@
           
        When for one station, there are both "an" and "ab", we only consider "ab"
        for travel time. -->
-  <!-- Special message specific to current city. If yes, R.string.CITYNAME_message will
-       be displayed.-->
-  <message available="true" />
   <stations>
     <!-- Note: station ID is a string WITHOUT space. -->
     <!-- TODO: check the line color, icon, and lat/lon for each stations. -->
@@ -282,7 +279,7 @@
     	<transit ids="S2-20 S4-22 S8-09" time="12" />
     </station>  
     <station id="S2-21" local="Berg am Laim" latitude="" longitude="">
-    	<trainst ids="S2-21 S4-23" time="12" />
+    	<transit ids="S2-21 S4-23" time="12" />
     </station>     
     <station id="S2-22" local="Riem" latitude="" longitude="" />     
     <station id="S2-23" local="Feldkirchen" latitude="" longitude="" />
