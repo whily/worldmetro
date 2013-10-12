@@ -180,15 +180,10 @@ class City(activity: Activity, cityName: String) {
         val id          = attr("id")
 	      val englishName = attr("english")
 	      val localName   = attr("local")
-	      assert(!id.isEmpty && !(englishName.isEmpty && localName.isEmpty))
-	      val name = 
-	        if (languagePref == "both" && !localName.isEmpty && !englishName.isEmpty)
-	          localName + " (" + englishName + ")"
-	        else if ((!localName.isEmpty && englishName.isEmpty) ||
-	                 (!localName.isEmpty && !englishName.isEmpty && languagePref == "local"))
-	          localName
-	        else
-	          englishName
+	      // Local name should be present even for English-speaking cities (in this case,
+	      // there is "local" name only.
+	      assert(!id.isEmpty)
+	      val name = displayName(localName, englishName)
 	        
 	      stationIdMap += (id -> name)
 	      stationNameMap += (name -> Set(id))
@@ -267,8 +262,8 @@ class City(activity: Activity, cityName: String) {
 	  
 	  /** Read information of places from city XML. */
     def readPlaces() { 
-	    // readElements("places") {
-	    //}    
+	    readElements("places") {
+	    }    
 	  }
 	  
 	  /** 
@@ -285,10 +280,10 @@ class City(activity: Activity, cityName: String) {
 	    assert(names.endsWith("s"))
 	    val name = names.init
 	    
-	    Log.i(logTag, cityName + ".xml:" + xpp.getLineNumber + " <" + xpp.getName + ">")
+	    // Log.i(logTag, cityName + ".xml:" + xpp.getLineNumber + " <" + xpp.getName + ">")
 	    xpp.require(XmlPullParser.START_TAG, null, names)
 	    while (xpp.next() != XmlPullParser.END_TAG) {
-	      Log.i(logTag, cityName + ".xml:" + xpp.getLineNumber + " <" + xpp.getName + ">")
+	      // Log.i(logTag, cityName + ".xml:" + xpp.getLineNumber + " <" + xpp.getName + ">")
 	      xpp.require(XmlPullParser.START_TAG, null, name)
 	      action
 	    }
@@ -332,6 +327,18 @@ class City(activity: Activity, cityName: String) {
       }	    
 	  }
   }
+  
+  private def displayName(localName: String, englishName: String): String = {
+  	// Local name should be present even for English-speaking cities (in this case,
+    // there is "local" name only.
+    assert(!localName.isEmpty)
+    if (languagePref == "both" && !englishName.isEmpty)
+      localName + " (" + englishName + ")"
+    else if (englishName.isEmpty || (!englishName.isEmpty && languagePref == "local"))
+      localName
+    else
+      englishName
+  }  
   
   case class Transit(ids: Array[String], time: Int, oneway: String)
 }
