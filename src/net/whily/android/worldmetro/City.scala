@@ -14,7 +14,7 @@ package net.whily.android.worldmetro
 import org.xmlpull.v1.XmlPullParser
 import scala.collection.mutable
 import android.app.Activity
-
+import android.util.Log
 
 /** 
  *  City class holds all data for a metro network of a city. 
@@ -24,6 +24,7 @@ import android.app.Activity
  *  (e.g. san_francisco.xml).
  *  */
 class City(activity: Activity, cityName: String) {
+  private val logTag = "City.scala"
 	private val languagePref = Util.getLanguagePref(activity) 
 	private var transits: List[Transit] = Nil
   
@@ -242,7 +243,7 @@ class City(activity: Activity, cityName: String) {
 	    	    transitMap += ((stationId, prevStation) -> time.toInt)    	    
 	    	    prevStation = stationId
 	    	  }
-	    	  xpp.nextTag() // Consume </station>
+	    	  xpp.nextTag() // Now we are at </station>
 	      }
  	  
 	      if (lineType == "ring") {
@@ -258,36 +259,36 @@ class City(activity: Activity, cityName: String) {
 	        case "ring" => new MetroRing(id, color, wait, stationIds)
 	        case _      => new MetroLinear(id, color, wait, stationIds)
 	      }
-	    	for (stationId <- stationIds) stationLineMap += (stationId -> metroLine)      
-	      
-	    	xpp.nextTag() // Consume </line>
+	    	for (stationId <- stationIds) stationLineMap += (stationId -> metroLine)    
+	    	
+	    	// xpp.nextTag() is not needed since after reading <stations> we're already at </line>.
 	    }    
 	  }
 	  
 	  /** Read information of places from city XML. */
     def readPlaces() { 
-	    readElements("places") {
-	      
-	    }    
+	    // readElements("places") {
+	    //}    
 	  }
 	  
 	  /** 
 	   * Read element `names` and the sub elements `name` with `action` performed on
 	   * each sub element. 
 	   * 
-	   * At the beginning, `xpp` is at the start tag <names>. 
-	   * After the function finishes, `xpp` is at the start tag of the next element.
+	   * At the beginning, `xpp` is at the <names>. 
+	   * After the function finishes, `xpp` is at the tag after </names>.
 	   * 
 	   * For `action`, `xpp` is at the start tag, and at the end of `action`,
-	   * 'xpp` should be at the corresponding end tag. 					*/
+	   * 'xpp` should be at the corresponding end tag. 					
+	   */
 	  def readElements(names: String)(action: => Unit) {
 	    assert(names.endsWith("s"))
 	    val name = names.init
 	    
-	    println("Line: " + xpp.getLineNumber() + "<" + xpp.getName + ">")
+	    Log.i(logTag, cityName + ".xml:" + xpp.getLineNumber + " <" + xpp.getName + ">")
 	    xpp.require(XmlPullParser.START_TAG, null, names)
 	    while (xpp.next() != XmlPullParser.END_TAG) {
-  	    println("Line: " + xpp.getLineNumber() + "<" + xpp.getName + ">")
+	      Log.i(logTag, cityName + ".xml:" + xpp.getLineNumber + " <" + xpp.getName + ">")
 	      xpp.require(XmlPullParser.START_TAG, null, name)
 	      action
 	    }
