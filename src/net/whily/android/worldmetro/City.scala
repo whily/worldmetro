@@ -87,9 +87,14 @@ class City(activity: Activity, cityName: String) {
       }
     }
     
-    routes.filter(x => ((x.travelTime - leastTime <= 10) && (x.transitNum <= transitForLeastTime)) ||
-                       ((leastTransit < transitForLeastTime) && (x.transitNum == leastTransit) && 
-                        (x.travelTime - timeForLeastTransit <= 10)))
+    val filteredRoutes = 
+      routes.filter(x => ((x.travelTime - leastTime <= 10) && (x.transitNum <= transitForLeastTime)) ||
+                         ((leastTransit < transitForLeastTime) && (x.transitNum == leastTransit) && 
+                          (x.travelTime - timeForLeastTransit <= 10)))
+                          
+    filteredRoutes sortWith
+      ((x, y) => x.travelTime < y.travelTime || 
+                (x.travelTime == y.travelTime && x.transitNum < y.transitNum))
   }
   
   /** Return true if `thisId` and `thatId` refer to the same station 
