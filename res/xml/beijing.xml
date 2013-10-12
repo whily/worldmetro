@@ -464,7 +464,7 @@
       </stations>      	
     </line>
 
-    <line id="9" local="9号线" english="Line 9" color="#87D300">
+    <line id="9" local="9号线" english="Line 9" color="#87D300" wait="9">
       <stations>
         <station id="901" time="9" /> 
         <station id="902" time="9" />
@@ -585,9 +585,9 @@
       </stations>    	
     </line>
     
-    <line id="100" local="昌平线" color="#D47DAA" wait="9" />
+    <!--<line id="100" local="昌平线" color="#D47DAA" wait="9" />
     <line id="101" local="亦庄线" color="#D61572" wait="9" />
-    <line id="102" local="房山线" color="#D85F26" wait="9" />
+    <line id="102" local="房山线" color="#D85F26" wait="9" /> -->
 
     <!-- Transit time information from
            http://baike.baidu.com/view/1733524.htm 
@@ -595,16 +595,16 @@
            http://bjsubway.com/node/1823
          Other travel time is from 
            http://zhidao.baidu.com/question/98549451.html -->
+    <!-- Not enabled as this is a special loop.
+           
     <line id="机场" english="Airport Express" local="机场线" color="#9B91B1" wait="6">
-       <!-- Not enabled as this is a special loop.
        <stations>
         <station id="AE01"/>
         <station id="AE02" time="4" />
         <station id="AE03" time="3" />
         <station id="AE04" time="" />
       </stations>
-      -->
-    </line>
+    </line> -->
   </lines>
   
   <places>  	
