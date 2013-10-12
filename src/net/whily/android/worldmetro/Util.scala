@@ -75,6 +75,14 @@ object Util {
    */
   def getRawId(activity: Activity, name: String) =
     getId(activity, name, "raw")
+    
+  /** 
+   *  Return id (like R.xml.name). 
+   *  
+   *  @param activity: it is needed to access global variable Resources.
+   */
+  def getXmlId(activity: Activity, name: String) =
+    getId(activity, name, "xml")    
 
   /** 
    *  Return string value corresponding to R.string.name. 
