@@ -87,7 +87,18 @@
     
     <!-- End of Line 2 -->
     
-    <!--  Start of Line 4 -->
+    <!--  Start of Line 4. Daxing line is merged here. -->
+    <station id="DX01" local="天宫院" english="TIANGONGYUAN" latitude="39.667778" longitude="116.313611" />
+    <station id="DX02" local="生物医药基地" english="BIOMEDICAL BASE" latitude="39.684722" longitude="116.315556" />
+    <station id="DX03" local="义和庄" english="YIHEZHUANG" latitude="39.710833" longitude="116.313056" />
+    <station id="DX04" local="黄村火车站" english="HUANGCUN RAILWAY STATION" latitude="39.721944" longitude="116.326389" />
+    <station id="DX05" local="黄村西大街" english="HUANGCUNXIDAJIE" latitude="39.7275" longitude="116.326667" />
+    <station id="DX06" local="清源路" english="QINGYUANLU" latitude="39.741389" longitude="116.326389" />
+    <station id="DX07" local="枣园" english="ZAOYUAN" latitude="39.751944" longitude="116.326111" />
+    <station id="DX08" local="高米店南" english="GAOMIDIAN SOUTH" latitude="39.763889" longitude="116.324722" />
+    <station id="DX09" local="高米店北" english="GAOMIDIAN NORTH" latitude="39.774444" longitude="116.324444" />
+    <station id="DX10" local="西红门" english="XIHONGMEN" latitude="39.788333" longitude="116.3225" />
+    <station id="DX11" local="新宫" english="XINGONG" latitude="39.811133" longitude="116.359353" />
     <station id="401" local="公益西桥" english="GONGYIXIQIAO" latitude="39.835833" longitude="116.370833" />
     <station id="402" local="角门西" english="JIAOMEN WEST" latitude="" longitude="">
     	<transit ids="402 1016" time="2" />
@@ -356,32 +367,44 @@
       </stations>    
     </line>
 
+    <!-- Travel time from http://bjsubway.com/node/2485 -->
     <line id="4" local="4号线" english="Line 4" color="#008193" wait="1">
       <stations>
-        <station id="401" time="9" /> 
-        <station id="402" time="9" />
-        <station id="403" time="9" />
-        <station id="404" time="9" />
-        <station id="405" time="9" />
-        <station id="406" time="9" />
-        <station id="407" time="9" />
-        <station id="408" time="9" />
-        <station id="409" time="9" />
-        <station id="410" time="9" />
-        <station id="411" time="9" />
-        <station id="412" time="9" />
-        <station id="413" time="9" />
-        <station id="414" time="9" />
-        <station id="415" time="9" />
-        <station id="416" time="9" />
-        <station id="417" time="9" />
-        <station id="418" time="9" />   
-        <station id="419" time="9" />
-        <station id="420" time="9" />
-        <station id="421" time="9" />
-        <station id="422" time="9" />
-        <station id="423" time="9" />
-        <station id="424" time="9" />                    
+        <station id="DX01" /> 
+        <station id="DX02" time="2" />
+        <station id="DX03" time="3" />
+        <station id="DX04" time="3" />
+        <station id="DX05" time="2" />
+        <station id="DX06" time="2" />
+        <station id="DX07" time="2" />
+        <station id="DX08" time="2" />
+        <station id="DX09" time="2" />
+        <station id="DX10" time="3" />
+        <station id="DX11" time="6" />      	
+        <station id="401" time="5" /> 
+        <station id="402" time="1" />
+        <station id="403" time="2" />
+        <station id="404" time="2" />
+        <station id="405" time="3" />
+        <station id="406" time="2" />
+        <station id="407" time="3" />
+        <station id="408" time="2" />
+        <station id="409" time="1" />
+        <station id="410" time="2" />
+        <station id="411" time="2" />
+        <station id="412" time="2" />
+        <station id="413" time="3" />
+        <station id="414" time="2" />
+        <station id="415" time="2" />
+        <station id="416" time="3" />
+        <station id="417" time="2" />
+        <station id="418" time="3" />   
+        <station id="419" time="1" />
+        <station id="420" time="2" />
+        <station id="421" time="2" />
+        <station id="422" time="3" />
+        <station id="423" time="2" />
+        <station id="424" time="1" />                    
       </stations>     	
     </line>
 
