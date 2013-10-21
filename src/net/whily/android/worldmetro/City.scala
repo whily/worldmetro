@@ -234,6 +234,10 @@ class City(activity: Activity, cityName: String) {
     def readLines() {
  	    readElements("lines") {
 	      val id = attr("id")
+	      // Three types
+	      // - line: default type (no attribute is needed).
+	      // - ring: bi-directional ring/loop
+	      // - uniring: uni-directional ring/loop
 	      val lineType = attr("type")
 	      val color = attr("color")
 	      val wait = attr("wait").toInt
@@ -251,7 +255,7 @@ class City(activity: Activity, cityName: String) {
 	    	  if (index == 0) {
 	    	    index = 1
 	    	    prevStation = stationId
-	    	    if (lineType == "ring") {
+	    	    if (lineType == "ring" || lineType == "uniring") {
 	    	      firstStation = stationId
 	    	      firstTime = attr("time")
 	    	      assert(!firstTime.isEmpty)
@@ -260,9 +264,11 @@ class City(activity: Activity, cityName: String) {
 	    	    val time = attr("time")
 	    	    assert(!time.isEmpty())
 	    	    timeMap += ((prevStation, stationId) -> time.toInt)
-	    	    timeMap += ((stationId, prevStation) -> time.toInt)
 	    	    transitMap += ((prevStation, stationId) -> time.toInt)
-	    	    transitMap += ((stationId, prevStation) -> time.toInt)    	    
+	    	    if (lineType != "uniring") {
+	    	    	timeMap += ((stationId, prevStation) -> time.toInt)	    	    
+	    	    	transitMap += ((stationId, prevStation) -> time.toInt)
+	    	    }
 	    	    prevStation = stationId
 	    	  }
 	    	  xpp.nextTag() // Now we are at </station>
@@ -273,13 +279,16 @@ class City(activity: Activity, cityName: String) {
 	        timeMap += ((prevStation, firstStation) -> firstTime.toInt)  
 	        transitMap += ((firstStation, prevStation) -> firstTime.toInt)
 	        transitMap += ((prevStation, firstStation) -> firstTime.toInt)          
+	      } else if (lineType == "uniring") {
+	        timeMap += ((prevStation, firstStation) -> firstTime.toInt)  
+	        transitMap += ((prevStation, firstStation) -> firstTime.toInt)  	        
 	      }
 
         // Build map (stationId -> line)
         stationIds = stationIds.reverse   
 	    	val metroLine = lineType match {
-	        case "ring" => new MetroRing(id, color, wait, stationIds)
-	        case _      => new MetroLinear(id, color, wait, stationIds)
+	        case "ring" | "uniring" => new MetroRing(id, color, wait, stationIds)
+	        case _                   => new MetroLinear(id, color, wait, stationIds)
 	      }
 	    	for (stationId <- stationIds) stationLineMap += (stationId -> metroLine)    
 	    	
