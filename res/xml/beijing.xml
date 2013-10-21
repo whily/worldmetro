@@ -74,7 +74,7 @@
     </station>   
     <station id="213" local="东四十条" english="DONGSI SHITIAO" latitude="" longitude="" />                                   
     <station id="214" local="东直门" english="DONGZHIMEN" latitude="39.94" longitude="116.428">
-      <transit ids="214 1316" time="2" />
+      <transit ids="214 1316 AE01" time="2" />
     </station>
     <station id="215" local="雍和宫" english="YONGHEGONG LAMA TEMPLE" latitude="" longitude="">
     	<transit ids="215 512" time="2" />
@@ -256,7 +256,9 @@
     <station id="1030" local="团结湖" english="TUANJIEHU" latitude="39.9323" longitude="116.4556" />
     <station id="1031" local="农业展览馆" english="AGRICULTURAL EXHIBITION CENTER" latitude="39.9403" longitude="116.4563" />
     <station id="1032" local="亮马桥" english="LIANGMAQIAO" latitude="39.949326" longitude="116.461558" />
-    <station id="1033" local="三元桥" english="SANYUANQIAO" latitude="39.96" longitude="116.451" />
+    <station id="1033" local="三元桥" english="SANYUANQIAO" latitude="39.96" longitude="116.451">
+    	<transit ids="1033 AE02" time="3" />
+    </station>
     <station id="1034" local="太阳宫" english="TAIYANGGONG" latitude="39.9713" longitude="116.4412" />
     <station id="1035" local="芍药居" english="SHAOYAOJU" latitude="39.9759" longitude="116.4302">
       <transit ids="1035 1313" time="3" />    	
@@ -307,7 +309,12 @@
     <station id="1518" local="石门" english="SHIMEN" latitude="40.128806" longitude="116.634814" />
     <station id="1519" local="顺义" english="SHUNYI" latitude="40.128889" longitude="116.650833" />
     <station id="1520" local="俸伯" english="FENGBO" latitude="40.131364" longitude="116.676169" />
-    <!-- End of Line 15 -->        
+    <!-- End of Line 15 -->    
+    
+    <!--  Start of Airport Express -->
+    <station id="AE03" local="T3航站楼" english="TERMINAL 3" latitude="" longitude="" />
+    <station id="AE04" local="T2航站楼" english="TERMINAL 2" latitude="40.079444" longitude="116.592778" />
+    <!--  End of Airport Express -->   
   </stations>
 
   <!-- Travel time information and line color is from wiki pages like 
@@ -614,20 +621,18 @@
 
     <!-- Transit time information from
            http://baike.baidu.com/view/1733524.htm 
-         Travel time from Dongzhimeng to Sanyuanqiao is from 
-           http://bjsubway.com/node/1823
-         Other travel time is from 
-           http://zhidao.baidu.com/question/98549451.html -->
-    <!-- Not enabled as this is a special loop.
-           
-    <line id="机场" english="Airport Express" local="机场线" color="#9B91B1" wait="6">
+         Travel time from Dongzhimeng to Sanyuanqiao is from
+           http://www.bjsubway.com/node/1823
+         Other travel time information from information from 
+           http://en.wikipedia.org/wiki/Airport_Line,_Beijing_Subway#Hours_of_Operation -->
+    <line id="机场" type="uniring" english="Airport Express" local="机场线" color="#9B91B1" wait="6">
        <stations>
-        <station id="AE01"/>
-        <station id="AE02" time="4" />
-        <station id="AE03" time="3" />
-        <station id="AE04" time="" />
+        <station id="AE01" time="20" />
+        <station id="AE02" time="4"  />
+        <station id="AE03" time="17" />
+        <station id="AE04" time="14" />
       </stations>
-    </line> -->
+    </line>
   </lines>
   
   <places>  	
