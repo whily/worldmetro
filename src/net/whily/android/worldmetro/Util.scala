@@ -52,9 +52,9 @@ object Util {
   def setHoloTheme(activity: Activity) {
     val theme: Int = 
       if (getThemePref(activity) == 0)
-      	android.R.style.Theme_Holo
+      	R.style.AppTheme_Dark
       else
-    	  android.R.style.Theme_Holo_Light
+    	  R.style.AppTheme_Light
     activity.setTheme(theme)    
   }
   

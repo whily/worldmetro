@@ -1,14 +1,10 @@
 <resources>
-  <!--
-      Base application theme, dependent on API level. Since the app is targeted
-      for Android 4.3+, we use res/values-v14/styles.xml directly.
-  -->
-  <style name="AppBaseTheme" parent="android:Theme.Holo">
-    <!-- API 14 theme customizations can go here. -->
+  <!-- Define two themes: holo dark and holo light, so users can switch. -->
+  <style name="AppTheme.Dark" parent="android:Theme.Holo">
+  	<item name="reverse_icon">@drawable/ic_menu_reverse_holo_dark</item>
   </style>
-
-  <!-- Application theme. -->
-  <style name="AppTheme" parent="AppBaseTheme">
-    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-  </style>
+  
+  <style name="AppTheme.Light" parent="android:Theme.Holo.Light">
+    <item name="reverse_icon">@drawable/ic_menu_reverse_holo_light</item>	
+  </style> 
 </resources>
