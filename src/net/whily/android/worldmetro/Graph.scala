@@ -46,7 +46,7 @@ object Graph {
    * If it is undirected, the caller should make sure to add
    * both u->v and v->u in the weightMap.  
    */
-  def Graph(weightMap: mutable.HashMap[(String, String), Int]) : Graph = {
+  def Graph(weightMap: mutable.HashMap[(String, String), Int]): Graph = {
     val pairs = weightMap.keys
     val tags = pairs.map(_._1).toSet ++ pairs.map(_._2).toSet
     val vertices = tags.toArray.map(new Vertex(_, List()))
