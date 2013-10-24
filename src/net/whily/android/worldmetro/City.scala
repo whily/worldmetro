@@ -136,7 +136,11 @@ class City(activity: Activity, cityName: String) {
       time
     }
     
-    override def toString = travelTime + " min, " + transitNum + " transits"   
+    def linesInfo: String = {
+      segments.map(_.lineId).mkString(" > ")
+    }
+    
+    override def toString = travelTime + " min, " + linesInfo   
   }
 
   class Segment (val segment: List[String]) {
@@ -147,6 +151,10 @@ class City(activity: Activity, cityName: String) {
         "towards " + line.direction(this) + ", " +
         Util.getPluralString(activity, R.plurals.stops, stopNum) + "\n" +
         segment.map(stationIdMap(_)).mkString("→")
+    }
+    
+    def lineId: String = {
+      line.id
     }
   }
 
