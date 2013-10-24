@@ -1,0 +1,3 @@
+<resources>
+  <attr name="reverse_icon" format="reference" />
+</resources>
