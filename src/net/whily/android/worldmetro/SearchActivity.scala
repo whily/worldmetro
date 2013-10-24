@@ -28,7 +28,7 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
   private var routeList: ExpandableListView = null
   private var city: City = null
   private var cityId: String = ""
-  private val cityIds = Array("beijing", "munich", "shanghai", "tokyo")    
+  private val cityIds = Array("beijing", "munich") //, "shanghai", "tokyo")    
   private var stationIdMap: mutable.HashMap[String, String] = null
   private var stationNameMap: mutable.HashMap[String, Set[String]] = null
   private val ResultSettings = 1
