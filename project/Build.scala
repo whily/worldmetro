@@ -1,49 +1,60 @@
 import sbt._
 
 import Keys._
-//import AndroidKeys._
+import AndroidKeys._
+import AndroidNdkKeys._
 
 object General {
+  // Some basic configuration
   val settings = Defaults.defaultSettings ++ Seq (
     name := "worldmetro",
-    //version := "0.1",
-    //versionCode := 2,
-    scalaVersion := "2.10",
-    //platformName := "android-18",
+    version := "0.1",
+    versionCode := 0,
+    scalaVersion := "2.10.0",
+    platformName in Android := "android-18",
     javacOptions ++= Seq("-encoding", "UTF-8", "-source", "1.6", "-target", "1.6")
   )
 
-  val proguardSettings = Seq (
-    //useProguard := true
-  )
+  // Default Proguard settings
+  lazy val proguardSettings = inConfig(Android) (Seq (
+    useProguard := true,
+    proguardOptimizations += "-keep class net.whily.android.worldmetro.** { *; }"
+  ))
 
+  // Example NDK settings
+  lazy val ndkSettings = AndroidNdk.settings ++ inConfig(Android) (Seq(
+    jniClasses := Seq(),
+    javahOutputFile := Some(new File("native.h"))
+  ))
+
+  // Full Android settings
   lazy val fullAndroidSettings =
     General.settings ++
-    //AndroidPlugin.androidDefaults ++
-    // AndroidProject.androidSettings ++
-    //TypedResources.settings ++
-    proguardSettings //++
-    //AndroidManifestGenerator.settings ++
-    //AndroidMarketPublish.settings ++ Seq (
-    //  keyalias in Android := "change-me",
-    //  libraryDependencies += "org.scalatest" %% "scalatest" % "1.9.2" % "test"
-    //)
+    AndroidProject.androidSettings ++
+    TypedResources.settings ++
+    proguardSettings ++
+    AndroidManifestGenerator.settings ++
+    AndroidMarketPublish.settings ++ Seq (
+      keyalias in Android := "change-me",
+      libraryDependencies += "org.scalatest" %% "scalatest" % "1.9.1" % "test"
+    )
 }
 
 object AndroidBuild extends Build {
   lazy val main = Project (
-    "worldmetro",
+    "main",
     file("."),
-    settings = General.fullAndroidSettings
+    settings = General.fullAndroidSettings ++ AndroidEclipseDefaults.settings
   )
 
   lazy val tests = Project (
     "tests",
     file("tests"),
     settings = General.settings ++
-               //AndroidTest.androidSettings ++
+               AndroidEclipseDefaults.settings ++
+               AndroidTest.androidSettings ++
                General.proguardSettings ++ Seq (
-      name := "WorldMetroTests"
+      name := "worldmetroTests"
     )
   ) dependsOn main
 }
