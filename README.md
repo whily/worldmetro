@@ -21,8 +21,6 @@ For more information about World Metro, please go to
 
 Wiki pages can be found at
   <https://wiki.github.com/whily/worldmetro>
-  
-Corresponding test project is <https://github.com/whily/worldmetro-test>.
 
 Installation
 ------------
