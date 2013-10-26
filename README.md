@@ -22,9 +22,6 @@ For more information about World Metro, please go to
 Wiki pages can be found at
   <https://wiki.github.com/whily/worldmetro>
 
-Installation
-------------
-
 Development
 -----------
 
@@ -34,13 +31,30 @@ The following tools are needed to build World Metro from source:
   Note that JDK is preinstalled on Mac OS X and available via package manager
   on many Linux systems. 
 * Android SDK r22.
-* Eclipse (4.2 Juno)
 * Scala (2.10.0)
-* Scalar IDE for Eclipse plugin (v3.0.1) from <http://scala-ide.org/>.
-* AndroidProguardScala from
-  <https://github.com/banshee/AndroidProguardScala>
+* sbt (0.12.4)
 * [Inkscape](http://inkscape.org) and [ImageMagick](http://www.imagemagick.org)
   to generate icons.
+  
+To compile/run the code, follow the steps below:
+
+1. Please ignore this step as it is a mental note to the
+   author. Generate the code from the template as below:
+
+        $ g8 fxthomas/android-app
+
+2. This is step is a work around. It seems that the plugin sbt-android
+   assumes that tools like `aapt` and `dx` are located in
+   `$ANDROID_HOME/platform-tools`. However at least in Android SDK
+   r22, the location is `$ANDROID_HOME/build-tools/18.0.1/`. The
+   simplest solution is to copy those binaries (including directory
+   **lib** which is related to `dx`) to folder
+   `$ANDROID_HOME/platform-tools`.
+   
+3. In the project directory, run the following command to build the
+   app and start it in a connected device or emulator:
+
+        $ sbt start
   
 TODO
 ----
