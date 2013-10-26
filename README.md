@@ -52,9 +52,9 @@ To compile/run the code, follow the steps below:
    `$ANDROID_HOME/platform-tools`.
    
 3. In the project directory, run the following command to build the
-   app and start it in a connected device or emulator:
+   app and start it in a connected device:
 
-        $ sbt start
+        $ sbt android:start-device
   
 TODO
 ----
