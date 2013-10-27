@@ -55,6 +55,21 @@ To compile/run the code, follow the steps below:
    app and start it in a connected device:
 
         $ sbt android:start-device
+        
+Testing
+-------
+
+There are two types of testing can be performed:
+
+* Unit testing. Simply run the following command in shell:
+    
+        $ sbt test
+        
+* Android integration testing. Run the following commands in sbt:
+
+        > project tests
+        > android:install-device
+        > android:test-device
   
 TODO
 ----
