@@ -148,7 +148,7 @@ class City(activity: Activity, cityName: String) {
     def line : MetroLine = stationLineMap(segment(0))
     override def toString = {
       "Line " + line.id + " " +
-        "towards " + line.direction(this) + ", " +
+        "towards " + line.headsign(this) + ", " +
         Util.getPluralString(activity, R.plurals.stops, stopNum) + "\n" +
         segment.map(stationIdMap(_)).mkString("→")
     }
@@ -160,14 +160,14 @@ class City(activity: Activity, cityName: String) {
 
   // Metro line. Note that we cannot have field "wait" since AnyRef already has such field.
   class MetroLine(val id: String, val color: String, val waitTime: Int, val stations: List[String]) {
-    // Return direction (a station) name.
-    def direction(segment: Segment): String = ""
+    // Return headsign.
+    def headsign(segment: Segment): String = ""
   }  
   
   // Typical metro line which is linear.
   class MetroLinear(id: String, color: String, waitTime: Int, stations: List[String]) 
     extends MetroLine(id, color, waitTime, stations) {
-    override def direction(segment: Segment): String = {
+    override def headsign(segment: Segment): String = {
       val i = stations.indexOf(segment.segment(0))
       val j = stations.indexOf(segment.segment(1))
       assert (i == j + 1 || j == i + 1)
@@ -179,7 +179,7 @@ class City(activity: Activity, cityName: String) {
   // Metro line which is a ring (loop).
   class MetroRing(id: String, color: String, waitTime: Int, stations: List[String])
     extends MetroLine(id, color, waitTime, stations) {
-    override def direction(segment: Segment): String =
+    override def headsign(segment: Segment): String =
       stationIdMap(segment.segment(1))
   }
   
