@@ -2,14 +2,13 @@ import sbt._
 
 import Keys._
 import AndroidKeys._
-import AndroidNdkKeys._
 
 object General {
   // Some basic configuration
   val settings = Defaults.defaultSettings ++ Seq (
     name := "worldmetro",
     version := "0.1",
-    versionCode := 0,
+    versionCode := 2,
     scalaVersion := "2.10.0",
     platformName in Android := "android-18",
     javacOptions ++= Seq("-encoding", "UTF-8", "-source", "1.6", "-target", "1.6")
@@ -18,13 +17,8 @@ object General {
   // Default Proguard settings
   lazy val proguardSettings = inConfig(Android) (Seq (
     useProguard := true,
-    proguardOptimizations += "-keep class net.whily.android.worldmetro.** { *; }"
-  ))
-
-  // Example NDK settings
-  lazy val ndkSettings = AndroidNdk.settings ++ inConfig(Android) (Seq(
-    jniClasses := Seq(),
-    javahOutputFile := Some(new File("native.h"))
+    proguardOptimizations += "-keep class net.whily.android.worldmetro.** { *; }",
+    proguardOptimizations += "-keep class scala.collection.SeqLike { public java.lang.String toString(); }"
   ))
 
   // Full Android settings
