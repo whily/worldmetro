@@ -4,10 +4,9 @@ import org.scalatest.FunSpec
 import scala.collection.mutable
 
 class Specs extends FunSpec with ShouldMatchers {
-  describe("Graph") {
-    it("find") {
+  describe("In class Graph") {
+    it("find() should work for example in http://en.wikipedia.org/wiki/Dijkstra's_algorithm") {
       var map = new mutable.HashMap[(String, String), Int]()
-      // Use the example from http://en.wikipedia.org/wiki/Dijkstra's_algorithm
       map += (("1", "2") -> 7)
       map += (("1", "3") -> 9)
       map += (("1", "6") -> 14)
