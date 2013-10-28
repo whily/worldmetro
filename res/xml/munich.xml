@@ -2,14 +2,9 @@
 <city>
   <!-- Unit for time duration is in minute. -->
   <!-- Timetable information from 
-       http://www.mvv-muenchen.de/en/journey-planner/timetable-book/index.html 
-       In normal hours, interval for U-Bahn and S-Bahn is 10 and 20 minutes, 
-       respectively. Assume there are 2 minute walking time, the transit time is:
-          U->U, S->U: 7 min, U->S and S->S: 12 min. 
-       Special case is S20/S27/A, whose intervals are roughly 60 minutes. Denote as SA, the
-       transit time is:
-          U->SA, S->SA, or SA->SA: 32 min
-          SA->U: 7min, SA->S: 12 min. 
+       http://www.mvv-muenchen.de/en/journey-planner/timetable-book/index.html
+       Transit time only considers walking time, and wait time will be
+       considered automatically. Here we assume walking time is 2 min.
           
        When for one station, there are both "an" and "ab", we only consider "ab"
        for travel time. -->
@@ -19,35 +14,35 @@
       
     <!-- Start of U1 -->
     <station id="U1-01" local="Olympia-Einkaufszentrum" latitude="48.181944" longitude="11.53">
-    	<transit ids="U1-01 U3-03" time="7" />
+    	<transit ids="U1-01 U3-03" time="2" />
     </station>
     <station id="U1-02" local="Georg-Brauchle-Ring" latitude="" longitude="" />
     <station id="U1-03" local="Westfriedhof" latitude="" longitude="">
-    	<transit ids="U1-03 U7-01" time="7" />
+    	<transit ids="U1-03 U7-01" time="2" />
     </station>
     <station id="U1-04" local="Gern" latitude="" longitude="">
-      <transit ids="U1-04 U7-02" time="7" />    	
+      <transit ids="U1-04 U7-02" time="2" />    	
     </station>
     <station id="U1-05" local="Rotkreuzplatz" latitude="48.153889 " longitude="11.533056">
-      <transit ids="U1-05 U7-03" time="7" />      	
+      <transit ids="U1-05 U7-03" time="2" />      	
     </station>
     <station id="U1-06" local="Maillingerstraße" latitude="" longitude="">
-      <transit ids="U1-06 U7-04" time="7" />        	
+      <transit ids="U1-06 U7-04" time="2" />        	
     </station>
     <station id="U1-07" local="Stiglmaierplatz" latitude="" longitude="">
-      <transit ids="U1-07 U7-05" time="7" />         	
+      <transit ids="U1-07 U7-05" time="2" />         	
     </station>
     <station id="U1-08" local="Hauptbahnhof" english="Central Station" latitude="48.140833" longitude="11.555">
-    	<transit ids="U1-08 U2-13 U4-05 U5-07 U7-06" time="7" />
+    	<transit ids="U1-08 U2-13 U4-05 U5-07 U7-06" time="2" />
     </station>
     <station id="U1-09" local="Sendlinger Tor" latitude="48.133333" longitude="11.566389">
-      <transit ids="U1-09 U2-14 U3-14 U6-16 U7-07" time="7" />	
+      <transit ids="U1-09 U2-14 U3-14 U6-16 U7-07" time="2" />	
     </station>
     <station id="U1-10" local="Fraunhoferstraße" latitude="" longitude="">
-    	<transit ids="U1-10 U2-15" time="7" />
+    	<transit ids="U1-10 U2-15" time="2" />
     </station>
     <station id="U1-11" local="Kolumbusplatz" latitude="48.119167" longitude="11.576944">
-      <transit ids="U1-11 U2-16" time="7" />	
+      <transit ids="U1-11 U2-16" time="2" />	
     </station>
     <station id="U1-12" local="Candidplatz" latitude="" longitude="" />
     <station id="U1-13" local="Wettersteinplatz" latitude="" longitude="" />
@@ -57,8 +52,7 @@
     
     <!-- Start of U2 -->
     <station id="U2-01" local="Feldmoching" latitude="48.213611" longitude="11.541389">
-      <transit oneway="source" ids="U2-01 S1-08" time="12" />
-      <transit oneway="source" ids="S1-08 U2-01" time="7" />   	
+      <transit ids="U2-01 S1-08" time="2" />
     </station>
     <station id="U2-02" local="Hasenbergl" latitude="" longitude="" />  
     <station id="U2-03" local="Dülferstraße" latitude="" longitude="" />      
@@ -67,7 +61,7 @@
     <station id="U2-06" local="Frankfurter Ring" latitude="" longitude="" />      
     <station id="U2-07" local="Milbertshofen" latitude="" longitude="" />    
     <station id="U2-08" local="Scheidplatz" latitude="48.171667" longitude="11.573333">
-    	<transit ids="U2-08 U3-07" time="7" />
+    	<transit ids="U2-08 U3-07" time="2" />
     </station>
     <station id="U2-09" local="Hohenzollernplatz" latitude="" longitude="" />                    
     <station id="U2-10" local="Josephsplatz" latitude="" longitude="" />  
@@ -78,13 +72,12 @@
     <station id="U2-19" local="Giesing Bahnhof" latitude="" longitude="" />   
     <station id="U2-20" local="Karl-Preis-Platz" latitude="" longitude="" />     
     <station id="U2-21" local="Innsbrucker Ring" latitude="" longitude="">
-      <transit ids="U2-08 U5-13" time="7" />	
+      <transit ids="U2-08 U5-13" time="2" />	
     </station> 
     <station id="U2-22" local="Josephsburg" latitude="" longitude="" />  
     <station id="U2-23" local="Kreillerstraße" latitude="" longitude="" />                        
     <station id="U2-24" local="Trudering" latitude="48.126111" longitude="11.663056">
-      <transit oneway="source" ids="U2-24 S4-24" time="12" />
-      <transit oneway="source" ids="S4-24 U2-24" time="7" />    	
+      <transit ids="U2-24 S4-24" time="2" />
     </station>  
     <station id="U2-25" local="Moosfeld" latitude="" longitude="" />                                            
     <station id="U2-26" local="Messestadt West" latitude="" longitude="" />                       
@@ -93,8 +86,7 @@
 
     <!-- Start of U3 -->
     <station id="U3-01" local="Moosach" latitude="" longitude="">
-      <transit oneway="source" ids="U3-01 S1-10" time="12" />
-      <transit oneway="source" ids="S1-10 U3-01" time="7" />      	
+      <transit ids="U3-01 S1-10" time="2" />
     </station>
     <station id="U3-02" local="Moosacher St.-Martins-Platz" latitude="" longitude="" />  
     <station id="U3-04" local="Oberwiesenfeld" latitude="" longitude="" />
@@ -102,33 +94,28 @@
     <station id="U3-06" local="Petuelring" latitude="" longitude="" />
     <station id="U3-08" local="Bonner Platz" latitude="" longitude="" />
     <station id="U3-09" local="Münchner Freiheit" latitude="" longitude="">
-      <transit ids="U3-09 U6-11" time="7" />  	
+      <transit ids="U3-09 U6-11" time="2" />  	
     </station>
     <station id="U3-10" local="Giselastraße" latitude="" longitude="">
-      <transit ids="U3-10 U6-12" time="7" />    	
+      <transit ids="U3-10 U6-12" time="2" />    	
     </station>
     <station id="U3-11" local="Universität" latitude="" longitude="">
-      <transit ids="U3-11 U6-13" time="7" />      	
+      <transit ids="U3-11 U6-13" time="2" />      	
     </station>  
     <station id="U3-12" local="Odeonsplatz" latitude="" longitude="">
-      <transit ids="U3-12 U4-07 U5-09 U6-14" time="7" />        	
+      <transit ids="U3-12 U4-07 U5-09 U6-14" time="2" />        	
     </station> 
     <station id="U3-13" local="Marienplatz" latitude="" longitude="">
-      <transit ids="U3-13 U6-15" time="7" />
-      <transit ids="S1-17 S2-16 S3-17 S4-18 S6-19 S7-19 S8-13" time="12" />
-      <transit oneway="source" ids="U3-13 S1-17 S2-16 S3-17 S4-18 S6-19 S7-19 S8-13" time="12" />
-      <transit oneway="source" ids="U6-15 S1-17 S2-16 S3-17 S4-18 S6-19 S7-19 S8-13" time="12" />
-      <transit oneway="target" ids="U3-13 S1-17 S2-16 S3-17 S4-18 S6-19 S7-19 S8-13" time="7" />
-      <transit oneway="target" ids="U6-15 S1-17 S2-16 S3-17 S4-18 S6-19 S7-19 S8-13" time="7" />
+      <transit ids="U3-13 U6-15 S1-17 S2-16 S3-17 S4-18 S6-19 S7-19 S8-13" time="2" />
     </station> 
     <station id="U3-15" local="Goetheplatz" latitude="" longitude="">
-      <transit ids="U3-15 U6-17" time="7" />        	
+      <transit ids="U3-15 U6-17" time="2" />        	
     </station>
     <station id="U3-16" local="Poccistraße" latitude="" longitude="">
-      <transit ids="U3-16 U6-18" time="7" />          	
+      <transit ids="U3-16 U6-18" time="2" />          	
     </station>
     <station id="U3-17" local="Implerstraße" latitude="" longitude="">
-      <transit ids="U3-17 U6-19" time="7" />           	
+      <transit ids="U3-17 U6-19" time="2" />           	
     </station>
     <station id="U3-18" local="Brudermühlstraße" latitude="" longitude="" />
     <station id="U3-19" local="Thalkirchen (Tierpark)" latitude="" longitude="" />      
@@ -142,31 +129,25 @@
 
     <!-- Start of U4 -->
     <station id="U4-01" local="Westendstraße" latitude="" longitude="">
-      <transit ids="U4-01 U5-03" time="7" />             	
+      <transit ids="U4-01 U5-03" time="2" />             	
     </station>
     <station id="U4-02" local="Heimeranplatz" latitude="" longitude="">
-      <transit ids="U4-02 U5-04" time="7" />
-      <transit ids="S20-05 S27-06" time="32" />             
-      <transit oneway="target" ids="U4-02 S7-14 S20-05 S27-06" time="7" /> 
-      <transit oneway="target" ids="U5-04 S7-14 S20-05 S27-06" time="7" />   
-      <transit oneway="target" ids="S7-14 U4-02 U5-04 S20-05 S27-06" time="12" />   
-      <transit oneway="target" ids="S20-05 S7-14 U4-02 U5-04" time="32" />
-      <transit oneway="target" ids="S27-06 S7-14 U4-02 U5-04" time="32" />
+      <transit ids="U4-02 U5-04 S7-14 S20-05 S27-06" time="2" />
     </station>
     <station id="U4-03" local="Schwanthalerhöhe" latitude="" longitude="">
-      <transit ids="U4-03 U5-05" time="7" />               	
+      <transit ids="U4-03 U5-05" time="2" />               	
     </station>
     <station id="U4-04" local="Theresienwiese" latitude="" longitude="">
-      <transit ids="U4-04 U5-06" time="7" />               	
+      <transit ids="U4-04 U5-06" time="2" />               	
     </station>
     <station id="U4-06" local="Karlsplatz (Stachus)" latitude="" longitude="">
-      <transit ids="U4-06 U5-08" time="7" />                	
+      <transit ids="U4-06 U5-08" time="2" />                	
     </station>    
     <station id="U4-08" local="Lehel" latitude="" longitude="">
-      <transit ids="U4-08 U5-10" time="7" />                	
+      <transit ids="U4-08 U5-10" time="2" />                	
     </station>
     <station id="U4-09" local="Max-Weber-Platz" latitude="" longitude="">
-      <transit ids="U4-09 U5-11" time="7" />                  	
+      <transit ids="U4-09 U5-11" time="2" />                  	
     </station>
     <station id="U4-10" local="Prinzregentenplatz" latitude="" longitude="" />
     <station id="U4-11" local="Böhmerwaldplatz" latitude="" longitude="" />   
@@ -178,17 +159,14 @@
     <station id="U5-01" local="Laimer Platz" latitude="" longitude="" />
     <station id="U5-02" local="Friedenheimer Straße" latitude="" longitude="" />  
     <station id="U5-12" local="Ostbahnhof" latitude="" longitude="">
-      <transit ids="S1-20 S2-19 S3-20 S4-21 S6-22 S7-22 S8-10" time="12" />
-      <transit oneway="source" ids="U5-12 S1-20 S2-19 S3-20 S4-21 S6-22 S7-22 S8-10" time="12" />
-      <transit oneway="target" ids="U5-12 S1-20 S2-19 S3-20 S4-21 S6-22 S7-22 S8-10" time="7" /> 	
+      <transit ids="U5-12 S1-20 S2-19 S3-20 S4-21 S6-22 S7-22 S8-10" time="2" />
     </station> 
     <station id="U5-14" local="Michaelibad" latitude="" longitude="" />     
     <station id="U5-15" local="Quiddestraße" latitude="" longitude="" />
     <station id="U5-16" local="Neuperlach Zentrum" latitude="" longitude="" />     
     <station id="U5-17" local="Therese-Giehse-Allee" latitude="" longitude="" />       
     <station id="U5-18" local="Neuperlach Süd" latitude="" longitude="">
-      <transit oneway="source" ids="U5-18 S7-26" time="12" />
-      <transit oneway="target" ids="U5-18 S7-26" time="7" />  	
+      <transit ids="U5-18 S7-26" time="2" />
     </station>                             
     <!-- End of U5 -->  
 
@@ -204,9 +182,7 @@
     <station id="U6-09" local="Nordfriedhof" latitude="" longitude="" />
     <station id="U6-10" local="Dietlindenstraße" latitude="" longitude="" />
     <station id="U6-20" local="Harras" latitude="" longitude="">
-      <transit oneway="target" ids="U6-20 S7-13 S27-05" time="7" />
-      <transit oneway="target" ids="S7-13 U6-20 S27-05" time="12" />  
-      <transit oneway="target" ids="S27-05 U6-20 S7-13" time="32" />                	
+      <transit ids="U6-20 S7-13 S27-05" time="2" />
     </station> 
     <station id="U6-21" local="Partnachplatz" latitude="" longitude="" />       
     <station id="U6-22" local="Westpark" latitude="" longitude="" />     
@@ -223,10 +199,10 @@
 
     <!-- Start of S1 -->
     <station id="S1-01" local="Flughafen München" english="Airport" latitude="" longitude="">
-      <transit ids="S1-01 S8-01" time="12" />            	
+      <transit ids="S1-01 S8-01" time="2" />            	
     </station>
     <station id="S1-02" local="Flughafen Besucherpark" latitude="" longitude="">
-      <transit ids="S1-02 S8-02" time="12" />             	
+      <transit ids="S1-02 S8-02" time="2" />             	
     </station>
     <station id="S1-03" local="Neufahrn" latitude="" longitude="" />  
     <station id="S1-04" local="Eching" latitude="" longitude="" />
@@ -235,30 +211,28 @@
     <station id="S1-07" local="Oberschleißheim" latitude="" longitude="" />
     <station id="S1-09" local="Fasanerie" latitude="" longitude="" />
     <station id="S1-11" local="Laim" latitude="" longitude="">
-      <transit ids="S1-11 S2-10 S3-11 S4-12 S6-13 S8-19" time="12" />               	
+      <transit ids="S1-11 S2-10 S3-11 S4-12 S6-13 S8-19" time="2" />               	
     </station>
     <station id="S1-12" local="Hirschgarten" latitude="" longitude="">
-      <transit ids="S1-12 S2-11 S3-12 S4-13 S6-14 S8-18" time="12" />                 	
+      <transit ids="S1-12 S2-11 S3-12 S4-13 S6-14 S8-18" time="2" />                 	
     </station>  
     <station id="S1-13" local="Donnersbergerbrücke" latitude="" longitude="">
-      <transit ids="S1-13 S2-12 S3-13 S4-14 S6-15 S7-15 S8-17" time="12" />
-      <transit oneway="source" ids="S27-07 S1-13 S2-12 S3-13 S4-14 S6-15 S7-15 S8-17" time="12" />
-      <transit oneway="target" ids="S27-07 S1-13 S2-12 S3-13 S4-14 S6-15 S7-15 S8-17" time="32" />
+      <transit ids="S1-13 S2-12 S3-13 S4-14 S6-15 S7-15 S8-17 S27-07" time="2" />
     </station>      
     <station id="S1-14" local="Hackerbrücke" latitude="" longitude="">
-      <transit ids="S1-14 S2-13 S3-14 S4-15 S6-16 S7-16 S8-16" time="12" />                   	
+      <transit ids="S1-14 S2-13 S3-14 S4-15 S6-16 S7-16 S8-16" time="2" />                   	
     </station>
     <station id="S1-15" local="Hauptbahnhof (Tunnel)" latitude="" longitude="">
-      <transit ids="S1-15 S2-14 S3-15 S4-16 S6-17 S7-17 S8-15" time="12" />                   	
+      <transit ids="S1-15 S2-14 S3-15 S4-16 S6-17 S7-17 S8-15" time="2" />                   	
     </station>
     <station id="S1-16" local="Karlsplatz (Stachus)" latitude="" longitude="">
-      <transit ids="S1-16 S2-15 S3-16 S4-17 S6-18 S7-18 S8-14" time="12" />                   	
+      <transit ids="S1-16 S2-15 S3-16 S4-17 S6-18 S7-18 S8-14" time="2" />                   	
     </station>
     <station id="S1-18" local="Isartor" latitude="" longitude="">
-      <transit ids="S1-18 S2-17 S3-18 S4-19 S6-20 S7-20 S8-12" time="12" />                   	
+      <transit ids="S1-18 S2-17 S3-18 S4-19 S6-20 S7-20 S8-12" time="2" />                   	
     </station>     
     <station id="S1-19" local="Rosenheimer Platz" latitude="" longitude="">
-      <transit ids="S1-19 S2-18 S3-19 S4-20 S6-21 S7-21 S8-11" time="12" />                   	
+      <transit ids="S1-19 S2-18 S3-19 S4-20 S6-21 S7-21 S8-11" time="2" />                   	
     </station>
     <!-- End of S1 -->  
 
@@ -268,18 +242,17 @@
     <station id="S2-03" local="Röhrmoos" latitude="" longitude="" />        
     <station id="S2-04" local="Hebertshausen" latitude="" longitude="" />
     <station id="S2-05" local="Dachau" latitude="" longitude="">
-    	<transit oneway="target" ids="S2-05 A-10" time="12" />
-    	<transit oneway="target" ids="A-10 S2-05" time="32" />
+      <transit ids="S2-05 A-10" time="2" />
     </station>
     <station id="S2-06" local="Karlsfeld" latitude="" longitude="" />
     <station id="S2-07" local="Allach" latitude="" longitude="" />
     <station id="S2-08" local="Untermenzing" latitude="" longitude="" />
     <station id="S2-09" local="Obermenzing" latitude="" longitude="" />
     <station id="S2-20" local="Leuchtenbergring" latitude="" longitude="">
-    	<transit ids="S2-20 S4-22 S8-09" time="12" />
+    	<transit ids="S2-20 S4-22 S8-09" time="2" />
     </station>  
     <station id="S2-21" local="Berg am Laim" latitude="" longitude="">
-    	<transit ids="S2-21 S4-23" time="12" />
+    	<transit ids="S2-21 S4-23" time="2" />
     </station>     
     <station id="S2-22" local="Riem" latitude="" longitude="" />     
     <station id="S2-23" local="Feldkirchen" latitude="" longitude="" />
@@ -307,15 +280,13 @@
     <station id="S3-08" local="Lochhausen" latitude="" longitude="" />
     <station id="S3-09" local="Langwied" latitude="" longitude="" />
     <station id="S3-10" local="Pasing" latitude="" longitude="">
-    	<transit ids="S3-10 S4-11 S6-12 S8-20" time="12" />
-    	<transit oneway="source" ids="S20-06 S3-10 S4-11 S6-12 S8-20" time="12" />
-    	<transit oneway="target" ids="S20-06 S3-10 S4-11 S6-12 S8-20" time="32" />
+      <transit ids="S3-10 S4-11 S6-12 S8-20 S20-06" time="2" />
     </station>
     <station id="S3-21" local="St.-Martin-Straße" latitude="" longitude="">
-    	<transit ids="S3-21 S7-23" time="12" />
+      <transit ids="S3-21 S7-23" time="2" />
     </station>       
     <station id="S3-22" local="Giesing" latitude="" longitude="">
-      <transit ids="S3-23 S7-24" time="12" />	
+      <transit ids="S3-23 S7-24" time="2" />	
     </station>     
     <station id="S3-23" local="Fasangarten" latitude="" longitude="" />
     <station id="S3-24" local="Fasanenpark" latitude="" longitude="" />   
@@ -323,9 +294,7 @@
     <station id="S3-26" local="Taufkirchen" latitude="" longitude="" />     
     <station id="S3-27" local="Furth" latitude="" longitude="" />
     <station id="S3-28" local="Deisenhofen" latitude="" longitude="">
-    	<transit ids="S20-01 S27-01" time="32" />
-    	<transit oneway="source" ids="S3-28 S20-01 S27-01" time="32" />
-      <transit oneway="target" ids="S3-28 S20-01 S27-01" time="12" />	
+      <transit ids="S3-28 S20-01 S27-01" time="32" />
     </station>   
     <station id="S3-29" local="Sauerlach" latitude="" longitude="" />       
     <station id="S3-30" local="Otterfing" latitude="" longitude="" />     
@@ -369,7 +338,7 @@
     <station id="S6-09" local="Gräfelfing" latitude="" longitude="" />
     <station id="S6-10" local="Lochham" latitude="" longitude="" />
     <station id="S6-11" local="Westkreuz" latitude="" longitude="">
-    	<transit ids="S6-11 S8-21" time="12" />
+      <transit ids="S6-11 S8-21" time="2" />
     </station>   
     <!-- End of S6 -->  
 
@@ -386,19 +355,13 @@
     <station id="S7-08" local="Pullach" latitude="" longitude="" />
     <station id="S7-09" local="Großhesselohe Isartalbf" latitude="" longitude="" />
     <station id="S7-10" local="Solln" latitude="" longitude="">
-    	<transit ids="S20-02 S27-02" time="32" />
-    	<transit oneway="source" ids="S7-10 S20-02 S27-02" time="32" />
-    	<transit oneway="target" ids="S7-10 S20-02 S27-02" time="12" />
+      <transit ids="S7-10 S20-02 S27-02" time="2" />
     </station>
     <station id="S7-11" local="Siemenswerke" latitude="" longitude="">
-      <transit ids="S20-03 S27-03" time="32" />
-      <transit oneway="source" ids="S7-11 S20-03 S27-03" time="32" />
-      <transit oneway="target" ids="S7-11 S20-03 S27-03" time="12" />	
+      <transit ids="S7-11 S20-03 S27-03" time="2" />
     </station>   
     <station id="S7-12" local="Mittersendling" latitude="" longitude="">
-      <transit ids="S20-04 S27-04" time="32" />
-      <transit oneway="source" ids="S7-12 S20-04 S27-04" time="32" />
-      <transit oneway="target" ids="S7-12 S20-04 S27-04" time="12" /> 	
+      <transit ids="S7-12 S20-04 S27-04" time="2" />
     </station>  
     <station id="S7-25" local="Perlach" latitude="" longitude="" />       
     <station id="S7-27" local="Neubiberg" latitude="" longitude="" />
