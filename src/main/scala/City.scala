@@ -1,13 +1,13 @@
 /**
- * Class City.
- *
- * @author  Yujian Zhang <yujian{dot}zhang[at]gmail(dot)com>
- *
- * License: 
- *   GNU General Public License v2
- *   http://www.gnu.org/licenses/gpl-2.0.html
- * Copyright (C) 2013 Yujian Zhang
- */
+  * Class City.
+  *
+  * @author  Yujian Zhang <yujian{dot}zhang[at]gmail(dot)com>
+  *
+  * License: 
+  *   GNU General Public License v2
+  *   http://www.gnu.org/licenses/gpl-2.0.html
+  * Copyright (C) 2013 Yujian Zhang
+  */
 
 package net.whily.android.worldmetro
 
@@ -16,20 +16,20 @@ import scala.collection.mutable
 import android.app.Activity
 import android.util.Log
 
-/** 
- *  City class holds all data for a metro network of a city. 
- *  
- *  cityName should be in English; and if there is spaces (e.g. San Francisco), 
- *  use underscore for space. cityName is the base name for the corresponding xml file
- *  (e.g. san_francisco.xml).
- *  */
+/**
+  *  City class holds all data for a metro network of a city. 
+  *  
+  *  cityName should be in English; and if there is spaces (e.g. San Francisco), 
+  *  use underscore for space. cityName is the base name for the corresponding xml file
+  *  (e.g. san_francisco.xml).
+  *  */
 class City(activity: Activity, cityName: String) {
   private val logTag = "City.scala"
-	private val languagePref = Util.getLanguagePref(activity) 
-	private var transits: List[Transit] = Nil
+  private val languagePref = Util.getLanguagePref(activity)
+  private var transits: List[Transit] = Nil
   
   // (stationId   -> stationName)
-  var stationIdMap = new mutable.HashMap[String, String]() 
+  var stationIdMap = new mutable.HashMap[String, String]()
   // (stationName -> (set of stationId)
   var stationNameMap = new mutable.HashMap[String, Set[String]]()
   // (localStationName -> stationName)
@@ -58,8 +58,8 @@ class City(activity: Activity, cityName: String) {
   def findRoutes(sourceName: String, targetName: String): List[Route] = {
     /** Return a list of station Ids corresponding the station/place. */
     def tagList(name: String) = {
-      val stationName = 
-        if (placeLocalStationMap.contains(name)) 
+      val stationName =
+        if (placeLocalStationMap.contains(name))
           localStationNameMap(placeLocalStationMap(name))
         else
           name
@@ -87,19 +87,19 @@ class City(activity: Activity, cityName: String) {
       }
     }
     
-    val filteredRoutes = 
+    val filteredRoutes =
       routes.filter(x => ((x.travelTime - leastTime <= 10) && (x.transitNum <= transitForLeastTime)) ||
-                         ((leastTransit < transitForLeastTime) && (x.transitNum == leastTransit) && 
-                          (x.travelTime - timeForLeastTransit <= 10)))
-                          
+        ((leastTransit < transitForLeastTime) && (x.transitNum == leastTransit) &&
+          (x.travelTime - timeForLeastTransit <= 10)))
+    
     filteredRoutes sortWith
-      ((x, y) => x.travelTime < y.travelTime || 
-                (x.travelTime == y.travelTime && x.transitNum < y.transitNum))
+    ((x, y) => x.travelTime < y.travelTime ||
+      (x.travelTime == y.travelTime && x.transitNum < y.transitNum))
   }
   
-  /** Return true if `thisId` and `thatId` refer to the same station 
-   *  (i.e. they can be on the different lines).
-   */
+  /** Return true if `thisId` and `thatId` refer to the same station
+    *  (i.e. they can be on the different lines).
+    */
   def sameStation(thisId: String, thatId: String): Boolean = {
     // Since sameStation is only called by trimPath, it is an error case
     // thisId == thatId.
@@ -113,15 +113,15 @@ class City(activity: Activity, cityName: String) {
     if (len <= 1) path
     else if (sameStation(path.head, path.tail.head)) trimPath(path.tail)
     else {
-    	val (u, v) = path.splitAt(len - 1)
-    	if (sameStation(u.last, v.head)) trimPath(u)
-    	else path
+      val (u, v) = path.splitAt(len - 1)
+      if (sameStation(u.last, v.head)) trimPath(u)
+      else path
     }
-  }  
+  }
   
   /**
-   * Class 
-   */
+    * Class 
+    */
   class Route(route: List[String]) {
     val segments = routeSegments(route).map(new Segment(_))
     val transitNum = segments.length - 1
@@ -140,7 +140,7 @@ class City(activity: Activity, cityName: String) {
       segments.map(_.lineId).mkString(" > ")
     }
     
-    override def toString = travelTime + " min, " + linesInfo   
+    override def toString = travelTime + " min, " + linesInfo
   }
 
   class Segment (val segment: List[String]) {
@@ -148,9 +148,9 @@ class City(activity: Activity, cityName: String) {
     def line : MetroLine = stationLineMap(segment(0))
     override def toString = {
       "Line " + line.id + " " +
-        "towards " + line.headsign(this) + ", " +
-        Util.getPluralString(activity, R.plurals.stops, stopNum) + "\n" +
-        segment.map(stationIdMap(_)).mkString("→")
+      "towards " + line.headsign(this) + ", " +
+      Util.getPluralString(activity, R.plurals.stops, stopNum) + "\n" +
+      segment.map(stationIdMap(_)).mkString("→")
     }
     
     def lineId: String = {
@@ -162,11 +162,11 @@ class City(activity: Activity, cityName: String) {
   class MetroLine(val id: String, val color: String, val waitTime: Int, val stations: List[String]) {
     // Return headsign.
     def headsign(segment: Segment): String = ""
-  }  
+  }
   
   // Typical metro line which is linear.
-  class MetroLinear(id: String, color: String, waitTime: Int, stations: List[String]) 
-    extends MetroLine(id, color, waitTime, stations) {
+  class MetroLinear(id: String, color: String, waitTime: Int, stations: List[String])
+      extends MetroLine(id, color, waitTime, stations) {
     override def headsign(segment: Segment): String = {
       val i = stations.indexOf(segment.segment(0))
       val j = stations.indexOf(segment.segment(1))
@@ -178,7 +178,7 @@ class City(activity: Activity, cityName: String) {
   
   // Metro line which is a ring (loop).
   class MetroRing(id: String, color: String, waitTime: Int, stations: List[String])
-    extends MetroLine(id, color, waitTime, stations) {
+      extends MetroLine(id, color, waitTime, stations) {
     override def headsign(segment: Segment): String =
       stationIdMap(segment.segment(1))
   }
@@ -186,13 +186,13 @@ class City(activity: Activity, cityName: String) {
   private def routeSegments(route: List[String]): List[List[String]] = {
     route match {
       case Nil    => Nil
-      case x :: y => 
+      case x :: y =>
         routeSegments(y) match {
           case Nil    => List(List(x))
-          case u :: v => if (stationLineMap(x).id == stationLineMap(u.head).id) 
-                           (x :: u) :: v
-                         else
-                           List(x) :: u :: v
+          case u :: v => if (stationLineMap(x).id == stationLineMap(u.head).id)
+            (x :: u) :: v
+          else
+            List(x) :: u :: v
         }
     }
   }
@@ -208,151 +208,151 @@ class City(activity: Activity, cityName: String) {
     readPlaces()
     initTransits()
     
-	  /** Read information of metro stations from city XML. */
+    /** Read information of metro stations from city XML. */
     def readStations() {
-	    readElements("stations") {
+      readElements("stations") {
         val id          = attr("id")
-	      val englishName = attr("english")
-	      val localName   = attr("local")
-	      // Local name should be present even for English-speaking cities (in this case,
-	      // there is "local" name only.
-	      assert(!id.isEmpty)
-	      val name = displayName(localName, englishName)
-	        
-	      stationIdMap += (id -> name)
-	      stationNameMap += (name -> Set(id))
-	      localStationNameMap += (localName -> name)
-	      
-	      if (xpp.next == XmlPullParser.START_TAG) {
-	        do {
-	          xpp.require(XmlPullParser.START_TAG, null, "transit")	
+	val englishName = attr("english")
+	val localName   = attr("local")
+	// Local name should be present even for English-speaking cities (in this case,
+	// there is "local" name only.
+	assert(!id.isEmpty)
+	val name = displayName(localName, englishName)
+	
+	stationIdMap += (id -> name)
+	stationNameMap += (name -> Set(id))
+	localStationNameMap += (localName -> name)
+	
+	if (xpp.next == XmlPullParser.START_TAG) {
+	  do {
+	    xpp.require(XmlPullParser.START_TAG, null, "transit")
             val ids = attr("ids").split(" ")
             transits = Transit(ids, attr("time").toInt, attr("oneway")) :: transits
-		        for (altId <- ids if altId != id) {
-		          stationIdMap += (altId -> name)
-		          stationNameMap(name) += altId
-		        }
-	          xpp.nextTag()
-	        } while (xpp.next() != XmlPullParser.END_TAG)
-	      }
-	    }	      
-	  }
-	  
-	  /** Read information of metro lines from city XML. */
-    def readLines() {
- 	    readElements("lines") {
-	      val id = attr("id")
-	      // Three types
-	      // - line: default type (no attribute is needed).
-	      // - ring: bi-directional ring/loop
-	      // - uniring: uni-directional ring/loop
-	      val lineType = attr("type")
-	      val color = attr("color")
-	      val wait = attr("wait").toInt
-	      assert(color != "")
-	    	var prevStation = ""
-	    	var index = 0
-	    	var firstStation = ""
-	    	var firstTime = ""
-	    	var stationIds: List[String] = Nil   
-	    	
-	    	xpp.nextTag()
-	      readElements("stations") {
-	    	  val stationId = attr("id")
-	    	  stationIds = stationId :: stationIds    	  
-	    	  if (index == 0) {
-	    	    index = 1
-	    	    prevStation = stationId
-	    	    if (lineType == "ring" || lineType == "uniring") {
-	    	      firstStation = stationId
-	    	      firstTime = attr("time")
-	    	      assert(!firstTime.isEmpty)
-	    	    }
-	    	  } else {
-	    	    val time = attr("time")
-	    	    assert(!time.isEmpty())
-	    	    timeMap += ((prevStation, stationId) -> time.toInt)
-	    	    transitMap += ((prevStation, stationId) -> time.toInt)
-	    	    if (lineType != "uniring") {
-	    	    	timeMap += ((stationId, prevStation) -> time.toInt)	    	    
-	    	    	transitMap += ((stationId, prevStation) -> time.toInt)
-	    	    }
-	    	    prevStation = stationId
-	    	  }
-	    	  xpp.nextTag() // Now we are at </station>
-	      }
- 	  
-	      if (lineType == "ring") {
-	        timeMap += ((firstStation, prevStation) -> firstTime.toInt)
-	        timeMap += ((prevStation, firstStation) -> firstTime.toInt)  
-	        transitMap += ((firstStation, prevStation) -> firstTime.toInt)
-	        transitMap += ((prevStation, firstStation) -> firstTime.toInt)          
-	      } else if (lineType == "uniring") {
-	        timeMap += ((prevStation, firstStation) -> firstTime.toInt)  
-	        transitMap += ((prevStation, firstStation) -> firstTime.toInt)  	        
-	      }
-
-        // Build map (stationId -> line)
-        stationIds = stationIds.reverse   
-	    	val metroLine = lineType match {
-	        case "ring" | "uniring" => new MetroRing(id, color, wait, stationIds)
-	        case _                   => new MetroLinear(id, color, wait, stationIds)
-	      }
-	    	for (stationId <- stationIds) stationLineMap += (stationId -> metroLine)    
-	    	
-	    	// xpp.nextTag() is not needed since after reading <stations> we're already at </line>.
-	    }    
-	  }
-	  
-	  /** Read information of places from city XML. */
-    def readPlaces() { 
-	    readElements("places") {
-	      val localName = attr("local")
-	      val englishName = attr("english")
-	      val stationLocalName = attr("stationLocal")
-	      val name = displayName(localName, englishName)
-	      assert(stationLocalName != "")
-	      
-	      placeLocalStationMap += (name -> stationLocalName)
-	      
-	      xpp.nextTag() // We are now at </place.
-	    }    
-	  }
-	  
-	  /** 
-	   * Read element `names` and the sub elements `name` with `action` performed on
-	   * each sub element. 
-	   * 
-	   * At the beginning, `xpp` is at the <names>. 
-	   * After the function finishes, `xpp` is at the tag after </names>.
-	   * 
-	   * For `action`, `xpp` is at the start tag, and at the end of `action`,
-	   * 'xpp` should be at the corresponding end tag. 					
-	   */
-	  def readElements(names: String)(action: => Unit) {
-	    assert(names.endsWith("s"))
-	    val name = names.init
-	    
-	    // Log.i(logTag, cityName + ".xml:" + xpp.getLineNumber + " <" + xpp.getName + ">")
-	    xpp.require(XmlPullParser.START_TAG, null, names)
-	    while (xpp.next() != XmlPullParser.END_TAG) {
-	      // Log.i(logTag, cityName + ".xml:" + xpp.getLineNumber + " <" + xpp.getName + ">")
-	      xpp.require(XmlPullParser.START_TAG, null, name)
-	      action
+	    for (altId <- ids if altId != id) {
+	      stationIdMap += (altId -> name)
+	      stationNameMap(name) += altId
 	    }
 	    xpp.nextTag()
-	  }    
-	  
-	  /** Return attribute value; return "" if attribute does not exist. */
-	  def attr(name: String) = {
-	    val result = xpp.getAttributeValue(null, name)
-	    if (result == null) "" else result
+	  } while (xpp.next() != XmlPullParser.END_TAG)
+	    }
+      }
+    }
+    
+    /** Read information of metro lines from city XML. */
+    def readLines() {
+      readElements("lines") {
+	val id = attr("id")
+	// Three types
+	// - line: default type (no attribute is needed).
+	// - ring: bi-directional ring/loop
+	// - uniring: uni-directional ring/loop
+	val lineType = attr("type")
+	val color = attr("color")
+	val wait = attr("wait").toInt
+	assert(color != "")
+	var prevStation = ""
+	var index = 0
+	var firstStation = ""
+	var firstTime = ""
+	var stationIds: List[String] = Nil
+	
+	xpp.nextTag()
+	readElements("stations") {
+	  val stationId = attr("id")
+	  stationIds = stationId :: stationIds
+	  if (index == 0) {
+	    index = 1
+	    prevStation = stationId
+	    if (lineType == "ring" || lineType == "uniring") {
+	      firstStation = stationId
+	      firstTime = attr("time")
+	      assert(!firstTime.isEmpty)
+	    }
+	  } else {
+	    val time = attr("time")
+	    assert(!time.isEmpty())
+	    timeMap += ((prevStation, stationId) -> time.toInt)
+	    transitMap += ((prevStation, stationId) -> time.toInt)
+	    if (lineType != "uniring") {
+	      timeMap += ((stationId, prevStation) -> time.toInt)
+	      transitMap += ((stationId, prevStation) -> time.toInt)
+	    }
+	    prevStation = stationId
 	  }
-	  
-	  /** Initialize transit weights information. */  
-	  def initTransits() {
-	    val TransitPenalty = 9999 
-	    
+	  xpp.nextTag() // Now we are at </station>
+	}
+ 	
+	if (lineType == "ring") {
+	  timeMap += ((firstStation, prevStation) -> firstTime.toInt)
+	  timeMap += ((prevStation, firstStation) -> firstTime.toInt)
+	  transitMap += ((firstStation, prevStation) -> firstTime.toInt)
+	  transitMap += ((prevStation, firstStation) -> firstTime.toInt)
+	} else if (lineType == "uniring") {
+	  timeMap += ((prevStation, firstStation) -> firstTime.toInt)
+	  transitMap += ((prevStation, firstStation) -> firstTime.toInt)
+	}
+
+        // Build map (stationId -> line)
+        stationIds = stationIds.reverse
+	val metroLine = lineType match {
+	  case "ring" | "uniring" => new MetroRing(id, color, wait, stationIds)
+	  case _                   => new MetroLinear(id, color, wait, stationIds)
+	}
+	for (stationId <- stationIds) stationLineMap += (stationId -> metroLine)
+	
+	// xpp.nextTag() is not needed since after reading <stations> we're already at </line>.
+      }
+    }
+    
+    /** Read information of places from city XML. */
+    def readPlaces() {
+      readElements("places") {
+	val localName = attr("local")
+	val englishName = attr("english")
+	val stationLocalName = attr("stationLocal")
+	val name = displayName(localName, englishName)
+	assert(stationLocalName != "")
+	
+	placeLocalStationMap += (name -> stationLocalName)
+	
+	xpp.nextTag() // We are now at </place.
+      }
+    }
+    
+    /**
+      * Read element `names` and the sub elements `name` with `action` performed on
+      * each sub element. 
+      * 
+      * At the beginning, `xpp` is at the <names>. 
+      * After the function finishes, `xpp` is at the tag after </names>.
+      * 
+      * For `action`, `xpp` is at the start tag, and at the end of `action`,
+      * 'xpp` should be at the corresponding end tag. 					
+      */
+    def readElements(names: String)(action: => Unit) {
+      assert(names.endsWith("s"))
+      val name = names.init
+      
+      // Log.i(logTag, cityName + ".xml:" + xpp.getLineNumber + " <" + xpp.getName + ">")
+      xpp.require(XmlPullParser.START_TAG, null, names)
+      while (xpp.next() != XmlPullParser.END_TAG) {
+	// Log.i(logTag, cityName + ".xml:" + xpp.getLineNumber + " <" + xpp.getName + ">")
+	xpp.require(XmlPullParser.START_TAG, null, name)
+	action
+      }
+      xpp.nextTag()
+    }
+    
+    /** Return attribute value; return "" if attribute does not exist. */
+    def attr(name: String) = {
+      val result = xpp.getAttributeValue(null, name)
+      if (result == null) "" else result
+    }
+    
+    /** Initialize transit weights information. */
+    def initTransits() {
+      val TransitPenalty = 9999
+      
       for (transit <- transits) {
         val ids = transit.ids
         val time = transit.time
@@ -363,10 +363,10 @@ class City(activity: Activity, cityName: String) {
           for (id <- ids.drop(1))
             if (oneway == "source") {
               timeMap += ((first, id) -> time)
-              transitMap += ((first, id) -> TransitPenalty)              
+              transitMap += ((first, id) -> TransitPenalty)
             } else {
               timeMap += ((id, first) -> time)
-              transitMap += ((id, first) -> TransitPenalty)              
+              transitMap += ((id, first) -> TransitPenalty)
             }
         } else {
           for (i <- 0 until ids.length)
@@ -374,15 +374,15 @@ class City(activity: Activity, cityName: String) {
               timeMap += ((ids(i), ids(j)) -> time)
               timeMap += ((ids(j), ids(i)) -> time)
               transitMap += ((ids(i), ids(j)) -> TransitPenalty)
-              transitMap += ((ids(j), ids(i)) -> TransitPenalty)              
-          }
-        }        
-      }	    
-	  }
+              transitMap += ((ids(j), ids(i)) -> TransitPenalty)
+            }
+        }
+      }
+    }
   }
   
   private def displayName(localName: String, englishName: String): String = {
-  	// Local name should be present even for English-speaking cities (in this case,
+    // Local name should be present even for English-speaking cities (in this case,
     // there is "local" name only.
     assert(!localName.isEmpty)
     if (languagePref == "both" && !englishName.isEmpty)
@@ -391,7 +391,7 @@ class City(activity: Activity, cityName: String) {
       localName
     else
       englishName
-  }  
+  }
   
   case class Transit(ids: Array[String], time: Int, oneway: String)
 }
