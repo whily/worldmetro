@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <city>
   <!-- Unit for time duration is in minute. -->
-  <!-- Transit information from ... -->
+  <!-- Transfer information from ... -->
   <stations>
     <!-- Note: station ID is a string WITHOUT space. -->
 

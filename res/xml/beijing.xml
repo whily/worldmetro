@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <city>
   <!-- Unit for time duration is in minute. -->
-  <!-- Transit information from http://www.ditiezu.com/thread-71145-1-1.html.
+  <!-- Transfer information from http://www.ditiezu.com/thread-71145-1-1.html.
        The values is multipled by two and we don't consider the difference between
        the directions -->
   <stations>
@@ -9,7 +9,7 @@
          if available. Otherwise the ids from Baidu are used. --> 
     
     <!--  Start of Line 1 -->
-    <!--  TODO: fix transit time in general. -->      
+    <!--  TODO: fix transfer time in general. -->      
     <station id="103" local="苹果园" english="PINGGUOYUAN" latitude="39.925" longitude="116.171944" />
     <station id="104" local="古城" english="GUCHENG" latitude="39.906111" longitude="116.183056" />
     <station id="105" local="八角游乐园" english="BAJIAO AMUSEMENT PARK" latitude="39.906111" longitude="116.206944" />
@@ -18,31 +18,31 @@
     <station id="108" local="五棵松" english="WUKESONG" latitude="39.906389" longitude="116.268611" />
     <station id="109" local="万寿路" english="WANSHOULU" latitude="39.906111" longitude="116.288889" />
     <station id="110" local="公主坟" english="GONGZHUFEN" latitude="39.906389" longitude="116.304167">
-    	<transit ids="110 1007" time="2" />
+    	<transfer ids="110 1007" time="2" />
     </station>
     <station id="111" local="军事博物馆" english="MILITARY MUSEUM" latitude="39.906389" longitude="116.316667">
-    	<transit ids="111 910" time="2" />
+    	<transfer ids="111 910" time="2" />
     </station>
     <station id="112" local="木樨地" english="MUXIDI" latitude="39.906111" longitude="116.331944" />
     <station id="113" local="南礼士路" english="NANLISHILU" latitude="39.905833" longitude="116.345278" />
     <station id="114" local="复兴门" english="FUXINGMEN" latitude="39.906111" longitude="116.35">
-    	<transit ids="114 204" time="2" />
+    	<transfer ids="114 204" time="2" />
     </station>
     <station id="115" local="西单" english="XIDAN" latitude="39.905833" longitude="116.367778">
-    	<transit ids="115 408" time="2" />
+    	<transfer ids="115 408" time="2" />
     </station>
     <station id="116" local="天安门西" english="TIAN'ANMEN WEST" latitude="39.906111" longitude="116.385556" />
     <station id="117" local="天安门东" english="TIAN'ANMEN EAST" latitude="39.906389" longitude="116.396111" />
     <station id="118" local="王府井" english="WANGFUJING" latitude="39.906667" longitude="116.405278" />
     <station id="119" local="东单" english="DONGDAN" latitude="39.908255" longitude="116.419845">
-    	<transit ids="119 507" time="2" />
+    	<transfer ids="119 507" time="2" />
     </station>
     <station id="120" local="建国门" english="JIANGUOMEN" latitude="35.907222" longitude="116.428889">
-    	<transit ids="120 211" time="2" />
+    	<transfer ids="120 211" time="2" />
     </station>
     <station id="121" local="永安里" english="YONG'ANLI" latitude="39.906944" longitude="116.444167" />
     <station id="122" local="国贸" english="GUOMAO" latitude="39.909819" longitude="116.455572">
-    	<transit ids="122 1027" time="2" />
+    	<transfer ids="122 1027" time="2" />
     </station>
     <station id="123" local="大望路" english="DAWANGLU" latitude="39.908333" longitude="116.477778" />
     <station id="124" local="四惠" english="SIHUI" latitude="" longitude="" />
@@ -51,37 +51,37 @@
 
     <!-- Start of Line 2 -->
     <station id="201" local="西直门" english="XIZHIMEN" latitude="39.9405" longitude="116.355">
-      <transit ids="201 413" time="2" />   
-      <transit ids="201 1301" time="6" />
-      <transit ids="413 1301" time="4" />
+      <transfer ids="201 413" time="2" />   
+      <transfer ids="201 1301" time="6" />
+      <transfer ids="413 1301" time="4" />
     </station>
     <station id="202" local="车公庄" english="CHEGONGZHUANG" latitude="39.932347" longitude="116.355728">
-    	<transit ids="202 612" time="2" />
+    	<transfer ids="202 612" time="2" />
     </station>    
     <station id="203" local="阜成门" english="FUCHENGMEN" latitude="" longitude="" />     
     <station id="205" local="长椿街" english="CHANGCHUNJIE" latitude="" longitude="" />   
     <station id="206" local="宣武门" english="XUANWUMEN" latitude="" longitude="">
-    	<transit ids="206 407" time="2" />
+    	<transfer ids="206 407" time="2" />
     </station>  
     <station id="207" local="和平门" english="HEPINGMEN" latitude="" longitude="" />   
     <station id="208" local="前门" english="QIANMEN" latitude="" longitude="" />    
     <station id="209" local="崇文门" english="CHONGWENMEN" latitude="" longitude="">
-    	<transit ids="209 506" time="2" />
+    	<transfer ids="209 506" time="2" />
     </station>
     <station id="210" local="北京站" english="BEIJING RAILWAY STATION" latitude="39.902222" longitude="116.421111" />    
     <station id="212" local="朝阳门" english="CHAOYANGMEN" latitude="" longitude="">
-    	<transit ids="212 617" time="2" />
+    	<transfer ids="212 617" time="2" />
     </station>   
     <station id="213" local="东四十条" english="DONGSI SHITIAO" latitude="" longitude="" />                                   
     <station id="214" local="东直门" english="DONGZHIMEN" latitude="39.94" longitude="116.428">
-      <transit ids="214 1316 AE01" time="2" />
+      <transfer ids="214 1316 AE01" time="2" />
     </station>
     <station id="215" local="雍和宫" english="YONGHEGONG LAMA TEMPLE" latitude="" longitude="">
-    	<transit ids="215 512" time="2" />
+    	<transfer ids="215 512" time="2" />
     </station>                                   
     <station id="216" local="安定门" english="ANDINGMEN" latitude="39.949167" longitude="116.408333" />                                   
     <station id="217" local="鼓楼大街" english="GULOUDAJIE" latitude="" longitude="">
-    	<transit ids="217 818" time="2" />
+    	<transfer ids="217 818" time="2" />
     </station>                                   
     <station id="218" local="积水潭" english="JISHUITAN" latitude="" longitude="" />       
     
@@ -101,7 +101,7 @@
     <station id="DX11" local="新宫" english="XINGONG" latitude="39.811133" longitude="116.359353" />
     <station id="401" local="公益西桥" english="GONGYIXIQIAO" latitude="39.835833" longitude="116.370833" />
     <station id="402" local="角门西" english="JIAOMEN WEST" latitude="" longitude="">
-    	<transit ids="402 1016" time="2" />
+    	<transfer ids="402 1016" time="2" />
     </station>
     <station id="403" local="马家堡" english="MAJIAPU" latitude="" longitude="" />
     <station id="404" local="北京南站" english="BEIJING SOUTH RAILWAY STATION" latitude="" longitude="" />
@@ -110,17 +110,17 @@
     <station id="409" local="灵境胡同" english="LINGJING HUTONG" latitude="" longitude="" />
     <station id="410" local="西四" english="XISI" latitude="" longitude="" />
     <station id="411" local="平安里" english="PING'ANLI" latitude="" longitude="">
-    	<transit ids="411 613" time="2" />
+    	<transfer ids="411 613" time="2" />
     </station>
     <station id="412" local="新街口" english="XINJIEKOU" latitude="" longitude="" />
     <station id="414" local="动物园" english="BEIJING ZOO" latitude="39.937119" longitude="116.332767" />
     <station id="415" local="国家图书馆" english="NATIONAL LIBRARY" latitude="39.942778" longitude="116.318889">
-    	<transit ids="415 913" time="2" />
+    	<transfer ids="415 913" time="2" />
     </station>
     <station id="416" local="魏公村" english="WEIGONGCUN" latitude="39.956389" longitude="116.317222" />
     <station id="417" local="人民大学" english="RENMIN UNIVERSITY" latitude="39.965556" longitude="116.315278" />
     <station id="418" local="海淀黄庄" english="HAIDIANHUANGZHUANG" latitude="39.974714" longitude="116.311467">
-    	<transit ids="418 1044" time="2" />
+    	<transfer ids="418 1044" time="2" />
     </station>
     <station id="419" local="中关村" english="ZHONGGUANCUN" latitude="39.983056" longitude="116.310278" />
     <station id="420" local="北京大学东门" english="EAST GATE OF PEKING UNIVERSITY" latitude="39.990833" longitude="116.309722" />
@@ -137,21 +137,21 @@
     <station id="522" local="天通苑" english="TIANTONGYUAN" latitude="" longitude="" />
     <station id="521" local="天通苑南" english="TIANTONGYUAN SOUTH" latitude="" longitude="" />
     <station id="520" local="立水桥" english="LISHUIQIAO" latitude="" longitude="">
-      <transit ids="520 1310" time="2" />
+      <transfer ids="520 1310" time="2" />
     </station>    
     <station id="519" local="立水桥南" english="LISHUIQIAO SOUTH" latitude="" longitude="" />
     <station id="518" local="北苑路北" english="BEIYUANLU NORTH" latitude="" longitude="" />
     <station id="517" local="大屯路东" english="DATUNLU EAST" latitude="" longitude="" />
     <station id="516" local="惠新西街北口" english="HUIXINXIJIE BEIKOU" latitude="" longitude="" />
     <station id="515" local="惠新西街南口" english="HUIXINXIJIE NANKOU" latitude="39.9757" longitude="116.4113">
-    	<transit ids="515 1036" time="2" />
+    	<transfer ids="515 1036" time="2" />
     </station>
     <station id="514" local="和平西桥" english="HEPINGXIQIAO" latitude="" longitude="" />
     <station id="513" local="和平里北街" english="HEPINGLI BEIJIE" latitude="" longitude="" />
     <station id="511" local="北新桥" english="BEIXINQIAO" latitude="" longitude="" />
     <station id="510" local="张自忠路" english="ZHANGZIZHONGLU" latitude="" longitude="" />
     <station id="509" local="东四" english="DONGSI" latitude="" longitude="">
-    	<transit ids="509 616" time="2" />
+    	<transfer ids="509 616" time="2" />
     </station>
     <station id="508" local="灯市口" english="DENGSHIKOU" latitude="" longitude="" />
     <station id="505" local="磁器口" english="CIQIKOU" latitude="" longitude="" />
@@ -159,28 +159,28 @@
     <station id="503" local="蒲黄榆" english="PUHUANGYU" latitude="" longitude="" />
     <station id="502" local="刘家窑" english="LIUJIAYAO" latitude="" longitude="" />
     <station id="501" local="宋家庄" english="SONGJIAZHUANG" latitude="" longitude="">
-    	<transit ids="501 1020" time="2" />
+    	<transfer ids="501 1020" time="2" />
     </station>    
     <!-- End of Line 5 -->
     
     <!--  Start of Line 6 -->
     <station id="606" local="海淀五路居" english="HAIDIAN WULUJU" latitude="39.931389" longitude="116.270833" />
     <station id="607" local="慈寿寺" english="CISHOUSI" latitude="" longitude="">
-    	<transit ids="607 1005" time="2" />
+    	<transfer ids="607 1005" time="2" />
     </station>
     <station id="608" local="花园桥" english="HUAYUANQIAO" latitude="" longitude="" />
     <station id="609" local="白石桥南" english="BAISHIQIAO SOUTH" latitude="" longitude="">
-    	<transit ids="609 912" time="2" />
+    	<transfer ids="609 912" time="2" />
     </station>
     <!--<station id="610" local="二里沟" english="ERLIGOU" latitude="" longitude="" />-->
     <station id="611" local="车公庄西" english="CHEGONGZHUANG WEST" latitude="" longitude="" />
     <station id="614" local="北海北" english="BEIHAI NORTH" latitude="" longitude="" />
     <station id="615" local="南锣鼓巷" english="NANLUOGUXIANG" latitude="" longitude="">
-    	<!--<transit ids="615 816" time="2" />-->
+    	<!--<transfer ids="615 816" time="2" />-->
     </station>
     <station id="618" local="东大桥" english="DONGDAQIAO" latitude="" longitude="" />
     <station id="619" local="呼家楼" english="HUJIALOU" latitude="39.922" longitude="116.4555">
-      <transit ids="619 1029" time="2" />    		
+      <transfer ids="619 1029" time="2" />    		
     </station>
     <station id="620" local="金台路" english="JINTAILU" latitude="" longitude="" />
     <station id="621" local="十里堡" english="SHILIPU" latitude="" longitude="" />
@@ -197,7 +197,7 @@
     <!--<station id="819" local="安德里北街" english="ANDELIBEIJIE" latitude="" longitude="" />-->
     <station id="820" local="安华桥" english="ANHUAQIAO" latitude="" longitude="" />
     <station id="821" local="北土城" english="BEITUCHENG" latitude="39.976" longitude="116.3879">
-    	<transit ids="821 1038" time="2" />
+    	<transfer ids="821 1038" time="2" />
     </station>
     <station id="822" local="奥体中心" english="OLYMPIC SPORTS CENTER" latitude="" longitude="" />
     <station id="823" local="奥林匹克公园" english="OLYMPIC GREEN" latitude="40.001125" longitude="116.386853" />
@@ -207,13 +207,13 @@
     <station id="827" local="西小口" english="XIXIAOKOU" latitude="" longitude="" />
     <station id="828" local="育新" english="YUXIN" latitude="" longitude="" />
     <station id="829" local="霍营" english="HUOYING" latitude="40.070556" longitude="116.360278">
-      <transit ids="829 1309" time="3" />    	
+      <transfer ids="829 1309" time="3" />    	
     </station>
     <station id="830" local="回龙观东大街" english="HUILONGGUAN DONGDAJIE" latitude="40.081389" longitude="116.367222" />
     <!-- End of Line 8 -->
     
     <!--  Start of Line 9 -->
-    <!--  TODO: check transit time, merge with previous lines. -->
+    <!--  TODO: check transfer time, merge with previous lines. -->
     <station id="901" local="郭公庄" english="GUOGONGZHUANG" latitude="" longitude="" />
     <station id="902" local="丰台科技园" english="FENGTAI SCIENCE PARK" latitude="" longitude="" />
     <station id="903" local="科怡路" english="KEYILU" latitude="" longitude="" />
@@ -221,7 +221,7 @@
     <station id="905" local="丰台东大街" english="FENGTAI DONGDAJIE" latitude="" longitude="" />
     <station id="906" local="七里庄" english="QILIZHUANG" latitude="" longitude="" />
     <station id="907" local="六里桥" english="LIULIQIAO" latitude="39.878889" longitude="116.296944">
-    	<transit ids="907 1009" time="2" />
+    	<transfer ids="907 1009" time="2" />
     </station>
     <station id="908" local="六里桥东" english="LIULIQIAO EAST" latitude="" longitude="" />
     <station id="909" local="北京西站" english="BEIJING WEST RAILWAY STATION" latitude="39.894444" longitude="116.315" />
@@ -236,7 +236,7 @@
     <station id="1006" local="西钓鱼台 " english="XIDIAOYUTAI" latitude="" longitude="" />
     <station id="1008" local="莲花桥" english="LIANHUAQIAO" latitude="" longitude="" />
     <station id="1010" local="西局" english="XIJU" latitude="" longitude="">
-    	<transit ids="1010 1407" time="2" />
+    	<transfer ids="1010 1407" time="2" />
     </station>
     <station id="1011" local="泥洼" english="NIWA" latitude="" longitude="" />
     <station id="1012" local="丰台站" english="FENGTAI RAILWAY STATION" latitude="39.848333" longitude="116.288611" />
@@ -257,18 +257,18 @@
     <station id="1031" local="农业展览馆" english="AGRICULTURAL EXHIBITION CENTER" latitude="39.9403" longitude="116.4563" />
     <station id="1032" local="亮马桥" english="LIANGMAQIAO" latitude="39.949326" longitude="116.461558" />
     <station id="1033" local="三元桥" english="SANYUANQIAO" latitude="39.96" longitude="116.451">
-    	<transit ids="1033 AE02" time="3" />
+    	<transfer ids="1033 AE02" time="3" />
     </station>
     <station id="1034" local="太阳宫" english="TAIYANGGONG" latitude="39.9713" longitude="116.4412" />
     <station id="1035" local="芍药居" english="SHAOYAOJU" latitude="39.9759" longitude="116.4302">
-      <transit ids="1035 1313" time="3" />    	
+      <transfer ids="1035 1313" time="3" />    	
     </station>
     <station id="1037" local="安贞门" english="ANZHENMEN" latitude="39.9757" longitude="116.3994" />
     <station id="1039" local="建德门" english="JIANDEMEN" latitude="39.9751" longitude="116.3749" />
     <station id="1040" local="牡丹园" english="MUDANYUAN" latitude="39.9749" longitude="116.3631" />
     <station id="1041" local="西土城" english="XITUCHENG" latitude="39.9749" longitude="116.3478" />
     <station id="1042" local="知春路" english="ZHICHUNLU" latitude="39.974722" longitude="116.334444">
-      <transit ids="1042 1303" time="3" />    	
+      <transfer ids="1042 1303" time="3" />    	
     </station>
     <station id="1043" local="知春里" english="ZHICHUNLI" latitude="39.9749" longitude="116.3229" />
     <station id="1045" local="苏州街" english="SUZHOUJIE" latitude="39.9743" longitude="116.3002" />
@@ -283,7 +283,7 @@
     <station id="1308" local="回龙观" english="HUILONGGUAN" latitude="40.070833" longitude="116.336111" />
     <station id="1311" local="北苑" english="BEIYUAN" latitude="" longitude="" />
     <station id="1312" local="望京西" english="WANGJING West" latitude="39.994167" longitude="116.4425">
-    	<transit ids="1312 1508" time="2" />
+    	<transfer ids="1312 1508" time="2" />
     </station>
     <station id="1314" local="光熙门" english="GUANGXIMEN" latitude="" longitude="" />
     <station id="1315" local="柳芳" english="LIUFANG" latitude="" longitude="" />
@@ -619,7 +619,7 @@
     <line id="101" local="亦庄线" color="#D61572" wait="9" />
     <line id="102" local="房山线" color="#D85F26" wait="9" /> -->
 
-    <!-- Transit time information from
+    <!-- Transfer time information from
            http://baike.baidu.com/view/1733524.htm 
          Travel time from Dongzhimeng to Sanyuanqiao is from
            http://www.bjsubway.com/node/1823

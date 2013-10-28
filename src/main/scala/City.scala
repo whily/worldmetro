@@ -26,7 +26,7 @@ import android.util.Log
 class City(activity: Activity, cityName: String) {
   private val logTag = "City.scala"
   private val languagePref = Util.getLanguagePref(activity)
-  private var transits: List[Transit] = Nil
+  private var transfers: List[Transfer] = Nil
   
   // (stationId   -> stationName)
   var stationIdMap = new mutable.HashMap[String, String]()
@@ -35,7 +35,7 @@ class City(activity: Activity, cityName: String) {
   // (localStationName -> stationName)
   var localStationNameMap = new mutable.HashMap[String, String]()
   
-  private var timeMap, transitMap = new mutable.HashMap[(String, String), Int]()
+  private var timeMap, transferMap = new mutable.HashMap[(String, String), Int]()
   private var stationLineMap = new mutable.HashMap[String, MetroLine]()
   
   // (placeName -> localStationName)
@@ -44,7 +44,7 @@ class City(activity: Activity, cityName: String) {
   init()
   
   private val timeGraph    = Graph.Graph(timeMap)
-  private val transitGraph = Graph.Graph(transitMap)
+  private val transferGraph = Graph.Graph(transferMap)
 
   // Todo: direclty use array concatenation, which seems raising error.
   private val stationNameArray: Array[String] = (stationNameMap.keys.toList ::: placeLocalStationMap.keys.toList).toArray
@@ -68,33 +68,33 @@ class City(activity: Activity, cityName: String) {
     val sourceTagList = tagList(sourceName)
     val targetTagList = tagList(targetName)
     val leastTimeRoutes = sourceTagList.flatMap(timeGraph.find(_, targetTagList).map(trimPath _))
-    val leastTransitRoutes = sourceTagList.flatMap(transitGraph.find(_, targetTagList).map(trimPath _))
+    val leastTransferRoutes = sourceTagList.flatMap(transferGraph.find(_, targetTagList).map(trimPath _))
     
     // Return only unique routes.
-    val routes = (leastTimeRoutes ::: leastTransitRoutes).distinct.map(new Route(_))
-    var leastTime, timeForLeastTransit = routes.head.travelTime
-    var transitForLeastTime, leastTransit = routes.head.transitNum
+    val routes = (leastTimeRoutes ::: leastTransferRoutes).distinct.map(new Route(_))
+    var leastTime, timeForLeastTransfer = routes.head.travelTime
+    var transferForLeastTime, leastTransfer = routes.head.transferNum
     for (route <- routes.tail) {
       val travelTime = route.travelTime
-      val transitNum = route.transitNum
+      val transferNum = route.transferNum
       if (travelTime < leastTime) {
         leastTime = travelTime
-        transitForLeastTime = transitNum
+        transferForLeastTime = transferNum
       }
-      if (transitNum < leastTransit) {
-        leastTransit = transitNum
-        timeForLeastTransit = travelTime
+      if (transferNum < leastTransfer) {
+        leastTransfer = transferNum
+        timeForLeastTransfer = travelTime
       }
     }
     
     val filteredRoutes =
-      routes.filter(x => ((x.travelTime - leastTime <= 10) && (x.transitNum <= transitForLeastTime)) ||
-        ((leastTransit < transitForLeastTime) && (x.transitNum == leastTransit) &&
-          (x.travelTime - timeForLeastTransit <= 10)))
+      routes.filter(x => ((x.travelTime - leastTime <= 10) && (x.transferNum <= transferForLeastTime)) ||
+        ((leastTransfer < transferForLeastTime) && (x.transferNum == leastTransfer) &&
+          (x.travelTime - timeForLeastTransfer <= 10)))
     
     filteredRoutes sortWith
     ((x, y) => x.travelTime < y.travelTime ||
-      (x.travelTime == y.travelTime && x.transitNum < y.transitNum))
+      (x.travelTime == y.travelTime && x.transferNum < y.transferNum))
   }
   
   /** Return true if `thisId` and `thatId` refer to the same station
@@ -107,7 +107,7 @@ class City(activity: Activity, cityName: String) {
     stationIdMap(thisId) == stationIdMap(thatId)
   }
   
-  /** Trim the unnecessary transits at the beginning and end of the `path`. */
+  /** Trim the unnecessary transfers at the beginning and end of the `path`. */
   def trimPath(path: List[String]): List[String] = {
     val len = path.length
     if (len <= 1) path
@@ -124,7 +124,7 @@ class City(activity: Activity, cityName: String) {
     */
   class Route(route: List[String]) {
     val segments = routeSegments(route).map(new Segment(_))
-    val transitNum = segments.length - 1
+    val transferNum = segments.length - 1
     def travelTime = {
       // Initialize with the wait time of the first segment.
       var time = segments(0).line.waitTime
@@ -206,7 +206,7 @@ class City(activity: Activity, cityName: String) {
     readStations()
     readLines()
     readPlaces()
-    initTransits()
+    initTransfers()
     
     /** Read information of metro stations from city XML. */
     def readStations() {
@@ -225,9 +225,9 @@ class City(activity: Activity, cityName: String) {
 	
 	if (xpp.next == XmlPullParser.START_TAG) {
 	  do {
-	    xpp.require(XmlPullParser.START_TAG, null, "transit")
+	    xpp.require(XmlPullParser.START_TAG, null, "transfer")
             val ids = attr("ids").split(" ")
-            transits = Transit(ids, attr("time").toInt, attr("oneway")) :: transits
+            transfers = Transfer(ids, attr("time").toInt, attr("oneway")) :: transfers
 	    for (altId <- ids if altId != id) {
 	      stationIdMap += (altId -> name)
 	      stationNameMap(name) += altId
@@ -272,10 +272,10 @@ class City(activity: Activity, cityName: String) {
 	    val time = attr("time")
 	    assert(!time.isEmpty())
 	    timeMap += ((prevStation, stationId) -> time.toInt)
-	    transitMap += ((prevStation, stationId) -> time.toInt)
+	    transferMap += ((prevStation, stationId) -> time.toInt)
 	    if (lineType != "uniring") {
 	      timeMap += ((stationId, prevStation) -> time.toInt)
-	      transitMap += ((stationId, prevStation) -> time.toInt)
+	      transferMap += ((stationId, prevStation) -> time.toInt)
 	    }
 	    prevStation = stationId
 	  }
@@ -285,11 +285,11 @@ class City(activity: Activity, cityName: String) {
 	if (lineType == "ring") {
 	  timeMap += ((firstStation, prevStation) -> firstTime.toInt)
 	  timeMap += ((prevStation, firstStation) -> firstTime.toInt)
-	  transitMap += ((firstStation, prevStation) -> firstTime.toInt)
-	  transitMap += ((prevStation, firstStation) -> firstTime.toInt)
+	  transferMap += ((firstStation, prevStation) -> firstTime.toInt)
+	  transferMap += ((prevStation, firstStation) -> firstTime.toInt)
 	} else if (lineType == "uniring") {
 	  timeMap += ((prevStation, firstStation) -> firstTime.toInt)
-	  transitMap += ((prevStation, firstStation) -> firstTime.toInt)
+	  transferMap += ((prevStation, firstStation) -> firstTime.toInt)
 	}
 
         // Build map (stationId -> line)
@@ -349,32 +349,32 @@ class City(activity: Activity, cityName: String) {
       if (result == null) "" else result
     }
     
-    /** Initialize transit weights information. */
-    def initTransits() {
-      val TransitPenalty = 9999
+    /** Initialize transfer weights information. */
+    def initTransfers() {
+      val TransferPenalty = 9999
       
-      for (transit <- transits) {
-        val ids = transit.ids
-        val time = transit.time
-        val oneway = transit.oneway
+      for (transfer <- transfers) {
+        val ids = transfer.ids
+        val time = transfer.time
+        val oneway = transfer.oneway
         if (oneway != "") {
           assert(ids.length >= 2 && ((oneway == "source") || (oneway == "target")))
           val first = ids(0)
           for (id <- ids.drop(1))
             if (oneway == "source") {
               timeMap += ((first, id) -> time)
-              transitMap += ((first, id) -> TransitPenalty)
+              transferMap += ((first, id) -> TransferPenalty)
             } else {
               timeMap += ((id, first) -> time)
-              transitMap += ((id, first) -> TransitPenalty)
+              transferMap += ((id, first) -> TransferPenalty)
             }
         } else {
           for (i <- 0 until ids.length)
             for (j <- (i + 1) until ids.length) {
               timeMap += ((ids(i), ids(j)) -> time)
               timeMap += ((ids(j), ids(i)) -> time)
-              transitMap += ((ids(i), ids(j)) -> TransitPenalty)
-              transitMap += ((ids(j), ids(i)) -> TransitPenalty)
+              transferMap += ((ids(i), ids(j)) -> TransferPenalty)
+              transferMap += ((ids(j), ids(i)) -> TransferPenalty)
             }
         }
       }
@@ -393,5 +393,5 @@ class City(activity: Activity, cityName: String) {
       englishName
   }
   
-  case class Transit(ids: Array[String], time: Int, oneway: String)
+  case class Transfer(ids: Array[String], time: Int, oneway: String)
 }
