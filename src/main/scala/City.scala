@@ -145,7 +145,7 @@ class City(activity: Activity, cityName: String) {
 
   class Segment (val segment: List[String]) {
     private val stopNum = segment.length - 1
-    def line : MetroLine = stationLineMap(segment(0))
+    def line: MetroLine = stationLineMap(segment(0))
     override def toString = {
       "Line " + line.id + " " +
       "towards " + line.headsign(this) + ", " +
@@ -234,7 +234,7 @@ class City(activity: Activity, cityName: String) {
 	    }
 	    xpp.nextTag()
 	  } while (xpp.next() != XmlPullParser.END_TAG)
-	    }
+	}
       }
     }
     
@@ -296,7 +296,7 @@ class City(activity: Activity, cityName: String) {
         stationIds = stationIds.reverse
 	val metroLine = lineType match {
 	  case "ring" | "uniring" => new MetroRing(id, color, wait, stationIds)
-	  case _                   => new MetroLinear(id, color, wait, stationIds)
+	  case _                  => new MetroLinear(id, color, wait, stationIds)
 	}
 	for (stationId <- stationIds) stationLineMap += (stationId -> metroLine)
 	
@@ -351,6 +351,9 @@ class City(activity: Activity, cityName: String) {
     
     /** Initialize transfer weights information. */
     def initTransfers() {
+      def transferTime(walkingTime: Int, targetStationId: String) =
+        walkingTime + stationLineMap(targetStationId).waitTime
+
       val TransferPenalty = 9999
       
       for (transfer <- transfers) {
@@ -362,17 +365,17 @@ class City(activity: Activity, cityName: String) {
           val first = ids(0)
           for (id <- ids.drop(1))
             if (oneway == "source") {
-              timeMap += ((first, id) -> time)
+              timeMap += ((first, id) -> transferTime(time, id))
               transferMap += ((first, id) -> TransferPenalty)
             } else {
-              timeMap += ((id, first) -> time)
+              timeMap += ((id, first) -> transferTime(time, first))
               transferMap += ((id, first) -> TransferPenalty)
             }
         } else {
           for (i <- 0 until ids.length)
             for (j <- (i + 1) until ids.length) {
-              timeMap += ((ids(i), ids(j)) -> time)
-              timeMap += ((ids(j), ids(i)) -> time)
+              timeMap += ((ids(i), ids(j)) -> transferTime(time, ids(j)))
+              timeMap += ((ids(j), ids(i)) -> transferTime(time, ids(i)))
               transferMap += ((ids(i), ids(j)) -> TransferPenalty)
               transferMap += ((ids(j), ids(i)) -> TransferPenalty)
             }
