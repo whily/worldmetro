@@ -20,9 +20,10 @@
     <station id="110" local="公主坟" english="GONGZHUFEN" latitude="39.906389" longitude="116.304167">
     	<transfer ids="110 1007" time="2" />
     </station>
-    <station id="111" local="军事博物馆" english="MILITARY MUSEUM" latitude="39.906389" longitude="116.316667">
-    	<transfer ids="111 910" time="2" />
-    </station>
+    <station id="111" local="军事博物馆" english="MILITARY MUSEUM"
+             latitude="39.906389" longitude="116.316667" />
+    <!--	<transfer ids="111 910" time="2" />
+    </station>-->
     <station id="112" local="木樨地" english="MUXIDI" latitude="39.906111" longitude="116.331944" />
     <station id="113" local="南礼士路" english="NANLISHILU" latitude="39.905833" longitude="116.345278" />
     <station id="114" local="复兴门" english="FUXINGMEN" latitude="39.906111" longitude="116.35">
@@ -496,19 +497,19 @@
 
     <line id="9" local="9号线" english="Line 9" color="#87D300" wait="9">
       <stations>
-        <station id="901" time="9" /> 
-        <station id="902" time="9" />
-        <station id="903" time="9" />
-        <station id="904" time="9" />
-        <station id="905" time="9" />
-        <station id="906" time="9" />
-        <station id="907" time="9" />
-        <station id="908" time="9" />
-        <station id="909" time="9" />
-        <station id="910" time="9" />
-        <station id="911" time="9" />
-        <station id="912" time="9" />
-        <station id="913" time="9" /> 
+        <station id="901"/> 
+        <station id="902" time="2" />
+        <station id="903" time="2" />
+        <station id="904" time="2" />
+        <station id="905" time="2" />
+        <station id="906" time="3" />
+        <station id="907" time="3" />
+        <station id="908" time="3" />
+        <station id="909" time="2" />
+        <!--<station id="910" time="9" />-->
+        <station id="911" time="6" />
+        <station id="912" time="2" />
+        <station id="913" time="2" /> 
       </stations>    	
     </line>
     
