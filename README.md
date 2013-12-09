@@ -43,7 +43,7 @@ To compile/run the code, follow the steps below:
 
         $ g8 fxthomas/android-app
 
-2. This is step is a work around. It seems that the plugin sbt-android
+2. This step is a work around. It seems that the plugin sbt-android
    assumes that tools like `aapt` and `dx` are located in
    `$ANDROID_HOME/platform-tools`. However at least in Android SDK
    r22, the location is `$ANDROID_HOME/build-tools/18.0.1/`. The
