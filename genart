@@ -33,35 +33,39 @@ Convert() {
   eDimMdpi=$3
   eDimHdpi=$4
   eDimXhdpi=$5
-  if [ -z "$6" ]; then
+  eDimXxhdpi=$6
+  if [ -z "$7" ]; then
     dimLdpi=$eDimLdpi
     dimMdpi=$eDimMdpi
     dimHdpi=$eDimHdpi
     dimXhdpi=$eDimXhdpi
+    dimXxhdpi=$eDimXxhdpi
   else
     dimLdpi=$(( eDimLdpi / 4 * 3))
     dimMdpi=$(( eDimMdpi / 4 * 3))
     dimHdpi=$(( eDimHdpi / 4 * 3))
     dimXhdpi=$(( eDimXhdpi / 4 * 3))
+    dimXxhdpi=$(( eDimXxhdpi / 4 * 3))
   fi
   ConvertSingle $1 ldpi $dimLdpi $eDimLdpi
   ConvertSingle $1 mdpi $dimMdpi $eDimMdpi
   ConvertSingle $1 hdpi $dimHdpi $eDimHdpi
   ConvertSingle $1 xhdpi $dimXhdpi $eDimXhdpi
+  ConvertSingle $1 xxhdpi $dimXxhdpi $eDimXxhdpi
 }
 
 ConvertToLauncherIcon() {
-  Convert $1 36 48 72 96
+  Convert $1 36 48 72 96 144
 }
 
 ConvertToActionBarIcon() {
   GenerateDark $1
   dark=${1%light.svg}dark.svg  
-  Convert $1    24 32 48 64 scale
-  Convert $dark 24 32 48 64 scale
+  Convert $1    24 32 48 64 96 scale
+  Convert $dark 24 32 48 64 96 scale
 }
 
-mkdir -p res/drawable-ldpi/ res/drawable-mdpi/ res/drawable-mdpi/ res/drawable-hdpi/ res/drawable-xhdpi/
+mkdir -p res/drawable-ldpi/ res/drawable-mdpi/ res/drawable-mdpi/ res/drawable-hdpi/ res/drawable-xhdpi/ res/drawable-xxhdpi/
 
 cd art/
 ConvertToLauncherIcon ic_launcher_worldmetro.svg
