@@ -119,6 +119,7 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
   // Initialize the widgets. The contents are initialized in `initContent`.
   private def initWidgets() {
     val editTextSize = Util.getEditTextSize(this)
+    val cityInfoTextSize = editTextSize - 2
     fromEntry = findViewById(R.id.from_entry).asInstanceOf[AutoCompleteTextView]
     toEntry = findViewById(R.id.to_entry).asInstanceOf[AutoCompleteTextView]
     fromEntry.setThreshold(1)
@@ -139,7 +140,7 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
     })   
     
     cityInfo = findViewById(R.id.city_info).asInstanceOf[TextView]
-    cityInfo.setTextSize(TypedValue.COMPLEX_UNIT_SP, editTextSize)   
+    cityInfo.setTextSize(TypedValue.COMPLEX_UNIT_SP, cityInfoTextSize)   
     
     routeList = findViewById(android.R.id.list).asInstanceOf[ExpandableListView]    
   }

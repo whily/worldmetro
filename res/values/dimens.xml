@@ -5,6 +5,7 @@
 	
 	<!--  TextView margins -->
   <dimen name="textview_horizontal_margin">8dp</dimen>
+  <dimen name="textview_horizontal_margin_large">12dp</dimen>
   <dimen name="textview_vertical_margin">8dp</dimen>
   
   <!--  Text size -->
