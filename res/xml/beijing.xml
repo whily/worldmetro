@@ -18,12 +18,16 @@
     <station id="108" local="五棵松" english="WUKESONG" latitude="39.906389" longitude="116.268611" />
     <station id="109" local="万寿路" english="WANSHOULU" latitude="39.906111" longitude="116.288889" />
     <station id="110" local="公主坟" english="GONGZHUFEN" latitude="39.906389" longitude="116.304167">
-    	<transfer ids="110 1007" time="2" />
+      <transfer ids="110 1007" time="2" />
     </station>
     <station id="111" local="军事博物馆" english="MILITARY MUSEUM"
-             latitude="39.906389" longitude="116.316667" />
-    <!--	<transfer ids="111 910" time="2" />
-    </station>-->
+             latitude="39.906389" longitude="116.316667">
+      <!-- Transfer time according to 22 Dec 2013 edition of bjnews.
+           Note that the transfer time from 910 to 111 is 6 min
+           according to the newspaper due to unavailability of
+           escalator, so 3 min is used here. -->
+      <transfer ids="111 910" time="3" />
+    </station>
     <station id="112" local="木樨地" english="MUXIDI" latitude="39.906111" longitude="116.331944" />
     <station id="113" local="南礼士路" english="NANLISHILU" latitude="39.905833" longitude="116.345278" />
     <station id="114" local="复兴门" english="FUXINGMEN" latitude="39.906111" longitude="116.35">
@@ -506,8 +510,8 @@
         <station id="907" time="3" />
         <station id="908" time="3" />
         <station id="909" time="2" />
-        <!--<station id="910" time="9" />-->
-        <station id="911" time="6" />
+        <station id="910" time="3" />
+        <station id="911" time="4" />
         <station id="912" time="2" />
         <station id="913" time="2" /> 
       </stations>    	
