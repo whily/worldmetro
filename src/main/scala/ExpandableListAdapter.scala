@@ -51,7 +51,7 @@ class ExpandableListAdapter(activity: Activity, groupArray: List[String], childA
     val textView = new TextView(activity)
     textView.setLayoutParams(layoutParams)
     textView.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT)
-    textView.setPadding(40, 0, 0, 0)
+    textView.setPadding(70, 0, 0, 0)
     textView.setText(string)
     textView.setTextSize(Util.getEditTextSize(activity))
     textView
