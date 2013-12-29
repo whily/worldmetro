@@ -86,7 +86,7 @@
     </station>                                   
     <station id="216" local="安定门" english="ANDINGMEN" latitude="39.949167" longitude="116.408333" />                                   
     <station id="217" local="鼓楼大街" english="GULOUDAJIE" latitude="" longitude="">
-    	<transfer ids="217 818" time="2" />
+    	<transfer ids="217 820" time="2" />
     </station>                                   
     <station id="218" local="积水潭" english="JISHUITAN" latitude="" longitude="" />       
     
@@ -180,8 +180,10 @@
     <!--<station id="610" local="二里沟" english="ERLIGOU" latitude="" longitude="" />-->
     <station id="611" local="车公庄西" english="CHEGONGZHUANG WEST" latitude="" longitude="" />
     <station id="614" local="北海北" english="BEIHAI NORTH" latitude="" longitude="" />
-    <station id="615" local="南锣鼓巷" english="NANLUOGUXIANG" latitude="" longitude="">
-    	<!--<transfer ids="615 816" time="2" />-->
+    <station id="615" local="南锣鼓巷" english="NANLUOGUXIANG"
+             latitude="" longitude="">
+      <!-- According to 22 Dec 2013 edition of bjnews. -->
+      <transfer ids="615 818" time="1" />
     </station>
     <station id="618" local="东大桥" english="DONGDAQIAO" latitude="" longitude="" />
     <station id="619" local="呼家楼" english="HUJIALOU" latitude="39.922" longitude="116.4555">
@@ -197,24 +199,28 @@
     <!--  End of Line 6 -->
        
     <!-- Start of Line 8 -->
-    <!--<station id="815" local="中国美术馆" english="NATIONAL ART MUSEUM" latitude="" longitude="" />-->
-    <!--<station id="817" local="什刹海" english="SHICHAHAI" latitude="" longitude="" />-->
-    <!--<station id="819" local="安德里北街" english="ANDELIBEIJIE" latitude="" longitude="" />-->
-    <station id="820" local="安华桥" english="ANHUAQIAO" latitude="" longitude="" />
-    <station id="821" local="北土城" english="BEITUCHENG" latitude="39.976" longitude="116.3879">
-    	<transfer ids="821 1038" time="2" />
+    <!--<station id="817" local="中国美术馆" english="NATIONAL ART MUSEUM" latitude="" longitude="" />-->
+    <station id="819" local="什刹海" english="SHICHAHAI" latitude="" longitude="" />
+    <station id="821" local="安德里北街" english="ANDELIBEIJIE" latitude="" longitude="" />
+    <station id="822" local="安华桥" english="ANHUAQIAO" latitude="" longitude="" />
+    <station id="823" local="北土城" english="BEITUCHENG" latitude="39.976" longitude="116.3879">
+    	<transfer ids="823 1038" time="2" />
     </station>
-    <station id="822" local="奥体中心" english="OLYMPIC SPORTS CENTER" latitude="" longitude="" />
-    <station id="823" local="奥林匹克公园" english="OLYMPIC GREEN" latitude="40.001125" longitude="116.386853" />
-    <station id="824" local="森林公园南门" english="SOUTH GATE OF FOREST PARK" latitude="40.01" longitude="116.3925" />
-    <station id="825" local="林萃桥" english="LINCUIQIAO" latitude="" longitude="" />
-    <station id="826" local="永泰庄" english="YONGTAIZHUANG" latitude="" longitude="" />
-    <station id="827" local="西小口" english="XIXIAOKOU" latitude="" longitude="" />
-    <station id="828" local="育新" english="YUXIN" latitude="" longitude="" />
-    <station id="829" local="霍营" english="HUOYING" latitude="40.070556" longitude="116.360278">
-      <transfer ids="829 1309" time="3" />    	
+    <station id="824" local="奥体中心" english="OLYMPIC SPORTS CENTER" latitude="" longitude="" />
+    <station id="825" local="奥林匹克公园" english="OLYMPIC GREEN" latitude="40.001125" longitude="116.386853" />
+    <station id="826" local="森林公园南门" english="SOUTH GATE OF FOREST PARK" latitude="40.01" longitude="116.3925" />
+    <station id="827" local="林萃桥" english="LINCUIQIAO" latitude="" longitude="" />
+    <station id="828" local="永泰庄" english="YONGTAIZHUANG" latitude="" longitude="" />
+    <station id="829" local="西小口" english="XIXIAOKOU" latitude="" longitude="" />
+    <station id="830" local="育新" english="YUXIN" latitude="" longitude="" />
+    <station id="831" local="霍营" english="HUOYING" latitude="40.070556" longitude="116.360278">
+      <transfer ids="831 1309" time="3" />    	
     </station>
-    <station id="830" local="回龙观东大街" english="HUILONGGUAN DONGDAJIE" latitude="40.081389" longitude="116.367222" />
+    <station id="832" local="回龙观东大街" english="HUILONGGUAN DONGDAJIE"
+             latitude="40.081389" longitude="116.367222" />
+    <station id="833" local="平西府" english="PINGXIFU" />
+    <station id="834" local="育知路" english="YUZHILU" />
+    <station id="835" local="朱辛庄" english="ZHUXINZHUANG" />
     <!-- End of Line 8 -->
     
     <!--  Start of Line 9 -->
@@ -480,22 +486,25 @@
          Headway information from http://baike.baidu.com/view/2157542.htm -->
     <line id="8" local="8号线" english="Line 8" color="#00997A" wait="3">
       <stations>
-        <!--<station id="815" time="9" />-->
-        <!--<station id="816" />-->
         <!--<station id="817" time="9" />-->
-        <station id="818" />   
-        <!--<station id="819" time="9" />-->
-        <station id="820" time="5" />
+        <station id="818" />
+        <station id="819" time="2" />
+        <station id="820" time="2" />   
         <station id="821" time="2" />
-        <station id="822" time="3" />
-        <station id="823" time="3" />
+        <station id="822" time="2" />
+        <station id="823" time="2" />
         <station id="824" time="2" />
         <station id="825" time="3" />
-        <station id="826" time="4" />      
-        <station id="827" time="2" />
-        <station id="828" time="3" />
-        <station id="829" time="3" />
-        <station id="830" time="2" />                
+        <station id="826" time="2" />
+        <station id="827" time="3" />
+        <station id="828" time="4" />      
+        <station id="829" time="2" />
+        <station id="830" time="3" />
+        <station id="831" time="3" />
+        <station id="832" time="2" />   
+        <station id="833" time="3" />       
+        <station id="834" time="3" />       
+        <station id="835" time="3" />                    
       </stations>      	
     </line>
 
