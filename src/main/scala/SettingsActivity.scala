@@ -9,7 +9,7 @@
  * Copyright (C) 2013 Yujian Zhang
  */
 
-package net.whily.android.worldmetro;
+package net.whily.android.worldmetro
 
 import android.os.Bundle
 import android.preference.PreferenceActivity
