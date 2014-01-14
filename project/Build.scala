@@ -10,7 +10,7 @@ object General {
     version := "0.1",
     versionCode := 2,
     scalaVersion := "2.10.0",
-    platformName in Android := "android-18",
+    platformName in Android := "android-19",
     javacOptions ++= Seq("-encoding", "UTF-8", "-source", "1.6", "-target", "1.6")
   )
 
