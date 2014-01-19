@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<city>
+  <!-- Unit for time duration is in minute. -->
+  <!-- Timetable from
+       http://jrportal.dpp.cz/jrportal/LineList.aspx?mi=3&t=1 
+       Version: 6 Jan 2014. -->
+  <stations>
+    <!-- Note: station ID is a string WITHOUT space. -->
+
+    <!-- Start of Line A -->
+    <station id="A-01" local="Depo Hostivař" latitude="50.075833" longitude="14.515556" />
+    <station id="A-02" local="Skalka" latitude="50.068056" longitude="14.5075" />
+    <station id="A-03" local="Strašnická" latitude="50.072778" longitude="14.491111" />
+    <station id="A-04" local="Želivského" latitude="50.078408" longitude="14.47409" />
+    <station id="A-05" local="Flora" latitude="50.077631" longitude="14.461236" />
+    <station id="A-06" local="Jiřího z Poděbrad" latitude="50.07783" longitude="14.450295" />
+    <station id="A-07" local="Náměstí Míru" latitude="50.075333" longitude="14.43769" />
+    <station id="A-08" local="Muzeum" latitude="50.0796" longitude="14.4312" />
+    <station id="A-09" local="Můstek" latitude="50.0842" longitude="14.4233" />
+    <station id="A-10" local="Staroměstská" latitude="50.088185" longitude="14.417633" />
+    <station id="A-11" local="Malostranská" latitude="50.091236" longitude="14.409492" />
+    <station id="A-12" local="Hradčanská" latitude="50.097214" longitude="14.404569" />
+    <station id="A-13" local="Dejvická" latitude="50.100594" longitude="14.392014" />
+    <!-- End of Line A -->
+  </stations>
+
+  <lines>
+    <line id="A" color="#00FF00" wait="4">
+      <stations>
+        <station id="A-01" />
+        <station id="A-02" time="3" />
+        <station id="A-03" time="2" />
+        <station id="A-04" time="2" />
+        <station id="A-05" time="2" />
+        <station id="A-06" time="1" />
+        <station id="A-07" time="2" />
+        <station id="A-08" time="1" />
+        <station id="A-09" time="2" />
+        <station id="A-10" time="1" />
+        <station id="A-11" time="2" />
+        <station id="A-12" time="1" />
+        <station id="A-13" time="2" />
+      </stations>
+    </line>
+  </lines>
+  
+  <!--  Attaction information from  -->
+  <places>    
+  </places>  
+</city>
