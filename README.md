@@ -5,9 +5,7 @@ World Metro is a universal metro/subway/underground Android app, with
 the ambition to cover major cities with metros. It is currently under
 development and is expected to have following features:
 
-* Supported cities: Beijing, Cairo, Guangzhou, Hong Kong, Kyoto,
-  London, Munich, Osaka, Paris, Rome, São Paulo, Seoul, Shanghai,
-  Singapore, Shenzhen, Tokyo, Washington
+* Supported cities: Beijing, Munich, Prague.
 * Designed for offline usage
 * Vector map
 * Display both English (if available) and local languages for station/line names
