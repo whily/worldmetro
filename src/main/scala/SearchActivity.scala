@@ -28,6 +28,7 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
   private var routeList: ExpandableListView = null
   private var city: City = null
   private var cityId: String = ""
+  // Please also modify res/values/string.xml for the city messages.
   private val cityIds = Array("beijing", "munich", "prague") //, "shanghai", "tokyo")    
   private var stationIdMap: mutable.HashMap[String, String] = null
   private var stationNameMap: mutable.HashMap[String, Set[String]] = null

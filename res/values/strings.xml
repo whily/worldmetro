@@ -14,6 +14,8 @@
   <string name="beijing_message"></string>
   <string name="munich">Munich</string>
   <string name="munich_message">Note that some stations might not be always available.</string>
+  <string name="prague">Prague</string>
+  <string name="prague_message"></string>
   <string name="shanghai">Shanghai</string>
   <string name="shanghai_message"></string>
   <string name="tokyo">Tokyo</string>
