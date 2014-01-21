@@ -26,4 +26,3 @@ class AboutActivity extends Activity {
     browser.loadData(getString(R.string.about_html), "text/html", "UTF-8")
   }
 }
-

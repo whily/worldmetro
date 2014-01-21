@@ -12,8 +12,19 @@
 package net.whily.android.worldmetro
 
 import android.app.Activity
+import android.content.Context
+import android.graphics.{Canvas, Color, Paint}
 import android.view.{Gravity, View, ViewGroup}
-import android.widget.{AbsListView, BaseExpandableListAdapter, TextView}
+import android.widget.{AbsListView, BaseExpandableListAdapter, LinearLayout, TextView}
+
+class MetroLineView(context: Context) extends View(context) {
+  override protected def onDraw(canvas: Canvas) {
+    val paint = new Paint()
+    paint.setAntiAlias(true)
+    paint.setStyle(Paint.Style.FILL)
+    canvas.drawText("test", 1, 1, paint)
+  }
+}
 
 /**
  * Expandable ListView adapter to show routes.
@@ -37,8 +48,18 @@ class ExpandableListAdapter(activity: Activity, groupArray: List[String], childA
   override def getGroupId(groupPosition: Int): Long = groupPosition
 
   override def getGroupView(groupPosition: Int, isExpanded: Boolean, convertView: View,
-                            parent: ViewGroup): View =
-    getGenericView(groupArray(groupPosition))
+                            parent: ViewGroup): View = {
+    val layout = new LinearLayout(activity)
+    val layoutParams: AbsListView.LayoutParams = 
+      new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 
+                                   ViewGroup.LayoutParams.WRAP_CONTENT)
+    layout.setLayoutParams(layoutParams)
+    layout.setOrientation(LinearLayout.HORIZONTAL)
+
+    layout.addView(getGenericView(groupArray(groupPosition)))
+    layout.addView(new MetroLineView(activity))
+    layout
+  }
 
   override def hasStableIds(): Boolean = false
 
@@ -46,7 +67,7 @@ class ExpandableListAdapter(activity: Activity, groupArray: List[String], childA
 
   private def getGenericView(string: String): TextView = {
     val layoutParams: AbsListView.LayoutParams = 
-      new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 
+      new AbsListView.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, 
                                    ViewGroup.LayoutParams.WRAP_CONTENT)
     val textView = new TextView(activity)
     textView.setLayoutParams(layoutParams)
