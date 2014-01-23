@@ -15,14 +15,50 @@ import android.app.Activity
 import android.content.Context
 import android.graphics.{Canvas, Color, Paint}
 import android.view.{Gravity, View, ViewGroup}
+import android.view.View.MeasureSpec
 import android.widget.{AbsListView, BaseExpandableListAdapter, LinearLayout, TextView}
 
 class MetroLineView(context: Context) extends View(context) {
+  val layoutParams =
+    new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+      ViewGroup.LayoutParams.WRAP_CONTENT)
+  setLayoutParams(layoutParams)
+
+  val paint = new Paint()
+  paint.setAntiAlias(true)
+  paint.setStyle(Paint.Style.STROKE)
+  paint.setColor(Color.RED)
+
   override protected def onDraw(canvas: Canvas) {
-    val paint = new Paint()
-    paint.setAntiAlias(true)
-    paint.setStyle(Paint.Style.FILL)
-    canvas.drawText("test", 1, 1, paint)
+    super.onDraw(canvas)
+    canvas.drawText("test", 1, 20, paint)
+  }
+
+  // From http://stackoverflow.com/questions/12266899/onmeasure-custom-view-explanation
+  // This function is necessary otherwise nothing will be shown.
+  override protected def onMeasure (widthMeasureSpec: Int, heightMeasureSpec: Int) {
+    val desiredWidth = 100
+    val desiredHeight = 100
+
+    val widthMode = MeasureSpec.getMode(widthMeasureSpec)
+    val widthSize = MeasureSpec.getSize(widthMeasureSpec)
+    val heightMode = MeasureSpec.getMode(heightMeasureSpec)
+    val heightSize = MeasureSpec.getSize(heightMeasureSpec)
+
+    val width = widthMode match {
+      case MeasureSpec.EXACTLY => widthSize  // Must be this size
+      case MeasureSpec.AT_MOST => Math.min(desiredWidth, widthSize)
+      case _ => desiredWidth
+    }
+
+    val height = heightMode match {
+      case MeasureSpec.EXACTLY => heightSize  // Must be this size
+      case MeasureSpec.AT_MOST => Math.min(desiredHeight, heightSize)
+      case _ => desiredHeight
+    }
+
+    // MUST CALL THIS.
+    setMeasuredDimension(width, height)
   }
 }
 
@@ -41,7 +77,7 @@ class ExpandableListAdapter(activity: Activity, groupArray: List[String], childA
 
   override def getChildrenCount(groupPosition: Int) = childArray(groupPosition).length
    
-  override def getGroup(groupPosition: Int): AnyRef = getGroup(groupPosition)
+  override def getGroup(groupPosition: Int): AnyRef = groupArray(groupPosition)
 
   override def getGroupCount(): Int = groupArray.length
 
@@ -50,9 +86,9 @@ class ExpandableListAdapter(activity: Activity, groupArray: List[String], childA
   override def getGroupView(groupPosition: Int, isExpanded: Boolean, convertView: View,
                             parent: ViewGroup): View = {
     val layout = new LinearLayout(activity)
-    val layoutParams: AbsListView.LayoutParams = 
+    val layoutParams =
       new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 
-                                   ViewGroup.LayoutParams.WRAP_CONTENT)
+        ViewGroup.LayoutParams.WRAP_CONTENT)
     layout.setLayoutParams(layoutParams)
     layout.setOrientation(LinearLayout.HORIZONTAL)
 
@@ -66,7 +102,7 @@ class ExpandableListAdapter(activity: Activity, groupArray: List[String], childA
   override def isChildSelectable(groupPosition: Int, childPosition: Int): Boolean = true
 
   private def getGenericView(string: String): TextView = {
-    val layoutParams: AbsListView.LayoutParams = 
+    val layoutParams = 
       new AbsListView.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, 
                                    ViewGroup.LayoutParams.WRAP_CONTENT)
     val textView = new TextView(activity)
