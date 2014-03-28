@@ -230,7 +230,10 @@
     <station id="903" local="科怡路" english="KEYILU" latitude="" longitude="" />
     <station id="904" local="丰台南路" english="FENGTAINANLU" latitude="" longitude="" />
     <station id="905" local="丰台东大街" english="FENGTAI DONGDAJIE" latitude="" longitude="" />
-    <station id="906" local="七里庄" english="QILIZHUANG" latitude="" longitude="" />
+    <station id="906" local="七里庄" english="QILIZHUANG" latitude=""
+             longitude="">
+        <transfer ids="906 1406" time="2" />
+    </station>
     <station id="907" local="六里桥" english="LIULIQIAO" latitude="39.878889" longitude="116.296944">
     	<transfer ids="907 1009" time="2" />
     </station>
@@ -607,7 +610,8 @@
         <station id="1403" time="5" />
         <station id="1404" time="3" />
         <station id="1405" time="3" />
-        <station id="1407" time="3" />
+        <station id="1406" time="2" />
+        <station id="1407" time="1" />
       </stations>    	
     </line>
 
