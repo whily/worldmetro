@@ -43,15 +43,20 @@ def get_city(city_name, gtfs_name):
         cur.execute('''CREATE TABLE routes(route_id TEXT PRIMARY KEY, 
                                            route_short_name TEXT NOT NULL, 
                                            route_long_name TEXT NOT NULL, 
-                                           route_type INTEGER NOT NULL)''')            
+                                           route_type INTEGER NOT NULL,
+                                           route_color TEXT,
+                                           route_text_color TEXT)''')            
         routes = csv.DictReader(open('routes.txt', 'r'), delimiter=',', quotechar='"')
         for record in routes: 
             fields = record
-            cur.execute("INSERT INTO routes VALUES(:route_id, :route_short_name, :route_long_name, :route_type)", 
+            cur.execute('''INSERT INTO routes VALUES(:route_id, :route_short_name, :route_long_name, 
+                                                     :route_type, :route_color, :route_text_color)''', 
                         {'route_id':         record['route_id'], 
                          'route_short_name': record['route_short_name'], 
                          'route_long_name':  record['route_long_name'], 
-                         'route_type':       record['route_type']})
+                         'route_type':       record['route_type'],
+                         'route_color':      record['route_color'],
+                         'route_text_color': record['route_text_color']})
 
         # Move table calender before trips since file calendar.txt should be processed before trips.txt for service_id.
         cur.execute('''CREATE TABLE calendar(service_id TEXT PRIMARY KEY, 
@@ -82,28 +87,45 @@ def get_city(city_name, gtfs_name):
                               
         cur.execute('''CREATE TABLE trips(route_id TEXT REFERENCES routes(route_id), 
                                           service_id TEXT REFERENCES calendar(service_id), 
-                                          trip_id TEXT PRIMARY KEY)''')
+                                          trip_id TEXT PRIMARY KEY,
+                                          trip_headsign TEXT)''')
         trips = csv.DictReader(open('trips.txt', 'r'), delimiter=',', quotechar='"')
         for record in trips: 
-            cur.execute("INSERT INTO trips VALUES(:route_id, :service_id, :trip_id)", 
-                        {'route_id':   record['route_id'],
-                         'service_id': record['service_id'],
-                         'trip_id':    record['trip_id']})
+            cur.execute("INSERT INTO trips VALUES(:route_id, :service_id, :trip_id, :trip_headsign)", 
+                        {'route_id':      record['route_id'],
+                         'service_id':    record['service_id'],
+                         'trip_id':       record['trip_id'],
+                         'trip_headsign': record['trip_headsign']})
 
         cur.execute('''CREATE TABLE stop_times(trip_id TEXT REFERENCES trips(trip_id), 
                                                arrival_time TEXT NOT NULL, 
                                                departure_time TEXT NOT NULL, 
                                                stop_id TEXT REFERENCES stops(stop_id), 
-                                               stop_sequence TEXT NOT NULL)''')            
+                                               stop_sequence TEXT NOT NULL,
+                                               stop_headsign TEXT)''')            
         stop_times = csv.DictReader(open('stop_times.txt', 'r'), delimiter=',', quotechar='"')
         for record in stop_times: 
-            cur.execute("INSERT INTO stop_times VALUES(:trip_id, :arrival_time, :departure_time, :stop_id, :stop_sequence)", 
+            cur.execute('''INSERT INTO stop_times VALUES(:trip_id, :arrival_time, :departure_time, 
+                                                         :stop_id, :stop_sequence, :stop_headsign)''', 
                         {'trip_id':        record['trip_id'],
                          'arrival_time':   record['arrival_time'],
                          'departure_time': record['departure_time'],
                          'stop_id':        record['stop_id'],
-                         'stop_sequence':  record['stop_sequence']})
+                         'stop_sequence':  record['stop_sequence'],
+                         'stop_headsign':  record['stop_headsign']})
 
+        cur.execute('''CREATE TABLE transfers(from_stop_id REFERENCES stops(stop_id),
+                                              to_stop_id TEXT REFERENCES stops(stop_id),
+                                              transfer_type INTEGER NOT NULL, 
+                                              min_transfer_time INTEGER)''')            
+        transfers = csv.DictReader(open('transfers.txt', 'r'), delimiter=',', quotechar='"')                                           
+        for record in transfers: 
+            cur.execute("INSERT INTO transfers VALUES(:from_stop_id, :to_stop_id, :transfer_type, :min_transfer_time)", 
+                        {'from_stop_id':      record['from_stop_id'], 
+                         'to_stop_id':        record['to_stop_id'], 
+                         'transfer_type':     record['transfer_type'], 
+                         'min_transfer_time': record['min_transfer_time']})
+            
         # Delete extracted files.
                                     
 if __name__ == '__main__': 
