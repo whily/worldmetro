@@ -17,6 +17,7 @@ import android.graphics.{Canvas, Color, Paint}
 import android.view.{Gravity, View, ViewGroup}
 import android.view.View.MeasureSpec
 import android.widget.{AbsListView, BaseExpandableListAdapter, LinearLayout, TextView}
+import net.whily.scaland.Util
 
 class MetroLineView(context: Context) extends View(context) {
   val layoutParams =

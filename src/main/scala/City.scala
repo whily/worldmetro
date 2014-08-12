@@ -15,6 +15,7 @@ import org.xmlpull.v1.XmlPullParser
 import scala.collection.mutable
 import android.app.Activity
 import android.util.Log
+import net.whily.scaland.Util
 
 /**
   *  City class holds all data for a metro network of a city. 

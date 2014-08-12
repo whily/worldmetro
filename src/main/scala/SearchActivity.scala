@@ -19,6 +19,7 @@ import android.view.{Menu, MenuItem, MotionEvent, View}
 import android.view.inputmethod.InputMethodManager
 import android.util.{Log, TypedValue}
 import android.widget.{AdapterView, ArrayAdapter, AutoCompleteTextView, ExpandableListView, TextView}
+import net.whily.scaland.Util
 
 class SearchActivity extends Activity with ActionBar.OnNavigationListener {
   private var bar: ActionBar = null
@@ -42,7 +43,7 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
   
   override def onCreate(icicle: Bundle) { 
     super.onCreate(icicle)
-    Util.setHoloTheme(this)
+    Misc.setHoloTheme(this)
     setContentView(R.layout.search)
     setTitle("")
     
