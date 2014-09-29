@@ -6,69 +6,837 @@
     <!-- Note: station ID is a string WITHOUT space. -->
 
     <!-- Start of Line 1 -->
-    <station id="101" local="莘庄" english="Xinzhuang" />
-    <station id="102" local="外环路" english="Waihuanlu" />
-    <station id="103" local="莲花路" english="Lianhua Road" />
-    <station id="104" local="锦江乐园" english="Jinjiang Park" />
-    <station id="105" local="上海南站" english="Shanghai South Railway Station" />
-    <station id="106" local="漕宝路" english="Caobao Road" />
-    <station id="107" local="上海体育馆" english="Shanghai Indoor Stadium" />
-    <station id="108" local="徐家汇" english="Xujiahui" />
-    <station id="109" local="衡山路" english="Hengshan Road" />
-    <station id="110" local="常熟路" english="Changshu Road" />
-    <station id="111" local="陕西南路" english="South Shaanxi Road" />
-    <station id="112" local="黄陂南路" english="South Huangpi Road" />
-    <station id="113" local="人民广场" english="People's Square" />
-    <station id="114" local="新闸路" english="Xinzha Road" />
-    <station id="115" local="汉中路" english="Hanzhong Road" />
-    <station id="116" local="上海火车站" english="Shanghai Railway Station" />
-    <station id="117" local="中山北路" english="North Zhongshan Road" />
-    <station id="118" local="延长路" english="Yanchang Road" />
-    <station id="119" local="上海马戏城" english="Shanghai Circus World" />
-    <station id="120" local="汶水路" english="Wenshui Road" />
-    <station id="121" local="彭浦新村" english="Pengpu Xincun" />
-    <station id="122" local="共康路" english="Gongkang Road" />
-    <station id="123" local="通河新村" english="Tonghe Xincun" />
-    <station id="124" local="呼兰路" english="Hulan Road" />
-    <station id="125" local="共富新村" english="Gongfu Xincun" />
-    <station id="126" local="宝安公路" english="Bao'an Highway" />
-    <station id="127" local="友谊西路" english="West Youyi Road" />
-    <station id="128" local="富锦路" english="Fujin Road" />                   
+    <station id="101" local="莘庄" english="Xinzhuang" latitude="" longitude="" />
+    <station id="102" local="外环路" english="Waihuanlu" latitude="" longitude="" />
+    <station id="103" local="莲花路" english="Lianhua Road" latitude="" longitude="" />
+    <station id="104" local="锦江乐园" english="Jinjiang Park" latitude="" longitude="" />
+    <station id="105" local="上海南站" english="Shanghai South Railway Station" latitude="" longitude="" />
+    <station id="106" local="漕宝路" english="Caobao Road" latitude="" longitude="" />
+    <station id="107" local="上海体育馆" english="Shanghai Indoor Stadium" latitude="" longitude="" />
+    <station id="108" local="徐家汇" english="Xujiahui" latitude="" longitude="" />
+    <station id="109" local="衡山路" english="Hengshan Road" latitude="" longitude="" />
+    <station id="110" local="常熟路" english="Changshu Road" latitude="" longitude="" />
+    <station id="111" local="陕西南路" english="South Shaanxi Road" latitude="" longitude="" />
+    <station id="112" local="黄陂南路" english="South Huangpi Road" latitude="" longitude="" />
+    <station id="113" local="人民广场" english="People's Square" latitude="" longitude="" />
+    <station id="114" local="新闸路" english="Xinzha Road" latitude="" longitude="" />
+    <station id="115" local="汉中路" english="Hanzhong Road" latitude="" longitude="" />
+    <station id="116" local="上海火车站" english="Shanghai Railway Station" latitude="" longitude="" />
+    <station id="117" local="中山北路" english="North Zhongshan Road" latitude="" longitude="" />
+    <station id="118" local="延长路" english="Yanchang Road" latitude="" longitude="" />
+    <station id="119" local="上海马戏城" english="Shanghai Circus World" latitude="" longitude="" />
+    <station id="120" local="汶水路" english="Wenshui Road" latitude="" longitude="" />
+    <station id="121" local="彭浦新村" english="Pengpu Xincun" latitude="" longitude="" />
+    <station id="122" local="共康路" english="Gongkang Road" latitude="" longitude="" />
+    <station id="123" local="通河新村" english="Tonghe Xincun" latitude="" longitude="" />
+    <station id="124" local="呼兰路" english="Hulan Road" latitude="" longitude="" />
+    <station id="125" local="共富新村" english="Gongfu Xincun" latitude="" longitude="" />
+    <station id="126" local="宝安公路" english="Bao'an Highway" latitude="" longitude="" />
+    <station id="127" local="友谊西路" english="West Youyi Road" latitude="" longitude="" />
+    <station id="128" local="富锦路" english="Fujin Road" latitude="" longitude="" />                   
     <!-- End of Line 1 -->
+
+    <!-- Start of Line 2 -->
+    <!-- http://en.wikipedia.org/wiki/Line_2,_Shanghai_Metro -->
+    <station id="201" local="浦东国际机场" english="Pudong International Airport" latitude="" longitude="" />
+    <station id="202" local="海天三路" english="Haitiansan Road" latitude="" longitude="" />
+    <station id="203" local="远东大道" english="Yuandong Avenue" latitude="" longitude="" />
+    <station id="204" local="凌空路" english="Lingkong Road" latitude="" longitude="" />
+    <station id="205" local="川沙" english="Chuansha" latitude="" longitude="" />
+    <station id="206" local="华夏东路" english="East Huaxia Road" latitude="" longitude="" />
+    <station id="207" local="创新中路" english="Middle Chuangxin Road" latitude="" longitude="" />
+    <station id="208" local="" english="" latitude="" longitude="" />
+    <station id="209" local="" english="" latitude="" longitude="" />
+    <station id="210" local="" english="" latitude="" longitude="" />
+    <station id="211" local="" english="" latitude="" longitude="" />
+    <station id="212" local="" english="" latitude="" longitude="" />
+    <station id="213" local="" english="" latitude="" longitude="" />
+    <station id="214" local="" english="" latitude="" longitude="" />
+    <station id="215" local="" english="" latitude="" longitude="" />
+    <station id="216" local="" english="" latitude="" longitude="" />
+    <station id="217" local="" english="" latitude="" longitude="" />
+    <station id="218" local="" english="" latitude="" longitude="" />
+    <station id="219" local="" english="" latitude="" longitude="" />
+    <station id="220" local="" english="" latitude="" longitude="" />
+    <station id="221" local="" english="" latitude="" longitude="" />
+    <station id="222" local="" english="" latitude="" longitude="" />
+    <station id="223" local="" english="" latitude="" longitude="" />
+    <station id="224" local="" english="" latitude="" longitude="" />
+    <station id="225" local="" english="" latitude="" longitude="" />
+    <station id="226" local="" english="" latitude="" longitude="" />
+    <station id="227" local="" english="" latitude="" longitude="" />
+    <station id="228" local="" english="" latitude="" longitude="" />                   
+    <station id="229" local="" english="" latitude="" longitude="" />                   
+    <station id="230" local="" english="" latitude="" longitude="" />                   
+    <!-- End of Line 2 -->
+
+    <!-- Start of Line 3 -->
+    <station id="301" local="" english="" latitude="" longitude="" />
+    <station id="302" local="" english="" latitude="" longitude="" />
+    <station id="303" local="" english="" latitude="" longitude="" />
+    <station id="304" local="" english="" latitude="" longitude="" />
+    <station id="305" local="" english="" latitude="" longitude="" />
+    <station id="306" local="" english="" latitude="" longitude="" />
+    <station id="307" local="" english="" latitude="" longitude="" />
+    <station id="308" local="" english="" latitude="" longitude="" />
+    <station id="309" local="" english="" latitude="" longitude="" />
+    <station id="310" local="" english="" latitude="" longitude="" />
+    <station id="311" local="" english="" latitude="" longitude="" />
+    <station id="312" local="" english="" latitude="" longitude="" />
+    <station id="313" local="" english="" latitude="" longitude="" />
+    <station id="314" local="" english="" latitude="" longitude="" />
+    <station id="315" local="" english="" latitude="" longitude="" />
+    <station id="316" local="" english="" latitude="" longitude="" />
+    <station id="317" local="" english="" latitude="" longitude="" />
+    <station id="318" local="" english="" latitude="" longitude="" />
+    <station id="319" local="" english="" latitude="" longitude="" />
+    <station id="320" local="" english="" latitude="" longitude="" />
+    <station id="321" local="" english="" latitude="" longitude="" />
+    <station id="322" local="" english="" latitude="" longitude="" />
+    <station id="323" local="" english="" latitude="" longitude="" />
+    <station id="324" local="" english="" latitude="" longitude="" />
+    <station id="325" local="" english="" latitude="" longitude="" />
+    <station id="326" local="" english="" latitude="" longitude="" />
+    <station id="327" local="" english="" latitude="" longitude="" />
+    <station id="328" local="" english="" latitude="" longitude="" />                   
+    <station id="329" local="" english="" latitude="" longitude="" />                   
+    <!-- End of Line 3 -->
+
+    <!-- Start of Line 4 -->
+    <station id="401" local="" english="" latitude="" longitude="" />
+    <station id="402" local="" english="" latitude="" longitude="" />
+    <station id="403" local="" english="" latitude="" longitude="" />
+    <station id="404" local="" english="" latitude="" longitude="" />
+    <station id="405" local="" english="" latitude="" longitude="" />
+    <station id="406" local="" english="" latitude="" longitude="" />
+    <station id="407" local="" english="" latitude="" longitude="" />
+    <station id="408" local="" english="" latitude="" longitude="" />
+    <station id="409" local="" english="" latitude="" longitude="" />
+    <station id="410" local="" english="" latitude="" longitude="" />
+    <station id="411" local="" english="" latitude="" longitude="" />
+    <station id="412" local="" english="" latitude="" longitude="" />
+    <station id="413" local="" english="" latitude="" longitude="" />
+    <station id="414" local="" english="" latitude="" longitude="" />
+    <station id="415" local="" english="" latitude="" longitude="" />
+    <station id="416" local="" english="" latitude="" longitude="" />
+    <station id="417" local="" english="" latitude="" longitude="" />
+    <station id="418" local="" english="" latitude="" longitude="" />
+    <station id="419" local="" english="" latitude="" longitude="" />
+    <station id="420" local="" english="" latitude="" longitude="" />
+    <station id="421" local="" english="" latitude="" longitude="" />
+    <station id="422" local="" english="" latitude="" longitude="" />
+    <station id="423" local="" english="" latitude="" longitude="" />
+    <station id="424" local="" english="" latitude="" longitude="" />
+    <station id="425" local="" english="" latitude="" longitude="" />
+    <station id="426" local="" english="" latitude="" longitude="" />
+    <!-- End of Line 4 -->
+
+    <!-- Start of Line 5 -->
+    <station id="501" local="" english="" latitude="" longitude="" />
+    <station id="502" local="" english="" latitude="" longitude="" />
+    <station id="503" local="" english="" latitude="" longitude="" />
+    <station id="504" local="" english="" latitude="" longitude="" />
+    <station id="505" local="" english="" latitude="" longitude="" />
+    <station id="506" local="" english="" latitude="" longitude="" />
+    <station id="507" local="" english="" latitude="" longitude="" />
+    <station id="508" local="" english="" latitude="" longitude="" />
+    <station id="509" local="" english="" latitude="" longitude="" />
+    <station id="510" local="" english="" latitude="" longitude="" />
+    <station id="511" local="" english="" latitude="" longitude="" />
+    <!-- End of Line 5 -->
+
+    <!-- Start of Line 6 -->
+    <station id="601" local="" english="" latitude="" longitude="" />
+    <station id="602" local="" english="" latitude="" longitude="" />
+    <station id="603" local="" english="" latitude="" longitude="" />
+    <station id="604" local="" english="" latitude="" longitude="" />
+    <station id="605" local="" english="" latitude="" longitude="" />
+    <station id="606" local="" english="" latitude="" longitude="" />
+    <station id="607" local="" english="" latitude="" longitude="" />
+    <station id="608" local="" english="" latitude="" longitude="" />
+    <station id="609" local="" english="" latitude="" longitude="" />
+    <station id="610" local="" english="" latitude="" longitude="" />
+    <station id="611" local="" english="" latitude="" longitude="" />
+    <station id="612" local="" english="" latitude="" longitude="" />
+    <station id="613" local="" english="" latitude="" longitude="" />
+    <station id="614" local="" english="" latitude="" longitude="" />
+    <station id="615" local="" english="" latitude="" longitude="" />
+    <station id="616" local="" english="" latitude="" longitude="" />
+    <station id="617" local="" english="" latitude="" longitude="" />
+    <station id="618" local="" english="" latitude="" longitude="" />
+    <station id="619" local="" english="" latitude="" longitude="" />
+    <station id="620" local="" english="" latitude="" longitude="" />
+    <station id="621" local="" english="" latitude="" longitude="" />
+    <station id="622" local="" english="" latitude="" longitude="" />
+    <station id="623" local="" english="" latitude="" longitude="" />
+    <station id="624" local="" english="" latitude="" longitude="" />
+    <station id="625" local="" english="" latitude="" longitude="" />
+    <station id="626" local="" english="" latitude="" longitude="" />
+    <station id="627" local="" english="" latitude="" longitude="" />
+    <station id="628" local="" english="" latitude="" longitude="" />                   
+    <!-- End of Line 6 -->
+
+    <!-- Start of Line 7 -->
+    <station id="701" local="" english="" latitude="" longitude="" />
+    <station id="702" local="" english="" latitude="" longitude="" />
+    <station id="703" local="" english="" latitude="" longitude="" />
+    <station id="704" local="" english="" latitude="" longitude="" />
+    <station id="705" local="" english="" latitude="" longitude="" />
+    <station id="706" local="" english="" latitude="" longitude="" />
+    <station id="707" local="" english="" latitude="" longitude="" />
+    <station id="708" local="" english="" latitude="" longitude="" />
+    <station id="709" local="" english="" latitude="" longitude="" />
+    <station id="710" local="" english="" latitude="" longitude="" />
+    <station id="711" local="" english="" latitude="" longitude="" />
+    <station id="712" local="" english="" latitude="" longitude="" />
+    <station id="713" local="" english="" latitude="" longitude="" />
+    <station id="714" local="" english="" latitude="" longitude="" />
+    <station id="715" local="" english="" latitude="" longitude="" />
+    <station id="716" local="" english="" latitude="" longitude="" />
+    <station id="717" local="" english="" latitude="" longitude="" />
+    <station id="718" local="" english="" latitude="" longitude="" />
+    <station id="719" local="" english="" latitude="" longitude="" />
+    <station id="720" local="" english="" latitude="" longitude="" />
+    <station id="721" local="" english="" latitude="" longitude="" />
+    <station id="722" local="" english="" latitude="" longitude="" />
+    <station id="723" local="" english="" latitude="" longitude="" />
+    <station id="724" local="" english="" latitude="" longitude="" />
+    <station id="725" local="" english="" latitude="" longitude="" />
+    <station id="726" local="" english="" latitude="" longitude="" />
+    <station id="727" local="" english="" latitude="" longitude="" />
+    <station id="728" local="" english="" latitude="" longitude="" />
+    <station id="729" local="" english="" latitude="" longitude="" />
+    <station id="730" local="" english="" latitude="" longitude="" />
+    <station id="731" local="" english="" latitude="" longitude="" />
+    <station id="732" local="" english="" latitude="" longitude="" />
+    <station id="733" local="" english="" latitude="" longitude="" />                   
+    <!-- End of Line 7 -->
+
+    <!-- Start of Line 8 -->
+    <station id="801" local="" english="" latitude="" longitude="" />
+    <station id="802" local="" english="" latitude="" longitude="" />
+    <station id="803" local="" english="" latitude="" longitude="" />
+    <station id="804" local="" english="" latitude="" longitude="" />
+    <station id="805" local="" english="" latitude="" longitude="" />
+    <station id="806" local="" english="" latitude="" longitude="" />
+    <station id="807" local="" english="" latitude="" longitude="" />
+    <station id="808" local="" english="" latitude="" longitude="" />
+    <station id="809" local="" english="" latitude="" longitude="" />
+    <station id="810" local="" english="" latitude="" longitude="" />
+    <station id="811" local="" english="" latitude="" longitude="" />
+    <station id="812" local="" english="" latitude="" longitude="" />
+    <station id="813" local="" english="" latitude="" longitude="" />
+    <station id="814" local="" english="" latitude="" longitude="" />
+    <station id="815" local="" english="" latitude="" longitude="" />
+    <station id="816" local="" english="" latitude="" longitude="" />
+    <station id="817" local="" english="" latitude="" longitude="" />
+    <station id="818" local="" english="" latitude="" longitude="" />
+    <station id="819" local="" english="" latitude="" longitude="" />
+    <station id="820" local="" english="" latitude="" longitude="" />
+    <station id="821" local="" english="" latitude="" longitude="" />
+    <station id="822" local="" english="" latitude="" longitude="" />
+    <station id="823" local="" english="" latitude="" longitude="" />
+    <station id="824" local="" english="" latitude="" longitude="" />
+    <station id="825" local="" english="" latitude="" longitude="" />
+    <station id="826" local="" english="" latitude="" longitude="" />
+    <station id="827" local="" english="" latitude="" longitude="" />
+    <station id="828" local="" english="" latitude="" longitude="" />  
+    <station id="829" local="" english="" latitude="" longitude="" />
+    <station id="830" local="" english="" latitude="" longitude="" />                  
+    <!-- End of Line 8 -->
+
+    <!-- Start of Line 9 -->
+    <station id="901" local="" english="" latitude="" longitude="" />
+    <station id="902" local="" english="" latitude="" longitude="" />
+    <station id="903" local="" english="" latitude="" longitude="" />
+    <station id="904" local="" english="" latitude="" longitude="" />
+    <station id="905" local="" english="" latitude="" longitude="" />
+    <station id="906" local="" english="" latitude="" longitude="" />
+    <station id="907" local="" english="" latitude="" longitude="" />
+    <station id="908" local="" english="" latitude="" longitude="" />
+    <station id="909" local="" english="" latitude="" longitude="" />
+    <station id="910" local="" english="" latitude="" longitude="" />
+    <station id="911" local="" english="" latitude="" longitude="" />
+    <station id="912" local="" english="" latitude="" longitude="" />
+    <station id="913" local="" english="" latitude="" longitude="" />
+    <station id="914" local="" english="" latitude="" longitude="" />
+    <station id="915" local="" english="" latitude="" longitude="" />
+    <station id="916" local="" english="" latitude="" longitude="" />
+    <station id="917" local="" english="" latitude="" longitude="" />
+    <station id="918" local="" english="" latitude="" longitude="" />
+    <station id="919" local="" english="" latitude="" longitude="" />
+    <station id="920" local="" english="" latitude="" longitude="" />
+    <station id="921" local="" english="" latitude="" longitude="" />
+    <station id="922" local="" english="" latitude="" longitude="" />
+    <station id="923" local="" english="" latitude="" longitude="" />
+    <station id="924" local="" english="" latitude="" longitude="" />
+    <station id="925" local="" english="" latitude="" longitude="" />
+    <station id="926" local="" english="" latitude="" longitude="" />
+    <!-- End of Line 9 -->
+
+    <!-- Start of Line 10 -->
+    <station id="1001" local="" english="" latitude="" longitude="" />
+    <station id="1002" local="" english="" latitude="" longitude="" />
+    <station id="1003" local="" english="" latitude="" longitude="" />
+    <station id="1004" local="" english="" latitude="" longitude="" />
+    <station id="1005" local="" english="" latitude="" longitude="" />
+    <station id="1006" local="" english="" latitude="" longitude="" />
+    <station id="1007" local="" english="" latitude="" longitude="" />
+    <station id="1008" local="" english="" latitude="" longitude="" />
+    <station id="1009" local="" english="" latitude="" longitude="" />
+    <station id="1010" local="" english="" latitude="" longitude="" />
+    <station id="1011" local="" english="" latitude="" longitude="" />
+    <station id="1012" local="" english="" latitude="" longitude="" />
+    <station id="1013" local="" english="" latitude="" longitude="" />
+    <station id="1014" local="" english="" latitude="" longitude="" />
+    <station id="1015" local="" english="" latitude="" longitude="" />
+    <station id="1016" local="" english="" latitude="" longitude="" />
+    <station id="1017" local="" english="" latitude="" longitude="" />
+    <station id="1018" local="" english="" latitude="" longitude="" />
+    <station id="1019" local="" english="" latitude="" longitude="" />
+    <station id="1020" local="" english="" latitude="" longitude="" />
+    <station id="1021" local="" english="" latitude="" longitude="" />
+    <station id="1022" local="" english="" latitude="" longitude="" />
+    <station id="1023" local="" english="" latitude="" longitude="" />
+    <station id="1024" local="" english="" latitude="" longitude="" />
+    <station id="1025" local="" english="" latitude="" longitude="" />
+    <station id="1026" local="" english="" latitude="" longitude="" />
+    <station id="1027" local="" english="" latitude="" longitude="" />
+    <station id="1028" local="" english="" latitude="" longitude="" />                   
+    <station id="1029" local="" english="" latitude="" longitude="" />
+    <station id="1030" local="" english="" latitude="" longitude="" />
+    <station id="1031" local="" english="" latitude="" longitude="" />
+    <!-- End of Line 10 -->
+
+    <!-- Start of Line 11 -->
+    <station id="1101" local="" english="" latitude="" longitude="" />
+    <station id="1102" local="" english="" latitude="" longitude="" />
+    <station id="1103" local="" english="" latitude="" longitude="" />
+    <station id="1104" local="" english="" latitude="" longitude="" />
+    <station id="1105" local="" english="" latitude="" longitude="" />
+    <station id="1106" local="" english="" latitude="" longitude="" />
+    <station id="1107" local="" english="" latitude="" longitude="" />
+    <station id="1108" local="" english="" latitude="" longitude="" />
+    <station id="1109" local="" english="" latitude="" longitude="" />
+    <station id="1110" local="" english="" latitude="" longitude="" />
+    <station id="1111" local="" english="" latitude="" longitude="" />
+    <station id="1112" local="" english="" latitude="" longitude="" />
+    <station id="1113" local="" english="" latitude="" longitude="" />
+    <station id="1114" local="" english="" latitude="" longitude="" />
+    <station id="1115" local="" english="" latitude="" longitude="" />
+    <station id="1116" local="" english="" latitude="" longitude="" />
+    <station id="1117" local="" english="" latitude="" longitude="" />
+    <station id="1118" local="" english="" latitude="" longitude="" />
+    <station id="1119" local="" english="" latitude="" longitude="" />
+    <station id="1120" local="" english="" latitude="" longitude="" />
+    <station id="1121" local="" english="" latitude="" longitude="" />
+    <station id="1122" local="" english="" latitude="" longitude="" />
+    <station id="1123" local="" english="" latitude="" longitude="" />
+    <station id="1124" local="" english="" latitude="" longitude="" />
+    <station id="1125" local="" english="" latitude="" longitude="" />
+    <station id="1126" local="" english="" latitude="" longitude="" />
+    <station id="1127" local="" english="" latitude="" longitude="" />
+    <station id="1128" local="" english="" latitude="" longitude="" />
+    <station id="1129" local="" english="" latitude="" longitude="" />
+    <station id="1130" local="" english="" latitude="" longitude="" />
+    <station id="1131" local="" english="" latitude="" longitude="" />
+    <station id="1132" local="" english="" latitude="" longitude="" />
+    <station id="1133" local="" english="" latitude="" longitude="" />
+    <station id="1134" local="" english="" latitude="" longitude="" />                   
+    <!-- End of Line 11 -->
+
+    <!-- Start of Line 12 -->
+    <station id="1201" local="" english="" latitude="" longitude="" />
+    <station id="1202" local="" english="" latitude="" longitude="" />
+    <station id="1203" local="" english="" latitude="" longitude="" />
+    <station id="1204" local="" english="" latitude="" longitude="" />
+    <station id="1205" local="" english="" latitude="" longitude="" />
+    <station id="1206" local="" english="" latitude="" longitude="" />
+    <station id="1207" local="" english="" latitude="" longitude="" />
+    <station id="1208" local="" english="" latitude="" longitude="" />
+    <station id="1209" local="" english="" latitude="" longitude="" />
+    <station id="1210" local="" english="" latitude="" longitude="" />
+    <station id="1211" local="" english="" latitude="" longitude="" />
+    <station id="1212" local="" english="" latitude="" longitude="" />
+    <station id="1213" local="" english="" latitude="" longitude="" />
+    <station id="1214" local="" english="" latitude="" longitude="" />
+    <station id="1215" local="" english="" latitude="" longitude="" />
+    <station id="1216" local="" english="" latitude="" longitude="" />
+    <!-- End of Line 12 -->
+
+    <!-- Start of Line 13 -->
+    <station id="1301" local="" english="" latitude="" longitude="" />
+    <station id="1302" local="" english="" latitude="" longitude="" />
+    <station id="1303" local="" english="" latitude="" longitude="" />
+    <station id="1304" local="" english="" latitude="" longitude="" />
+    <station id="1305" local="" english="" latitude="" longitude="" />
+    <station id="1306" local="" english="" latitude="" longitude="" />
+    <!-- End of Line 13 -->
+
+    <!-- Start of Line 16 -->
+    <station id="1601" local="" english="" latitude="" longitude="" />
+    <station id="1602" local="" english="" latitude="" longitude="" />
+    <station id="1603" local="" english="" latitude="" longitude="" />
+    <station id="1604" local="" english="" latitude="" longitude="" />
+    <station id="1605" local="" english="" latitude="" longitude="" />
+    <station id="1606" local="" english="" latitude="" longitude="" />
+    <station id="1607" local="" english="" latitude="" longitude="" />
+    <station id="1608" local="" english="" latitude="" longitude="" />
+    <station id="1609" local="" english="" latitude="" longitude="" />
+    <station id="1610" local="" english="" latitude="" longitude="" />
+    <station id="1611" local="" english="" latitude="" longitude="" />
+    <!-- End of Line 16 -->
   </stations>
 
-  <!-- Travel time information is from wiki pages like ... -->
   <lines>
-    <line id="1" color="#FF0000" wait="9">
+    <!-- Travel time information is from
+         http://114.80.218.33/hcskb/240.htm -->
+    <!-- TODO: check wait time -->
+    <line id="1" color="#FF0000" wait="3">     
       <stations>
         <station id="101" />
         <station id="102" time="2" />
         <station id="103" time="2" />
-        <station id="104" time="2" />
-        <station id="105" time="2" />
+        <station id="104" time="3" />
+        <station id="105" time="3" />
         <station id="106" time="2" />
-        <station id="107" time="2" />
+        <station id="107" time="3" />
         <station id="108" time="2" />
         <station id="109" time="2" />
         <station id="110" time="2" />
         <station id="111" time="2" />
-        <station id="112" time="2" />
-        <station id="113" time="2" />
-        <station id="114" time="2" />
+        <station id="112" time="3" />
+        <station id="113" time="3" />
+        <station id="114" time="1" />
         <station id="115" time="2" />
-        <station id="116" time="2" />
+        <station id="116" time="3" />
         <station id="117" time="2" />
-        <station id="118" time="2" />
+        <station id="118" time="3" />
         <station id="119" time="2" />
         <station id="120" time="2" />
-        <station id="121" time="2" />
-        <station id="122" time="2" />
+        <station id="121" time="3" />
+        <station id="122" time="3" />
         <station id="123" time="2" />
-        <station id="124" time="2" />
+        <station id="124" time="3" />
         <station id="125" time="2" />
-        <station id="126" time="2" />
+        <station id="126" time="3" />
         <station id="127" time="2" />
         <station id="128" time="2" />
+      </stations>
+    </line>
+
+    <!-- Travel time information is 
+         http://114.80.218.33/hcskb/242.htm -->
+    <!-- TODO: check wait time, confirm color -->
+    <line id="2" color="#87d300" wait="3">
+      <stations>
+        <station id="201" />
+        <station id="202" time="2" />
+        <station id="203" time="2" />
+        <station id="204" time="3" />
+        <station id="205" time="3" />
+        <station id="206" time="2" />
+        <station id="207" time="3" />
+        <station id="208" time="2" />
+        <station id="209" time="2" />
+        <station id="210" time="2" />
+        <station id="211" time="2" />
+        <station id="212" time="3" />
+        <station id="213" time="3" />
+        <station id="214" time="2" />
+        <station id="215" time="2" />
+        <station id="216" time="3" />
+        <station id="217" time="2" />
+        <station id="218" time="3" />
+        <station id="219" time="2" />
+        <station id="220" time="2" />
+        <station id="221" time="3" />
+        <station id="222" time="3" />
+        <station id="223" time="2" />
+        <station id="224" time="3" />
+        <station id="225" time="2" />
+        <station id="226" time="3" />
+        <station id="227" time="2" />
+        <station id="228" time="2" />
+        <station id="229" time="2" />
+        <station id="230" time="2" />
+      </stations>
+    </line>
+
+    <!-- Travel time information is 
+         http://114.80.218.33/hcskb/242.htm -->
+    <!-- TODO: check wait time, confirm color -->
+    <line id="1" color="#87d300" wait="3">
+      <stations>
+        <station id="301" />
+        <station id="302" time="2" />
+        <station id="303" time="2" />
+        <station id="304" time="3" />
+        <station id="305" time="3" />
+        <station id="306" time="2" />
+        <station id="307" time="3" />
+        <station id="308" time="2" />
+        <station id="309" time="2" />
+        <station id="310" time="2" />
+        <station id="311" time="2" />
+        <station id="312" time="3" />
+        <station id="313" time="3" />
+        <station id="314" time="2" />
+        <station id="315" time="2" />
+        <station id="316" time="3" />
+        <station id="317" time="2" />
+        <station id="318" time="3" />
+        <station id="319" time="2" />
+        <station id="320" time="2" />
+        <station id="321" time="3" />
+        <station id="322" time="3" />
+        <station id="323" time="2" />
+        <station id="324" time="3" />
+        <station id="325" time="2" />
+        <station id="326" time="3" />
+        <station id="327" time="2" />
+        <station id="328" time="2" />
+        <station id="329" time="2" />
+      </stations>
+    </line>
+
+    <!-- Travel time information is 
+         http://114.80.218.33/hcskb/242.htm -->
+    <!-- TODO: check wait time, confirm color -->
+    <line id="4" color="#87d300" wait="3">
+      <stations>
+        <station id="401" />
+        <station id="402" time="2" />
+        <station id="403" time="2" />
+        <station id="404" time="3" />
+        <station id="405" time="3" />
+        <station id="406" time="2" />
+        <station id="407" time="3" />
+        <station id="408" time="2" />
+        <station id="409" time="2" />
+        <station id="410" time="2" />
+        <station id="411" time="2" />
+        <station id="412" time="3" />
+        <station id="413" time="3" />
+        <station id="414" time="2" />
+        <station id="415" time="2" />
+        <station id="416" time="3" />
+        <station id="417" time="2" />
+        <station id="418" time="3" />
+        <station id="419" time="2" />
+        <station id="420" time="2" />
+        <station id="421" time="3" />
+        <station id="422" time="3" />
+        <station id="423" time="2" />
+        <station id="424" time="3" />
+        <station id="425" time="2" />
+        <station id="426" time="3" />
+      </stations>
+    </line>
+
+    <!-- Travel time information is 
+         http://114.80.218.33/hcskb/242.htm -->
+    <!-- TODO: check wait time, confirm color -->
+    <line id="5" color="#87d300" wait="3">
+      <stations>
+        <station id="501" />
+        <station id="502" time="2" />
+        <station id="503" time="2" />
+        <station id="504" time="3" />
+        <station id="505" time="3" />
+        <station id="506" time="2" />
+        <station id="507" time="3" />
+        <station id="508" time="2" />
+        <station id="509" time="2" />
+        <station id="510" time="2" />
+        <station id="511" time="2" />
+      </stations>
+    </line>
+
+    <!-- Travel time information is 
+         http://114.80.218.33/hcskb/242.htm -->
+    <!-- TODO: check wait time, confirm color -->
+    <line id="6" color="#87d300" wait="3">
+      <stations>
+        <station id="601" />
+        <station id="602" time="2" />
+        <station id="603" time="2" />
+        <station id="604" time="3" />
+        <station id="605" time="3" />
+        <station id="606" time="2" />
+        <station id="607" time="3" />
+        <station id="608" time="2" />
+        <station id="609" time="2" />
+        <station id="610" time="2" />
+        <station id="611" time="2" />
+        <station id="612" time="3" />
+        <station id="613" time="3" />
+        <station id="614" time="2" />
+        <station id="615" time="2" />
+        <station id="616" time="3" />
+        <station id="617" time="2" />
+        <station id="618" time="3" />
+        <station id="619" time="2" />
+        <station id="620" time="2" />
+        <station id="621" time="3" />
+        <station id="622" time="3" />
+        <station id="623" time="2" />
+        <station id="624" time="3" />
+        <station id="625" time="2" />
+        <station id="626" time="3" />
+        <station id="627" time="2" />
+        <station id="628" time="2" />
+      </stations>
+    </line>
+
+    <!-- Travel time information is 
+         http://114.80.218.33/hcskb/242.htm -->
+    <!-- TODO: check wait time, confirm color -->
+    <line id="7" color="#87d300" wait="3">
+      <stations>
+        <station id="701" />
+        <station id="702" time="2" />
+        <station id="703" time="2" />
+        <station id="704" time="3" />
+        <station id="705" time="3" />
+        <station id="706" time="2" />
+        <station id="707" time="3" />
+        <station id="708" time="2" />
+        <station id="709" time="2" />
+        <station id="710" time="2" />
+        <station id="711" time="2" />
+        <station id="712" time="3" />
+        <station id="713" time="3" />
+        <station id="714" time="2" />
+        <station id="715" time="2" />
+        <station id="716" time="3" />
+        <station id="717" time="2" />
+        <station id="718" time="3" />
+        <station id="719" time="2" />
+        <station id="720" time="2" />
+        <station id="721" time="3" />
+        <station id="722" time="3" />
+        <station id="723" time="2" />
+        <station id="724" time="3" />
+        <station id="725" time="2" />
+        <station id="726" time="3" />
+        <station id="727" time="2" />
+        <station id="728" time="2" />
+        <station id="729" time="2" />
+        <station id="730" time="2" />
+        <station id="731" time="3" />
+        <station id="732" time="3" />
+        <station id="733" time="2" />
+      </stations>
+    </line>
+
+    <!-- Travel time information is 
+         http://114.80.218.33/hcskb/242.htm -->
+    <!-- TODO: check wait time, confirm color -->
+    <line id="8" color="#87d300" wait="3">
+      <stations>
+        <station id="801" />
+        <station id="802" time="2" />
+        <station id="803" time="2" />
+        <station id="804" time="3" />
+        <station id="805" time="3" />
+        <station id="806" time="2" />
+        <station id="807" time="3" />
+        <station id="808" time="2" />
+        <station id="809" time="2" />
+        <station id="810" time="2" />
+        <station id="811" time="2" />
+        <station id="812" time="3" />
+        <station id="813" time="3" />
+        <station id="814" time="2" />
+        <station id="815" time="2" />
+        <station id="816" time="3" />
+        <station id="817" time="2" />
+        <station id="818" time="3" />
+        <station id="819" time="2" />
+        <station id="820" time="2" />
+        <station id="821" time="3" />
+        <station id="822" time="3" />
+        <station id="823" time="2" />
+        <station id="824" time="3" />
+        <station id="825" time="2" />
+        <station id="826" time="3" />
+        <station id="827" time="2" />
+        <station id="828" time="2" />
+        <station id="829" time="2" />
+        <station id="830" time="2" />
+      </stations>
+    </line>
+
+    <!-- Travel time information is 
+         http://114.80.218.33/hcskb/242.htm -->
+    <!-- TODO: check wait time, confirm color -->
+    <line id="9" color="#87d300" wait="3">
+      <stations>
+        <station id="901" />
+        <station id="902" time="2" />
+        <station id="903" time="2" />
+        <station id="904" time="3" />
+        <station id="905" time="3" />
+        <station id="906" time="2" />
+        <station id="907" time="3" />
+        <station id="908" time="2" />
+        <station id="909" time="2" />
+        <station id="910" time="2" />
+        <station id="911" time="2" />
+        <station id="912" time="3" />
+        <station id="913" time="3" />
+        <station id="914" time="2" />
+        <station id="915" time="2" />
+        <station id="916" time="3" />
+        <station id="917" time="2" />
+        <station id="918" time="3" />
+        <station id="919" time="2" />
+        <station id="920" time="2" />
+        <station id="921" time="3" />
+        <station id="922" time="3" />
+        <station id="923" time="2" />
+        <station id="924" time="3" />
+        <station id="925" time="2" />
+        <station id="926" time="3" />
+      </stations>
+    </line>
+
+    <!-- Travel time information is 
+         http://114.80.218.33/hcskb/242.htm -->
+    <!-- TODO: check wait time, confirm color -->
+    <line id="10" color="#87d300" wait="3">
+      <stations>
+        <station id="1001" />
+        <station id="1002" time="2" />
+        <station id="1003" time="2" />
+        <station id="1004" time="3" />
+        <station id="1005" time="3" />
+        <station id="1006" time="2" />
+        <station id="1007" time="3" />
+        <station id="1008" time="2" />
+        <station id="1009" time="2" />
+        <station id="1010" time="2" />
+        <station id="1011" time="2" />
+        <station id="1012" time="3" />
+        <station id="1013" time="3" />
+        <station id="1014" time="2" />
+        <station id="1015" time="2" />
+        <station id="1016" time="3" />
+        <station id="1017" time="2" />
+        <station id="1018" time="3" />
+        <station id="1019" time="2" />
+        <station id="1020" time="2" />
+        <station id="1021" time="3" />
+        <station id="1022" time="3" />
+        <station id="1023" time="2" />
+        <station id="1024" time="3" />
+        <station id="1025" time="2" />
+        <station id="1026" time="3" />
+        <station id="1027" time="2" />
+        <station id="1028" time="2" />
+        <station id="1029" time="2" />
+        <station id="1030" time="2" />
+        <station id="1031" time="3" />
+      </stations>
+    </line>
+
+    <!-- Travel time information is 
+         http://114.80.218.33/hcskb/242.htm -->
+    <!-- TODO: check wait time, confirm color -->
+    <line id="11" color="#87d300" wait="3">
+      <stations>
+        <station id="1101" />
+        <station id="1102" time="2" />
+        <station id="1103" time="2" />
+        <station id="1104" time="3" />
+        <station id="1105" time="3" />
+        <station id="1106" time="2" />
+        <station id="1107" time="3" />
+        <station id="1108" time="2" />
+        <station id="1109" time="2" />
+        <station id="1110" time="2" />
+        <station id="1111" time="2" />
+        <station id="1112" time="3" />
+        <station id="1113" time="3" />
+        <station id="1114" time="2" />
+        <station id="1115" time="2" />
+        <station id="1116" time="3" />
+        <station id="1117" time="2" />
+        <station id="1118" time="3" />
+        <station id="1119" time="2" />
+        <station id="1120" time="2" />
+        <station id="1121" time="3" />
+        <station id="1122" time="3" />
+        <station id="1123" time="2" />
+        <station id="1124" time="3" />
+        <station id="1125" time="2" />
+        <station id="1126" time="3" />
+        <station id="1127" time="2" />
+        <station id="1128" time="2" />
+        <station id="1129" time="2" />
+        <station id="1130" time="2" />
+        <station id="1131" time="3" />
+        <station id="1132" time="3" />
+        <station id="1133" time="2" />
+        <station id="1134" time="3" />
+      </stations>
+    </line>
+
+    <!-- Travel time information is 
+         http://114.80.218.33/hcskb/242.htm -->
+    <!-- TODO: check wait time, confirm color -->
+    <line id="12" color="#87d300" wait="3">
+      <stations>
+        <station id="1201" />
+        <station id="1202" time="2" />
+        <station id="1203" time="2" />
+        <station id="1204" time="3" />
+        <station id="1205" time="3" />
+        <station id="1206" time="2" />
+        <station id="1207" time="3" />
+        <station id="1208" time="2" />
+        <station id="1209" time="2" />
+        <station id="1210" time="2" />
+        <station id="1211" time="2" />
+        <station id="1212" time="3" />
+        <station id="1213" time="3" />
+        <station id="1214" time="2" />
+        <station id="1215" time="2" />
+        <station id="1216" time="3" />
+      </stations>
+    </line>
+
+    <!-- Travel time information is 
+         http://114.80.218.33/hcskb/242.htm -->
+    <!-- TODO: check wait time, confirm color -->
+    <line id="13" color="#87d300" wait="3">
+      <stations>
+        <station id="1301" />
+        <station id="1302" time="2" />
+        <station id="1303" time="2" />
+        <station id="1304" time="3" />
+        <station id="1305" time="3" />
+        <station id="1306" time="2" />
+      </stations>
+    </line>
+
+    <!-- Travel time information is 
+         http://114.80.218.33/hcskb/242.htm -->
+    <!-- TODO: check wait time, confirm color -->
+    <line id="16" color="#87d300" wait="3">
+      <stations>
+        <station id="1601" />
+        <station id="1602" time="2" />
+        <station id="1603" time="2" />
+        <station id="1604" time="3" />
+        <station id="1605" time="3" />
+        <station id="1606" time="2" />
+        <station id="1607" time="3" />
+        <station id="1608" time="2" />
+        <station id="1609" time="2" />
+        <station id="1610" time="2" />
+        <station id="1611" time="2" />
       </stations>
     </line>
   </lines>
