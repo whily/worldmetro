@@ -20,6 +20,8 @@
   <string name="shanghai_message"></string>
   <string name="tokyo">Tokyo</string>
   <string name="tokyo_message"></string>
+  <string name="wuhan">Wuhan</string>
+  <string name="wuhan_message"></string>
   
   <!--  Activity Settings -->
   <string name="appearance_preference">Appearance</string>

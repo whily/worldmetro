@@ -10,7 +10,7 @@ exec scala "$0" "$@"
  * License: 
  *   GNU General Public License v2
  *   http://www.gnu.org/licenses/gpl-2.0.html
- * Copyright (C) 2013 Yujian Zhang
+ * Copyright (C) 2013-2014 Yujian Zhang
  */
 
 import java.net._
@@ -18,10 +18,10 @@ import java.io._
 
 object Line {
   // Configurable parameters.
-  val url = "http://en.wikipedia.org/w/index.php?title=Line_14,_Beijing_Subway&action=edit&section=1"
+  val url = "http://en.wikipedia.org/w/index.php?title=Line_1,_Wuhan_Metro&action=edit&section=2"
   val wikiPrefix = "http://en.wikipedia.org/wiki/"
   // Whether English name of the station should be upper case.
-  val upperCaseStationName = true 
+  val upperCaseStationName = false
   // Whether travel time information is available or not.
   val timeInfo = false
   val hasLocalName = true

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<city>
+  <!-- Unit for time duration is in minute. -->
+  <!-- Transfer information from ... -->
+  <stations>
+    <!-- Note: station ID is a string WITHOUT space. -->
+
+    <!-- Start of Line 1:
+         http://en.wikipedia.org/wiki/Line_1,_Wuhan_Metro -->
+    <station id="101" local="汉口北" english="Hankou North Station" latitude="" longitude="" />
+    <station id="102" local="滠口新城" english="Shekouxincheng" latitude="" longitude="" />
+    <station id="103" local="滕子岗" english="Tengzigang" latitude="" longitude="" />
+    <station id="104" local="堤角" english="Dijiao" latitude="30.667207" longitude="114.338686" />
+    <station id="105" local="新荣" english="Xinrong" latitude="30.656816" longitude="114.334642" />
+    <station id="106" local="丹水池" english="Danshuichi" latitude="30.645324" longitude="114.330704" />
+    <station id="107" local="徐州新村" english="Xuzhouxincun" latitude="30.630693" longitude="114.322658" />
+    <station id="108" local="二七路" english="Erqi Road" latitude="30.624988" longitude="114.31916" />
+    <station id="109" local="头道街" english="Toudao Street" latitude="30.633869" longitude="114.323323" />
+    <station id="110" local="黄浦路" english="Huangpu Road" latitude="30.607712" longitude="114.307637" />
+    <station id="111" local="三阳路" english="Sanyang Road" latitude="30.597785" longitude="114.301629" />
+    <station id="112" local="大智路" english="Dazhi Road" latitude="30.592336" longitude="114.295363" />
+    <station id="113" local="循礼门" english="Xunlimen"
+             latitude="30.587997" longitude="114.281666">
+    	<transfer ids="209" time="2" />
+    </station>
+    <station id="114" local="友谊路" english="Youyi Road" latitude="31.4064" longitude="121.471" />
+    <station id="115" local="利济北路" english="Liji North Road" latitude="30.583343" longitude="114.273059" />
+    <station id="116" local="崇仁路" english="Chongren Road" latitude="30.576467" longitude="114.256521" />
+    <station id="117" local="硚口路" english="Qiaokou Road" latitude="30.574039" longitude="114.244961" />
+    <station id="118" local="太平洋" english="Taipingyang" latitude="30.576536" longitude="114.235332" />
+    <station id="119" local="宗关" english="Zongguan"
+             latitude="30.582981" longitude="114.221019" />
+    <!-- TODO: check coordinates of gutian 1/2/3/4 road and Dongwu Boulevard: why they are same. -->
+    <station id="120" local="汉西一路" english="Hanxi 1st Road" latitude="30.584504" longitude="114.220165" />
+    <station id="121" local="古田四路" english="Gutian 4th Road" latitude="30.584504" longitude="114.220165" />
+    <station id="122" local="古田三路" english="Gutian 3rd Road" latitude="30.584504" longitude="114.220165" />
+    <station id="123" local="古田二路" english="Gutian 2nd Road" latitude="30.584504" longitude="114.220165" />
+    <station id="124" local="古田一路" english="Gutian 1st Road" latitude="30.584504" longitude="114.220165" />
+    <station id="125" local="舵落口" english="Duoluokou" latitude="30.609619" longitude="114.170056" />
+    <station id="126" local="竹叶海" english="Zhuyehai" latitude="30.615533" longitude="114.16297" />
+    <station id="127" local="额头湾" english="Etouwan" latitude="30.618432" longitude="114.153791" />
+    <station id="128" local="五环大道" english="Wuhuan Boulevard" latitude="30.618432" longitude="114.153791" />
+    <station id="129" local="东吴大道" english="Dongwu Boulevard" latitude="30.584504" longitude="114.220165" />
+    <!-- End of Line 1 -->
+
+    <!-- Start of Line 2:
+         http://en.wikipedia.org/wiki/Line_2,_Wuhan_Metro -->
+    <station id="201" local="金银潭" english="Jinyintan" latitude="30.652709" longitude="114.238083" />
+    <station id="202" local="常青花园" english="Changqing Huayuan" latitude="30.643558" longitude="114.237463" />
+    <station id="203" local="长港路" english="Changgang Rd" latitude="30.629513" longitude="114.24068" />
+    <station id="204" local="汉口火车站" english="Hankou Railway Station" latitude="30.618086" longitude="114.255" />
+    <station id="205" local="范湖" english="Fanhu" latitude="30.610149" longitude="114.253833" />
+    <station id="206" local="王家墩东" english="Wangjiadun East" latitude="30.596699" longitude="114.257234" />
+    <station id="207" local="青年路" english="Qingnian Rd"
+             latitude="30.58761" longitude="114.259615" />
+    <!-- Get coordinate below -->
+    <station id="208" local="中山公园" english="Zhongshan Park" latitude="" longitude="" />
+    <station id="210" local="江汉路" english="Jianghan Rd" latitude="30.582265" longitude="114.286845" />
+    <station id="211" local="积玉桥" english="Jiyuqiao" latitude="30.563183" longitude="114.303192" />
+    <station id="212" local="螃蟹岬" english="Pangxiejia" latitude="30.556013" longitude="114.311289" />
+    <station id="213" local="小龟山" english="Xiaoguishan" latitude="30.553822" longitude="114.320309" />
+    <station id="214" local="洪山广场" english="Hongshan Square"
+             latitude="30.547205" longitude="114.330885">
+    	<transfer ids="434" time="2" />
+    </station>
+    <station id="215" local="中南路" english="Zhongnan Rd"
+             latitude="30.539147" longitude="114.327018">
+        <transfer ids="433" time="2" />
+    </station>
+    <station id="216" local="宝通寺" english="Baotong Temple" latitude="30.532609" longitude="114.335389" />
+    <station id="217" local="街道口" english="Jiedaokou" latitude="30.529029" longitude="114.34786" />
+    <station id="218" local="广埠屯" english="Guangbutun" latitude="30.524495" longitude="114.358977" />
+    <station id="219" local="虎泉" english="Huquan" latitude="30.514402" longitude="114.365118" />
+    <station id="220" local="杨家湾" english="Yangjiawan" latitude="30.507442" longitude="114.377534" />
+    <station id="221" local="光谷广场" english="Optics Valley Square" latitude="30.507929" longitude="114.390086" />
+    <!-- End of Line 2 -->
+
+    <!-- Start of Line 4:
+         http://en.wikipedia.org/wiki/Line_4,_Wuhan_Metro -->
+    <station id="431" local="武昌火车站" english="Wuchang Railway Station" latitude="30.528558" longitude="114.317828" />
+    <station id="432" local="梅苑小区" english="Meiyuanxiaoqu" latitude="" longitude="" />
+    <station id="435" local="楚河汉街" english="Chuhe Hanjie" latitude="" longitude="" />
+    <station id="436" local="青鱼嘴" english="Qingyuzui" latitude="" longitude="" />
+    <station id="437" local="东亭" english="Dongting" latitude="" longitude="" />
+    <station id="438" local="岳家嘴" english="Yuejiazui" latitude="" longitude="" />
+    <station id="439" local="铁机路" english="Tieji Road" latitude="" longitude="" />
+    <station id="440" local="罗家港" english="Luojiagang" latitude="" longitude="" />
+    <station id="441" local="园林路" english="Yuanlin Road" latitude="" longitude="" />
+    <station id="442" local="仁和路" english="Renhe Road" latitude="" longitude="" />
+    <station id="443" local="工业四路" english="Gongye Fourth Road" latitude="" longitude="" />
+    <station id="444" local="杨春湖" english="Yangchunhu" latitude="" longitude="" />
+    <station id="445" local="武汉火车站" english="Wuhan Railway Station" latitude="30.610192" longitude="114.418664" />
+    <!-- End of Line 4 -->
+  </stations>
+
+  <lines>
+    <!-- Travel time information is 
+         http://www.whrt.gov.cn/public_forward.aspx??url=public_content_page.aspx?newid=C85D4339F7EEBCEE48257C230026F633&dtag=menu_motion_1 -->
+    <line id="1" color="#086dbb" wait="2">
+      <stations>
+        <station id="101" />
+        <station id="102" time="5" />
+        <station id="103" time="2" />
+        <station id="104" time="2" />
+        <station id="105" time="2" />
+        <station id="106" time="3" />
+        <station id="107" time="3" />
+        <station id="108" time="2" />
+        <station id="109" time="2" />
+        <station id="110" time="2" />
+        <station id="111" time="3" />
+        <station id="112" time="2" />
+        <station id="113" time="2" />
+        <station id="114" time="3" />
+        <station id="115" time="2" />
+        <station id="116" time="3" />
+        <station id="117" time="2" />
+        <station id="118" time="3" />
+        <station id="119" time="2" />
+        <station id="120" time="2" />
+        <station id="121" time="2" />
+        <station id="122" time="2" />
+        <station id="123" time="2" />
+        <station id="124" time="2" />
+        <station id="125" time="3" />
+        <station id="126" time="1" />
+        <station id="127" time="2" />
+        <station id="128" time="3" />
+        <station id="129" time="4" />
+      </stations>
+    </line>
+
+    <!-- Travel time information is 
+         http://www.whrt.gov.cn/public_forward.aspx??url=public_content_page.aspx?newid=C85D4339F7EEBCEE48257C230026F633&dtag=menu_motion_1 -->
+    <line id="2" color="#e579ab" wait="2">
+      <stations>
+        <station id="201" />
+        <station id="202" time="2" />
+        <station id="203" time="3" />
+        <station id="204" time="3" />
+        <station id="205" time="2" />
+        <station id="206" time="3" />
+        <station id="207" time="2" />
+        <station id="208" time="2" />
+        <station id="209" time="3" />
+        <station id="210" time="3" />
+        <station id="211" time="4" />
+        <station id="212" time="3" />
+        <station id="213" time="2" />
+        <station id="214" time="2" />
+        <station id="215" time="3" />
+        <station id="216" time="2" />
+        <station id="217" time="3" />
+        <station id="218" time="3" />
+        <station id="219" time="2" />
+        <station id="220" time="3" />
+        <station id="221" time="2" />
+      </stations>
+    </line>
+
+    <!-- Travel time information is
+         http://www.whrt.gov.cn/public_forward.aspx??url=public_content_page.aspx?newid=FC1C0DAF117A3CE248257C4E00346982&dtag=menu_motion_1 -->
+    <line id="4" color="#b5d31b" wait="2">
+      <stations>
+        <station id="431" />
+        <station id="432" time="2" />
+        <station id="433" time="2" />
+        <station id="434" time="3" />
+        <station id="435" time="2" />
+        <station id="436" time="2" />
+        <station id="437" time="2" />
+        <station id="438" time="2" />
+        <station id="439" time="2" />
+        <station id="440" time="3" />
+        <station id="441" time="2" />
+        <station id="442" time="2" />
+        <station id="443" time="2" />
+        <station id="444" time="2" />
+        <station id="445" time="2" />
+      </stations>
+    </line>
+  </lines>
+</city>
