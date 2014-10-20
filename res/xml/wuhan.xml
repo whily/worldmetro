@@ -21,7 +21,7 @@
     <station id="112" local="大智路" english="Dazhi Road" latitude="30.592336" longitude="114.295363" />
     <station id="113" local="循礼门" english="Xunlimen"
              latitude="30.587997" longitude="114.281666">
-    	<transfer ids="209" time="2" />
+    	<transfer ids="113 209" time="2" />
     </station>
     <station id="114" local="友谊路" english="Youyi Road" latitude="31.4064" longitude="121.471" />
     <station id="115" local="利济北路" english="Liji North Road" latitude="30.583343" longitude="114.273059" />
@@ -61,18 +61,19 @@
     <station id="213" local="小龟山" english="Xiaoguishan" latitude="30.553822" longitude="114.320309" />
     <station id="214" local="洪山广场" english="Hongshan Square"
              latitude="30.547205" longitude="114.330885">
-    	<transfer ids="434" time="2" />
+    	<transfer ids="214 434" time="2" />
     </station>
     <station id="215" local="中南路" english="Zhongnan Rd"
              latitude="30.539147" longitude="114.327018">
-        <transfer ids="433" time="2" />
+        <transfer ids="215 433" time="2" />
     </station>
     <station id="216" local="宝通寺" english="Baotong Temple" latitude="30.532609" longitude="114.335389" />
     <station id="217" local="街道口" english="Jiedaokou" latitude="30.529029" longitude="114.34786" />
     <station id="218" local="广埠屯" english="Guangbutun" latitude="30.524495" longitude="114.358977" />
     <station id="219" local="虎泉" english="Huquan" latitude="30.514402" longitude="114.365118" />
     <station id="220" local="杨家湾" english="Yangjiawan" latitude="30.507442" longitude="114.377534" />
-    <station id="221" local="光谷广场" english="Optics Valley Square" latitude="30.507929" longitude="114.390086" />
+    <station id="221" local="光谷广场" english="Optics Valley Square"
+             latitude="30.507929" longitude="114.390086" />
     <!-- End of Line 2 -->
 
     <!-- Start of Line 4:
@@ -89,14 +90,15 @@
     <station id="442" local="仁和路" english="Renhe Road" latitude="" longitude="" />
     <station id="443" local="工业四路" english="Gongye Fourth Road" latitude="" longitude="" />
     <station id="444" local="杨春湖" english="Yangchunhu" latitude="" longitude="" />
-    <station id="445" local="武汉火车站" english="Wuhan Railway Station" latitude="30.610192" longitude="114.418664" />
+    <station id="445" local="武汉火车站" english="Wuhan Railway Station"
+             latitude="30.610192" longitude="114.418664" />
     <!-- End of Line 4 -->
   </stations>
 
   <lines>
     <!-- Travel time information is 
          http://www.whrt.gov.cn/public_forward.aspx??url=public_content_page.aspx?newid=C85D4339F7EEBCEE48257C230026F633&dtag=menu_motion_1 -->
-    <line id="1" color="#086dbb" wait="2">
+    <line id="1" color="#086dbb" wait="2" local="1号线" english="Line 1">
       <stations>
         <station id="101" />
         <station id="102" time="5" />
@@ -131,8 +133,9 @@
     </line>
 
     <!-- Travel time information is 
-         http://www.whrt.gov.cn/public_forward.aspx??url=public_content_page.aspx?newid=C85D4339F7EEBCEE48257C230026F633&dtag=menu_motion_1 -->
-    <line id="2" color="#e579ab" wait="2">
+         http://www.whrt.gov.cn/public_forward.aspx??url=public_content_page.aspx?newid=C85D4339F7EEBCEE48257C230026F633&dtag=menu_motion_1
+    -->
+    <line id="2" color="#e579ab" wait="2" local="2号线" english="Line 2">
       <stations>
         <station id="201" />
         <station id="202" time="2" />
@@ -159,8 +162,9 @@
     </line>
 
     <!-- Travel time information is
-         http://www.whrt.gov.cn/public_forward.aspx??url=public_content_page.aspx?newid=FC1C0DAF117A3CE248257C4E00346982&dtag=menu_motion_1 -->
-    <line id="4" color="#b5d31b" wait="2">
+         http://www.whrt.gov.cn/public_forward.aspx??url=public_content_page.aspx?newid=FC1C0DAF117A3CE248257C4E00346982&dtag=menu_motion_1
+    -->
+    <line id="4" color="#b5d31b" wait="2" local="4号线" english="Line 4" >
       <stations>
         <station id="431" />
         <station id="432" time="2" />
@@ -180,4 +184,7 @@
       </stations>
     </line>
   </lines>
+
+  <places>  	
+  </places>
 </city>
