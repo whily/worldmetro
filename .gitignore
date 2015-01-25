@@ -5,6 +5,7 @@ local.properties
 proguard.cfg
 *.class
 *.log
+*.zip
 .cache
 libs/
 proguard_cache/
