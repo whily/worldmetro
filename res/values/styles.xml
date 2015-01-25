@@ -1,10 +1,10 @@
 <resources>
   <!-- Define two themes: holo dark and holo light, so users can switch. -->
-  <style name="AppTheme.Dark" parent="android:Theme.Holo">
+  <style name="AppTheme.Dark" parent="android:Theme.Material">
   	<item name="reverse_icon">@drawable/ic_menu_reverse_holo_dark</item>
   </style>
   
-  <style name="AppTheme.Light" parent="android:Theme.Holo.Light">
+  <style name="AppTheme.Light" parent="android:Theme.Material.Light">
     <item name="reverse_icon">@drawable/ic_menu_reverse_holo_light</item>	
   </style> 
 </resources>

@@ -15,13 +15,13 @@ import android.app.Activity
 import net.whily.scaland.Util
 
 object Misc {
-  /** Set Holo Light/Dark theme according to preference value. */
-  def setHoloTheme(activity: Activity) {
+  /** Set Material Light/Dark theme according to preference value. */
+  def setMaterialTheme(activity: Activity) {
     val theme: Int = 
       if (Util.getThemePref(activity) == 0)
       	R.style.AppTheme_Dark
       else
-    	  R.style.AppTheme_Light
+    	R.style.AppTheme_Light
     activity.setTheme(theme)    
   }
 }

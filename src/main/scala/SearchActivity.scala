@@ -30,7 +30,7 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
   private var city: City = null
   private var cityId: String = ""
   // Please also modify res/values/string.xml for the city messages.
-  private val cityIds = Array("beijing", "munich", "prague", "shanghai", "wuhan")//, "tokyo")    
+  private val cityIds = Array("beijing", "munich", "prague", "wuhan")//, "shanghai", "tokyo")    
   private var stationIdMap: mutable.HashMap[String, String] = null
   private var stationNameMap: mutable.HashMap[String, Set[String]] = null
   private val ResultSettings = 1
@@ -47,7 +47,7 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
     // Set handler for uncaught exception raised from current activity.
     Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this))
 
-    Misc.setHoloTheme(this)
+    Misc.setMaterialTheme(this)
     setContentView(R.layout.search)
     setTitle("")
     
