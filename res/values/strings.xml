@@ -9,7 +9,10 @@
   <string name="from_entry_hint">FROM station or place</string>
   <string name="to_entry_hint">TO station or place</string>
   <string name="general_message">Route and travel time may not be 100% accurate.</string>
-  <!--  Below is the array of names of the cities supported in this app. -->
+  <!--  Below is the array of names of the cities supported in this
+       app. -->
+  <string name="athens">Athens</string>
+  <string name="athens_message"></string>
   <string name="beijing">Beijing</string>
   <string name="beijing_message"></string>
   <string name="munich">Munich</string>

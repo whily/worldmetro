@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<city>
+  <!-- Unit for time duration is in minute. -->
+  <!-- Travel time information from
+       http://www.stasy.gr/index.php?id=67&L=1 -->
+  <!-- TODO: check waiting time and transfer time. -->
+  <stations>
+    <!-- Note: station ID is a string WITHOUT space. -->
+
+    <!-- Start of Line 1:
+         http://en.wikipedia.org/wiki/Line_1_(Athens_Metro) -->
+    <station id="101" local="Πειραιάς" english="Piraeus" latitude="37.948056" longitude="23.643333" />
+    <station id="102" local="Φάληρο" english="Faliro" latitude="37.943889" longitude="23.686111" />
+    <station id="103" local="Μοσχάτο" english="Moschato" latitude="37.9552" longitude="23.6803" />
+    <station id="104" local="Καλλιθέα" english="Kallithea" latitude="37.9605" longitude="23.6971" />
+    <station id="105" local="Ταύρος" english="Tavros" latitude="37.9625" longitude="23.7034" />
+    <station id="106" local="Πετράλωνα" english="Petralona" latitude="37.9685" longitude="23.7091" />
+    <station id="107" local="Θησείο" english="Thissio" latitude="37.976667" longitude="23.720556" />
+    <station id="108" local="Μοναστηράκι"
+             english="Monastiraki" latitude="37.976111"
+             longitude="23.725556">
+      <transfer ids="108 305" time="2" />
+    </station>
+    <station id="109" local="Ομόνοια" english="Omonoia"
+             latitude="37.984167" longitude="23.728333">
+      <transfer ids="109 208" time="2" />
+    </station>
+    <station id="110" local="Βικτώρια" english="Victoria" latitude="37.993056" longitude="23.730556" />
+    <station id="111" local="Αττική" english="Attiki"
+             latitude="37.999444" longitude="23.722778">
+      <transfer ids="111 205" time="2" />
+    </station>
+    <station id="112" local="Άγιος Νικόλαος" english="Agios Nikolaos" latitude="38.006944" longitude="23.727778" />
+    <station id="113" local="Κάτω Πατήσια" english="Kato Patisia" latitude="38.011944" longitude="23.728611" />
+    <station id="114" local="Άγιος Ελευθέριος" english="Agios Eleftherios" latitude="38.019722" longitude="23.731667" />
+    <station id="115" local="Άνω Πατήσια" english="Ano Patisia" latitude="38.023806" longitude="23.736111" />
+    <station id="116" local="Περισσός" english="Perissos" latitude="38.032778" longitude="23.744722" />
+    <station id="117" local="Πευκάκια" english="Pefkakia" latitude="38.036944" longitude="23.75" />
+    <station id="118" local="Νέα Ιωνία" english="Nea Ionia" latitude="38.041528" longitude="23.755" />
+    <station id="119" local="Ηράκλειο" english="Irakleio" latitude="38.0462" longitude="23.7661" />
+    <station id="120" local="Ειρήνη" english="Eirini" latitude="38.0432" longitude="23.7834" />
+    <station id="121" local="Νερατζιώτισσα"
+             english="Nerantziotissa" latitude="38.045"
+             longitude="23.792778" />
+    <station id="122" local="Μαρούσι" english="Marousi" latitude="38.056111" longitude="23.804722" />
+    <station id="123" local="KAT" english="KAT" latitude="38.065833" longitude="23.803889" />
+    <station id="124" local="Κηφισιά" english="Kifisia" latitude="38.073333" longitude="23.808056" />
+    <!-- End of Line 1 -->
+
+    <!-- Start of Line 2:
+         http://en.wikipedia.org/wiki/Line_2_(Athens_Metro) -->
+    <station id="201" local="Ανθούπολη" english="Anthoupoli" latitude="38.016944" longitude="23.691667" />
+    <station id="202" local="Περιστέρι" english="Peristeri" latitude="38.0132" longitude="23.6957" />
+    <station id="203" local="Άγιος Αντώνιος" english="Agios Antonios" latitude="38.00645" longitude="23.699789" />
+    <station id="204" local="Σεπόλια" english="Sepolia" latitude="38.0029" longitude="23.7134" />
+    <station id="206" local="Σταθμός Λαρίσης" english="Larissa Station" latitude="37.992289" longitude="23.720556" />
+    <station id="207" local="Μεταξουργείο" english="Metaxourghio" latitude="37.9858" longitude="23.721" />
+    <station id="209" local="Πανεπιστήμιο" english="Panepistimio" latitude="37.980278" longitude="23.733056" />
+    <station id="210" local="Σύνταγμ" english="Syntagma" latitude="37.975278"
+             longitude="23.735278">
+      <transfer ids="210 306" time="2" />
+    </station>
+    <station id="211" local="Ακρόπολη" english="Akropoli" latitude="37.975833" longitude="23.749722" />
+    <station id="212" local="Συγγρού-Φιξ " english="Syngrou FIX" latitude="37.9645" longitude="23.7266" />
+    <station id="213" local="Νέος Κόσμος" english="Neos Kosmos" latitude="37.9577" longitude="23.7286" />
+    <station id="214" local="Άγιος Ιωάννης" english="Agios Ioannis" latitude="37.9565" longitude="23.7342" />
+    <station id="215" local="Δάφνη" english="Dafni" latitude="37.9499" longitude="23.7382" />
+    <station id="216" local="Άγιος Δημήτριος" english="Agios Dimitrios" latitude="37.9414" longitude="23.7408" />
+    <station id="217" local="Ηλιούπολη" english="Ilioupoli" latitude="37.9296" longitude="23.7445" />
+    <station id="218" local="Άλιμος" english="Alimos" latitude="37.9183" longitude="23.7444" />
+    <station id="219" local="Αργυρούπολη" english="Argyroupoli" latitude="37.9031" longitude="23.7459" />
+    <station id="220" local="Ελληνικό" english="Elliniko" latitude="37.8926" longitude="23.7474" />
+    <!-- End of Line 2 -->
+
+    <!-- Start of Line 3:
+         http://en.wikipedia.org/wiki/Line_3_(Athens_Metro) -->
+    <station id="301" local="Αγία Μαρίνα" english="Agia Marina" latitude="37.996944" longitude="23.667778" />
+    <station id="302" local="Αιγάλεω" english="Egaleo" latitude="37.986667" longitude="23.690833" />
+    <station id="303" local="Ελαιώνας" english="Eleonas" latitude="37.992222" longitude="23.696944" />
+    <station id="304" local="Κεραμεικός" english="Kerameikos" latitude="37.986667" longitude="23.723056" />
+    <station id="307" local="Ευαγγελισμός" english="Evangelismos" latitude="37.9763" longitude="23.747" />
+    <station id="308" local="Μέγαρο Μουσικής" english="Megaro Moussikis" latitude="37.993056" longitude="23.776389" />
+    <station id="309" local="Αμπελόκηποι" english="Ambelokipi" latitude="37.987222" longitude="23.7575" />
+    <station id="310" local="Πανόρμου" english="Panormou" latitude="37.992778" longitude="23.766667" />
+    <station id="311" local="Κατεχάκη" english="Katehaki" latitude="37.993056" longitude="23.776389" />
+    <station id="312" local="Εθνική Άμυνα" english="Ethniki Amyna" latitude="38" longitude="23.785556" />
+    <station id="313" local="Χολαργός" english="Holargos" latitude="38.001667" longitude="23.812222" />
+    <station id="314" local="Νομισματοκοπείο" english="Nomismatokopio" latitude="38.001667" longitude="23.812222" />
+    <station id="315" local="Αγία Παρασκευή" english="Agia Paraskevi" latitude="38.017222" longitude="23.8125" />
+    <station id="316" local="Χαλάνδρι" english="Chalandri" latitude="38.021667" longitude="23.820833" />
+    <station id="317" local="Δουκίσσης Πλακεντίας" english="Doukissis Plakentias" latitude="38.024167" longitude="23.833611" />
+    <station id="318" local="Παλλήνη" english="Pallini" latitude="38.005278" longitude="23.869722" />
+    <station id="319" local="Παιανία-Κάντζα" english="Paiania-Kantza" latitude="37.984167" longitude="23.87" />
+    <station id="320" local="Κορωπί" english="Koropi" latitude="37.912778" longitude="23.895833" />
+    <station id="321" local=" Διεθνής Αερολιμένας Αθηνών " english="Airport" latitude="37.936389" longitude="23.947222" />
+    <!-- End of Line 3 -->
+  </stations>
+
+  <lines>
+    <line id="1" color="#00792c" wait="5" local="Γραμμή 1" english="Line 1">
+      <stations>
+        <station id="101" />
+        <station id="102" time="3" />
+        <station id="103" time="3" />
+        <station id="104" time="3" />
+        <station id="105" time="1" />
+        <station id="106" time="2" />
+        <station id="107" time="3" />
+        <station id="108" time="1" />
+        <station id="109" time="3" />
+        <station id="110" time="2" />
+        <station id="111" time="3" />
+        <station id="112" time="2" />
+        <station id="113" time="1" />
+        <station id="114" time="2" />
+        <station id="115" time="2" />
+        <station id="116" time="2" />
+        <station id="117" time="2" />
+        <station id="118" time="1" />
+        <station id="119" time="3" />
+        <station id="120" time="2" />
+        <station id="121" time="2" />
+        <station id="122" time="3" />
+        <station id="123" time="3" />
+        <station id="124" time="2" />
+      </stations>
+    </line>
+
+    <line id="2" color="#e32119" wait="5" local="Γραμμή 2" english="Line 2">
+      <stations>
+        <station id="201" />
+        <station id="202" time="1" />
+        <station id="203" time="1" />
+        <station id="204" time="2" />
+        <station id="205" time="1" />
+        <station id="206" time="2" />
+        <station id="207" time="1" />
+        <station id="208" time="2" />
+        <station id="209" time="1" />
+        <station id="210" time="2" />
+        <station id="211" time="1" />
+        <station id="212" time="2" />
+        <station id="213" time="1" />
+        <station id="214" time="1" />
+        <station id="215" time="2" />
+        <station id="216" time="2" />
+        <station id="217" time="2" />
+        <station id="218" time="1" />
+        <station id="219" time="3" />
+        <station id="220" time="1" />
+      </stations>
+    </line>
+
+    <line id="3" color="#0098d4" wait="5" local="Γραμμή 3" english="Line 3" >
+      <stations>
+        <station id="301" />
+        <station id="302" time="2" />
+        <station id="303" time="2" />
+        <station id="304" time="2" />
+        <station id="305" time="2" />
+        <station id="306" time="2" />
+        <station id="307" time="2" />
+        <station id="308" time="1" />
+        <station id="309" time="2" />
+        <station id="310" time="2" />
+        <station id="311" time="2" />
+        <station id="312" time="1" />
+        <station id="313" time="2" />
+        <station id="314" time="1" />
+        <station id="315" time="2" />
+        <station id="316" time="2" />
+        <station id="317" time="2" />
+        <station id="318" time="6" />
+        <station id="319" time="2" />
+        <station id="320" time="6" />
+        <station id="321" time="6" />
+      </stations>
+    </line>
+  </lines>
+
+  <places>  	
+  </places>
+</city>

@@ -30,7 +30,7 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
   private var city: City = null
   private var cityId: String = ""
   // Please also modify res/values/string.xml for the city messages.
-  private val cityIds = Array("beijing", "munich", "prague", "wuhan")//, "shanghai", "tokyo")    
+  private val cityIds = Array("athens", "beijing", "munich", "prague", "wuhan")//, "shanghai", "tokyo")    
   private var stationIdMap: mutable.HashMap[String, String] = null
   private var stationNameMap: mutable.HashMap[String, Set[String]] = null
   private val ResultSettings = 1
@@ -64,7 +64,7 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
     cityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
     bar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST)
     bar.setListNavigationCallbacks(cityAdapter, this)
-    
+
     initWidgets()
     initContents() 
   }
