@@ -18,23 +18,33 @@ import java.io._
 
 object Line {
   // Configurable parameters.
-  val url = "http://en.wikipedia.org/w/index.php?title=Line_1,_Wuhan_Metro&action=edit&section=2"
-  val wikiPrefix = "http://en.wikipedia.org/wiki/"
+  val url = "http://en.wikipedia.org/w/index.php?title=Line_14,_Beijing_Subway&action=edit&section=1"  
   // Whether English name of the station should be upper case.
-  val upperCaseStationName = false
+  val upperCaseStationName = true
   // Whether travel time information is available or not.
   val timeInfo = false
-  val hasLocalName = true
-  val stationInfoIndent = " " * 4
-  val lineInfoIndent    = " " * 8
   val reverse = false // Reverse all stations. This is mainly used to align the station ids.
+  val verbose = true
+
+  // Constants.
+  val stationInfoIndent = " " * 4
+  val wikiPrefix = "http://en.wikipedia.org/wiki/"
 
   def main(args: Array[String]) = {
-    val str = webPage(url).replace("{BJS line links|}", "") // Remove the confusing |}
-    
+    val str = webPage(url).replace("{BJS line links|}", ""). // Remove the confusing |}
+                replace("| [[", "|[[").     // Remove the redundant space
+                replace("'[[", "|[[")       // Canonicalize another alternative.
+
     // The actual data is betwen |[[ and |}
     val s = str.substring(str.indexOf("|[["), str.indexOf("|}")).trim
-    
+
+    if (verbose) {
+      println("Received Wikipedia text:")
+      println(s)
+      println("-------------------------------------------------------------------------")
+      println()
+    }
+       
     // Character | should be escaped. Note that there might be trailing rows which do not contain data.
     val stations = s.split("\\|-")
     
@@ -46,6 +56,10 @@ object Line {
         val englishStationName1 = if (sa.length == 1) sa(0) else sa(1)
         val englishStationName = if (upperCaseStationName) englishStationName1.toUpperCase else englishStationName1
         val localName = between(station, ">", "\n")
+
+        if (verbose) {
+          println("Fetching station: " + stationUrl)
+        }
         
         try {
           val (latitude, longitude) = coordinates(stationUrl) 
