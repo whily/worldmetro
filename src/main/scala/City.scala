@@ -229,7 +229,9 @@ class City(activity: Activity, cityName: String) {
 	  do {
 	    xpp.require(XmlPullParser.START_TAG, null, "transfer")
             val ids = attr("ids").split(" ")
-            transfers = Transfer(ids, attr("time").toInt, attr("oneway")) :: transfers
+	    val time = attr("time")
+	    assert(!time.isEmpty())            
+            transfers = Transfer(ids, time.toInt, attr("oneway")) :: transfers
 	    for (altId <- ids if altId != id) {
 	      stationIdMap += (altId -> name)
 	      stationNameMap(name) += altId
