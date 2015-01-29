@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <city>
   <!-- Unit for time duration is in minute. -->
-  <!-- Transfer information from http://www.ditiezu.com/thread-71145-1-1.html.
+  <!-- Unless explicitly specified, travel time information can be
+       found in
+          http://www.bjsubway.com/e/action/ListInfo/?classid=39&ph=1
+       Transfer information from http://www.ditiezu.com/thread-71145-1-1.html.
        The values is multipled by two and we don't consider the difference between
        the directions -->
   <stations>
@@ -111,7 +114,9 @@
     <station id="403" local="马家堡" english="MAJIAPU" latitude="" longitude="" />
     <station id="404" local="北京南站" english="BEIJING SOUTH RAILWAY STATION" latitude="" longitude="" />
     <station id="405" local="陶然亭" english="TAORANTING" latitude="" longitude="" />
-    <station id="406" local="菜市口" english="CAISHIKOU" latitude="" longitude="" />
+    <station id="406" local="菜市口" english="CAISHIKOU" latitude="39.8879" longitude="116.3683">
+      <transfer ids="406 705" time="2" />
+    </station>
     <station id="409" local="灵境胡同" english="LINGJING HUTONG" latitude="" longitude="" />
     <station id="410" local="西四" english="XISI" latitude="" longitude="" />
     <station id="411" local="平安里" english="PING'ANLI" latitude="" longitude="">
@@ -159,7 +164,10 @@
     	<transfer ids="509 616" time="2" />
     </station>
     <station id="508" local="灯市口" english="DENGSHIKOU" latitude="" longitude="" />
-    <station id="505" local="磁器口" english="CIQIKOU" latitude="" longitude="" />
+    <station id="505" local="磁器口" english="CIQIKOU" latitude=""
+             longitude="">
+      <transfer ids="505 709" time="2" />
+    </station>
     <station id="504" local="天坛东门" english="TIANTANDONGMEN" latitude="" longitude="" />
     <station id="503" local="蒲黄榆" english="PUHUANGYU" latitude="" longitude="" />
     <station id="502" local="刘家窑" english="LIUJIAYAO" latitude="" longitude="" />
@@ -181,7 +189,7 @@
     <station id="611" local="车公庄西" english="CHEGONGZHUANG WEST" latitude="" longitude="" />
     <station id="614" local="北海北" english="BEIHAI NORTH" latitude="" longitude="" />
     <station id="615" local="南锣鼓巷" english="NANLUOGUXIANG"
-             latitude="" longitude="">
+             latitude="39.931944" longitude="116.396944">
       <!-- According to 22 Dec 2013 edition of bjnews. -->
       <transfer ids="615 818" time="1" />
     </station>
@@ -189,15 +197,67 @@
     <station id="619" local="呼家楼" english="HUJIALOU" latitude="39.922" longitude="116.4555">
       <transfer ids="619 1029" time="2" />    		
     </station>
-    <station id="620" local="金台路" english="JINTAILU" latitude="" longitude="" />
+    <station id="620" local="金台路" english="JINTAILU" latitude=""
+             longitude="">
+      <transfer ids="620 1430" time="2" />
+    </station>
     <station id="621" local="十里堡" english="SHILIPU" latitude="" longitude="" />
     <station id="622" local="青年路" english="QINGNIANLU" latitude="" longitude="" />
     <station id="623" local="褡裢坡" english="DALIANPO" latitude="" longitude="" />
     <station id="624" local="黄渠" english="HUANGQU" latitude="" longitude="" />
     <station id="625" local="常营" english="CHANGYING" latitude="" longitude="" />
-    <station id="626" local="草房" english="CAOFANG" latitude="" longitude="" />
+    <station id="626" local="草房" english="CAOFANG" latitude=""
+             longitude="" />
+    <station id="627" local="物资学院路" english="WUZIXUEYUANLU" latitude="" longitude="" />
+    <station id="628" local="通州北关" english="TONGZHOU BEIGUAN" latitude="" longitude="" />
+    <!--<station id="629" local="通运门" english="TONGYUNMEN" latitude="" longitude="" />-->
+    <station id="630" local="北运河西" english="BEIYUNHE WEST"
+             latitude="" longitude="" />
+    <!--<station id="631" local="北运河东" english="BEIYUNHE EAST" latitude="" longitude="" />-->
+    <station id="632" local="郝家府" english="HAOJIAFU" latitude="" longitude="" />
+    <station id="633" local="东夏园" english="DONGXIAYUAN" latitude="" longitude="" />
+    <station id="634" local="潞城" english="LUCHENG" latitude="" longitude="" />
     <!--  End of Line 6 -->
-       
+
+    <!-- Start of Line 7 -->
+    <station id="701" local="北京西站" english="BEIJING WEST RAILWAY
+                                                STATION"
+             latitude="39.894444" longitude="116.315">
+      <transfer ids="701 909" time="2" />
+    </station>
+    <station id="702" local="湾子" english="WANZI" latitude="" longitude="" />
+    <station id="703" local="达官营" english="DAGUANYING" latitude="" longitude="" />
+    <station id="704" local="广安门内" english="GUANG'ANMENNEI"
+             latitude="" longitude="" />
+    <station id="706" local="虎坊桥" english="HUFANGQIAO" latitude=""
+             longitude="" />
+    <station id="707" local="珠市口" english="ZHUSHIKOU" latitude=""
+             longitude="" />
+    <station id="708" local="桥湾" english="QIAOWAN" latitude="" longitude="" />
+    <station id="710" local="广渠门内" english="GUANGQUMENNEI" latitude=""
+             longitude="" />
+    <station id="711" local="广渠门外" english="GUANGQUMENWAI" latitude="" longitude="" />
+    <!-- Same as 1026 <station id="712" local="双井" english="SHUANGJING"
+         latitude="39.8922" longitude="116.4552" /> -->
+    <station id="713" local="九龙山" english="JIULONGSHAN" latitude=""
+             longitude="" />
+    <station id="714" local="大郊亭" english="DAJIAOTING"
+             latitude="" longitude="" />
+    <station id="715" local="百子湾" english="BAIZIWAN" latitude=""
+             longitude="" />
+    <station id="716" local="化工" english="HUAGONG"
+             latitude="" longitude="" />
+    <station id="717" local="南楼梓庄" english="NANLOUZIZHUANG" latitude=""
+             longitude="" />
+    <station id="718" local="欢乐谷景区" english="HAPPY VALLEY SCENIC AREA"
+             latitude="" longitude="" />
+    <!--<station id="719" local="垡头" english="FATOU" latitude=""
+             longitude="" />-->
+    <station id="720" local="双合" english="SHUANGHE" latitude="" longitude="" />
+    <station id="721" local="焦化厂" english="JIAOHUACHANG" latitude=""
+             longitude="" />
+    <!-- End of Line 7 -->
+
     <!-- Start of Line 8 -->
     <!--<station id="817" local="中国美术馆" english="NATIONAL ART MUSEUM" latitude="" longitude="" />-->
     <station id="819" local="什刹海" english="SHICHAHAI" latitude="" longitude="" />
@@ -207,7 +267,10 @@
     	<transfer ids="823 1038" time="2" />
     </station>
     <station id="824" local="奥体中心" english="OLYMPIC SPORTS CENTER" latitude="" longitude="" />
-    <station id="825" local="奥林匹克公园" english="OLYMPIC GREEN" latitude="40.001125" longitude="116.386853" />
+    <station id="825" local="奥林匹克公园" english="OLYMPIC GREEN"
+             latitude="40.001125" longitude="116.386853">
+      <transfer ids="825 1504" time="2" />
+    </station>
     <station id="826" local="森林公园南门" english="SOUTH GATE OF FOREST PARK" latitude="40.01" longitude="116.3925" />
     <station id="827" local="林萃桥" english="LINCUIQIAO" latitude="" longitude="" />
     <station id="828" local="永泰庄" english="YONGTAIZHUANG" latitude="" longitude="" />
@@ -238,7 +301,6 @@
     	<transfer ids="907 1009" time="2" />
     </station>
     <station id="908" local="六里桥东" english="LIULIQIAO EAST" latitude="" longitude="" />
-    <station id="909" local="北京西站" english="BEIJING WEST RAILWAY STATION" latitude="39.894444" longitude="116.315" />
     <station id="911" local="白堆子" english="BAIDUIZI" latitude="" longitude="" />
     <!--  End of Line 9 -->
 
@@ -302,17 +364,39 @@
     <station id="1314" local="光熙门" english="GUANGXIMEN" latitude="" longitude="" />
     <station id="1315" local="柳芳" english="LIUFANG" latitude="" longitude="" />
     <!-- End of Line 13 -->
-    
+
     <!-- Start of Line 14 -->
+    <!-- More stations to be added once the whole line is operating. -->
     <station id="1401" local="张郭庄" english="Zhangguozhuang" latitude="" longitude="" />
     <station id="1402" local="园博园" english="GARDEN EXPO" latitude="" longitude="" />
     <station id="1403" local="大瓦窑" english="DAWAYAO" latitude="" longitude="" />
     <station id="1404" local="郭庄子" english="GUOZHUANGZI" latitude="" longitude="" />
-    <station id="1405" local="大井" english="DAJING" latitude="" longitude="" />
-    <!-- End of Line 14 -->  
-    
+    <station id="1405" local="大井" english="DAJING" latitude=""
+             longitude="" />
+    <!--<station id="1431" local="朝阳公园" english="CHAOYANG PARK" latitude="" longitude="" />-->
+    <station id="1432" local="枣营" english="ZAOYING" latitude="" longitude="" />
+    <station id="1433" local="东风北桥" english="DONGFENG BEIQIAO" latitude="" longitude="" />
+    <station id="1434" local="将台" english="JIANGTAI" latitude="" longitude="" />
+    <!--<station id="1435" local="高家园" english="GAOJIAYUAN" latitude="" longitude="" />-->
+    <station id="1436" local="望京南" english="WANGJING SOUTH" latitude="" longitude="" />
+    <station id="1437" local="阜通" english="FUTONG" latitude="" longitude="" />
+    <station id="1438" local="望京" english="WANGJING"
+             latitude="39.9975" longitude="116.463056">
+      <transfer ids="1438 1510" time="2" />
+    </station>
+    <station id="1439" local="东湖渠" english="DONGHUQU" latitude="" longitude="" />
+    <station id="1440" local="来广营" english="LAIGUANGYING" latitude="" longitude="" />
+    <station id="1441" local="善各庄" english="SHAN'GEZHUANG" latitude="" longitude="" />
+    <!-- End of Line 14 -->
+
     <!-- Start of Line 15 -->
-    <station id="1510" local="望京" english="WANGJING" latitude="39.9975" longitude="116.463056" />
+    <station id="1501" local="清华东路西口" english="QINGHUADONGLUXIKOU" latitude="" longitude="" />
+    <station id="1502" local="六道口" english="LIUDAOKOU" latitude="" longitude="" />
+    <station id="1503" local="北沙滩" english="BEISHATAN" latitude="" longitude="" />
+    <station id="1505" local="安立路" english="ANLILU" latitude="" longitude="" />
+    <!--<station id="1506" local="大屯路东" english="DATUNLU EAST" latitude="40.002222" longitude="116.411111" />-->
+    <station id="1507" local="关庄" english="GUANZHUANG" latitude=""
+             longitude="" />
     <station id="1511" local="崔各庄" english="CUIGEZHUANG" latitude="40.020278" longitude="116.486944" />
     <station id="1512" local="马泉营" english="MAQUANYING" latitude="40.0325" longitude="116.498611" />
     <station id="1513" local="孙河" english="SUNHE" latitude="40.043943" longitude="116.528651" />
@@ -323,7 +407,7 @@
     <station id="1518" local="石门" english="SHIMEN" latitude="40.128806" longitude="116.634814" />
     <station id="1519" local="顺义" english="SHUNYI" latitude="40.128889" longitude="116.650833" />
     <station id="1520" local="俸伯" english="FENGBO" latitude="40.131364" longitude="116.676169" />
-    <!-- End of Line 15 -->    
+    <!-- End of Line 15 -->
     
     <!--  Start of Airport Express -->
     <station id="AE03" local="T3航站楼" english="TERMINAL 3" latitude="" longitude="" />
@@ -481,7 +565,41 @@
         <station id="623" time="5" />
         <station id="624" time="2" />
         <station id="625" time="3" />
-        <station id="626" time="2" />            
+        <station id="626" time="2" />
+        <station id="627" time="2" />
+        <station id="628" time="4" />
+        <!--<station id="629" time="2" />-->
+        <station id="630" time="4" />
+        <!--<station id="631" time="2" />-->
+        <station id="632" time="4" />
+        <station id="633" time="2" />
+        <station id="634" time="2" />            
+      </stations>     	
+    </line>
+
+    <line id="7" local="7号线" english="Line 7" color="#FFC66E" wait="2">
+      <stations>
+        <station id="701" />
+        <station id="702" time="2" />
+        <station id="703" time="2" />
+        <station id="704" time="3" />
+        <station id="705" time="2" />
+        <station id="706" time="2" />
+        <station id="707" time="2" />
+        <station id="708" time="2" />
+        <station id="709" time="3" />
+        <station id="710" time="2" />
+        <station id="711" time="2" />
+        <!--<station id="712" time="2" />-->
+        <station id="713" time="4" />
+        <station id="714" time="2" />
+        <station id="715" time="2" />
+        <station id="716" time="2" />
+        <station id="717" time="2" />
+        <station id="718" time="3" />   
+        <!--<station id="719" time="2" />-->
+        <station id="720" time="4" />
+        <station id="721" time="2" />
       </stations>     	
     </line>
 
@@ -615,11 +733,37 @@
       </stations>    	
     </line>
 
+    <!-- As currently we cannot handle segments, so use two lines. The
+         two segment of line 14 are to be merged. -->
+    <line id="14e" local="14号线" english="Line 14" color="#D4A7A1" wait="9">
+      <stations>
+        <station id="1430" />
+        <!--<station id="1431" time="2" />-->
+        <station id="1432" time="4" />
+        <station id="1433" time="4" />
+        <station id="1434" time="2" />
+        <!--<station id="1435" time="1" />-->
+        <station id="1436" time="4" />
+        <station id="1437" time="3" />
+        <station id="1438" time="2" />   
+        <station id="1439" time="2" />
+        <station id="1440" time="3" />
+        <station id="1441" time="2" />
+      </stations>    	
+    </line>
+
     <!-- Information is from http://www.bjsubway.com/node/1836 -->       
     <line id="15" local="15号线" english="Line 15" color="#6A1D44" wait="9">
       <stations>
-        <station id="1508" />
-        <station id="1510" time="2" />
+        <station id="1501" />
+        <station id="1502" time="2" />
+        <station id="1503" time="2" />
+        <station id="1504" time="3" />
+        <station id="1505" time="3" />
+        <!--<station id="1506" time="2" />-->
+        <station id="1507" time="4" />
+        <station id="1508" time="3" /> 
+        <station id="1510" time="4" />
         <station id="1511" time="5" />
         <station id="1512" time="3" />
         <station id="1513" time="4" />
@@ -629,7 +773,7 @@
         <station id="1517" time="5" />
         <station id="1518" time="3" />
         <station id="1519" time="2" />
-        <station id="1520" time="3" />                                
+        <station id="1520" time="3" /> 
       </stations>    	
     </line>
     
