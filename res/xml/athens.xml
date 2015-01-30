@@ -92,7 +92,7 @@
     <station id="318" local="Παλλήνη" english="Pallini" latitude="38.005278" longitude="23.869722" />
     <station id="319" local="Παιανία-Κάντζα" english="Paiania-Kantza" latitude="37.984167" longitude="23.87" />
     <station id="320" local="Κορωπί" english="Koropi" latitude="37.912778" longitude="23.895833" />
-    <station id="321" local=" Διεθνής Αερολιμένας Αθηνών " english="Airport" latitude="37.936389" longitude="23.947222" />
+    <station id="321" local="Διεθνής Αερολιμένας Αθηνών " english="Airport" latitude="37.936389" longitude="23.947222" />
     <!-- End of Line 3 -->
   </stations>
 
