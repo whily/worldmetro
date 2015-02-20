@@ -33,26 +33,24 @@ The following tools are needed to build World Metro from source:
 * sbt (0.13.5)
 * [Inkscape](http://inkscape.org) and [ImageMagick](http://www.imagemagick.org)
   to generate icons.
-  
-To compile/run the code, follow the steps below:
 
-1. Please ignore this step as it is a mental note to the
-   author. Generate the code from the template as below:
+### Generate the icons
 
-        $ g8 fxthomas/android-app
+In project directory, run following command:
 
-2. This step is a work around. It seems that the plugin sbt-android
-   assumes that tools like `aapt` and `dx` are located in
-   `$ANDROID_HOME/platform-tools`. However at least in Android SDK
-   r23.0.5, the location is `$ANDROID_HOME/build-tools/21.1.1/`. The
-   simplest solution is to copy those binaries (including directory
-   **lib** which is related to `dx`) to folder
-   `$ANDROID_HOME/platform-tools`.
-   
-3. In the project directory, run the following command to build the
+        $ ./genart
+
+### Build the code
+
+The library dependencies include
+[scasci](https://github.com/whily/scasci) and
+[scaland](https://github.com/whily/scaland).  Please
+follow the steps discussed in those libraries on how to use them.
+
+To compile/run the code, run the following command to build the
    app and start it in a connected device:
 
-        $ sbt android:start-device
+        $ sbt android:run
         
 Testing
 -------
