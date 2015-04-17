@@ -12,7 +12,7 @@ libraryDependencies ++= Seq(
   "net.whily" %% "scasci" % "0.0.1-SNAPSHOT",
   "net.whily" %% "scaland" % "0.0.1-SNAPSHOT")
 
-platformTarget in Android := "android-21"
+platformTarget in Android := "android-22"
 
 proguardCache in Android ++= Seq(
   ProguardCache("scasci") % "net.whily" %% "scasci",
