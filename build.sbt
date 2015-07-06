@@ -14,9 +14,8 @@ libraryDependencies ++= Seq(
 
 platformTarget in Android := "android-22"
 
-proguardCache in Android ++= Seq(
-  ProguardCache("scasci") % "net.whily" %% "scasci",
-  ProguardCache("scaland") % "net.whily" %% "scaland")
+proguardCache in Android += "net.whily.scasci"
+proguardCache in Android += "net.whily.scaland"
 
 proguardOptions in Android ++= Seq(
   "-dontobfuscate",
@@ -37,4 +36,3 @@ run <<= run in Android
 
 install <<= install in Android
 
-Keys.`package` <<= `packageT` in Android
