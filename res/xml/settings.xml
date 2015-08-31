@@ -31,7 +31,7 @@
         android:entryValues="@array/language_values_preference"
         android:dialogTitle="@string/language_dialog_title_preference"
         android:persistent="true" 
-        android:defaultValue="0"
+        android:defaultValue="both"
         android:shouldDisableView="false" />         
   </PreferenceCategory>
   <PreferenceCategory
