@@ -17,13 +17,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.{Menu, MenuItem, MotionEvent, View}
 import android.util.{Log, TypedValue}
-import android.widget.{AdapterView, ArrayAdapter, AutoCompleteTextView, ExpandableListView, TextView}
+import android.widget.{AdapterView, ArrayAdapter, AutoCompleteTextView, Button, ExpandableListView, TextView}
 import net.whily.scaland.{ExceptionHandler, Util}
 
 class SearchActivity extends Activity with ActionBar.OnNavigationListener {
   private var bar: ActionBar = null
   private var fromEntry: AutoCompleteTextView = null
   private var toEntry: AutoCompleteTextView = null
+  private var reverseButton: Button = null  
   private var cityInfo: TextView = null
   private var routeList: ExpandableListView = null
   private var city: City = null
@@ -78,10 +79,6 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
     item.getItemId match {
       case android.R.id.home | R.id.about => 
         startActivity(new Intent(this, classOf[AboutActivity]))
-        true
-        
-      case R.id.reverse =>
-        reverseFromTo()        
         true
    
       case R.id.settings =>  
@@ -142,7 +139,14 @@ class SearchActivity extends Activity with ActionBar.OnNavigationListener {
       	toEntry.showDropDown()
       	false
       }
-    })   
+    })
+
+    reverseButton = findViewById(R.id.reverse).asInstanceOf[Button]
+    reverseButton.setOnClickListener(new View.OnClickListener() {
+      override def onClick(v: View) {
+        reverseFromTo()
+      }
+    })    
     
     cityInfo = findViewById(R.id.city_info).asInstanceOf[TextView]
     cityInfo.setTextSize(TypedValue.COMPLEX_UNIT_SP, cityInfoTextSize)   
