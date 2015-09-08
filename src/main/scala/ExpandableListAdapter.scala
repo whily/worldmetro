@@ -19,7 +19,7 @@ import android.view.View.MeasureSpec
 import android.widget.{AbsListView, BaseExpandableListAdapter, LinearLayout, TextView}
 import net.whily.scaland.Util
 
-class MetroLineView(context: Context, textSizeSp: Int) extends View(context) {
+class MetroLineView(context: Context, textSizeSp: Int, info: String) extends View(context) {
   val layoutParams =
     new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
       ViewGroup.LayoutParams.WRAP_CONTENT)
@@ -31,15 +31,15 @@ class MetroLineView(context: Context, textSizeSp: Int) extends View(context) {
   val paint = new Paint()
   paint.setAntiAlias(true)
   paint.setStyle(Paint.Style.STROKE)
-  paint.setColor(Color.RED)
+  paint.setColor(Color.BLUE)
   val textSizePx = Util.dp2px(textSizeSp, context)
   paint.setTextSize(textSizePx)
 
   override protected def onDraw(canvas: Canvas) {
     super.onDraw(canvas)
-    val text = "test"
+    val text = info
     paint.getTextBounds(text, 0, text.length(), textBounds)    
-    canvas.drawText(text, 1, textSizePx - textBounds.exactCenterY(), paint)
+    canvas.drawText(text, 1, canvas.getHeight() / 2.0f - textBounds.exactCenterY(), paint)
   }
 
   // From http://stackoverflow.com/questions/12266899/onmeasure-custom-view-explanation
@@ -100,8 +100,8 @@ class ExpandableListAdapter(activity: Activity, groupArray: List[String], childA
     layout.setLayoutParams(layoutParams)
     layout.setOrientation(LinearLayout.HORIZONTAL)
 
-    layout.addView(getGenericView(groupArray(groupPosition)))
-    layout.addView(new MetroLineView(activity, Util.getEditTextSize(activity)))
+    layout.addView(new MetroLineView(activity, Util.getEditTextSize(activity),
+      groupArray(groupPosition)))
     layout
   }
 
