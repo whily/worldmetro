@@ -52,20 +52,9 @@ To compile/run the code, run the following command to build the
 
         $ sbt android:run
         
-Testing
--------
+To build a release version and start it in a connected device:
 
-There are two types of testing can be performed:
-
-* Unit testing. Simply run the following command in shell:
-    
-        $ sbt test
-        
-* Android integration testing. Run the following commands in sbt:
-
-        > project tests
-        > android:install-device
-        > android:test-device
+        $ sbt android:set-release android:run
   
 TODO
 ----
