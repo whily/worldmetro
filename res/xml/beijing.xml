@@ -109,7 +109,7 @@
     <station id="DX11" local="新宫" english="XINGONG" latitude="39.811133" longitude="116.359353" />
     <station id="401" local="公益西桥" english="GONGYIXIQIAO" latitude="39.835833" longitude="116.370833" />
     <station id="402" local="角门西" english="JIAOMEN WEST" latitude="" longitude="">
-    	<transfer ids="402 1016" time="2" />
+      <transfer ids="402 1016" time="2" />
     </station>
     <station id="403" local="马家堡" english="MAJIAPU" latitude="" longitude="" />
     <station id="404" local="北京南站" english="BEIJING SOUTH RAILWAY STATION" latitude="" longitude="" />
@@ -120,7 +120,7 @@
     <station id="409" local="灵境胡同" english="LINGJING HUTONG" latitude="" longitude="" />
     <station id="410" local="西四" english="XISI" latitude="" longitude="" />
     <station id="411" local="平安里" english="PING'ANLI" latitude="" longitude="">
-    	<transfer ids="411 613" time="2" />
+      <transfer ids="411 613" time="4" /> <!-- Measured by foot on 2016-03-13 -->
     </station>
     <station id="412" local="新街口" english="XINJIEKOU" latitude="" longitude="" />
     <station id="414" local="动物园" english="BEIJING ZOO" latitude="39.937119" longitude="116.332767" />
@@ -194,8 +194,11 @@
       <transfer ids="615 818" time="1" />
     </station>
     <station id="618" local="东大桥" english="DONGDAQIAO" latitude="" longitude="" />
-    <station id="619" local="呼家楼" english="HUJIALOU" latitude="39.922" longitude="116.4555">
-      <transfer ids="619 1029" time="2" />
+    <station id="619" local="呼家楼" english="HUJIALOU"
+             latitude="39.922" longitude="116.4555">
+      <!-- Measured by foot on 2016-03-13, from line 10 to line 6,
+           direction 海淀五路居 -->
+      <transfer ids="619 1029" time="1" />
     </station>
     <station id="620" local="金台路" english="JINTAILU" latitude=""
              longitude="">
