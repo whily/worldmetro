@@ -12,7 +12,7 @@ libraryDependencies ++= Seq(
   "net.whily" %% "scasci" % "0.0.1-SNAPSHOT",
   "net.whily" %% "scaland" % "0.0.1-SNAPSHOT")
 
-platformTarget in Android := "android-21"
+platformTarget in Android := "android-23"
 
 proguardCache in Android += "net.whily.scasci"
 proguardCache in Android += "net.whily.scaland"
@@ -35,4 +35,3 @@ javacOptions in Compile  += "-deprecation"
 run <<= run in Android
 
 install <<= install in Android
-
