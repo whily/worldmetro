@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="app_name">World Metro</string>
-  
+
   <!--  SearchActivity -->
   <string name="settings">Settings</string>
-  <string name="about">About</string>  
+  <string name="about">About</string>
   <string name="reverse">Reverse FROM and TO</string>
   <string name="from_entry_hint">FROM station or place</string>
   <string name="to_entry_hint">TO station or place</string>
@@ -17,6 +17,8 @@
   <string name="beijing_message"></string>
   <string name="munich">Munich</string>
   <string name="munich_message">Note that some stations might not be always available.</string>
+  <string name="nanjing">Nanjing</string>
+  <string name="nanjing_message"></string>
   <string name="prague">Prague</string>
   <string name="prague_message"></string>
   <string name="shanghai">Shanghai</string>
@@ -25,7 +27,7 @@
   <string name="tokyo_message"></string>
   <string name="wuhan">Wuhan</string>
   <string name="wuhan_message"></string>
-  
+
   <!--  Activity Settings -->
   <string name="appearance_preference">Appearance</string>
   <string name="theme_title_preference">Theme</string>
@@ -35,13 +37,13 @@
   	<item>Light</item>
   </string-array>
   <string-array name="theme_values_preference">
-    <item>0</item> 
-    <item>1</item> 
+    <item>0</item>
+    <item>1</item>
   </string-array>
   <string name="text_size_title_preference">Text size</string>
   <string name="text_size_dialog_title_preference">Text size</string>
   <string-array name="text_size_entries_preference">
-    <item>Small</item>  	
+    <item>Small</item>
     <item>Medium</item>
     <item>Large</item>
   </string-array>
@@ -55,11 +57,11 @@
   <string-array name="language_entries_preference">
     <item>Local language only</item>
     <item>English (if available) only</item>
-    <item>Local and English (if available)</item>    
+    <item>Local and English (if available)</item>
   </string-array>
   <string-array name="language_values_preference">
-    <item>local</item> 
-    <item>english</item> 
+    <item>local</item>
+    <item>english</item>
     <item>both</item>
   </string-array>
   <string name="miscellaneous_preference">Miscellaneous</string>
@@ -70,10 +72,10 @@
     <item>Imperial</item>
   </string-array>
   <string-array name="unit_values_preference">
-    <item>0</item> 
-    <item>1</item> 
-  </string-array>    
-    
+    <item>0</item>
+    <item>1</item>
+  </string-array>
+
   <!-- Activity About -->
   <string name="whats_new">What\'s new</string>
   <string name="changelog">Changelog</string>
@@ -89,5 +91,5 @@
       </body>
     </html>
     ]]>
-  </string>  
+  </string>
 </resources>
