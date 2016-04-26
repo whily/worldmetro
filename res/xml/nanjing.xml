@@ -14,7 +14,10 @@
     <station id="105" local="玄武门" english="XUANWUMEN" latitude="32.070278" longitude="118.784167" />
     <station id="106" local="鼓楼" english="GULOU" latitude="32.059167" longitude="118.783889" />
     <station id="107" local="珠江路" english="ZHUJIANGLU" latitude="32.050556" longitude="118.783889" />
-    <station id="108" local="新街口" english="XINJIEKOU" latitude="32.041111" longitude="118.784167" />
+    <station id="108" local="新街口" english="XINJIEKOU"
+             latitude="32.041111" longitude="118.784167">
+        <transfer ids ="108 211" time="2" />
+    </station>
     <station id="109" local="张府园" english="ZHANGFUYUAN" latitude="32.030556" longitude="118.783889" />
     <station id="110" local="三山街" english="SANSHANJIE" latitude="32.023333" longitude="118.781667" />
     <station id="111" local="中华门" english="ZHONGHUAMEN" latitude="32.006667" longitude="118.774722" />
@@ -36,6 +39,47 @@
     <station id="126" local="南京交院" english="NANJING COMMUNICATIONS INSTITUTE OF TECHNOLOGY" latitude="31.913333" longitude="118.904444" />
     <station id="127" local="中国药科大学" english="CHINA PHARMACEUTICAL UNIVERSITY" latitude="31.897778" longitude="118.913889" />
     <!-- End of Line 1 -->
+
+    <!-- Start of Line 2 -->
+    <station id="201" local="油坊桥" english="YOUFANGQIAO" latitude="" longitude="" />
+    <station id="202" local="雨润大街" english="YURUNDAJIE" latitude="31.983611" longitude="118.722778" />
+    <station id="203" local="元通" english="YUANTONG" latitude="31.995556" longitude="118.721667" />
+    <station id="204" local="奥体中心" english="OLYMPIC STADIUM EAST" latitude="32.0049" longitude="118.729" />
+    <station id="205" local="兴隆大街" english="XINGLONGDAJIE" latitude="32.0049" longitude="118.729" />
+    <station id="206" local="集庆门大街" english="JIQINGMENDAJIE" latitude="32.028889" longitude="118.739444" />
+    <station id="207" local="云锦路" english="YUNJINLU" latitude="32.035278" longitude="118.7475" />
+    <station id="208" local="莫愁湖" english="MOCHOUHU" latitude="32.037222" longitude="118.758889" />
+    <station id="209" local="汉中门" english="HANZHONGMEN" latitude="32.042778" longitude="118.766944" />
+    <station id="210" local="上海路" english="SHANGHAILU" latitude="32.042222" longitude="118.776111" />
+    <station id="212" local="大行宫" english="DAXINGGONG" latitude="" longitude="" />
+    <station id="213" local="西安门" english="XI'ANMEN" latitude="32.039722" longitude="118.805556" />
+    <station id="214" local="明故宫" english="MINGGUGONG" latitude="32.039167" longitude="118.819167" />
+    <station id="215" local="苜蓿园" english="MUXUYUAN"
+             latitude="32.040278" longitude="118.835" />
+    <station id="216" local="下马坊" english="XIAMAFANG" latitude="32.0375" longitude="118.848333" />
+    <station id="217" local="孝陵卫" english="XIAOLINGWEI" latitude="32.035556" longitude="118.8575" />
+    <station id="218" local="钟灵街" english="ZHONGLINGJIE" latitude="32.039444" longitude="118.869167" />
+    <station id="219" local="马群" english="MAQUN" latitude="32.049444" longitude="118.894444" />
+    <station id="220" local="金马路" english="JINMALU" latitude="32.071667" longitude="118.906111" />
+    <station id="221" local="仙鹤门" english="XIANHEMEN" latitude="32.085278" longitude="118.905" />
+    <station id="222" local="学则路" english="XUEZELU" latitude="32.091667" longitude="118.916944" />
+    <station id="223" local="仙林中心" english="XIANLINZHONGXIN" latitude="32.098333" longitude="118.929722" />
+    <station id="224" local="羊山公园" english="YANGSHANGONGYUAN" latitude="32.1113" longitude="118.956" />
+    <station id="225" local="南大仙林校区" english="NJU XIANLIN CAMPUS" latitude="32.111389" longitude="118.955833" />
+    <station id="226" local="经天路" english="JINGTIANLU" latitude="32.116389" longitude="118.977222" />
+    <!-- End of Line 2 -->
+
+    <!-- Start of Line 3 -->
+    <!-- End of Line 3 -->
+
+    <!-- Start of Line 10 -->
+    <!-- End of Line 10 -->
+
+    <!-- Start of Line S1 -->
+    <!-- End of Line S1 -->
+
+    <!-- Start of Line S8 -->
+    <!-- End of Line S8 -->
   </stations>
 
   <lines>
@@ -70,6 +114,39 @@
         <station id="125" time="2" />
         <station id="126" time="4" />
         <station id="127" time="2" />
+      </stations>
+    </line>
+
+    <!-- Travel time information is
+         http://nj.bendibao.com/ditie/shike_5.shtml -->
+    <line id="2" color="#c7003f" wait="2" local="2号线" english="Line 2">
+      <stations>
+        <station id="201" />
+        <station id="202" time="3" />
+        <station id="203" time="2" />
+        <station id="204" time="2" />
+        <station id="205" time="2" />
+        <station id="206" time="3" />
+        <station id="207" time="3" />
+        <station id="208" time="2" />
+        <station id="209" time="2" />
+        <station id="210" time="2" />
+        <station id="211" time="2" />
+        <station id="212" time="2" />
+        <station id="213" time="2" />
+        <station id="214" time="2" />
+        <station id="215" time="2" />
+        <station id="216" time="3" />
+        <station id="217" time="2" />
+        <station id="218" time="2" />
+        <station id="219" time="3" />
+        <station id="220" time="4" />
+        <station id="221" time="3" />
+        <station id="222" time="2" />
+        <station id="223" time="2" />
+        <station id="224" time="2" />
+        <station id="225" time="2" />
+        <station id="226" time="2" />
       </stations>
     </line>
   </lines>
