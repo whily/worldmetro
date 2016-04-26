@@ -18,8 +18,7 @@ import java.io._
 
 object Line {
   // Configurable parameters.
-  val url = "https://en.wikipedia.org/w/index.php?title=Line_1,_Nanjing_Metro&action=edit"
-  //val url = "https://en.wikipedia.org/w/index.php?title=Line_1,_Beijing_Subway&action=edit"
+  val url = "https://en.wikipedia.org/w/index.php?title=Line_2,_Nanjing_Metro&action=edit"
   // Whether English name of the station should be upper case.
   val upperCaseStationName = true
   // Whether travel time information is available or not.
@@ -57,7 +56,10 @@ object Line {
         val stationUrl = wikiPrefix + sa(0).split(" ").mkString("_")
         val englishStationName1 = if (sa.length == 1) sa(0) else sa(1)
         val englishStationName = if (upperCaseStationName) englishStationName1.toUpperCase else englishStationName1
-        var localName = between(station, ">", "\n")
+        var localNameStartIndex = station.indexOf("[[")
+        localNameStartIndex = station.indexOf("\n", localNameStartIndex)
+        val tailStation = station.substring(localNameStartIndex + 1)
+        var localName = between(tailStation, ">", "\n")
         // Remove unnecessary leading/trailing characters when handling Nanjing metro.
         localName = localName.replace("{{lang|zh-cn|", "").replace("}}&lt;/span>", "")
 
