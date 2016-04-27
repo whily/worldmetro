@@ -9,7 +9,10 @@
          http://en.wikipedia.org/wiki/Line_1,_Nanjing_Metro -->
     <station id="101" local="迈皋桥" english="MAIGAOQIAO" latitude="32.103056" longitude="118.809722" />
     <station id="102" local="红山动物园" english="HONGSHAN ZOO" latitude="32.096667" longitude="118.802222" />
-    <station id="103" local="南京火车站" english="NANJING RAILWAY STATION" latitude="32.088583" longitude="118.792189" />
+    <station id="103" local="南京火车站" english="NANJING RAILWAY STATION"
+             latitude="32.088583" longitude="118.792189">
+        <transfer ids ="103 310" time="2" />
+    </station>
     <station id="104" local="新模范马路" english="XINMOFANMALU" latitude="32.08" longitude="118.783889" />
     <station id="105" local="玄武门" english="XUANWUMEN" latitude="32.070278" longitude="118.784167" />
     <station id="106" local="鼓楼" english="GULOU" latitude="32.059167" longitude="118.783889" />
@@ -25,7 +28,10 @@
     <station id="113" local="天隆寺" english="TIANLONGSI" latitude="31.978333" longitude="118.762778" />
     <station id="114" local="软件大道" english="RUANJIANDADAO" latitude="31.977222" longitude="118.774722" />
     <station id="115" local="花神庙" english="HUASHENMIAO" latitude="31.977778" longitude="118.785278" />
-    <station id="116" local="南京南站" english="NANJING SOUTH RAILWAY STATION" latitude="31.970556" longitude="118.7925" />
+    <station id="116" local="南京南站" english="NANJING SOUTH RAILWAY STATION"
+             latitude="31.970556" longitude="118.7925">
+        <transfer ids ="116 322" time="2" />
+    </station>
     <station id="117" local="双龙大道" english="SHUANGLONGDADAO"
              latitude="31.962778" longitude="118.818056" />
     <station id="118" local="河定桥" english="HEDINGQIAO" latitude="31.952222" longitude="118.82" />
@@ -51,7 +57,10 @@
     <station id="208" local="莫愁湖" english="MOCHOUHU" latitude="32.037222" longitude="118.758889" />
     <station id="209" local="汉中门" english="HANZHONGMEN" latitude="32.042778" longitude="118.766944" />
     <station id="210" local="上海路" english="SHANGHAILU" latitude="32.042222" longitude="118.776111" />
-    <station id="212" local="大行宫" english="DAXINGGONG" latitude="" longitude="" />
+    <station id="212" local="大行宫" english="DAXINGGONG" latitude=""
+             longitude="">
+        <transfer ids ="212 314" time="2" />
+    </station>
     <station id="213" local="西安门" english="XI'ANMEN" latitude="32.039722" longitude="118.805556" />
     <station id="214" local="明故宫" english="MINGGUGONG" latitude="32.039167" longitude="118.819167" />
     <station id="215" local="苜蓿园" english="MUXUYUAN"
@@ -70,6 +79,32 @@
     <!-- End of Line 2 -->
 
     <!-- Start of Line 3 -->
+    <station id="301" local="林场" english="LINCHANG" latitude="" longitude="" />
+    <station id="302" local="星火路" english="XINGHUOLU" latitude="" longitude="" />
+    <station id="303" local="东大成贤学院" english="SOUTHEAST UNIVERSITY CHENGXIAN CAMPUS" latitude="" longitude="" />
+    <station id="304" local="泰冯路" english="TAIFENGLU" latitude="" longitude="" />
+    <station id="305" local="天润城" english="TIANRUNCHENG" latitude="" longitude="" />
+    <station id="306" local="柳洲东路" english="LIUZHOUDONGLU" latitude="" longitude="" />
+    <station id="307" local="上元门" english="SHANGYUANMEN" latitude="" longitude="" />
+    <station id="308" local="五塘广场" english="WUTANGGUANGCHANG" latitude="" longitude="" />
+    <station id="309" local="小市" english="XIAOSHI" latitude="" longitude="" />
+    <station id="311" local="新庄" english="XINZHUANG" latitude="" longitude="" />
+    <station id="312" local="鸡鸣寺" english="JIMINGSI" latitude="" longitude="" />
+    <station id="313" local="浮桥" english="FUQIAO" latitude="" longitude="" />
+    <station id="315" local="常府街" english="CHANGFUJIE" latitude="" longitude="" />
+    <station id="316" local="夫子庙" english="FUZIMIAO" latitude="" longitude="" />
+    <station id="317" local="武定门" english="WUDINGMEN" latitude="" longitude="" />
+    <station id="318" local="雨花门" english="YUHUAMEN" latitude="" longitude="" />
+    <station id="319" local="卡子门" english="KAZIMEN" latitude="" longitude="" />
+    <station id="320" local="大明路" english="DAMINGLU" latitude="" longitude="" />
+    <station id="321" local="明发广场" english="MINGFAGUANGCHANG" latitude="" longitude="" />
+    <station id="323" local="宏运大道" english="HONGYUNDAODAO" latitude="" longitude="" />
+    <station id="324" local="胜太西路" english="SHENGTAIXILU" latitude="" longitude="" />
+    <station id="325" local="天元西路" english="TIANYUANXILU" latitude="" longitude="" />
+    <station id="326" local="九龙湖" english="JIULONGHU" latitude="" longitude="" />
+    <station id="327" local="诚信大道" english="CHENGXINDADAO" latitude="" longitude="" />
+    <station id="328" local="东大九龙湖校区" english="SOUTHEAST UNIVERSITY JIULONGHU CAMPUS" latitude="" longitude="" />
+    <station id="329" local="秣周东路" english="MOZHOUDONGLU" latitude="" longitude="" />
     <!-- End of Line 3 -->
 
     <!-- Start of Line 10 -->
@@ -147,6 +182,42 @@
         <station id="224" time="2" />
         <station id="225" time="2" />
         <station id="226" time="2" />
+      </stations>
+    </line>
+
+    <!-- Travel time information is
+         http://nj.bendibao.com/ditie/shike_7.shtml -->
+    <line id="3" color="#009651" wait="3" local="3号线" english="Line 3">
+      <stations>
+        <station id="301" />
+        <station id="302" time="2" />
+        <station id="303" time="2" />
+        <station id="304" time="3" />
+        <station id="305" time="2" />
+        <station id="306" time="3" />
+        <station id="307" time="5" />
+        <station id="308" time="1" />
+        <station id="309" time="2" /> <!-- Just estimation, no data available. -->
+        <station id="310" time="3" />
+        <station id="311" time="2" /> <!-- Just estimation, no data available. -->
+        <station id="312" time="3" />
+        <station id="313" time="2" />
+        <station id="314" time="2" />
+        <station id="315" time="3" />
+        <station id="316" time="2" />
+        <station id="317" time="2" />
+        <station id="318" time="2" />
+        <station id="319" time="2" />
+        <station id="320" time="2" />
+        <station id="321" time="2" />
+        <station id="322" time="5" />
+        <station id="323" time="2" />
+        <station id="324" time="3" />
+        <station id="325" time="3" />
+        <station id="326" time="3" />
+        <station id="327" time="3" />
+        <station id="328" time="2" />
+        <station id="329" time="3" />
       </stations>
     </line>
   </lines>
