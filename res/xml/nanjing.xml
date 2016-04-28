@@ -9,7 +9,7 @@
          http://en.wikipedia.org/wiki/Line_1,_Nanjing_Metro -->
     <station id="101" local="迈皋桥" english="MAIGAOQIAO" latitude="32.103056" longitude="118.809722" />
     <station id="102" local="红山动物园" english="HONGSHAN ZOO" latitude="32.096667" longitude="118.802222" />
-    <station id="103" local="南京火车站" english="NANJING RAILWAY STATION"
+    <station id="103" local="南京站" english="NANJING RAILWAY STATION"
              latitude="32.088583" longitude="118.792189">
         <transfer ids ="103 310" time="2" />
     </station>
@@ -19,12 +19,15 @@
     <station id="107" local="珠江路" english="ZHUJIANGLU" latitude="32.050556" longitude="118.783889" />
     <station id="108" local="新街口" english="XINJIEKOU"
              latitude="32.041111" longitude="118.784167">
-        <transfer ids ="108 211" time="2" />
+        <transfer ids="108 211" time="2" />
     </station>
     <station id="109" local="张府园" english="ZHANGFUYUAN" latitude="32.030556" longitude="118.783889" />
     <station id="110" local="三山街" english="SANSHANJIE" latitude="32.023333" longitude="118.781667" />
     <station id="111" local="中华门" english="ZHONGHUAMEN" latitude="32.006667" longitude="118.774722" />
-    <station id="112" local="安德门" english="ANDEMEN" latitude="31.9925" longitude="118.761944" />
+    <station id="112" local="安德门" english="ANDEMEN"
+             latitude="31.9925" longitude="118.761944">
+        <transfer ids="112 1001" time="2" />
+    </station>
     <station id="113" local="天隆寺" english="TIANLONGSI" latitude="31.978333" longitude="118.762778" />
     <station id="114" local="软件大道" english="RUANJIANDADAO" latitude="31.977222" longitude="118.774722" />
     <station id="115" local="花神庙" english="HUASHENMIAO" latitude="31.977778" longitude="118.785278" />
@@ -49,7 +52,10 @@
     <!-- Start of Line 2 -->
     <station id="201" local="油坊桥" english="YOUFANGQIAO" latitude="" longitude="" />
     <station id="202" local="雨润大街" english="YURUNDAJIE" latitude="31.983611" longitude="118.722778" />
-    <station id="203" local="元通" english="YUANTONG" latitude="31.995556" longitude="118.721667" />
+    <station id="203" local="元通" english="YUANTONG"
+             latitude="31.995556" longitude="118.721667">
+        <transfer ids="203 1004" time="2" />
+    </station>
     <station id="204" local="奥体中心" english="OLYMPIC STADIUM EAST" latitude="32.0049" longitude="118.729" />
     <station id="205" local="兴隆大街" english="XINGLONGDAJIE" latitude="32.0049" longitude="118.729" />
     <station id="206" local="集庆门大街" english="JIQINGMENDAJIE" latitude="32.028889" longitude="118.739444" />
@@ -108,6 +114,18 @@
     <!-- End of Line 3 -->
 
     <!-- Start of Line 10 -->
+    <station id="1002" local="小行" english="XIAOHANG" latitude="31.983056" longitude="118.744722" />
+    <station id="1003" local="中胜" english="ZHONGSHENG" latitude="31.987778" longitude="118.733056" />
+    <station id="1005" local="奥体中心" english="OLYMPIC STADIUM" latitude="32.008889" longitude="118.7175" />
+    <station id="1006" local="梦都大街" english="MENGDUDAJIE" latitude="" longitude="" />
+    <station id="1007" local="绿博园" english="LÜBOYUAN" latitude="" longitude="" />
+    <station id="1008" local="江心洲" english="JIANGXINZHOU" latitude="" longitude="" />
+    <station id="1009" local="临江路" english="LINJIANGLU" latitude="" longitude="" />
+    <station id="1010" local="浦口万汇城" english="PUKOUWANHUICHENG" latitude="" longitude="" />
+    <station id="1011" local="南京工业大学" english="NANJING UNIVERSITY OF TECHNOLOGY" latitude="" longitude="" />
+    <station id="1012" local="龙华路" english="LONGHUALU" latitude="" longitude="" />
+    <station id="1013" local="文德路" english="WENDELU" latitude="" longitude="" />
+    <station id="1014" local="雨山路" english="YUSHANLU" latitude="" longitude="" />
     <!-- End of Line 10 -->
 
     <!-- Start of Line S1 -->
@@ -218,6 +236,27 @@
         <station id="327" time="3" />
         <station id="328" time="2" />
         <station id="329" time="3" />
+      </stations>
+    </line>
+
+    <!-- Travel time information is
+         http://nj.bendibao.com/ditie/shike_4.shtml -->
+    <line id="10" color="#ea3c84" wait="2" local="10号线" english="Line 10">
+      <stations>
+        <station id="1001" />
+        <station id="1002" time="3" />
+        <station id="1003" time="3" />
+        <station id="1004" time="4" />
+        <station id="1005" time="3" />
+        <station id="1006" time="2" />
+        <station id="1007" time="3" />
+        <station id="1008" time="2" />
+        <station id="1009" time="5" />
+        <station id="1010" time="2" />
+        <station id="1011" time="2" />
+        <station id="1012" time="3" />
+        <station id="1013" time="2" />
+        <station id="1014" time="3" />
       </stations>
     </line>
   </lines>
