@@ -33,7 +33,7 @@
     <station id="115" local="花神庙" english="HUASHENMIAO" latitude="31.977778" longitude="118.785278" />
     <station id="116" local="南京南站" english="NANJING SOUTH RAILWAY STATION"
              latitude="31.970556" longitude="118.7925">
-        <transfer ids ="116 322" time="2" />
+        <transfer ids ="116 322 S101" time="2" />
     </station>
     <station id="117" local="双龙大道" english="SHUANGLONGDADAO"
              latitude="31.962778" longitude="118.818056" />
@@ -88,7 +88,10 @@
     <station id="301" local="林场" english="LINCHANG" latitude="" longitude="" />
     <station id="302" local="星火路" english="XINGHUOLU" latitude="" longitude="" />
     <station id="303" local="东大成贤学院" english="SOUTHEAST UNIVERSITY CHENGXIAN CAMPUS" latitude="" longitude="" />
-    <station id="304" local="泰冯路" english="TAIFENGLU" latitude="" longitude="" />
+    <station id="304" local="泰冯路" english="TAIFENGLU" latitude=""
+             longitude="">
+        <transfer ids="304 S802" />
+    </station>
     <station id="305" local="天润城" english="TIANRUNCHENG" latitude="" longitude="" />
     <station id="306" local="柳洲东路" english="LIUZHOUDONGLU" latitude="" longitude="" />
     <station id="307" local="上元门" english="SHANGYUANMEN" latitude="" longitude="" />
@@ -129,9 +132,32 @@
     <!-- End of Line 10 -->
 
     <!-- Start of Line S1 -->
+    <station id="S102" local="翠屏山" english="CUIPINGSHAN" latitude="" longitude="" />
+    <station id="S103" local="佛城西路" english="FOCHENGXILU" latitude="" longitude="" />
+    <station id="S104" local="吉印大道" english="JIYINDADAO" latitude="" longitude="" />
+    <station id="S105" local="正方中路" english="ZHENGFANGZHONGLU" latitude="" longitude="" />
+    <station id="S106" local="翔宇路北" english="XIANGYULUBEI" latitude="" longitude="" />
+    <station id="S107" local="翔宇路南" english="XIANGYULUNAN" latitude="" longitude="" />
+    <station id="S108" local="禄口机场" english="LUKOU INTERNATIONAL AIRPORT" latitude="" longitude="" />
     <!-- End of Line S1 -->
 
     <!-- Start of Line S8 -->
+    <station id="S801" local="泰山新村" english="TAISHANXINCUN" latitude="" longitude="" />
+    <station id="S803" local="高新开发区" english="NANJING HIGH-TECH ZONE" latitude="" longitude="" />
+    <station id="S804" local="信息工程大学" english="NUIST" latitude="" longitude="" />
+    <station id="S805" local="卸甲甸" english="XIEJIADIAN" latitude="" longitude="" />
+    <station id="S806" local="大厂" english="DACHANG" latitude="" longitude="" />
+    <station id="S807" local="葛塘" english="GETANG" latitude="" longitude="" />
+    <station id="S808" local="长芦" english="CHANGLU" latitude="" longitude="" />
+    <station id="S809" local="化工园" english="HUAGONGYUAN" latitude="" longitude="" />
+    <station id="S810" local="六合开发区" english="LUHE ECONOMIC ZONE" latitude="" longitude="" />
+    <station id="S811" local="龙池" english="LONGCHI" latitude="" longitude="" />
+    <station id="S812" local="雄州" english="XIONGZHOU" latitude="" longitude="" />
+    <station id="S813" local="凤凰山公园" english="FENGHUANGSHANGONGYUAN" latitude="" longitude="" />
+    <station id="S814" local="方州广场" english="FANGZHOUGUANGCHANG" latitude="" longitude="" />
+    <station id="S815" local="沈桥" english="SHENQIAO" latitude="" longitude="" />
+    <station id="S816" local="八百桥" english="BABAIQIAO" latitude="" longitude="" />
+    <station id="S817" local="金牛湖" english="JINNIUHU" latitude="" longitude="" />
     <!-- End of Line S8 -->
   </stations>
 
@@ -240,7 +266,7 @@
     </line>
 
     <!-- Travel time information is
-         http://nj.bendibao.com/ditie/shike_4.shtml -->
+         http://nj.bendibao.com/ditie/shike_66.shtml -->
     <line id="10" color="#ea3c84" wait="2" local="10号线" english="Line 10">
       <stations>
         <station id="1001" />
@@ -257,6 +283,45 @@
         <station id="1012" time="3" />
         <station id="1013" time="2" />
         <station id="1014" time="3" />
+      </stations>
+    </line>
+
+    <!-- Travel time information is
+         http://nj.bendibao.com/ditie/shike_59.shtml -->
+    <line id="S1" color="#4bbbb4" wait="2" local="S1号线" english="Line S1">
+      <stations>
+        <station id="S101" />
+        <station id="S102" time="5" />
+        <station id="S103" time="4" />
+        <station id="S104" time="4" />
+        <station id="S105" time="5" />
+        <station id="S106" time="6" />
+        <station id="S107" time="4" />
+        <station id="S108" time="6" />
+      </stations>
+    </line>
+
+    <!-- Travel time information is
+         http://nj.bendibao.com/ditie/shike_67.shtml -->
+    <line id="S8" color="#eca153" wait="2" local="S8号线" english="Line S8">
+      <stations>
+        <station id="S801" />
+        <station id="S802" time="2" />
+        <station id="S803" time="3" />
+        <station id="S804" time="3" />
+        <station id="S805" time="2" />
+        <station id="S806" time="3" />
+        <station id="S807" time="2" />
+        <station id="S808" time="4" />
+        <station id="S809" time="2" />
+        <station id="S810" time="3" />
+        <station id="S811" time="3" />
+        <station id="S812" time="3" />
+        <station id="S813" time="3" />
+        <station id="S814" time="2" />
+        <station id="S815" time="5" />
+        <station id="S816" time="5" />
+        <station id="S817" time="4" />
       </stations>
     </line>
   </lines>
