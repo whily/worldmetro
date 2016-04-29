@@ -90,7 +90,7 @@
     <station id="303" local="东大成贤学院" english="SOUTHEAST UNIVERSITY CHENGXIAN CAMPUS" latitude="" longitude="" />
     <station id="304" local="泰冯路" english="TAIFENGLU" latitude=""
              longitude="">
-        <transfer ids="304 S802" />
+        <transfer ids="304 S802" time="2" />
     </station>
     <station id="305" local="天润城" english="TIANRUNCHENG" latitude="" longitude="" />
     <station id="306" local="柳洲东路" english="LIUZHOUDONGLU" latitude="" longitude="" />
