@@ -25,12 +25,12 @@ Development
 
 The following tools are needed to build World Metro from source:
 
-* JDK version 6/7 from <http://www.java.com> if Java is not available. 
+* JDK version 6/7/8 from <http://www.java.com> if Java is not available.
   Note that JDK is preinstalled on Mac OS X and available via package manager
-  on many Linux systems. 
-* Android SDK r23.0.5.
-* Scala (2.11.6)
-* sbt (0.13.8)
+  on many Linux systems.
+* Android SDK r24.4.1.
+* Scala (2.11.8)
+* sbt (0.13.13)
 * [Inkscape](http://inkscape.org) and [ImageMagick](http://www.imagemagick.org)
   to generate icons.
 
@@ -51,15 +51,13 @@ To compile/run the code, run the following command to build the
    app and start it in a connected device:
 
         $ sbt android:run
-        
+
 To build a release version and start it in a connected device:
 
         $ sbt android:set-release android:run
-  
+
 TODO
 ----
 
 * Regression test (for all station pairs in all cities)
 * Draw line
-
-

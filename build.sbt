@@ -1,14 +1,13 @@
 import android.Keys._
 import android.Dependencies.aar
 
-android.Plugin.androidBuild
+enablePlugins(AndroidApp)
 
 name := "worldmetro"
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.11.8"
 
 libraryDependencies ++= Seq(
-  "org.scalatest" %% "scalatest" % "2.2.0" % "test",
   "net.whily" %% "scasci" % "0.0.1-SNAPSHOT",
   "net.whily" %% "scaland" % "0.0.1-SNAPSHOT")
 
