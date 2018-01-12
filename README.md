@@ -29,8 +29,8 @@ The following tools are needed to build World Metro from source:
   Note that JDK is preinstalled on Mac OS X and available via package manager
   on many Linux systems.
 * Android SDK r24.4.1.
-* Scala (2.11.8)
-* sbt (0.13.13)
+* Scala (2.11.11)
+* sbt (0.13.16)
 * [Inkscape](http://inkscape.org) and [ImageMagick](http://www.imagemagick.org)
   to generate icons.
 
