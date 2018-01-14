@@ -52,7 +52,10 @@
     <station id="122" local="国贸" english="GUOMAO" latitude="39.909819" longitude="116.455572">
     	<transfer ids="122 1027" time="2" />
     </station>
-    <station id="123" local="大望路" english="DAWANGLU" latitude="39.908333" longitude="116.477778" />
+    <station id="123" local="大望路" english="DAWANGLU"
+             latitude="39.908333" longitude="116.477778">
+        <transfer ids="123 1428" time="2" />
+    </station>
     <station id="124" local="四惠" english="SIHUI" latitude="" longitude="" />
     <station id="125" local="四惠东" english="SIHUI EAST" latitude="" longitude="" />
     <!-- End of Line 1 -->
@@ -112,7 +115,11 @@
       <transfer ids="402 1016" time="2" />
     </station>
     <station id="403" local="马家堡" english="MAJIAPU" latitude="" longitude="" />
-    <station id="404" local="北京南站" english="BEIJING SOUTH RAILWAY STATION" latitude="" longitude="" />
+    <station id="404" local="北京南站" english="BEIJING SOUTH RAILWAY
+                                                STATION" latitude=""
+             longitude="">
+      <transfer ids="404 1418" time="2" />
+    </station>
     <station id="405" local="陶然亭" english="TAORANTING" latitude="" longitude="" />
     <station id="406" local="菜市口" english="CAISHIKOU" latitude="39.8879" longitude="116.3683">
       <transfer ids="406 705" time="2" />
@@ -169,7 +176,10 @@
       <transfer ids="505 709" time="2" />
     </station>
     <station id="504" local="天坛东门" english="TIANTANDONGMEN" latitude="" longitude="" />
-    <station id="503" local="蒲黄榆" english="PUHUANGYU" latitude="" longitude="" />
+    <station id="503" local="蒲黄榆" english="PUHUANGYU" latitude=""
+             longitude="">
+      <transfer ids="503 1422" time="2" />
+    </station>
     <station id="502" local="刘家窑" english="LIUJIAYAO" latitude="" longitude="" />
     <station id="501" local="宋家庄" english="SONGJIAZHUANG" latitude="" longitude="">
     	<transfer ids="501 1020" time="2" />
@@ -243,7 +253,9 @@
     <!-- Same as 1026 <station id="712" local="双井" english="SHUANGJING"
          latitude="39.8922" longitude="116.4552" /> -->
     <station id="713" local="九龙山" english="JIULONGSHAN" latitude=""
-             longitude="" />
+             longitude="">
+      <transfer ids="713 1427" time="2" />
+    </station>
     <station id="714" local="大郊亭" english="DAJIAOTING"
              latitude="" longitude="" />
     <station id="715" local="百子湾" english="BAIZIWAN" latitude=""
@@ -327,7 +339,10 @@
     <station id="1019" local="石榴庄" english="SHILIUZHUANG" latitude="" longitude="" />
     <station id="1021" local="成寿寺" english="CHENGSHOUSI" latitude="" longitude="" />
     <station id="1022" local="分钟寺" english="FENZHONGSI" latitude="" longitude="" />
-    <station id="1023" local="十里河" english="SHILIHE" latitude="" longitude="" />
+    <station id="1023" local="十里河" english="SHILIHE" latitude=""
+             longitude="">
+      <transfer ids="1024 1424" time="2" />
+    </station>
     <station id="1024" local="潘家园" english="PANJIAYUAN" latitude="" longitude="" />
     <station id="1025" local="劲松" english="JINSONG" latitude="39.8831" longitude="116.4551" />
     <station id="1026" local="双井" english="SHUANGJING" latitude="39.8922" longitude="116.4552" />
@@ -376,7 +391,20 @@
     <station id="1404" local="郭庄子" english="GUOZHUANGZI" latitude="" longitude="" />
     <station id="1405" local="大井" english="DAJING" latitude=""
              longitude="" />
-    <!--<station id="1431" local="朝阳公园" english="CHAOYANG PARK" latitude="" longitude="" />-->
+
+    <!-- station id="1419" local="陶然桥" english="TAORANQIAO"
+             latitude="" longitude="" />-->
+    <station id="1420" local="永定门外" english="YONGDINGMENWAI"
+             latitude="" longitude="" />
+    <station id="1421" local="景泰" english="JINGTAI"
+             latitude="" longitude="" />
+    <station id="1423" local="方庄" english="FANGZHUANG"
+             latitude="" longitude="" />
+    <station id="1425" local="北工大西门" english="BEIGONGDA XIMEN" latitude="" longitude="" />
+    <station id="1426" local="平乐园" english="PINGLEYUAN" latitude="" longitude="" />
+    <!--<station id="1429" local="红庙" english="HONGMIAO" latitude="" longitude="" />-->
+    <station id="1430" local="金台路" english="JINTAILU" latitude="" longitude="" />
+    <station id="1431" local="朝阳公园" english="CHAOYANG PARK" latitude="" longitude="" />
     <station id="1432" local="枣营" english="ZAOYING" latitude="" longitude="" />
     <station id="1433" local="东风北桥" english="DONGFENG BEIQIAO" latitude="" longitude="" />
     <station id="1434" local="将台" english="JIANGTAI" latitude="" longitude="" />
@@ -411,6 +439,8 @@
     <station id="1519" local="顺义" english="SHUNYI" latitude="40.128889" longitude="116.650833" />
     <station id="1520" local="俸伯" english="FENGBO" latitude="40.131364" longitude="116.676169" />
     <!-- End of Line 15 -->
+
+    <!-- TODO: Line 16 -->
 
     <!--  Start of Airport Express -->
     <station id="AE03" local="T3航站楼" english="TERMINAL 3" latitude="" longitude="" />
@@ -740,7 +770,17 @@
          two segment of line 14 are to be merged. -->
     <line id="14e" local="14号线" english="Line 14" color="#D4A7A1" wait="9">
       <stations>
-        <station id="1430" />
+        <station id="1418" />
+        <station id="1420" time="3" />
+        <station id="1421" time="2" />
+        <station id="1422" time="3" />
+        <station id="1423" time="2" />
+        <station id="1424" time="3" />
+        <station id="1425" time="4" />
+        <station id="1426" time="2" />
+        <station id="1427" time="2" />
+        <station id="1428" time="3" />
+        <station id="1430" time="3" />
         <!--<station id="1431" time="2" />-->
         <station id="1432" time="4" />
         <station id="1433" time="4" />
